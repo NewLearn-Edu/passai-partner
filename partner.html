@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>수학 모의고사 · 학원 파트너 프로그램</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&display=swap');
+
+  :root {
+    --orange:       #E84A0F;
+    --orange-mid:   #F26338;
+    --orange-light: #FFF2EE;
+    --orange-border:#F5D5C8;
+    --warm-bg:      #FFF5F2;
+    --white:        #FFFFFF;
+    --dark:         #1A1A1A;
+    --text-mid:     #555555;
+    --text-light:   #999999;
+    --border:       #EDE8E6;
+    --border-soft:  #F3EDEB;
+    --radius-sm:    8px;
+    --radius-md:    12px;
+    --radius-lg:    18px;
+    --shadow-sm:    0 2px 10px rgba(232,74,15,0.07);
+    --shadow-md:    0 6px 24px rgba(232,74,15,0.10);
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body {
+    font-family:'Noto Sans KR','Apple SD Gothic Neo',sans-serif;
+    color:var(--dark); background:var(--warm-bg);
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    background:rgba(255,255,255,0.96);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--border);
+    padding:0 48px; height:58px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .nav-logo { display:flex; align-items:center; gap:10px; text-decoration:none; }
+  .nav-logo-icon {
+    width:28px; height:28px; background:var(--orange); border-radius:var(--radius-sm);
+    display:flex; align-items:center; justify-content:center;
+    color:white; font-weight:900; font-size:13px; letter-spacing:-0.5px;
+  }
+  .nav-logo-text { font-size:14px; font-weight:700; color:var(--dark); }
+  .nav-logo-badge {
+    font-size:11px; background:var(--orange-light);
+    border:1px solid var(--orange-border); color:var(--orange);
+    padding:2px 9px; border-radius:20px; font-weight:600;
+  }
+  .nav-links { display:flex; align-items:center; gap:24px; }
+  .nav-links a {
+    font-size:13px; color:var(--text-mid); text-decoration:none; font-weight:500;
+    transition:color .2s;
+  }
+  .nav-links a:hover { color:var(--orange); }
+  .nav-cta {
+    background:var(--orange); color:white !important;
+    padding:7px 18px; border-radius:20px; font-weight:700 !important;
+    font-size:13px !important; transition:background .2s;
+  }
+  .nav-cta:hover { background:#c93e0a; }
+
+  /* ── HERO ── */
+  .hero {
+    padding-top:58px;
+    background:var(--white);
+    border-bottom:1px solid var(--border);
+  }
+  .hero-inner {
+    max-width:1080px; margin:0 auto; padding:72px 48px 64px;
+    display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center;
+  }
+  .hero-eyebrow {
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:11px; font-weight:700; letter-spacing:1.5px; color:var(--orange);
+    background:var(--orange-light); border:1px solid var(--orange-border);
+    padding:4px 12px; border-radius:20px; margin-bottom:20px;
+  }
+  .hero-title {
+    font-size:40px; font-weight:900; line-height:1.2;
+    letter-spacing:-1.5px; margin-bottom:16px; color:var(--dark);
+  }
+  .hero-title em { color:var(--orange); font-style:normal; }
+  .hero-desc {
+    font-size:15px; color:var(--text-mid); line-height:1.85;
+    margin-bottom:32px; font-weight:300;
+  }
+  .hero-btns { display:flex; gap:10px; }
+  .btn-p {
+    background:var(--orange); color:white;
+    padding:13px 26px; border-radius:var(--radius-lg); font-size:14px; font-weight:700;
+    text-decoration:none; transition:background .2s, transform .15s; display:inline-block;
+    box-shadow:var(--shadow-md);
+  }
+  .btn-p:hover { background:#c93e0a; transform:translateY(-1px); }
+  .btn-s {
+    background:var(--warm-bg); color:var(--dark);
+    padding:13px 26px; border-radius:var(--radius-lg); font-size:14px; font-weight:600;
+    text-decoration:none; border:1.5px solid var(--border);
+    transition:background .2s; display:inline-block;
+  }
+  .btn-s:hover { background:var(--orange-light); border-color:var(--orange-border); }
+
+  .hero-right { display:flex; flex-direction:column; gap:12px; }
+  .hstat-row { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  .hstat {
+    background:var(--warm-bg); border:1.5px solid var(--border);
+    border-radius:var(--radius-md); padding:20px 18px;
+  }
+  .hstat.accent {
+    background:var(--orange-light); border-color:var(--orange-border);
+  }
+  .hstat-num { font-size:26px; font-weight:900; color:var(--dark); margin-bottom:4px; }
+  .hstat-num.orange { color:var(--orange); }
+  .hstat-num span { font-size:13px; font-weight:400; color:var(--text-light); }
+  .hstat-label { font-size:12px; color:var(--text-light); line-height:1.5; }
+  .hstat-desc {
+    background:var(--warm-bg); border:1.5px solid var(--border);
+    border-radius:var(--radius-md); padding:16px 18px;
+  }
+  .hstat-desc-label { font-size:11px; color:var(--text-light); margin-bottom:6px; }
+  .hstat-desc-text { font-size:13px; color:var(--text-mid); line-height:1.8; }
+
+  /* ── SECTION ── */
+  section { padding:80px 48px; }
+  .sec-inner { max-width:1080px; margin:0 auto; }
+  .sec-eyebrow {
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:11px; font-weight:700; color:var(--orange); letter-spacing:1.5px;
+    background:var(--orange-light); border:1px solid var(--orange-border);
+    padding:4px 12px; border-radius:20px; margin-bottom:14px;
+  }
+  .sec-title { font-size:28px; font-weight:900; letter-spacing:-0.8px; margin-bottom:8px; }
+  .sec-sub { font-size:15px; color:var(--text-light); line-height:1.7; font-weight:300; }
+  .sec-head { margin-bottom:40px; }
+
+  /* ── GRADE TABS ── */
+  #program { background:var(--white); }
+  .tab-bar {
+    display:flex; gap:6px; margin-bottom:24px;
+  }
+  .tab {
+    padding:9px 20px; border-radius:20px;
+    font-size:13px; font-weight:600; color:var(--text-light);
+    cursor:pointer; border:1.5px solid var(--border); background:var(--white);
+    transition:all .2s; font-family:inherit;
+  }
+  .tab:hover { border-color:var(--orange-border); color:var(--orange); }
+  .tab.active {
+    background:var(--orange); color:white; border-color:var(--orange);
+    box-shadow:var(--shadow-sm);
+  }
+  .tab-panel { display:none; }
+  .tab-panel.active { display:block; }
+
+  .season-grid { display:flex; flex-direction:column; gap:8px; }
+  .season-row {
+    background:var(--white); border-radius:var(--radius-md);
+    border:1.5px solid var(--border);
+    display:grid; align-items:center; padding:16px 20px;
+    transition:border-color .2s, box-shadow .2s;
+  }
+  .season-row:hover { border-color:var(--orange-border); box-shadow:var(--shadow-sm); }
+  .season-row.g3  { grid-template-columns:150px 130px 1fr 76px 76px; gap:14px; }
+  .season-row.g12 { grid-template-columns:110px 130px 1fr 76px 76px; gap:14px; }
+  .season-row.header {
+    background:var(--warm-bg); border-color:var(--border-soft);
+    font-size:11px; font-weight:700; color:var(--text-light); letter-spacing:0.5px;
+  }
+  .season-row.header:hover { border-color:var(--border-soft); box-shadow:none; }
+  .s-badge {
+    display:inline-flex; align-items:center;
+    font-size:12px; font-weight:700; color:var(--orange);
+  }
+  .s-period { font-size:12px; color:var(--text-light); }
+  .s-units  { font-size:13px; color:var(--dark); font-weight:500; }
+  .s-count  { text-align:center; font-size:14px; font-weight:700; color:var(--dark); }
+  .s-count span { font-size:11px; color:var(--text-light); display:block; font-weight:400; }
+  .s-count.orange { color:var(--orange); }
+
+  .season-total {
+    background:var(--orange-light); border:1.5px solid var(--orange-border);
+    border-radius:var(--radius-md); padding:14px 20px;
+    display:flex; justify-content:space-between; align-items:center; margin-top:4px;
+  }
+  .season-total-label { font-size:13px; color:var(--orange); font-weight:700; }
+  .season-total-nums  { display:flex; gap:28px; }
+  .season-total-item  { text-align:center; }
+  .season-total-num   { font-size:20px; font-weight:900; color:var(--orange); }
+  .season-total-num span { font-size:12px; color:var(--orange-mid); }
+  .season-total-sub   { font-size:11px; color:var(--orange-mid); margin-top:1px; }
+
+  .grade-note {
+    margin-top:12px; padding:12px 16px;
+    background:var(--warm-bg); border-radius:var(--radius-sm);
+    border-left:3px solid var(--orange);
+    font-size:13px; color:var(--text-mid); line-height:1.8;
+  }
+
+  /* ── TYPES ── */
+  #types { background:var(--warm-bg); }
+  .type-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+  .type-card {
+    background:var(--white); border:1.5px solid var(--border);
+    border-radius:var(--radius-md); padding:24px 20px;
+    transition:border-color .2s, box-shadow .2s; position:relative; overflow:hidden;
+  }
+  .type-card:hover { border-color:var(--orange-border); box-shadow:var(--shadow-md); }
+  .type-card.rec {
+    border-color:var(--orange); box-shadow:var(--shadow-md);
+  }
+  .type-card.rec::before {
+    content:'추천';
+    position:absolute; top:14px; right:-18px;
+    background:var(--orange); color:white; font-size:10px; font-weight:700;
+    padding:3px 26px; transform:rotate(45deg); letter-spacing:0.5px;
+  }
+  .type-letter {
+    width:34px; height:34px; border-radius:var(--radius-sm);
+    background:var(--orange-light); border:1px solid var(--orange-border);
+    display:flex; align-items:center; justify-content:center;
+    font-size:15px; font-weight:900; color:var(--orange); margin-bottom:12px;
+  }
+  .type-name   { font-size:16px; font-weight:800; margin-bottom:4px; }
+  .type-comp   { font-size:12px; color:var(--text-light); margin-bottom:12px; line-height:1.6; }
+  .type-target {
+    font-size:11px; font-weight:600; color:var(--orange);
+    background:var(--orange-light); padding:3px 9px; border-radius:20px;
+    display:inline-block; margin-bottom:14px; border:1px solid var(--orange-border);
+  }
+  .type-divider { border:none; border-top:1px solid var(--border-soft); margin:14px 0; }
+  .type-price-label { font-size:11px; color:var(--text-light); margin-bottom:3px; }
+  .type-student-price { font-size:13px; color:var(--text-mid); margin-bottom:8px; }
+  .type-academy-price { font-size:22px; font-weight:900; color:var(--orange); }
+  .type-academy-price span { font-size:12px; font-weight:400; color:var(--text-light); }
+  .type-margin { font-size:11px; color:var(--text-light); margin-top:3px; }
+
+  /* ── PRICING ── */
+  #pricing { background:var(--white); }
+  .pricing-principle {
+    display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-bottom:28px;
+  }
+  .pp-card {
+    background:var(--warm-bg); border:1.5px solid var(--border);
+    border-radius:var(--radius-md); padding:22px;
+  }
+  .pp-num   { font-size:30px; font-weight:900; color:var(--orange); margin-bottom:6px; }
+  .pp-label { font-size:13px; color:var(--text-mid); line-height:1.65; }
+
+  .pricing-table {
+    width:100%; border-collapse:collapse;
+    border:1.5px solid var(--border); border-radius:var(--radius-md); overflow:hidden;
+  }
+  .pricing-table th {
+    background:var(--warm-bg); padding:12px 18px;
+    font-size:11px; font-weight:700; color:var(--text-light); letter-spacing:0.5px;
+    text-align:left; border-bottom:1.5px solid var(--border);
+  }
+  .pricing-table td {
+    padding:14px 18px; font-size:14px; color:var(--text-mid);
+    border-bottom:1px solid var(--border-soft);
+  }
+  .pricing-table tr:last-child td { border-bottom:none; }
+  .pricing-table .price-orange { color:var(--orange); font-weight:700; font-size:16px; }
+  .pricing-table .price-dim    { color:var(--text-light); font-size:12px; }
+  .pricing-note-warm {
+    margin-top:18px; padding:14px 18px;
+    background:var(--warm-bg); border-radius:var(--radius-sm);
+    border-left:3px solid var(--orange);
+    font-size:13px; color:var(--text-mid); line-height:1.8;
+  }
+
+  /* ── SCHEDULE ── */
+  #schedule { background:var(--warm-bg); }
+  .schedule-wrap { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  .sch-card { background:var(--white); border-radius:var(--radius-md); border:1.5px solid var(--border); overflow:hidden; }
+  .sch-header {
+    background:var(--orange-light); border-bottom:1.5px solid var(--orange-border);
+    padding:14px 18px; display:flex; justify-content:space-between; align-items:center;
+  }
+  .sch-title { font-size:14px; font-weight:700; color:var(--dark); }
+  .sch-badge {
+    font-size:11px; background:var(--orange); color:white;
+    padding:3px 9px; border-radius:20px; font-weight:600;
+  }
+  .sch-row {
+    display:grid; grid-template-columns:1fr 72px 72px;
+    padding:11px 18px; border-bottom:1px solid var(--border-soft);
+    font-size:13px; align-items:center; gap:8px;
+  }
+  .sch-row:last-child { border-bottom:none; }
+  .sch-row.head { background:var(--warm-bg); font-size:11px; color:var(--text-light); font-weight:600; }
+  .sch-unit { color:var(--dark); font-weight:500; }
+  .sch-cnt  { text-align:center; color:var(--text-light); }
+  .sch-cnt.acc { color:var(--orange); font-weight:700; }
+
+  /* ── POC ── */
+  #poc { background:var(--white); }
+  .poc-steps { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  .poc-step {
+    background:var(--warm-bg); border:1.5px solid var(--border);
+    border-radius:var(--radius-md); padding:26px 22px; position:relative;
+  }
+  .poc-step-num {
+    width:30px; height:30px; border-radius:var(--radius-sm);
+    background:var(--orange); color:white;
+    display:flex; align-items:center; justify-content:center;
+    font-size:14px; font-weight:900; margin-bottom:12px;
+  }
+  .poc-step-title  { font-size:15px; font-weight:800; margin-bottom:8px; }
+  .poc-step-period {
+    font-size:11px; font-weight:700; color:var(--orange);
+    background:var(--orange-light); padding:3px 9px; border-radius:20px;
+    display:inline-block; margin-bottom:12px; border:1px solid var(--orange-border);
+  }
+  .poc-step ul { list-style:none; display:flex; flex-direction:column; gap:7px; }
+  .poc-step ul li {
+    font-size:13px; color:var(--text-mid); padding-left:14px;
+    position:relative; line-height:1.5;
+  }
+  .poc-step ul li::before { content:'·'; position:absolute; left:0; color:var(--orange); font-weight:700; }
+  .poc-arrow {
+    position:absolute; top:50%; right:-13px; transform:translateY(-50%);
+    width:26px; height:26px; background:var(--white);
+    border:1.5px solid var(--border); border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-size:11px; color:var(--orange); z-index:1;
+  }
+  .poc-step:last-child .poc-arrow { display:none; }
+
+  /* ── INQUIRY ── */
+  #inquiry { background:var(--warm-bg); }
+  .inquiry-wrap { display:grid; grid-template-columns:1fr 1.5fr; gap:60px; align-items:start; }
+  .inq-left h3 { font-size:24px; font-weight:900; margin-bottom:12px; line-height:1.4; color:var(--dark); }
+  .inq-left p  { font-size:14px; color:var(--text-mid); line-height:1.85; margin-bottom:24px; }
+  .inq-contact { display:flex; flex-direction:column; gap:12px; }
+  .inq-item    { display:flex; align-items:center; gap:12px; }
+  .inq-icon {
+    width:36px; height:36px; border-radius:var(--radius-sm);
+    background:var(--orange-light); border:1px solid var(--orange-border);
+    display:flex; align-items:center; justify-content:center; font-size:16px;
+  }
+  .inq-label { font-size:11px; color:var(--text-light); margin-bottom:2px; }
+  .inq-val   { font-size:14px; color:var(--dark); font-weight:600; }
+
+  .inq-form-wrap {
+    background:var(--white); border-radius:var(--radius-lg);
+    border:1.5px solid var(--border); padding:32px;
+    box-shadow:var(--shadow-sm);
+  }
+  form { display:flex; flex-direction:column; gap:12px; }
+  .form-row { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  .fg { display:flex; flex-direction:column; gap:5px; }
+  .fg label { font-size:12px; font-weight:700; color:var(--text-mid); }
+  .fg input, .fg select, .fg textarea {
+    border:1.5px solid var(--border); border-radius:var(--radius-sm);
+    padding:11px 13px; font-size:13px; font-family:inherit;
+    color:var(--dark); background:var(--warm-bg);
+    transition:border-color .2s; outline:none;
+  }
+  .fg input::placeholder, .fg textarea::placeholder { color:var(--text-light); }
+  .fg input:focus, .fg select:focus, .fg textarea:focus {
+    border-color:var(--orange); background:var(--white);
+  }
+  .fg textarea { resize:vertical; min-height:88px; }
+  .fg select { appearance:none; cursor:pointer; }
+  .form-check {
+    display:flex; align-items:flex-start; gap:9px;
+    font-size:12px; color:var(--text-light); cursor:pointer;
+  }
+  .form-check input { margin-top:2px; accent-color:var(--orange); }
+  .form-submit {
+    background:var(--orange); color:white; border:none; border-radius:var(--radius-md);
+    padding:14px; font-size:15px; font-weight:700;
+    font-family:inherit; cursor:pointer; transition:background .2s, transform .15s;
+    box-shadow:var(--shadow-sm);
+  }
+  .form-submit:hover { background:#c93e0a; transform:translateY(-1px); }
+
+  /* ── TOAST ── */
+  #toast {
+    position:fixed; bottom:32px; left:50%; transform:translateX(-50%) translateY(20px);
+    background:var(--dark); color:white; padding:13px 22px; border-radius:var(--radius-md);
+    font-size:13px; font-weight:500;
+    opacity:0; transition:opacity .3s, transform .3s; z-index:999; pointer-events:none;
+  }
+  #toast.show { opacity:1; transform:translateX(-50%) translateY(0); }
+
+  /* ── FOOTER ── */
+  footer {
+    background:var(--dark); color:white; padding:28px 48px;
+    display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px;
+  }
+  .ft-logo { display:flex; align-items:center; gap:8px; margin-bottom:4px; }
+  .ft-logo-icon {
+    width:22px; height:22px; background:var(--orange); border-radius:6px;
+    display:flex; align-items:center; justify-content:center; color:white; font-weight:900; font-size:11px;
+  }
+  .ft-logo-text { font-size:13px; font-weight:700; }
+  .ft-copy { font-size:11px; color:#555; }
+  .ft-info { font-size:11px; color:#555; line-height:1.9; text-align:right; }
+  .ft-info strong { color:#888; }
+
+  @media (max-width:900px) {
+    .hero-inner, .inquiry-wrap { grid-template-columns:1fr; }
+    .hero-right { display:none; }
+    .type-grid  { grid-template-columns:1fr 1fr; }
+    .schedule-wrap, .poc-steps { grid-template-columns:1fr; }
+    .pricing-principle { grid-template-columns:1fr; }
+    nav, section, footer { padding-left:20px; padding-right:20px; }
+    .hero-title { font-size:30px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-icon">수학</div>
+    <span class="nav-logo-text">수학 모의고사</span>
+    <span class="nav-logo-badge">학원 파트너</span>
+  </a>
+  <div class="nav-links">
+    <a href="#program">프로그램</a>
+    <a href="#types">구독 타입</a>
+    <a href="#pricing">공급가</a>
+    <a href="#schedule">납품 일정</a>
+    <a href="#inquiry" class="nav-cta">파트너 신청</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow">학원 파트너 프로그램</div>
+      <h1 class="hero-title">수학 단원·난이도<br><em>맞춤형</em> 테스트지<br>정기 납품</h1>
+      <p class="hero-desc">
+        원하는 단원, 원하는 난이도를 골라 격주·월간 정기 납품.<br>
+        고1부터 고3·N수까지 학년별 시즌 커리큘럼 제공.<br>
+        수능특강·평가원 패러프레이징 기반 출제.
+      </p>
+      <div class="hero-btns">
+        <a href="#inquiry" class="btn-p">파트너 신청 · 샘플 요청</a>
+        <a href="#program" class="btn-s">프로그램 보기</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hstat-row">
+        <div class="hstat accent">
+          <div class="hstat-num orange">격주<span>납품</span></div>
+          <div class="hstat-label">10문항 or 20문항<br>2주 1회</div>
+        </div>
+        <div class="hstat accent">
+          <div class="hstat-num orange">월간<span>납품</span></div>
+          <div class="hstat-label">30문항 종합<br>월 1회</div>
+        </div>
+      </div>
+      <div class="hstat-row">
+        <div class="hstat">
+          <div class="hstat-num">60<span>%</span></div>
+          <div class="hstat-label">학원 공급가<br>(학생가 기준)</div>
+        </div>
+        <div class="hstat">
+          <div class="hstat-num">3<span>개</span></div>
+          <div class="hstat-label">학년 커리큘럼<br>고1 · 고2 · 고3</div>
+        </div>
+      </div>
+      <div class="hstat-desc">
+        <div class="hstat-desc-label">납품 방식</div>
+        <div class="hstat-desc-text">PDF + 인쇄 파일 전달 → 학원 자체 인쇄<br>배송 전환 시 별도 협의</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PROGRAM -->
+<section id="program">
+  <div class="sec-inner">
+    <div class="sec-head">
+      <div class="sec-eyebrow">01 · 프로그램 구성</div>
+      <h2 class="sec-title">학년별 연간 커리큘럼</h2>
+      <p class="sec-sub">수능 일정에 맞춘 시즌제 운영 · 수능특강·평가원 패러프레이징 기반 출제</p>
+    </div>
+    <div class="tab-bar">
+      <button class="tab active" onclick="switchTab(0)">고3 · N수</button>
+      <button class="tab" onclick="switchTab(1)">고2</button>
+      <button class="tab" onclick="switchTab(2)">고1</button>
+    </div>
+
+    <!-- 고3·N수 -->
+    <div class="tab-panel active" id="tab-0">
+      <div class="season-grid">
+        <div class="season-row g3 header">
+          <div>시즌</div><div>기간</div><div>출제 기준 · 단원</div>
+          <div style="text-align:center">격주 납품</div>
+          <div style="text-align:center">월간 납품</div>
+        </div>
+        <div class="season-row g3">
+          <div class="s-badge">시즌1 수학Ⅰ</div>
+          <div class="s-period">1~2월 · 8주</div>
+          <div class="s-units">단원 집중 — 수열 / 지수·로그함수 / 삼각함수</div>
+          <div class="s-count">4회<span>10 or 20문항</span></div>
+          <div class="s-count orange">2회<span>30문항</span></div>
+        </div>
+        <div class="season-row g3">
+          <div class="s-badge">시즌2 수능특강</div>
+          <div class="s-period">3~4월 · 8주</div>
+          <div class="s-units">수능특강 패러프레이징 — 수학Ⅱ · 선택과목 기반</div>
+          <div class="s-count">4회<span>10 or 20문항</span></div>
+          <div class="s-count orange">2회<span>30문항</span></div>
+        </div>
+        <div class="season-row g3">
+          <div class="s-badge">시즌3 6월모평 대비</div>
+          <div class="s-period">5월 · 4주</div>
+          <div class="s-units">6월 평가원 대비 — 전체 단원 실전형</div>
+          <div class="s-count">2회<span>20문항</span></div>
+          <div class="s-count orange">2회<span>30문항</span></div>
+        </div>
+        <div class="season-row g3">
+          <div class="s-badge">시즌4 6월모평 반영</div>
+          <div class="s-period">6~7월 · 8주</div>
+          <div class="s-units">6월 평가원 패러프레이징 — 출제 경향 즉시 반영</div>
+          <div class="s-count">4회<span>10문항 심화</span></div>
+          <div class="s-count orange">2회<span>30문항</span></div>
+        </div>
+        <div class="season-row g3">
+          <div class="s-badge">시즌5 9월모평 대비</div>
+          <div class="s-period">8월 · 4주</div>
+          <div class="s-units">9월 평가원 대비 — 전체 단원 실전형</div>
+          <div class="s-count">2회<span>10문항 킬러</span></div>
+          <div class="s-count orange">2회<span>30문항</span></div>
+        </div>
+        <div class="season-row g3">
+          <div class="s-badge">시즌6 수능 파이널</div>
+          <div class="s-period">9~10월 · 8주</div>
+          <div class="s-units">9월 평가원 패러프레이징 — 수능 직전 최종 점검</div>
+          <div class="s-count">4회<span>10문항 킬러</span></div>
+          <div class="s-count orange">2회<span>30문항</span></div>
+        </div>
+      </div>
+      <div class="season-total">
+        <span class="season-total-label">연간 합계 (고3·N수)</span>
+        <div class="season-total-nums">
+          <div class="season-total-item">
+            <div class="season-total-num">20<span>회</span></div>
+            <div class="season-total-sub">격주 납품</div>
+          </div>
+          <div class="season-total-item">
+            <div class="season-total-num">12<span>회</span></div>
+            <div class="season-total-sub">월간 납품</div>
+          </div>
+        </div>
+      </div>
+      <div class="grade-note">
+        시즌1·2: 일반반 → 20문항 중난도 / 심화반 → 10문항 상난도 중 선택<br>
+        시즌2: 수능특강 출제 문항 기반 패러프레이징 — EBS 연계 대비 직결<br>
+        시즌4·6: 평가원 모의고사 출제 경향을 즉시 반영한 변형 문항 제공
+      </div>
+    </div>
+
+    <!-- 고2 -->
+    <div class="tab-panel" id="tab-1">
+      <div class="season-grid">
+        <div class="season-row g12 header">
+          <div>학기</div><div>기간</div><div>단원</div>
+          <div style="text-align:center">격주 납품</div>
+          <div style="text-align:center">월간 납품</div>
+        </div>
+        <div class="season-row g12">
+          <div class="s-badge">1학기</div>
+          <div class="s-period">3~6월 · 10주</div>
+          <div class="s-units">수열 / 지수·로그함수 / 삼각함수</div>
+          <div class="s-count">5회<span>20문항</span></div>
+          <div class="s-count orange">2회<span>30문항</span></div>
+        </div>
+        <div class="season-row g12">
+          <div class="s-badge">2학기</div>
+          <div class="s-period">9~12월 · 10주</div>
+          <div class="s-units">함수의 극한 / 미분법 / 적분법</div>
+          <div class="s-count">5회<span>20문항</span></div>
+          <div class="s-count orange">2회<span>30문항</span></div>
+        </div>
+      </div>
+      <div class="season-total">
+        <span class="season-total-label">연간 합계 (고2)</span>
+        <div class="season-total-nums">
+          <div class="season-total-item">
+            <div class="season-total-num">10<span>회</span></div>
+            <div class="season-total-sub">격주 납품</div>
+          </div>
+          <div class="season-total-item">
+            <div class="season-total-num">4<span>회</span></div>
+            <div class="season-total-sub">월간 납품</div>
+          </div>
+        </div>
+      </div>
+      <div class="grade-note">
+        20문항 중난도 중심 운영 · 내신 기간(6월, 11월) 제외<br>
+        상위권반은 10문항 심화 추가 가능
+      </div>
+    </div>
+
+    <!-- 고1 -->
+    <div class="tab-panel" id="tab-2">
+      <div class="season-grid">
+        <div class="season-row g12 header">
+          <div>학기</div><div>기간</div><div>단원</div>
+          <div style="text-align:center">격주 납품</div>
+          <div style="text-align:center">월간 납품</div>
+        </div>
+        <div class="season-row g12">
+          <div class="s-badge">1학기</div>
+          <div class="s-period">3~6월 · 10주</div>
+          <div class="s-units">다항식 / 방정식과 부등식 / 도형의 방정식</div>
+          <div class="s-count">5회<span>20문항</span></div>
+          <div class="s-count orange">2회<span>30문항</span></div>
+        </div>
+        <div class="season-row g12">
+          <div class="s-badge">2학기</div>
+          <div class="s-period">9~12월 · 10주</div>
+          <div class="s-units">집합과 명제 / 함수 / 경우의 수</div>
+          <div class="s-count">5회<span>20문항</span></div>
+          <div class="s-count orange">2회<span>30문항</span></div>
+        </div>
+      </div>
+      <div class="season-total">
+        <span class="season-total-label">연간 합계 (고1)</span>
+        <div class="season-total-nums">
+          <div class="season-total-item">
+            <div class="season-total-num">10<span>회</span></div>
+            <div class="season-total-sub">격주 납품</div>
+          </div>
+          <div class="season-total-item">
+            <div class="season-total-num">4<span>회</span></div>
+            <div class="season-total-sub">월간 납품</div>
+          </div>
+        </div>
+      </div>
+      <div class="grade-note">
+        20문항 중난도 중심 운영 · 심화(10문항) 수요 낮음<br>
+        내신 기간(6월, 11월) 제외
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TYPES -->
+<section id="types">
+  <div class="sec-inner">
+    <div class="sec-head">
+      <div class="sec-eyebrow">02 · 구독 타입</div>
+      <h2 class="sec-title">학원 구독 타입 4가지</h2>
+      <p class="sec-sub">학원 운영 방식에 맞는 타입을 선택하세요</p>
+    </div>
+    <div class="type-grid">
+      <div class="type-card">
+        <div class="type-letter">A</div>
+        <div class="type-name">단원 집중형</div>
+        <div class="type-comp">격주 20문항 × 월 2회</div>
+        <div class="type-target">일반반 · 단원 마무리</div>
+        <hr class="type-divider">
+        <div class="type-price-label">학생가 기준 월 비용</div>
+        <div class="type-student-price">30,000원 / 월</div>
+        <div class="type-price-label">학원 공급가 (월)</div>
+        <div class="type-academy-price">18,000원 <span>/ 월</span></div>
+        <div class="type-margin">학원 마진 12,000원 (40%)</div>
+      </div>
+      <div class="type-card">
+        <div class="type-letter">B</div>
+        <div class="type-name">심화형</div>
+        <div class="type-comp">격주 10문항 × 월 2회</div>
+        <div class="type-target">상위권 · N수반 특화</div>
+        <hr class="type-divider">
+        <div class="type-price-label">학생가 기준 월 비용</div>
+        <div class="type-student-price">20,000원 / 월</div>
+        <div class="type-price-label">학원 공급가 (월)</div>
+        <div class="type-academy-price">12,000원 <span>/ 월</span></div>
+        <div class="type-margin">학원 마진 8,000원 (40%)</div>
+      </div>
+      <div class="type-card">
+        <div class="type-letter">C</div>
+        <div class="type-name">종합형</div>
+        <div class="type-comp">월 30문항 × 월 1회</div>
+        <div class="type-target">정기 평가 · 성취도 확인</div>
+        <hr class="type-divider">
+        <div class="type-price-label">학생가 기준 월 비용</div>
+        <div class="type-student-price">12,000원 / 월</div>
+        <div class="type-price-label">학원 공급가 (월)</div>
+        <div class="type-academy-price">7,200원 <span>/ 월</span></div>
+        <div class="type-margin">학원 마진 4,800원 (40%)</div>
+      </div>
+      <div class="type-card rec">
+        <div class="type-letter">D</div>
+        <div class="type-name">풀패키지</div>
+        <div class="type-comp">격주 20문항 × 2회 + 월 30문항</div>
+        <div class="type-target">전반적 운영 · 완성형</div>
+        <hr class="type-divider">
+        <div class="type-price-label">학생가 기준 월 비용</div>
+        <div class="type-student-price">42,000원 / 월</div>
+        <div class="type-price-label">학원 공급가 (월)</div>
+        <div class="type-academy-price">25,200원 <span>/ 월</span></div>
+        <div class="type-margin">학원 마진 16,800원 (40%)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="sec-inner">
+    <div class="sec-head">
+      <div class="sec-eyebrow">03 · 공급가</div>
+      <h2 class="sec-title">학원 공급가 기준</h2>
+      <p class="sec-sub">학원 파트너 전용 가격 · 학생가의 60% 공급</p>
+    </div>
+    <div class="pricing-principle">
+      <div class="pp-card">
+        <div class="pp-num">60%</div>
+        <div class="pp-label">학원 공급가<br>학생가 기준 60% 적용</div>
+      </div>
+      <div class="pp-card">
+        <div class="pp-num">40%</div>
+        <div class="pp-label">학원 마진<br>인쇄·배포·운영 학원 부담</div>
+      </div>
+      <div class="pp-card">
+        <div class="pp-num">PDF</div>
+        <div class="pp-label">PoC 납품 방식<br>인쇄 파일 전달 → 학원 자체 인쇄</div>
+      </div>
+    </div>
+    <table class="pricing-table">
+      <thead>
+        <tr>
+          <th>상품</th><th>구성</th><th>학생가</th><th>학원 공급가</th><th>학원 마진</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>심화 테스트</td>
+          <td>10문항 × 2회분</td>
+          <td>10,000원</td>
+          <td class="price-orange">6,000원</td>
+          <td class="price-dim">4,000원</td>
+        </tr>
+        <tr>
+          <td>단원 테스트</td>
+          <td>20문항 × 2회분</td>
+          <td>15,000원</td>
+          <td class="price-orange">9,000원</td>
+          <td class="price-dim">6,000원</td>
+        </tr>
+        <tr>
+          <td>월간 모의고사</td>
+          <td>30문항 × 1회분</td>
+          <td>12,000원</td>
+          <td class="price-orange">7,200원</td>
+          <td class="price-dim">4,800원</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="pricing-note-warm">
+      시중 모의고사 7,500~15,000원 수준 · 단원·난이도 맞춤형 프리미엄 포지셔닝<br>
+      시즌 단위 계약 시 추가 할인 협의 가능 · 대량 납품 별도 문의
+    </div>
+  </div>
+</section>
+
+<!-- SCHEDULE -->
+<section id="schedule">
+  <div class="sec-inner">
+    <div class="sec-head">
+      <div class="sec-eyebrow">04 · 납품 일정</div>
+      <h2 class="sec-title">연간 납품 스케줄</h2>
+      <p class="sec-sub">수능특강·평가원 일정에 연동된 출제 기준</p>
+    </div>
+    <div class="schedule-wrap">
+      <div class="sch-card">
+        <div class="sch-header">
+          <span class="sch-title">고3·N수 연간 납품 일정</span>
+          <span class="sch-badge">격주 + 월간</span>
+        </div>
+        <div class="sch-row head">
+          <div>시즌 · 기간</div>
+          <div style="text-align:center">격주</div>
+          <div style="text-align:center">월간</div>
+        </div>
+        <div class="sch-row">
+          <div class="sch-unit">시즌1 · 1~2월<br><span style="font-size:11px;color:var(--text-light)">수학Ⅰ 단원 집중</span></div>
+          <div class="sch-cnt acc">4회</div>
+          <div class="sch-cnt acc">2회</div>
+        </div>
+        <div class="sch-row">
+          <div class="sch-unit">시즌2 · 3~4월<br><span style="font-size:11px;color:var(--text-light)">수능특강 패러프레이징</span></div>
+          <div class="sch-cnt acc">4회</div>
+          <div class="sch-cnt acc">2회</div>
+        </div>
+        <div class="sch-row">
+          <div class="sch-unit">시즌3 · 5월<br><span style="font-size:11px;color:var(--text-light)">6월 평가원 대비</span></div>
+          <div class="sch-cnt acc">2회</div>
+          <div class="sch-cnt acc">2회</div>
+        </div>
+        <div class="sch-row">
+          <div class="sch-unit">시즌4 · 6~7월<br><span style="font-size:11px;color:var(--text-light)">6월 평가원 패러프레이징</span></div>
+          <div class="sch-cnt acc">4회</div>
+          <div class="sch-cnt acc">2회</div>
+        </div>
+        <div class="sch-row">
+          <div class="sch-unit">시즌5 · 8월<br><span style="font-size:11px;color:var(--text-light)">9월 평가원 대비</span></div>
+          <div class="sch-cnt acc">2회</div>
+          <div class="sch-cnt acc">2회</div>
+        </div>
+        <div class="sch-row">
+          <div class="sch-unit">시즌6 · 9~10월<br><span style="font-size:11px;color:var(--text-light)">9월 평가원 패러프레이징</span></div>
+          <div class="sch-cnt acc">4회</div>
+          <div class="sch-cnt acc">2회</div>
+        </div>
+      </div>
+      <div class="sch-card">
+        <div class="sch-header">
+          <span class="sch-title">출제 기준 · 차별점</span>
+          <span class="sch-badge">평가원 연계</span>
+        </div>
+        <div class="sch-row head">
+          <div>출제 기준</div>
+          <div style="text-align:center">시즌</div>
+          <div style="text-align:center">특징</div>
+        </div>
+        <div class="sch-row">
+          <div class="sch-unit">단원 집중 맞춤 제작</div>
+          <div class="sch-cnt">시즌1</div>
+          <div class="sch-cnt acc">맞춤형</div>
+        </div>
+        <div class="sch-row">
+          <div class="sch-unit">수능특강 패러프레이징</div>
+          <div class="sch-cnt">시즌2</div>
+          <div class="sch-cnt acc">EBS 연계</div>
+        </div>
+        <div class="sch-row">
+          <div class="sch-unit">6월 모평 대비 실전형</div>
+          <div class="sch-cnt">시즌3</div>
+          <div class="sch-cnt acc">실전형</div>
+        </div>
+        <div class="sch-row">
+          <div class="sch-unit">6월 평가원 패러프레이징</div>
+          <div class="sch-cnt">시즌4</div>
+          <div class="sch-cnt acc">즉시 반영</div>
+        </div>
+        <div class="sch-row">
+          <div class="sch-unit">9월 모평 대비 실전형</div>
+          <div class="sch-cnt">시즌5</div>
+          <div class="sch-cnt acc">실전형</div>
+        </div>
+        <div class="sch-row">
+          <div class="sch-unit">9월 평가원 패러프레이징</div>
+          <div class="sch-cnt">시즌6</div>
+          <div class="sch-cnt acc">수능 직결</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- POC -->
+<section id="poc">
+  <div class="sec-inner">
+    <div class="sec-head">
+      <div class="sec-eyebrow">05 · 도입 순서</div>
+      <h2 class="sec-title">단계별 파트너 도입</h2>
+      <p class="sec-sub">샘플 검토부터 연간 계약까지 단계적으로 진행합니다</p>
+    </div>
+    <div class="poc-steps">
+      <div class="poc-step">
+        <div class="poc-arrow">→</div>
+        <div class="poc-step-num">1</div>
+        <div class="poc-step-period">지금 바로 · 5월</div>
+        <div class="poc-step-title">샘플 검토</div>
+        <ul>
+          <li>30문항 월간 모의고사 샘플 무료 발송</li>
+          <li>품질 확인 후 도입 여부 결정</li>
+          <li>타입 C(종합형) 단품으로 시작</li>
+        </ul>
+      </div>
+      <div class="poc-step">
+        <div class="poc-arrow">→</div>
+        <div class="poc-step-num">2</div>
+        <div class="poc-step-period">반응 확인 후</div>
+        <div class="poc-step-title">구독 전환</div>
+        <ul>
+          <li>격주 20문항 단원 테스트 추가</li>
+          <li>타입 A(단원 집중형) 구독 전환</li>
+          <li>학원별 단원·난이도 맞춤 설정</li>
+        </ul>
+      </div>
+      <div class="poc-step">
+        <div class="poc-step-num">3</div>
+        <div class="poc-step-period">안정화 후</div>
+        <div class="poc-step-title">연간 시즌 계약</div>
+        <ul>
+          <li>타입 B·D로 확장</li>
+          <li>시즌 단위 연간 계약 전환</li>
+          <li>고1·2 커리큘럼 추가 도입</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INQUIRY -->
+<section id="inquiry">
+  <div class="sec-inner">
+    <div class="sec-head">
+      <div class="sec-eyebrow">06 · 파트너 신청</div>
+      <h2 class="sec-title">샘플 요청 · 파트너 신청</h2>
+      <p class="sec-sub">문의 주시면 영업일 기준 1일 이내 답변드립니다</p>
+    </div>
+    <div class="inquiry-wrap">
+      <div class="inq-left">
+        <h3>샘플을 먼저<br>확인하세요</h3>
+        <p>실제 시험지 샘플을 무료로 발송해드립니다.<br>품질을 직접 확인하신 후 구독 타입을 결정하시면 됩니다.</p>
+        <div class="inq-contact">
+          <div class="inq-item">
+            <div class="inq-icon">✉️</div>
+            <div>
+              <div class="inq-label">이메일</div>
+              <div class="inq-val">newlearnsoft@gmail.com</div>
+            </div>
+          </div>
+          <div class="inq-item">
+            <div class="inq-icon">🏢</div>
+            <div>
+              <div class="inq-label">회사</div>
+              <div class="inq-val">뉴런소프트</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="inq-form-wrap">
+        <form id="partnerForm">
+          <div class="form-row">
+            <div class="fg">
+              <label>학원명 *</label>
+              <input type="text" name="academy" placeholder="학원 이름" required>
+            </div>
+            <div class="fg">
+              <label>담당자명 *</label>
+              <input type="text" name="name" placeholder="이름" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="fg">
+              <label>연락처 *</label>
+              <input type="tel" name="phone" placeholder="010-0000-0000" required>
+            </div>
+            <div class="fg">
+              <label>이메일 *</label>
+              <input type="email" name="email" placeholder="academy@example.com" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="fg">
+              <label>학원 유형</label>
+              <select name="type">
+                <option value="">선택</option>
+                <option>재종반</option>
+                <option>독재학원</option>
+                <option>단과학원</option>
+                <option>종합학원</option>
+                <option>스터디카페</option>
+                <option>기타</option>
+              </select>
+            </div>
+            <div class="fg">
+              <label>관심 구독 타입</label>
+              <select name="plan">
+                <option value="">선택</option>
+                <option>A · 단원 집중형 (격주 20문항)</option>
+                <option>B · 심화형 (격주 10문항)</option>
+                <option>C · 종합형 (월 30문항)</option>
+                <option>D · 풀패키지</option>
+                <option>샘플만 먼저 검토</option>
+              </select>
+            </div>
+          </div>
+          <div class="fg">
+            <label>대상 학년</label>
+            <select name="grade">
+              <option value="">선택</option>
+              <option>고3·N수</option>
+              <option>고2</option>
+              <option>고1</option>
+              <option>복수 학년</option>
+            </select>
+          </div>
+          <div class="fg">
+            <label>문의 내용</label>
+            <textarea name="message" placeholder="학원 규모, 희망 단원, 시작 시기 등 자유롭게 작성해주세요"></textarea>
+          </div>
+          <label class="form-check">
+            <input type="checkbox" required>
+            개인정보 수집 및 이용에 동의합니다. (샘플 발송 및 파트너 연락 목적)
+          </label>
+          <button type="submit" class="form-submit" id="submitBtn">샘플 요청 · 파트너 신청하기</button>
+        </form>
+
+        <div id="formSuccess" style="display:none; text-align:center; padding:56px 24px;">
+          <div style="width:64px;height:64px;background:var(--orange-light);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:28px;">✅</div>
+          <h3 style="font-size:20px;font-weight:700;color:var(--dark);margin-bottom:12px;">신청이 완료되었습니다!</h3>
+          <p style="font-size:15px;color:var(--text-mid);line-height:1.7;">빠른 시일 내에 연락드리겠습니다.<br>영업일 기준 <strong style="color:var(--orange);">1일 이내</strong> 담당자가 직접 연락드립니다.</p>
+          <p style="font-size:13px;color:var(--text-light);margin-top:16px;">문의: newlearnsoft@gmail.com</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="ft-logo">
+      <div class="ft-logo-icon">수</div>
+      <span class="ft-logo-text">수학 모의고사 · 학원 파트너</span>
+    </div>
+    <div class="ft-copy">© 2026 뉴런소프트. All rights reserved.</div>
+  </div>
+  <div class="ft-info">
+    <strong>회사명</strong> (주)뉴런소프트<br>
+    <strong>이메일</strong> newlearnsoft@gmail.com
+  </div>
+</footer>
+
+<div id="toast">✅ 신청이 접수되었습니다. 영업일 기준 1일 이내 연락드립니다.</div>
+
+<script>
+  function switchTab(idx) {
+    document.querySelectorAll('.tab').forEach((t,i) => t.classList.toggle('active', i===idx));
+    document.querySelectorAll('.tab-panel').forEach((p,i) => p.classList.toggle('active', i===idx));
+  }
+  // ★ Google Apps Script 배포 후 아래 URL을 교체하세요
+  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwfV43wUWvb5ZBbgnax_Ot4R6dMoCGlM6DtZxo97y7SrPHPeXwup97FLF9p4nq7oXx7/exec';
+
+  document.getElementById('partnerForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const btn = document.getElementById('submitBtn');
+    btn.disabled = true;
+    btn.textContent = '제출 중...';
+
+    const params = new URLSearchParams(new FormData(this));
+
+    fetch(SCRIPT_URL, { method: 'POST', body: params, mode: 'no-cors' })
+      .then(() => {
+        document.getElementById('partnerForm').style.display = 'none';
+        document.getElementById('formSuccess').style.display = 'block';
+      })
+      .catch(() => {
+        // 네트워크 오류 시 fallback
+        btn.disabled = false;
+        btn.textContent = '샘플 요청 · 파트너 신청하기';
+        const toast = document.getElementById('toast');
+        toast.textContent = '❌ 제출에 실패했습니다. 이메일로 문의해주세요.';
+        toast.style.background = '#e53e3e';
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 5000);
+      });
+  });
+  const sections = document.querySelectorAll('section[id], div.hero');
+  const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 80) current = s.id; });
+    navLinks.forEach(a => {
+      a.style.color = a.getAttribute('href') === '#' + current ? 'var(--orange)' : '';
+    });
+  });
+</script>
+</body>
+</html>
