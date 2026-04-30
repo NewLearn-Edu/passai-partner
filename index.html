@@ -3,41 +3,103 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>수학 모의고사 · 학원 파트너</title>
+<title>수학 모의고사 · 학원 파트너 | 단원·난이도 맞춤 테스트지 정기 납품</title>
+
+<!-- SEO -->
+<meta name="description" content="수업 흐름에 맞는 단원·난이도 맞춤 수학 테스트지를 격주·월간으로 납품합니다. 수능특강·평가원 패러프레이징 기반 출제로 EBS 연계 대비 직결. 30문항 샘플 무료 발송.">
+<meta name="keywords" content="수학 모의고사, 학원 파트너, 단원 테스트, 평가원 패러프레이징, EBS 연계, 수능특강, 격주 모의고사, 월간 모의고사, 수학 학원, 모의고사 납품">
+<meta name="author" content="뉴런소프트">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph (KakaoTalk · Facebook · LinkedIn) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="수학 모의고사 · 학원 파트너">
+<meta property="og:description" content="단원·난이도 맞춤 수학 테스트지 정기 납품. 수능특강·평가원 패러프레이징 기반 출제. 30문항 샘플 무료.">
+<meta property="og:site_name" content="수학 모의고사 학원 파트너">
+<meta property="og:locale" content="ko_KR">
+<!-- og:url 과 og:image 는 실제 도메인·이미지 업로드 후 채워주세요 -->
+<!-- <meta property="og:url" content="https://your-domain.kr/"> -->
+<!-- <meta property="og:image" content="https://your-domain.kr/og-image.png"> -->
+<!-- <meta property="og:image:width" content="1200"> -->
+<!-- <meta property="og:image:height" content="630"> -->
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="수학 모의고사 · 학원 파트너">
+<meta name="twitter:description" content="단원·난이도 맞춤 수학 테스트지 정기 납품. 30문항 샘플 무료.">
+
+<!-- Theme & Browser UI -->
+<meta name="theme-color" content="#0F1B2D">
+<meta name="apple-mobile-web-app-title" content="수학 모의고사">
+
+<!-- Favicon (data URI - 빨간 점 위에 흰색 √ 미니 로고) -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230F1B2D'/%3E%3Ccircle cx='16' cy='16' r='5' fill='%23E63946'/%3E%3C/svg%3E">
+
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap');
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
 
 :root {
-  --orange:       #E84A0F;
-  --orange-dark:  #C93D08;
-  --orange-light: #FFF2EE;
-  --orange-bdr:   #F0CCBC;
-  --warm:         #FEF6F3;
+  /* ── Color: 미드나잇 블루 + 시그널 레드 (입시·프리미엄) ── */
+  --navy:         #0F1B2D;   /* 메인 — 미드나잇 블루 (대형 다크 박스) */
+  --navy-soft:    #1E2D45;   /* 다크 박스 내부 보조 */
+  --navy-line:    #2A3A55;   /* 다크 박스 내부 라인 */
+  --orange:       #E63946;   /* 시그널 레드 — 핵심 키워드만 */
+  --orange-dark:  #C82838;   /* hover */
+  --orange-light: #FFEEF0;   /* 매우 옅은 레드 (배지 배경) */
+  --orange-bdr:   #F5C7CC;   /* 레드 보더 */
+  --warm:         #F7F8FA;   /* 깨끗한 콜드 그레이 베이스 */
   --white:        #FFFFFF;
-  --ink:          #0F0F0F;
-  --body:         #3A3A3A;
-  --mid:          #777777;
-  --muted:        #BBBBBB;
-  --line:         #E8E3E0;
-  --line-soft:    #F2EEEC;
-  --r-sm:  8px;
-  --r-md:  14px;
-  --r-lg:  22px;
-  --r-xl:  30px;
-  --sh-sm: 0 2px 12px rgba(0,0,0,0.07);
-  --sh-md: 0 8px 32px rgba(0,0,0,0.09);
-  --sh-lg: 0 20px 64px rgba(0,0,0,0.11);
-  --sh-or: 0 8px 28px rgba(232,74,15,0.22);
+  --ink:          #0F1B2D;   /* 제목·강조 = 메인 네이비와 동일 */
+  --body:         #2D3748;   /* 본문 차콜 */
+  --mid:          #6B7280;   /* 차가운 그레이 */
+  --muted:        #9CA3AF;   /* 차가운 뮤티드 */
+  --line:         #E5E7EB;   /* 차가운 라인 */
+  --line-soft:    #F1F3F5;   /* 차가운 약한 라인 */
+  /* ── Typography ── */
+  --f-sans:  'Pretendard Variable', 'Pretendard', -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+  /* ── Radius·Shadow ── */
+  --r-sm:  6px;
+  --r-md:  10px;
+  --r-lg:  14px;
+  --r-xl:  18px;
+  --sh-sm: 0 1px 3px rgba(15,27,45,0.05);
+  --sh-md: 0 4px 16px rgba(15,27,45,0.06);
+  --sh-lg: 0 12px 40px rgba(15,27,45,0.08);
+  --sh-or: 0 6px 18px rgba(230,57,70,0.22);
+  --sh-navy: 0 16px 48px rgba(15,27,45,0.16);
 }
 
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
+
+/* ─ Scroll reveal animation ─ */
+.reveal{
+  opacity:0;transform:translateY(16px);
+  transition:opacity .7s cubic-bezier(.2,.6,.2,1), transform .7s cubic-bezier(.2,.6,.2,1);
+  will-change:opacity,transform;
+}
+.reveal.in{opacity:1;transform:translateY(0);}
+@media(prefers-reduced-motion:reduce){
+  .reveal,.reveal.in{
+    opacity:1;transform:none;transition:none;
+  }
+}
 body{
-  font-family:'Noto Sans KR','Apple SD Gothic Neo',sans-serif;
+  font-family:var(--f-sans);
   color:var(--body);background:var(--white);
   -webkit-font-smoothing:antialiased;
-  word-break:keep-all;line-height:1.6;
+  word-break:keep-all;line-height:1.7;font-weight:400;
 }
+
+/* ─ Icon system (Phosphor-style monoline 1.5px) ─ */
+.icon{
+  width:24px;height:24px;
+  stroke:currentColor;fill:none;
+  stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;
+  flex-shrink:0;
+}
+.icon-sm{width:16px;height:16px;stroke-width:1.8;}
+.icon-lg{width:28px;height:28px;}
 
 /* ─ NAV ─ */
 nav{
@@ -54,12 +116,21 @@ nav.up{box-shadow:var(--sh-sm);}
   width:10px;height:10px;border-radius:50%;
   background:var(--orange);box-shadow:0 0 0 3px var(--orange-light);
 }
-.logo-name{font-size:15px;font-weight:800;color:var(--ink);letter-spacing:-0.4px;}
+.logo-name{
+  font-size:15px;font-weight:700;color:var(--ink);letter-spacing:-0.5px;
+}
 .logo-tag{
   font-size:11px;font-weight:600;color:var(--orange);
   background:var(--orange-light);border:1px solid var(--orange-bdr);
   padding:2px 9px;border-radius:20px;
 }
+.nav-menu{display:flex;align-items:center;gap:4px;}
+.nav-menu a{
+  font-size:13px;font-weight:600;color:var(--mid);
+  text-decoration:none;padding:8px 14px;border-radius:8px;
+  letter-spacing:-0.2px;transition:color .2s,background .2s;
+}
+.nav-menu a:hover{color:var(--orange);background:var(--orange-light);}
 .nav-cta{
   background:var(--orange);color:white;
   padding:9px 22px;border-radius:22px;font-size:13px;font-weight:700;
@@ -67,7 +138,7 @@ nav.up{box-shadow:var(--sh-sm);}
   box-shadow:var(--sh-or);
   transition:background .2s,transform .15s,box-shadow .2s;
 }
-.nav-cta:hover{background:var(--orange-dark);transform:translateY(-1px);box-shadow:0 12px 32px rgba(232,74,15,0.28);}
+.nav-cta:hover{background:var(--orange-dark);transform:translateY(-1px);box-shadow:var(--sh-or);}
 
 /* ─ HERO ─ */
 .hero{
@@ -75,9 +146,10 @@ nav.up{box-shadow:var(--sh-sm);}
   background:var(--white);
 }
 .hero-in{
-  max-width:1080px;margin:0 auto;padding:100px 60px 96px;
+  max-width:1120px;margin:0 auto;padding:128px 60px 128px;
   display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;
 }
+.hero-left{display:flex;flex-direction:column;justify-content:center;}
 
 .hero-kicker{
   display:inline-flex;align-items:center;gap:8px;
@@ -89,18 +161,15 @@ nav.up{box-shadow:var(--sh-sm);}
   background:var(--orange);border-radius:1px;
 }
 .hero-h1{
-  font-size:52px;font-weight:900;line-height:1.12;
-  letter-spacing:-2.5px;color:var(--ink);margin-bottom:24px;
+  font-size:64px;font-weight:800;line-height:1.15;
+  letter-spacing:-2px;color:var(--ink);margin-bottom:32px;
 }
 .hero-h1 b{
-  font-weight:inherit;
-  background:linear-gradient(130deg,#E84A0F 0%,#FF6B35 100%);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-  background-clip:text;
+  font-weight:800;color:var(--orange);
 }
 .hero-list{
   list-style:none;display:flex;flex-direction:column;gap:10px;
-  margin-bottom:40px;
+  margin-bottom:32px;
 }
 .hero-list li{
   display:flex;align-items:flex-start;gap:10px;
@@ -110,61 +179,129 @@ nav.up{box-shadow:var(--sh-sm);}
   content:'';width:5px;height:5px;min-width:5px;
   border-radius:50%;background:var(--orange);margin-top:9px;
 }
+.hero-badges{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:36px;}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:12px;font-weight:700;color:var(--orange);
+  background:var(--orange-light);border:1.5px solid var(--orange-bdr);
+  padding:7px 14px;border-radius:20px;letter-spacing:-0.2px;
+}
+.hero-badge::before{content:'✓';font-weight:900;}
 .hero-btns{display:flex;gap:10px;flex-wrap:wrap;}
 .btn-main{
   display:inline-block;background:var(--orange);color:white;
-  padding:15px 32px;border-radius:var(--r-lg);font-size:15px;font-weight:700;
+  padding:18px 40px;border-radius:var(--r-lg);font-size:16px;font-weight:700;
   text-decoration:none;letter-spacing:-0.3px;
   box-shadow:var(--sh-or);
   transition:background .2s,transform .15s,box-shadow .2s;
 }
-.btn-main:hover{background:var(--orange-dark);transform:translateY(-2px);box-shadow:0 14px 38px rgba(232,74,15,0.30);}
+.btn-main:hover{background:var(--orange-dark);transform:translateY(-1px);box-shadow:var(--sh-or);}
 .btn-sub{
   display:inline-block;background:var(--warm);color:var(--body);
-  padding:15px 28px;border-radius:var(--r-lg);font-size:15px;font-weight:600;
-  text-decoration:none;border:1.5px solid var(--line);
+  padding:18px 36px;border-radius:var(--r-lg);font-size:16px;font-weight:600;
+  text-decoration:none;border:1px solid var(--line);
   transition:all .2s;letter-spacing:-0.2px;
 }
-.btn-sub:hover{border-color:var(--orange-bdr);color:var(--orange);}
+.btn-sub:hover{border-color:var(--navy);color:var(--navy);}
 
-/* Hero Right — stat card */
+/* Hero Right — DARK BOX (yigam-style premium) */
 .hero-card{
-  background:var(--warm);border:1.5px solid var(--line);
+  background:var(--navy);color:var(--white);
   border-radius:var(--r-xl);padding:36px;
   display:flex;flex-direction:column;gap:4px;
+  box-shadow:var(--sh-navy);
+  position:relative;overflow:hidden;
+}
+.hero-card::before{
+  content:'';position:absolute;top:-40px;right:-40px;
+  width:160px;height:160px;border-radius:50%;
+  background:radial-gradient(circle,rgba(230,57,70,0.18) 0%,rgba(230,57,70,0) 70%);
+  pointer-events:none;
 }
 .hc-label{
-  font-size:11px;font-weight:700;color:var(--muted);
-  letter-spacing:1.2px;text-transform:uppercase;margin-bottom:16px;
+  font-size:11px;font-weight:800;color:var(--orange);
+  letter-spacing:1.4px;text-transform:uppercase;margin-bottom:18px;
+  position:relative;z-index:1;
 }
 .hc-item{
-  background:var(--white);border:1.5px solid var(--line);
+  background:var(--navy-soft);border:1px solid var(--navy-line);
   border-radius:var(--r-md);padding:20px 22px;
   display:flex;align-items:center;justify-content:space-between;
-  margin-bottom:8px;transition:border-color .2s;
+  margin-bottom:8px;transition:border-color .2s,background .2s;
+  position:relative;z-index:1;
 }
 .hc-item:last-child{margin-bottom:0;}
-.hc-item:hover{border-color:var(--orange-bdr);}
-.hc-item.hl{background:var(--orange-light);border-color:var(--orange-bdr);}
+.hc-item:hover{border-color:var(--orange);}
+.hc-item.hl{
+  background:var(--orange);border-color:var(--orange);
+}
+.hc-item.hl .hc-title,.hc-item.hl .hc-desc{color:var(--white);}
 .hc-left{display:flex;flex-direction:column;gap:3px;}
-.hc-title{font-size:13px;font-weight:700;color:var(--ink);}
-.hc-desc{font-size:12px;color:var(--mid);line-height:1.5;}
-.hc-num{font-size:28px;font-weight:900;color:var(--ink);letter-spacing:-1px;line-height:1;}
+.hc-title{font-size:13px;font-weight:800;color:var(--white);letter-spacing:-0.3px;}
+.hc-desc{font-size:12px;color:rgba(255,255,255,0.7);line-height:1.5;letter-spacing:-0.2px;}
+.hc-num{font-size:28px;font-weight:900;color:var(--white);letter-spacing:-1px;line-height:1;}
 .hc-num.org{color:var(--orange);}
-.hc-unit{font-size:12px;color:var(--muted);font-weight:400;}
+.hc-unit{font-size:12px;color:rgba(255,255,255,0.55);font-weight:500;}
+.hc-icon{
+  width:36px;height:36px;border-radius:8px;
+  background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.9);
+  display:flex;align-items:center;justify-content:center;
+}
+.hc-item.hl .hc-icon{background:rgba(255,255,255,0.14);color:var(--white);}
+.pr-icon{
+  width:42px;height:42px;border-radius:10px;
+  background:var(--orange-light);color:var(--orange);
+  display:flex;align-items:center;justify-content:center;
+}
 
-/* ─ WHY ─ */
-.why{background:var(--warm);padding:96px 60px;}
-.why-in{max-width:1080px;margin:0 auto;}
+/* ─ Section common ─ */
 .sec-tag{
   display:inline-flex;align-items:center;gap:10px;
-  font-size:11px;font-weight:700;color:var(--orange);letter-spacing:1.5px;
-  margin-bottom:16px;
+  font-size:12px;font-weight:700;color:var(--orange);letter-spacing:1.6px;
+  margin-bottom:20px;text-transform:uppercase;
 }
 .sec-tag::before{content:'';width:18px;height:2px;background:var(--orange);border-radius:1px;}
-.sec-h2{font-size:34px;font-weight:900;letter-spacing:-1.2px;color:var(--ink);margin-bottom:10px;line-height:1.2;}
-.sec-sub{font-size:15px;color:var(--muted);line-height:1.75;margin-bottom:52px;}
+.sec-h2{
+  font-size:48px;font-weight:800;letter-spacing:-1.6px;
+  color:var(--ink);margin-bottom:16px;line-height:1.2;
+}
+.sec-sub{font-size:16px;color:var(--mid);line-height:1.7;margin-bottom:72px;max-width:680px;}
 
+/* ─ STATS STRIP ─ */
+.stats{
+  background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+}
+.stats-in{
+  max-width:1120px;margin:0 auto;padding:48px 60px;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:0;
+  position:relative;
+}
+.stat-item{
+  display:flex;flex-direction:column;align-items:center;gap:10px;
+  padding:0 24px;text-align:center;
+  border-right:1px solid var(--line);
+}
+.stat-item:last-child{border-right:0;}
+.stat-num{
+  font-size:42px;font-weight:800;color:var(--ink);
+  letter-spacing:-1.6px;line-height:1;
+  display:inline-flex;align-items:baseline;gap:4px;
+}
+.stat-num em{font-style:normal;color:var(--orange);font-weight:800;}
+.stat-num sup{
+  font-size:18px;font-weight:700;color:var(--orange);
+  letter-spacing:-0.3px;line-height:1;
+  position:static;align-self:flex-end;padding-bottom:5px;
+  margin-left:1px;
+}
+.stat-label{
+  font-size:13px;color:var(--mid);font-weight:500;
+  letter-spacing:-0.2px;
+}
+
+/* ─ WHY ─ */
+.why{background:var(--warm);padding:128px 60px;}
+.why-in{max-width:1120px;margin:0 auto;}
 .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
 .why-card{
   background:var(--white);border:1.5px solid var(--line);
@@ -175,35 +312,97 @@ nav.up{box-shadow:var(--sh-sm);}
 .why-card::after{
   content:'';position:absolute;bottom:-24px;right:-24px;
   width:100px;height:100px;border-radius:50%;
-  background:var(--orange-light);opacity:0;
+  background:var(--warm);opacity:0;
   transition:opacity .3s;
 }
-.why-card:hover{box-shadow:var(--sh-md);border-color:var(--orange-bdr);transform:translateY(-4px);}
+.why-card:hover{border-color:var(--navy);}
 .why-card:hover::after{opacity:1;}
 .why-icon{
-  width:48px;height:48px;border-radius:var(--r-sm);
-  background:var(--orange-light);border:1.5px solid var(--orange-bdr);
+  width:48px;height:48px;border-radius:12px;
+  background:var(--navy);color:var(--white);
   display:flex;align-items:center;justify-content:center;
-  font-size:22px;margin-bottom:22px;
+  margin-bottom:24px;
 }
 .why-num{
-  font-size:42px;font-weight:900;color:var(--orange);
-  letter-spacing:-2px;line-height:1;margin-bottom:6px;
+  font-size:11px;font-weight:700;color:var(--orange);
+  letter-spacing:1.2px;text-transform:uppercase;
+  margin-bottom:14px;line-height:1;
+  display:inline-block;
 }
-.why-h3{font-size:18px;font-weight:800;color:var(--ink);margin-bottom:10px;letter-spacing:-0.4px;}
-.why-p{font-size:14px;color:var(--mid);line-height:1.8;}
+.why-h3{
+  font-size:18px;font-weight:700;color:var(--ink);
+  margin-bottom:10px;letter-spacing:-0.5px;line-height:1.4;
+  position:relative;z-index:1;
+}
+.why-p{font-size:14px;color:var(--mid);line-height:1.8;position:relative;z-index:1;}
+
+/* ─ CONTENTS (NEW) ─ */
+.contents{background:var(--white);padding:128px 60px;}
+.contents-in{max-width:1120px;margin:0 auto;}
+.contents-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:16px;
+  margin-bottom:24px;
+}
+.cont-card{
+  background:var(--warm);border:1.5px solid var(--line);
+  border-radius:var(--r-lg);padding:32px;
+  display:flex;gap:22px;align-items:flex-start;
+  transition:border-color .2s,box-shadow .2s,transform .2s;
+}
+.cont-card:hover{border-color:var(--navy);box-shadow:var(--sh-sm);}
+.cont-ic{
+  width:52px;height:52px;min-width:52px;border-radius:12px;
+  background:var(--white);border:1px solid var(--line);
+  color:var(--navy);
+  display:flex;align-items:center;justify-content:center;
+}
+.cont-body{flex:1;}
+.cont-h3{
+  font-size:17px;font-weight:700;color:var(--ink);
+  margin-bottom:8px;letter-spacing:-0.4px;
+}
+.cont-p{font-size:13.5px;color:var(--mid);line-height:1.75;}
+
+.cont-haesul{
+  background:var(--warm);border:1.5px solid var(--line);
+  border-radius:var(--r-lg);padding:24px 32px;
+  display:flex;align-items:center;gap:24px;flex-wrap:wrap;
+}
+.cont-haesul-label{
+  font-size:12px;font-weight:800;color:var(--ink);
+  letter-spacing:0.4px;display:flex;align-items:center;gap:8px;
+  white-space:nowrap;
+}
+.cont-haesul-label .icon{color:var(--orange);}
+.cont-haesul-items{
+  display:flex;gap:8px;flex-wrap:wrap;flex:1;
+}
+.cont-haesul-tag{
+  font-size:13px;color:var(--body);font-weight:600;
+  background:var(--white);border:1px solid var(--line);
+  padding:7px 14px;border-radius:18px;
+}
 
 /* ─ PRODUCTS ─ */
-.products{background:var(--white);padding:96px 60px;}
-.products-in{max-width:1080px;margin:0 auto;}
+.products{background:var(--warm);padding:128px 60px;}
+.products-in{max-width:1120px;margin:0 auto;}
 
 .prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:28px;}
 .prod-card{
+  background:var(--white);
   border:1.5px solid var(--line);border-radius:var(--r-lg);
   overflow:hidden;transition:box-shadow .2s,border-color .2s,transform .2s;
-  display:flex;flex-direction:column;
+  display:flex;flex-direction:column;position:relative;
 }
-.prod-card:hover{box-shadow:var(--sh-lg);border-color:var(--orange-bdr);transform:translateY(-4px);}
+.prod-card:hover{box-shadow:var(--sh-md);border-color:var(--navy);}
+.prod-card.featured{border:1px solid var(--navy);box-shadow:var(--sh-sm);}
+.prod-card.featured:hover{box-shadow:var(--sh-md);}
+.prod-feature-flag{
+  position:absolute;top:14px;right:14px;
+  font-size:10px;font-weight:800;color:var(--white);
+  background:var(--orange);padding:4px 10px;border-radius:10px;
+  letter-spacing:0.5px;
+}
 .prod-top{
   padding:28px 28px 0;
   border-bottom:0;
@@ -212,41 +411,338 @@ nav.up{box-shadow:var(--sh-sm);}
   font-size:11px;font-weight:700;letter-spacing:1px;color:var(--orange);
   margin-bottom:10px;
 }
-.prod-name{font-size:20px;font-weight:900;color:var(--ink);letter-spacing:-0.5px;margin-bottom:6px;}
-.prod-desc{font-size:13px;color:var(--mid);line-height:1.7;margin-bottom:20px;}
+.prod-name{
+  font-size:20px;font-weight:700;color:var(--ink);
+  letter-spacing:-0.6px;margin-bottom:6px;
+}
+.prod-desc{font-size:13px;color:var(--mid);line-height:1.7;margin-bottom:18px;}
 .prod-pill{
   display:inline-flex;align-items:center;gap:5px;
   font-size:12px;font-weight:600;color:var(--orange);
   background:var(--orange-light);border:1px solid var(--orange-bdr);
-  padding:5px 12px;border-radius:20px;margin-bottom:24px;
+  padding:5px 12px;border-radius:20px;margin-bottom:14px;
 }
+.prod-feats{
+  display:flex;flex-direction:column;gap:6px;margin-bottom:24px;
+}
+.prod-feat{
+  font-size:12px;color:var(--body);font-weight:600;
+  display:flex;align-items:center;gap:6px;
+}
+.prod-feat::before{
+  content:'✓';color:var(--orange);font-weight:900;font-size:11px;
+}
+.prod-feat.muted{color:var(--muted);}
+.prod-feat.muted::before{content:'—';color:var(--muted);}
 .prod-divider{height:1px;background:var(--line-soft);margin:0 28px;}
 .prod-bottom{padding:22px 28px 28px;background:var(--warm);flex:1;}
-.prod-price-label{font-size:11px;color:var(--muted);margin-bottom:5px;}
-.prod-student{font-size:13px;color:var(--mid);margin-bottom:12px;}
-.prod-acad-label{font-size:11px;font-weight:600;color:var(--orange);margin-bottom:4px;}
-.prod-acad{font-size:28px;font-weight:900;color:var(--orange);letter-spacing:-1px;line-height:1;}
-.prod-acad span{font-size:14px;font-weight:400;color:var(--muted);}
-.prod-margin{font-size:12px;color:var(--muted);margin-top:6px;}
+.prod-card.featured .prod-bottom{background:var(--warm);}
+.prod-acad-label{
+  font-size:11px;font-weight:700;color:var(--orange);
+  letter-spacing:0.6px;text-transform:uppercase;margin-bottom:14px;
+}
+.prod-pickline{
+  display:flex;align-items:baseline;gap:12px;
+  padding:8px 0;border-bottom:1px dashed var(--line);
+  font-size:13px;
+}
+.prod-pickline:last-child{border-bottom:0;}
+.pl-key{
+  color:var(--mid);font-weight:600;min-width:44px;
+  font-size:11.5px;letter-spacing:-0.2px;
+}
+.pl-val{
+  color:var(--ink);font-weight:700;
+  letter-spacing:-0.2px;
+}
 
 .pricing-rule{
-  background:var(--orange-light);border:1.5px solid var(--orange-bdr);
-  border-radius:var(--r-md);padding:20px 28px;
+  background:var(--white);border:1px solid var(--line);
+  border-left:3px solid var(--orange);
+  border-radius:var(--r-sm);padding:20px 28px;
   display:flex;align-items:center;gap:24px;flex-wrap:wrap;
+  margin-bottom:36px;
 }
-.pr-num{font-size:36px;font-weight:900;color:var(--orange);letter-spacing:-1.5px;line-height:1;}
+.pr-num{
+  font-size:38px;font-weight:900;color:var(--orange);
+  letter-spacing:-1.6px;line-height:1;
+}
 .pr-divider{width:1px;height:40px;background:var(--orange-bdr);}
 .pr-text{font-size:14px;color:var(--body);line-height:1.75;}
 .pr-text strong{color:var(--ink);font-weight:700;}
 
+/* Subscription packages 5종 */
+.packages{background:var(--white);padding:128px 60px;border-top:1px solid var(--line);}
+.packages-in{max-width:1120px;margin:0 auto;}
+.sub-wrap{
+  background:var(--warm);border:1px solid var(--line);
+  border-radius:var(--r-lg);padding:36px;
+}
+.sub-h3,.sub-p,.sub-head,.sub-head-left,.sub-badge{display:none;}
+.sub-table{
+  width:100%;border-collapse:separate;border-spacing:0;
+  font-size:13px;
+}
+.sub-table thead th{
+  font-size:11px;font-weight:700;color:var(--muted);
+  text-align:left;padding:10px 14px;
+  background:var(--warm);
+  border-bottom:1px solid var(--line);
+  letter-spacing:0.5px;
+}
+.sub-table thead th:first-child{border-radius:var(--r-sm) 0 0 0;}
+.sub-table thead th:last-child{border-radius:0 var(--r-sm) 0 0;}
+.sub-table tbody td{
+  padding:14px;border-bottom:1px solid var(--line-soft);
+  vertical-align:middle;
+}
+.sub-table tbody tr:last-child td{border-bottom:0;}
+.sub-table tbody tr:hover{background:var(--warm);}
+.sub-type{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:26px;height:26px;border-radius:50%;
+  background:var(--orange-light);border:1px solid var(--orange-bdr);
+  color:var(--orange);font-weight:800;font-size:12px;margin-right:6px;
+}
+.sub-name{font-weight:700;color:var(--ink);}
+.sub-comp{color:var(--mid);font-size:12.5px;}
+.sub-pick{white-space:nowrap;}
+.pick-on{
+  display:inline-block;
+  font-size:12px;font-weight:700;color:var(--orange);
+  background:var(--orange-light);border:1px solid var(--orange-bdr);
+  padding:4px 10px;border-radius:14px;letter-spacing:-0.2px;
+}
+.sub-cycle{font-size:12.5px;color:var(--body);font-weight:600;}
+.sub-note{
+  font-size:13px;color:var(--mid);margin-top:18px;line-height:1.7;
+}
+.sub-note strong{color:var(--ink);font-weight:700;}
+
+/* ─ PROGRAM (NEW) ─ */
+.program{background:var(--white);padding:128px 60px;border-top:1px solid var(--line);}
+.program-in{max-width:1120px;margin:0 auto;}
+
+.timeline-wrap{margin-bottom:60px;}
+.timeline-track{
+  position:relative;padding-top:24px;margin-bottom:18px;
+}
+.timeline-track::before{
+  content:'';position:absolute;
+  top:33px;left:6%;right:6%;height:2px;
+  background:linear-gradient(to right,
+    var(--line) 0%,
+    var(--orange-bdr) 50%,
+    var(--orange) 100%);
+  z-index:0;
+}
+.timeline-grid{
+  display:grid;grid-template-columns:repeat(6,1fr);gap:10px;
+  position:relative;z-index:1;
+  align-items:stretch;
+}
+.tl-card{
+  background:var(--white);border:1px solid var(--line);
+  border-radius:12px;padding:36px 16px 20px;
+  display:flex;flex-direction:column;gap:8px;
+  position:relative;transition:border-color .2s,box-shadow .2s;
+  min-height:240px;
+}
+.tl-card:hover{border-color:var(--navy);box-shadow:var(--sh-sm);}
+.tl-card:last-child{
+  border-color:var(--orange);
+  box-shadow:0 0 0 1px var(--orange);
+}
+.tl-dot{
+  position:absolute;top:0;left:50%;transform:translateX(-50%);
+  width:20px;height:20px;border-radius:50%;
+  background:var(--white);border:2px solid var(--line);
+  color:var(--mid);
+  display:flex;align-items:center;justify-content:center;
+  font-size:10px;font-weight:800;
+  transition:border-color .2s,background .2s,color .2s;
+  z-index:2;
+}
+.tl-card:hover .tl-dot{border-color:var(--navy);color:var(--navy);}
+.tl-card:last-child .tl-dot{
+  background:var(--orange);border-color:var(--orange);color:var(--white);
+}
+.tl-num{
+  display:none;
+}
+.tl-label{
+  font-size:9.5px;font-weight:700;color:var(--orange);
+  letter-spacing:1.2px;text-align:center;
+}
+.tl-period{
+  font-size:11.5px;color:var(--mid);font-weight:500;text-align:center;
+  padding-bottom:10px;border-bottom:1px solid var(--line-soft);
+  margin-bottom:4px;
+}
+.tl-title{
+  font-size:14px;font-weight:700;color:var(--ink);
+  letter-spacing:-0.4px;line-height:1.4;text-align:center;
+  min-height:39px;
+  display:flex;align-items:center;justify-content:center;
+}
+.tl-scope{
+  font-size:11.5px;color:var(--mid);line-height:1.55;text-align:center;
+  flex:1;min-height:54px;
+}
+.tl-counts{
+  display:flex;gap:4px;flex-wrap:wrap;justify-content:center;margin-top:auto;
+  padding-top:12px;
+}
+.tl-cnt{
+  font-size:10px;font-weight:700;color:var(--body);
+  background:var(--white);border:1px solid var(--line);
+  padding:3px 7px;border-radius:10px;
+}
+
+.tl-total{
+  background:var(--navy);color:var(--white);
+  border-radius:var(--r-md);padding:24px 32px;
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;
+  box-shadow:var(--sh-navy);
+  position:relative;overflow:hidden;
+}
+.tl-total::before{
+  content:'';position:absolute;top:-30px;right:-30px;
+  width:140px;height:140px;border-radius:50%;
+  background:radial-gradient(circle,rgba(230,57,70,0.20) 0%,rgba(230,57,70,0) 70%);
+  pointer-events:none;
+}
+.tl-total > *{position:relative;z-index:1;}
+.tl-total-label{
+  font-size:11px;font-weight:800;letter-spacing:1.4px;
+  color:var(--orange);
+}
+.tl-total-main{
+  font-size:18px;font-weight:800;letter-spacing:-0.5px;margin-top:4px;
+}
+.tl-total-stats{display:flex;gap:32px;}
+.tl-stat{display:flex;flex-direction:column;gap:2px;}
+.tl-stat-num{
+  font-size:28px;font-weight:900;letter-spacing:-1.2px;line-height:1;
+  color:var(--orange);
+}
+.tl-stat-num span{font-size:13px;font-weight:600;color:rgba(255,255,255,0.7);letter-spacing:-0.2px;}
+.tl-stat-label{font-size:10.5px;color:rgba(255,255,255,0.65);letter-spacing:0.5px;font-weight:600;}
+
+/* Process 4-step */
+.proc-head{margin-top:60px;margin-bottom:28px;}
+.proc-h3{
+  font-size:24px;font-weight:700;color:var(--ink);
+  letter-spacing:-0.7px;margin-bottom:8px;
+}
+.proc-p{font-size:14px;color:var(--mid);line-height:1.7;}
+
+.proc-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:12px;
+  position:relative;
+}
+.proc-card{
+  background:var(--warm);border:1px solid var(--line);
+  border-radius:var(--r-md);padding:24px;
+  position:relative;transition:border-color .2s,transform .2s;
+}
+.proc-card:hover{border-color:var(--navy);}
+.proc-card:not(:last-child)::after{
+  content:'→';position:absolute;
+  top:50%;right:-14px;transform:translateY(-50%);
+  font-size:22px;color:var(--muted);font-weight:300;
+  z-index:2;
+}
+.proc-step{
+  font-size:10px;font-weight:800;color:var(--orange);
+  letter-spacing:1.5px;margin-bottom:8px;
+}
+.proc-num{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:32px;height:32px;border-radius:50%;
+  background:var(--orange);color:white;
+  font-size:13px;font-weight:900;margin-bottom:14px;
+}
+.proc-title{
+  font-size:15px;font-weight:700;color:var(--ink);
+  margin-bottom:6px;letter-spacing:-0.4px;
+}
+.proc-desc{font-size:12.5px;color:var(--mid);line-height:1.7;}
+
+/* More-grade (고2/고1) accordion */
+.more-grade{
+  margin-top:48px;
+  background:var(--warm);border:1px solid var(--line);
+  border-radius:var(--r-lg);overflow:hidden;
+}
+.more-toggle{
+  width:100%;border:0;background:transparent;
+  padding:22px 28px;cursor:pointer;
+  display:flex;align-items:center;justify-content:space-between;
+  font-family:inherit;text-align:left;
+  transition:background .2s;
+}
+.more-toggle:hover{background:var(--warm);}
+.mt-left{display:flex;align-items:center;gap:14px;}
+.mt-ic{
+  width:36px;height:36px;border-radius:10px;
+  background:var(--white);border:1px solid var(--line);
+  color:var(--navy);
+  display:flex;align-items:center;justify-content:center;
+}
+.mt-text{display:flex;flex-direction:column;gap:2px;}
+.mt-title{
+  font-size:14px;font-weight:700;color:var(--ink);letter-spacing:-0.4px;
+}
+.mt-sub{font-size:12px;color:var(--mid);}
+.mt-arrow{font-size:18px;color:var(--muted);transition:transform .3s;}
+.more-toggle.open .mt-arrow{transform:rotate(180deg);}
+.more-body{
+  max-height:0;overflow:hidden;
+  transition:max-height .35s ease;
+}
+.more-body.open{max-height:1200px;}
+.more-inner{
+  padding:0 28px 28px;
+  display:grid;grid-template-columns:1fr 1fr;gap:16px;
+}
+.grade-card{
+  background:var(--white);border:1px solid var(--line);
+  border-radius:var(--r-md);padding:22px;
+}
+.grade-h{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid var(--line-soft);
+}
+.grade-name{
+  font-size:15px;font-weight:700;color:var(--ink);letter-spacing:-0.4px;
+}
+.grade-period{font-size:11px;color:var(--muted);font-weight:600;}
+.grade-row{
+  display:flex;justify-content:space-between;align-items:flex-start;gap:12px;
+  font-size:12.5px;padding:8px 0;
+}
+.grade-row + .grade-row{border-top:1px dashed var(--line-soft);}
+.grade-key{color:var(--mid);font-weight:600;min-width:60px;}
+.grade-val{color:var(--body);text-align:right;flex:1;}
+.grade-val strong{color:var(--ink);font-weight:700;}
+.grade-note{
+  margin-top:14px;padding:10px 12px;
+  background:var(--orange-light);border-radius:var(--r-sm);
+  font-size:11.5px;color:var(--body);line-height:1.65;
+}
+
 /* ─ INQUIRY ─ */
-.inquiry{background:var(--warm);padding:96px 60px;}
-.inquiry-in{max-width:1080px;margin:0 auto;}
+.inquiry{background:var(--warm);padding:128px 60px;}
+.inquiry-in{max-width:1120px;margin:0 auto;}
 
 .inq-wrap{display:grid;grid-template-columns:1fr 1.55fr;gap:72px;align-items:start;}
 
 .inq-left{}
-.inq-h3{font-size:30px;font-weight:900;letter-spacing:-1px;color:var(--ink);margin-bottom:14px;line-height:1.3;}
+.inq-h3{
+  font-size:42px;font-weight:800;letter-spacing:-1.4px;
+  color:var(--ink);margin-bottom:18px;line-height:1.22;
+}
 .inq-h3 b{color:var(--orange);}
 .inq-p{font-size:15px;color:var(--mid);line-height:1.85;margin-bottom:32px;}
 .inq-checks{list-style:none;display:flex;flex-direction:column;gap:12px;margin-bottom:36px;}
@@ -262,9 +758,10 @@ nav.up{box-shadow:var(--sh-sm);}
 .inq-contact{display:flex;flex-direction:column;gap:10px;}
 .inq-row{display:flex;align-items:center;gap:12px;}
 .inq-ic{
-  width:40px;height:40px;min-width:40px;border-radius:var(--r-sm);
-  background:var(--white);border:1.5px solid var(--line);
-  display:flex;align-items:center;justify-content:center;font-size:16px;
+  width:40px;height:40px;min-width:40px;border-radius:10px;
+  background:var(--white);border:1px solid var(--line);
+  color:var(--navy);
+  display:flex;align-items:center;justify-content:center;
 }
 .inq-label-s{font-size:11px;color:var(--muted);margin-bottom:2px;}
 .inq-val{font-size:14px;color:var(--ink);font-weight:600;}
@@ -275,7 +772,10 @@ nav.up{box-shadow:var(--sh-sm);}
   border:1.5px solid var(--line);padding:40px;
   box-shadow:var(--sh-lg);
 }
-.form-ttl{font-size:17px;font-weight:800;color:var(--ink);margin-bottom:28px;letter-spacing:-0.5px;}
+.form-ttl{
+  font-size:17px;font-weight:700;color:var(--ink);
+  margin-bottom:28px;letter-spacing:-0.5px;
+}
 .form-wrap{display:flex;flex-direction:column;gap:14px;}
 .frow{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
 .fg{display:flex;flex-direction:column;gap:6px;}
@@ -299,14 +799,56 @@ nav.up{box-shadow:var(--sh-sm);}
 }
 .fcheck{
   display:flex;align-items:flex-start;gap:10px;
-  font-size:12.5px;color:var(--muted);cursor:pointer;line-height:1.7;
+  font-size:13px;color:var(--mid);cursor:pointer;line-height:1.6;
 }
-.fcheck input{margin-top:3px;accent-color:var(--orange);width:15px;height:15px;min-width:15px;cursor:pointer;}
+.fcheck input{margin-top:3px;accent-color:var(--orange);width:16px;height:16px;min-width:16px;cursor:pointer;}
+.fcheck span{flex:1;}
+
+/* Privacy notice (details/summary) */
+.privacy-notice{
+  background:var(--warm);border:1px solid var(--line);
+  border-radius:var(--r-sm);padding:12px 16px;
+  font-size:12.5px;color:var(--mid);line-height:1.65;
+}
+.privacy-notice summary{
+  cursor:pointer;font-weight:700;color:var(--body);
+  display:flex;align-items:center;justify-content:space-between;
+  list-style:none;letter-spacing:-0.2px;
+  padding:2px 0;
+}
+.privacy-notice summary::-webkit-details-marker{display:none;}
+.privacy-notice summary::after{
+  content:'+';font-weight:700;color:var(--mid);
+  font-size:16px;line-height:1;width:16px;text-align:center;
+  transition:transform .25s;
+}
+.privacy-notice[open] summary::after{transform:rotate(45deg);}
+.privacy-notice summary span{
+  font-size:11px;font-weight:500;color:var(--muted);
+  letter-spacing:-0.1px;
+}
+.privacy-notice dl{
+  margin:14px 0 8px;display:grid;
+  grid-template-columns:auto 1fr;gap:8px 14px;
+}
+.privacy-notice dt{
+  color:var(--ink);font-weight:600;font-size:11.5px;
+  letter-spacing:-0.2px;white-space:nowrap;
+  padding-top:1px;
+}
+.privacy-notice dd{font-size:12px;color:var(--mid);}
+.privacy-contact{
+  margin-top:6px;padding-top:10px;border-top:1px dashed var(--line);
+  font-size:11.5px;color:var(--muted);
+}
+.privacy-contact a{color:var(--orange);text-decoration:none;}
+.privacy-contact a:hover{text-decoration:underline;}
+
 .fsub{
   background:var(--orange);color:white;border:none;
   border-radius:var(--r-md);padding:16px;font-size:15px;font-weight:700;
   font-family:inherit;cursor:pointer;letter-spacing:-0.2px;margin-top:2px;
-  box-shadow:0 4px 18px rgba(232,74,15,0.28);
+  box-shadow:var(--sh-or);
   transition:background .2s,transform .15s,box-shadow .2s;
 }
 .fsub:hover{background:var(--orange-dark);transform:translateY(-1px);box-shadow:var(--sh-or);}
@@ -334,26 +876,77 @@ nav.up{box-shadow:var(--sh-sm);}
 
 /* Footer */
 footer{
-  background:#111;color:white;padding:32px 60px;
-  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;
+  background:#0B1220;color:rgba(255,255,255,0.7);
+  padding:48px 60px 36px;
+  border-top:1px solid rgba(255,255,255,0.06);
 }
-.ft-logo{display:flex;align-items:center;gap:8px;margin-bottom:5px;}
+.ft-in{
+  max-width:1120px;margin:0 auto;
+  display:flex;align-items:flex-start;justify-content:space-between;gap:32px;flex-wrap:wrap;
+}
+.ft-brand{display:flex;flex-direction:column;gap:8px;min-width:200px;}
+.ft-logo{display:flex;align-items:center;gap:10px;}
 .ft-dot{width:8px;height:8px;border-radius:50%;background:var(--orange);}
-.ft-name{font-size:14px;font-weight:700;}
-.ft-copy{font-size:12px;color:#444;}
-.ft-info{font-size:12px;color:#444;line-height:2;text-align:right;}
-.ft-info strong{color:#666;margin-right:5px;}
+.ft-name{
+  font-size:14px;font-weight:700;letter-spacing:-0.3px;color:var(--white);
+}
+.ft-copy{font-size:12px;color:rgba(255,255,255,0.4);margin-top:6px;}
+.ft-info{
+  font-size:12px;color:rgba(255,255,255,0.55);line-height:1.85;
+  display:flex;flex-direction:column;gap:2px;
+  text-align:right;
+}
+.ft-info-row{display:block;}
+.ft-info-row strong{
+  color:rgba(255,255,255,0.4);font-weight:500;
+  margin-right:8px;letter-spacing:-0.2px;
+}
+.ft-info a{color:inherit;text-decoration:none;border-bottom:1px solid transparent;transition:border-color .2s;}
+.ft-info a:hover{border-bottom-color:rgba(255,255,255,0.4);}
 
 /* Responsive */
+@media(max-width:1100px){
+  .nav-menu{display:none;}
+}
 @media(max-width:960px){
   nav,footer{padding-left:24px;padding-right:24px;}
-  .hero-in{grid-template-columns:1fr;padding:64px 24px 56px;gap:44px;}
+  .ft-info{text-align:left;}
+  .hero-in{grid-template-columns:1fr;padding:80px 24px 64px;gap:44px;}
   .hero-card{display:none;}
-  .hero-h1{font-size:38px;letter-spacing:-1.5px;}
-  .why,.products,.inquiry{padding:72px 24px;}
-  .why-grid,.prod-grid{grid-template-columns:1fr;}
+  .why,.products,.inquiry,.contents,.program,.packages{padding:96px 24px;}
+  .stats-in{grid-template-columns:repeat(2,1fr);gap:24px 0;padding:36px 24px;}
+  .stat-item{padding:0 12px;}
+  .stat-item:nth-child(2n){border-right:0;}
+  .stat-num{font-size:32px;}
+  .stat-num sup{font-size:14px;padding-bottom:3px;}
+  .hero-h1{font-size:38px;letter-spacing:-1.2px;}
+  .sec-h2{font-size:30px;letter-spacing:-0.8px;}
+  .inq-h3{font-size:28px;letter-spacing:-0.7px;}
+  .sec-sub{margin-bottom:48px;}
+  .why-grid,.prod-grid,.contents-grid{grid-template-columns:1fr;}
+  .timeline-grid{grid-template-columns:repeat(2,1fr);gap:24px 10px;}
+  .timeline-track::before{display:none;}
+  .tl-card{min-height:auto;}
+  .tl-title,.tl-scope{min-height:auto;}
+  .proc-grid{grid-template-columns:1fr;gap:20px;}
+  .proc-card:not(:last-child)::after{
+    content:'↓';top:auto;bottom:-20px;right:50%;transform:translateX(50%);
+  }
+  .more-inner{grid-template-columns:1fr;}
   .inq-wrap{grid-template-columns:1fr;gap:40px;}
-  .sec-h2{font-size:26px;}
+  .sub-wrap{padding:24px;}
+  .sub-table thead{display:none;}
+  .sub-table,.sub-table tbody,.sub-table tr,.sub-table td{display:block;width:100%;}
+  .sub-table tr{
+    border:1px solid var(--line);border-radius:var(--r-sm);
+    padding:12px;margin-bottom:8px;
+  }
+  .sub-table td{border:0!important;padding:4px 0;}
+  .sub-cycle{font-size:13px;}
+  .tl-total-stats{gap:20px;}
+}
+@media(max-width:560px){
+  .timeline-grid{grid-template-columns:1fr;gap:24px;}
 }
 </style>
 </head>
@@ -366,20 +959,32 @@ footer{
     <span class="logo-name">수학 모의고사</span>
     <span class="logo-tag">학원 파트너</span>
   </a>
+  <div class="nav-menu">
+    <a href="#why">왜</a>
+    <a href="#contents">콘텐츠</a>
+    <a href="#products">상품</a>
+    <a href="#program">운영</a>
+    <a href="#inquiry">문의</a>
+  </div>
   <a href="#inquiry" class="nav-cta">샘플 무료 요청</a>
 </nav>
 
 <!-- HERO -->
 <section class="hero" id="hero">
   <div class="hero-in">
-    <div>
+    <div class="hero-left">
       <div class="hero-kicker"><span></span>학원 파트너 전용 프로그램</div>
-      <h1 class="hero-h1">수업 흐름에 맞는<br><b>단원별 테스트지</b><br>정기 납품</h1>
+      <h1 class="hero-h1"><b>매달 단원·난이도</b><br>학원이 직접 선택하는<br>수학 테스트지</h1>
       <ul class="hero-list">
-        <li>원하는 단원, 원하는 난이도만 골라서 쓰는 맞춤형 구성</li>
+        <li>10·20문항 격주 테스트는 학원이 진도에 맞춰 매달 단원과 난이도를 직접 지정</li>
         <li>수능특강·평가원 패러프레이징 기반 출제 — EBS 연계 대비 직결</li>
         <li>샘플 무료 발송 · 품질 확인 후 도입 결정</li>
       </ul>
+      <div class="hero-badges">
+        <span class="hero-badge">매달 단원 선택</span>
+        <span class="hero-badge">매달 난이도 선택</span>
+        <span class="hero-badge">평가원 반영</span>
+      </div>
       <div class="hero-btns">
         <a href="#inquiry" class="btn-main">샘플 무료 요청하기</a>
         <a href="#why" class="btn-sub">자세히 보기</a>
@@ -387,17 +992,17 @@ footer{
     </div>
     <div class="hero-card">
       <div class="hc-label">납품 구조</div>
-      <div class="hc-item hl">
+      <div class="hc-item">
         <div class="hc-left">
           <div class="hc-title">샘플 무료 제공</div>
           <div class="hc-desc">30문항 월간 모의고사 샘플</div>
         </div>
-        <div style="font-size:22px;">🎁</div>
+        <div class="hc-icon"><svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 12v8a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-8"/><path d="M2 7h20v5H2z"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 1 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 1 0 0-5C13 2 12 7 12 7z"/></svg></div>
       </div>
-      <div class="hc-item">
+      <div class="hc-item hl">
         <div class="hc-left">
-          <div class="hc-title">격주 납품</div>
-          <div class="hc-desc">10문항 or 20문항</div>
+          <div class="hc-title">격주 납품 · 매달 선택</div>
+          <div class="hc-desc">10문항 or 20문항 · 단원·난이도 매달 학원이 지정</div>
         </div>
         <div class="hc-num">2<span class="hc-unit">주</span></div>
       </div>
@@ -413,8 +1018,30 @@ footer{
           <div class="hc-title">납품 방식</div>
           <div class="hc-desc">PDF 파일 → 학원 자체 인쇄</div>
         </div>
-        <div style="font-size:22px;">📄</div>
+        <div class="hc-icon"><svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8"/><path d="M8 17h8"/></svg></div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS STRIP -->
+<section class="stats" aria-label="핵심 수치">
+  <div class="stats-in">
+    <div class="stat-item">
+      <div class="stat-num"><em>6</em><sup>단계</sup></div>
+      <div class="stat-label">시즌 커리큘럼</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num"><em>30</em><sup>회분</sup></div>
+      <div class="stat-label">연간 콘텐츠</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num"><em>100</em><sup>%</sup></div>
+      <div class="stat-label">평가원 패러프레이징</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num"><em>무료</em></div>
+      <div class="stat-label">30문항 샘플</div>
     </div>
   </div>
 </section>
@@ -427,22 +1054,72 @@ footer{
     <p class="sec-sub">전체 단원을 한 번에 다루는 시중 모의고사와 달리, 수업 흐름에 맞게 씁니다</p>
     <div class="why-grid">
       <div class="why-card">
-        <div class="why-icon">📌</div>
-        <div class="why-num">단원<br>맞춤</div>
-        <div class="why-h3">수업 직후 바로 쓰는<br>단원 집중 구성</div>
-        <p class="why-p">수업이 끝난 단원만 골라서 출제합니다. 진도에 맞춰 바로 확인 테스트로 활용할 수 있습니다.</p>
+        <div class="why-icon"><svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 17v5"/><path d="M9 10.76a2 2 0 0 1-1.11 1.79l-1.78.9A2 2 0 0 0 5 15.24V16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-.76a2 2 0 0 0-1.11-1.79l-1.78-.9A2 2 0 0 1 15 10.76V7a1 1 0 0 1 1-1 2 2 0 0 0 0-4H8a2 2 0 0 0 0 4 1 1 0 0 1 1 1z"/></svg></div>
+        <div class="why-num">매달 선택</div>
+        <div class="why-h3">매달 단원·난이도를<br>학원이 직접 선택</div>
+        <p class="why-p">10·20문항 격주 테스트는 학원이 매달 단원과 난이도를 직접 지정합니다. 진도와 반 구성에 맞춰 그달의 콘텐츠를 설계할 수 있습니다.</p>
       </div>
       <div class="why-card">
-        <div class="why-icon">🎯</div>
-        <div class="why-num">평가원<br>연계</div>
+        <div class="why-icon"><svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
+        <div class="why-num">평가원 연계</div>
         <div class="why-h3">수능특강·모평 패러프레이징<br>즉시 반영</div>
         <p class="why-p">수능특강 기반 출제로 EBS 연계를 대비하고, 6·9월 평가원 모의고사 경향을 즉시 반영합니다.</p>
       </div>
       <div class="why-card">
-        <div class="why-icon">🚀</div>
-        <div class="why-num">단계적<br>도입</div>
+        <div class="why-icon"><svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></div>
+        <div class="why-num">단계적 도입</div>
         <div class="why-h3">샘플부터 시작<br>부담 없는 첫 걸음</div>
         <p class="why-p">무료 샘플로 품질을 먼저 확인하세요. 단품 구매로 시작해 필요에 맞게 정기 구독으로 전환할 수 있습니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTENTS (NEW) -->
+<section class="contents" id="contents">
+  <div class="contents-in">
+    <div class="sec-tag">출제 원칙</div>
+    <h2 class="sec-h2">검증된 출제 프로세스로 만듭니다</h2>
+    <p class="sec-sub">평가원 트렌드 분석과 EBS 연계 분석을 매 시즌 반영합니다</p>
+
+    <div class="contents-grid">
+      <div class="cont-card">
+        <div class="cont-ic"><svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></div>
+        <div class="cont-body">
+          <div class="cont-h3">평가원 트렌드 분석</div>
+          <p class="cont-p">6월·9월 모의평가와 수능 출제 경향을 즉시 분석해 다음 시즌 문항에 반영합니다. 시즌4·시즌6은 평가원 패러프레이징 회차로 운영됩니다.</p>
+        </div>
+      </div>
+      <div class="cont-card">
+        <div class="cont-ic"><svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><path d="M9 6h7"/><path d="M9 10h7"/></svg></div>
+        <div class="cont-body">
+          <div class="cont-h3">EBS 연계 분석</div>
+          <p class="cont-p">수능특강 출제 문항을 패러프레이징해 시즌2 콘텐츠로 제공합니다. 연계 의도와 변형 포인트를 해설지에 함께 명시합니다.</p>
+        </div>
+      </div>
+      <div class="cont-card">
+        <div class="cont-ic"><svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
+        <div class="cont-body">
+          <div class="cont-h3">매달 단원·난이도 선택</div>
+          <p class="cont-p">10·20문항 격주 테스트는 학원이 매달 단원과 난이도(하·중·상·혼합)를 직접 지정합니다. 일반반은 단원형, 심화반은 고난도형으로 분리 운영도 가능합니다.</p>
+        </div>
+      </div>
+      <div class="cont-card">
+        <div class="cont-ic"><svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 3v18h18"/><path d="M7 14l4-4 4 4 5-5"/></svg></div>
+        <div class="cont-body">
+          <div class="cont-h3">난이도 분포 설계</div>
+          <p class="cont-p">3점·4점 문항의 비율을 평가원 기조와 일치시킵니다. 30문항 월간 모의고사는 실전형 난이도 분포로, 격주 테스트는 학원 요청 난이도로 구성합니다.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cont-haesul">
+      <div class="cont-haesul-label"><svg class="icon icon-sm" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg><span>해설지 구성</span></div>
+      <div class="cont-haesul-items">
+        <span class="cont-haesul-tag">풀이 과정</span>
+        <span class="cont-haesul-tag">오답 분석</span>
+        <span class="cont-haesul-tag">출제 의도</span>
+        <span class="cont-haesul-tag">EBS·평가원 연계 표시</span>
       </div>
     </div>
   </div>
@@ -453,35 +1130,59 @@ footer{
   <div class="products-in">
     <div class="sec-tag">상품 구성</div>
     <h2 class="sec-h2">3가지 상품 라인업</h2>
-    <p class="sec-sub" style="margin-bottom:44px;">심화·단원·월간 중 학원 운영에 맞게 선택하거나 조합해서 사용하세요</p>
+    <p class="sec-sub">심화·단원·월간 중 학원 운영에 맞게 선택해 사용하세요. 격주 상품(10·20문항)은 매달 단원과 난이도를 학원이 직접 지정합니다.</p>
 
     <div class="prod-grid">
-      <div class="prod-card">
+      <div class="prod-card featured">
+        <span class="prod-feature-flag">매달 선택</span>
         <div class="prod-top">
           <div class="prod-label">INTENSIVE</div>
           <div class="prod-name">심화 테스트</div>
           <div class="prod-desc">상위권·N수반을 위한 고난도 집중 훈련</div>
           <div class="prod-pill">10문항 × 2회분</div>
+          <div class="prod-feats">
+            <div class="prod-feat">단원 선택</div>
+            <div class="prod-feat">난이도 선택</div>
+            <div class="prod-feat">격주 납품</div>
+          </div>
         </div>
         <div class="prod-divider"></div>
         <div class="prod-bottom">
-          <div class="prod-acad-label">파트너 공급가</div>
-          <div class="prod-acad">6,000원 <span>/ 2회분</span></div>
-          <div class="prod-margin">공급가 상세는 문의 시 안내드립니다</div>
+          <div class="prod-acad-label">매달 학원이 직접 선택</div>
+          <div class="prod-pickline">
+            <span class="pl-key">단원</span>
+            <span class="pl-val">진도에 맞춰 자유 선택</span>
+          </div>
+          <div class="prod-pickline">
+            <span class="pl-key">난이도</span>
+            <span class="pl-val">하 · 중 · 상 · 혼합</span>
+          </div>
         </div>
       </div>
-      <div class="prod-card">
+      <div class="prod-card featured">
+        <span class="prod-feature-flag">매달 선택</span>
         <div class="prod-top">
           <div class="prod-label">STANDARD</div>
           <div class="prod-name">단원 테스트</div>
           <div class="prod-desc">일반반 단원 마무리·확인 평가에 최적</div>
           <div class="prod-pill">20문항 × 2회분</div>
+          <div class="prod-feats">
+            <div class="prod-feat">단원 선택</div>
+            <div class="prod-feat">난이도 선택</div>
+            <div class="prod-feat">격주 납품</div>
+          </div>
         </div>
         <div class="prod-divider"></div>
         <div class="prod-bottom">
-          <div class="prod-acad-label">파트너 공급가</div>
-          <div class="prod-acad">9,000원 <span>/ 2회분</span></div>
-          <div class="prod-margin">공급가 상세는 문의 시 안내드립니다</div>
+          <div class="prod-acad-label">매달 학원이 직접 선택</div>
+          <div class="prod-pickline">
+            <span class="pl-key">단원</span>
+            <span class="pl-val">진도에 맞춰 자유 선택</span>
+          </div>
+          <div class="prod-pickline">
+            <span class="pl-key">난이도</span>
+            <span class="pl-val">하 · 중 · 상 · 혼합</span>
+          </div>
         </div>
       </div>
       <div class="prod-card">
@@ -490,24 +1191,284 @@ footer{
           <div class="prod-name">월간 모의고사</div>
           <div class="prod-desc">전체 단원 실전형 · 월 1회 정기 평가 운영</div>
           <div class="prod-pill">30문항 × 1회분</div>
+          <div class="prod-feats">
+            <div class="prod-feat">전체 단원 실전형</div>
+            <div class="prod-feat">평가원 경향 반영</div>
+            <div class="prod-feat muted">난이도 고정</div>
+          </div>
         </div>
         <div class="prod-divider"></div>
         <div class="prod-bottom">
-          <div class="prod-acad-label">파트너 공급가</div>
-          <div class="prod-acad">7,200원 <span>/ 1회분</span></div>
-          <div class="prod-margin">공급가 상세는 문의 시 안내드립니다</div>
+          <div class="prod-acad-label">정기 운영</div>
+          <div class="prod-pickline">
+            <span class="pl-key">주기</span>
+            <span class="pl-val">월 1회 정기 납품</span>
+          </div>
+          <div class="prod-pickline">
+            <span class="pl-key">구성</span>
+            <span class="pl-val">실전형 · 평가원 반영</span>
+          </div>
         </div>
       </div>
     </div>
 
     <div class="pricing-rule">
-      <div style="font-size:22px;">📋</div>
+      <div class="pr-icon"><svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M9 12h6"/><path d="M9 16h6"/></svg></div>
       <div class="pr-divider"></div>
       <div class="pr-text">
-        <strong>파트너 학원 전용 공급가 적용</strong><br>
-        샘플 검토 후 단품 또는 정기 구독으로 시작 · 시즌 계약 시 추가 협의 가능 · 공급가 상세는 문의 시 안내드립니다
+        <strong>학원 공급가는 문의 시 안내드립니다</strong><br>
+        샘플 검토 후 단품 또는 정기 구독으로 시작 · 시즌 계약 시 추가 협의 가능 · PDF 공급 또는 인쇄 납품 선택 가능
       </div>
     </div>
+
+  </div>
+</section>
+
+<!-- PACKAGES (5 subscription types) -->
+<section class="packages" id="packages">
+  <div class="packages-in">
+    <div class="sec-tag">월 구독 패키지</div>
+    <h2 class="sec-h2">학원 운영에 맞는 5가지 구성</h2>
+    <p class="sec-sub">단품·월 패키지·풀패키지 중 학원 운영 형태에 맞게 선택할 수 있습니다. 격주 테스트가 포함된 모든 구성에서 단원과 난이도를 매달 선택합니다.</p>
+
+    <!-- 월 구독 패키지 5종 -->
+    <div class="sub-wrap">
+      <table class="sub-table">
+        <thead>
+          <tr>
+            <th>타입</th>
+            <th>구성</th>
+            <th>매달 선택</th>
+            <th>주기</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="sub-type">A</span> <span class="sub-name">10문항 심화형</span></td>
+            <td class="sub-comp">10문항 × 2회</td>
+            <td class="sub-pick"><span class="pick-on">단원 · 난이도</span></td>
+            <td class="sub-cycle">격주</td>
+          </tr>
+          <tr>
+            <td><span class="sub-type">B</span> <span class="sub-name">20문항 단원형</span></td>
+            <td class="sub-comp">20문항 × 2회</td>
+            <td class="sub-pick"><span class="pick-on">단원 · 난이도</span></td>
+            <td class="sub-cycle">격주</td>
+          </tr>
+          <tr>
+            <td><span class="sub-type">C</span> <span class="sub-name">10문항 + 월간 모의고사</span></td>
+            <td class="sub-comp">10문항 × 2회 + 30문항 × 1회</td>
+            <td class="sub-pick"><span class="pick-on">단원 · 난이도</span></td>
+            <td class="sub-cycle">격주 + 월간</td>
+          </tr>
+          <tr>
+            <td><span class="sub-type">D</span> <span class="sub-name">20문항 + 월간 모의고사</span></td>
+            <td class="sub-comp">20문항 × 2회 + 30문항 × 1회</td>
+            <td class="sub-pick"><span class="pick-on">단원 · 난이도</span></td>
+            <td class="sub-cycle">격주 + 월간</td>
+          </tr>
+          <tr>
+            <td><span class="sub-type">E</span> <span class="sub-name">풀패키지</span></td>
+            <td class="sub-comp">10·20·30문항 모두 포함</td>
+            <td class="sub-pick"><span class="pick-on">단원 · 난이도</span></td>
+            <td class="sub-cycle">격주 + 월간</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="sub-note"><strong>매달 단원·난이도 선택</strong>  격주 테스트(10·20문항)가 포함된 모든 구성은 학원이 매달 직접 단원과 난이도를 지정합니다. 30문항 월간 모의고사는 전체 단원 실전형으로 고정 운영됩니다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAM (NEW) -->
+<section class="program" id="program">
+  <div class="program-in">
+    <div class="sec-tag">연간 운영</div>
+    <h2 class="sec-h2">시즌1부터 시즌6까지, 1년이 설계되어 있습니다</h2>
+    <p class="sec-sub">고3·N수 대상 10개월 커리큘럼 · 평가원 일정에 맞춘 6시즌 구성</p>
+
+    <div class="timeline-wrap">
+      <div class="timeline-track">
+        <div class="timeline-grid">
+          <div class="tl-card">
+            <div class="tl-dot">1</div>
+            <div class="tl-label">SEASON 1</div>
+            <div class="tl-period">1~2월 · 8주</div>
+            <div class="tl-title">수학1 단원 집중</div>
+            <div class="tl-scope">수열 / 지수로그 / 삼각함수</div>
+            <div class="tl-counts">
+              <span class="tl-cnt">격주 4회</span>
+              <span class="tl-cnt">월간 2회</span>
+            </div>
+          </div>
+          <div class="tl-card">
+            <div class="tl-dot">2</div>
+            <div class="tl-label">SEASON 2</div>
+            <div class="tl-period">3~4월 · 8주</div>
+            <div class="tl-title">수능특강 패러프레이징</div>
+            <div class="tl-scope">수학2 + 선택과목 기반 · EBS 연계 대비</div>
+            <div class="tl-counts">
+              <span class="tl-cnt">격주 4회</span>
+              <span class="tl-cnt">월간 2회</span>
+            </div>
+          </div>
+          <div class="tl-card">
+            <div class="tl-dot">3</div>
+            <div class="tl-label">SEASON 3</div>
+            <div class="tl-period">5월 · 4주</div>
+            <div class="tl-title">6월 모평 대비</div>
+            <div class="tl-scope">전체 단원 실전형</div>
+            <div class="tl-counts">
+              <span class="tl-cnt">격주 2회</span>
+              <span class="tl-cnt">월간 1회</span>
+            </div>
+          </div>
+          <div class="tl-card">
+            <div class="tl-dot">4</div>
+            <div class="tl-label">SEASON 4</div>
+            <div class="tl-period">6~7월 · 8주</div>
+            <div class="tl-title">6월 모평 반영</div>
+            <div class="tl-scope">6월 평가원 패러프레이징 · 출제 경향 즉시 반영</div>
+            <div class="tl-counts">
+              <span class="tl-cnt">격주 4회</span>
+              <span class="tl-cnt">월간 2회</span>
+            </div>
+          </div>
+          <div class="tl-card">
+            <div class="tl-dot">5</div>
+            <div class="tl-label">SEASON 5</div>
+            <div class="tl-period">8월 · 4주</div>
+            <div class="tl-title">9월 모평 대비</div>
+            <div class="tl-scope">전체 단원 실전형</div>
+            <div class="tl-counts">
+              <span class="tl-cnt">격주 2회</span>
+              <span class="tl-cnt">월간 1회</span>
+            </div>
+          </div>
+          <div class="tl-card">
+            <div class="tl-dot">6</div>
+            <div class="tl-label">SEASON 6</div>
+            <div class="tl-period">9~10월 · 8주</div>
+            <div class="tl-title">수능 파이널</div>
+            <div class="tl-scope">9월 평가원 패러프레이징 · 수능 직전 최종 점검</div>
+            <div class="tl-counts">
+              <span class="tl-cnt">격주 4회</span>
+              <span class="tl-cnt">월간 2회</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-total">
+        <div>
+          <div class="tl-total-label">고3·N수 연간 합계</div>
+          <div class="tl-total-main">10개월 · 40주 운영</div>
+        </div>
+        <div class="tl-total-stats">
+          <div class="tl-stat">
+            <div class="tl-stat-num">20<span>회</span></div>
+            <div class="tl-stat-label">격주 테스트</div>
+          </div>
+          <div class="tl-stat">
+            <div class="tl-stat-num">10<span>회</span></div>
+            <div class="tl-stat-label">월간 모의고사</div>
+          </div>
+          <div class="tl-stat">
+            <div class="tl-stat-num">30<span>회분</span></div>
+            <div class="tl-stat-label">총 콘텐츠</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 도입 4단계 -->
+    <div class="proc-head">
+      <div class="proc-h3">도입은 부담 없이 시작합니다</div>
+      <p class="proc-p">샘플 검토부터 정기 계약까지, 4단계로 진행합니다</p>
+    </div>
+    <div class="proc-grid">
+      <div class="proc-card">
+        <div class="proc-step">STEP 01</div>
+        <div class="proc-num">1</div>
+        <div class="proc-title">샘플 신청</div>
+        <p class="proc-desc">30문항 월간 모의고사 샘플을 무료로 발송합니다. 영업일 1일 이내 담당자 연락.</p>
+      </div>
+      <div class="proc-card">
+        <div class="proc-step">STEP 02</div>
+        <div class="proc-num">2</div>
+        <div class="proc-title">1:1 상담</div>
+        <p class="proc-desc">학원 규모·진도·반 구성에 맞춘 단원 및 난이도, 시즌 일정을 협의합니다.</p>
+      </div>
+      <div class="proc-card">
+        <div class="proc-step">STEP 03</div>
+        <div class="proc-num">3</div>
+        <div class="proc-title">시범 운영</div>
+        <p class="proc-desc">단품 구매로 2~4주 시범 운영. 문항 품질·운영 적합성을 직접 검증합니다.</p>
+      </div>
+      <div class="proc-card">
+        <div class="proc-step">STEP 04</div>
+        <div class="proc-num">4</div>
+        <div class="proc-title">정기 계약</div>
+        <p class="proc-desc">격주·월간 자동 납품으로 전환. 시즌 단위 계약 시 추가 협의 가능합니다.</p>
+      </div>
+    </div>
+
+    <!-- 고2·고1 더보기 -->
+    <div class="more-grade">
+      <button class="more-toggle" id="moreToggle" type="button" aria-expanded="false">
+        <div class="mt-left">
+          <div class="mt-ic"><svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V2H6.5A2.5 2.5 0 0 0 4 4.5z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20"/></svg></div>
+          <div class="mt-text">
+            <div class="mt-title">고2·고1 진도 운영 보기</div>
+            <div class="mt-sub">내신 기간 제외 · 학기제 운영 · 단원 테스트 중심</div>
+          </div>
+        </div>
+        <div class="mt-arrow">⌄</div>
+      </button>
+      <div class="more-body" id="moreBody">
+        <div class="more-inner">
+          <div class="grade-card">
+            <div class="grade-h">
+              <div class="grade-name">고2 운영안</div>
+              <div class="grade-period">3~12월 · 내신 제외</div>
+            </div>
+            <div class="grade-row">
+              <div class="grade-key">1학기</div>
+              <div class="grade-val"><strong>3~6월 (10주)</strong><br>수열 / 지수로그 / 삼각함수</div>
+            </div>
+            <div class="grade-row">
+              <div class="grade-key">2학기</div>
+              <div class="grade-val"><strong>9~12월 (10주)</strong><br>극한 / 미분 / 적분</div>
+            </div>
+            <div class="grade-row">
+              <div class="grade-key">연간 합계</div>
+              <div class="grade-val">격주 <strong>10회</strong> · 월간 <strong>4회</strong></div>
+            </div>
+            <div class="grade-note">20문항 중난도 중심 · 상위권반은 10문항 심화 테스트 추가 가능 · 내신 기간은 별도 내신형 테스트로 전환 가능</div>
+          </div>
+          <div class="grade-card">
+            <div class="grade-h">
+              <div class="grade-name">고1 운영안</div>
+              <div class="grade-period">3~12월 · 내신 제외</div>
+            </div>
+            <div class="grade-row">
+              <div class="grade-key">1학기</div>
+              <div class="grade-val"><strong>3~6월 (10주)</strong><br>다항식 / 방정식 / 도형의 방정식</div>
+            </div>
+            <div class="grade-row">
+              <div class="grade-key">2학기</div>
+              <div class="grade-val"><strong>9~12월 (10주)</strong><br>집합 / 함수 / 경우의 수</div>
+            </div>
+            <div class="grade-row">
+              <div class="grade-key">연간 합계</div>
+              <div class="grade-val">격주 <strong>10회</strong> · 월간 <strong>4회</strong></div>
+            </div>
+            <div class="grade-note">20문항 중난도 중심 · 학원 수요에 따라 단원 테스트 위주로 먼저 운영 · 심화 10문항은 선택 옵션</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -520,21 +1481,21 @@ footer{
         <h3 class="inq-h3">먼저 <b>샘플</b>로<br>확인하세요</h3>
         <p class="inq-p">30문항 월간 모의고사 샘플을 무료로 발송해드립니다. 품질을 직접 보신 후 도입 여부를 결정하시면 됩니다.</p>
         <ul class="inq-checks">
-          <li><div class="chk">✓</div>30문항 샘플 무료 발송</li>
-          <li><div class="chk">✓</div>학원 규모·단원 맞춤 상담</li>
-          <li><div class="chk">✓</div>단품 시작 → 구독 전환 가능</li>
-          <li><div class="chk">✓</div>영업일 1일 이내 담당자 연락</li>
+          <li><div class="chk"><svg class="icon icon-sm" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width:11px;height:11px;stroke-width:3;"><path d="M20 6 9 17l-5-5"/></svg></div>30문항 샘플 무료 발송</li>
+          <li><div class="chk"><svg class="icon icon-sm" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width:11px;height:11px;stroke-width:3;"><path d="M20 6 9 17l-5-5"/></svg></div>학원 규모·단원 맞춤 상담</li>
+          <li><div class="chk"><svg class="icon icon-sm" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width:11px;height:11px;stroke-width:3;"><path d="M20 6 9 17l-5-5"/></svg></div>단품 시작 → 구독 전환 가능</li>
+          <li><div class="chk"><svg class="icon icon-sm" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width:11px;height:11px;stroke-width:3;"><path d="M20 6 9 17l-5-5"/></svg></div>영업일 1일 이내 담당자 연락</li>
         </ul>
         <div class="inq-contact">
           <div class="inq-row">
-            <div class="inq-ic">✉️</div>
+            <div class="inq-ic"><svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></div>
             <div>
               <div class="inq-label-s">이메일</div>
               <div class="inq-val">newlearnsoft@gmail.com</div>
             </div>
           </div>
           <div class="inq-row">
-            <div class="inq-ic">🏢</div>
+            <div class="inq-ic"><svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="2" width="16" height="20" rx="1"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M8 10h.01"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 14h.01"/><path d="M16 14h.01"/><path d="M12 14h.01"/></svg></div>
             <div>
               <div class="inq-label-s">회사</div>
               <div class="inq-val">뉴런소프트</div>
@@ -571,7 +1532,8 @@ footer{
                 <option>심화 테스트 (10문항)</option>
                 <option>단원 테스트 (20문항)</option>
                 <option>월간 모의고사 (30문항)</option>
-                <option>복수 / 조합</option>
+                <option>월 패키지 C/D (격주 + 월간)</option>
+                <option>풀패키지 E</option>
                 <option>샘플만 먼저 검토</option>
               </select>
             </div>
@@ -580,15 +1542,29 @@ footer{
             <label>문의 내용</label>
             <textarea name="message" placeholder="학원 규모, 희망 단원, 시작 시기 등 자유롭게 작성해주세요"></textarea>
           </div>
+          <details class="privacy-notice">
+            <summary>개인정보 수집·이용 안내 <span>자세히 보기</span></summary>
+            <dl>
+              <dt>수집 항목</dt>
+              <dd>학원명, 담당자명, 연락처, 이메일, 학원 유형, 관심 상품, 문의 내용</dd>
+              <dt>이용 목적</dt>
+              <dd>샘플 자료 발송 및 파트너 상담 진행</dd>
+              <dt>보유 기간</dt>
+              <dd>상담 종료 후 1년 (관계 법령에 따른 보관 의무가 있는 경우 해당 기간까지)</dd>
+              <dt>동의 거부 권리</dt>
+              <dd>위 항목의 수집·이용에 동의하지 않으실 수 있으며, 거부 시 샘플 발송 및 상담이 제한됩니다.</dd>
+            </dl>
+            <p class="privacy-contact">개인정보 관련 문의: <a href="mailto:newlearnsoft@gmail.com">newlearnsoft@gmail.com</a></p>
+          </details>
           <label class="fcheck">
             <input type="checkbox" required>
-            개인정보 수집 및 이용에 동의합니다. (샘플 발송 및 파트너 연락 목적)
+            <span>위 개인정보 수집·이용 안내를 확인했으며, 이에 동의합니다.</span>
           </label>
           <button type="submit" class="fsub" id="submitBtn">샘플 요청 · 파트너 신청하기</button>
         </form>
         <div id="formSuccess">
-          <div class="suc-icon">✅</div>
-          <h3 style="font-size:20px;font-weight:800;color:var(--ink);margin-bottom:12px;letter-spacing:-0.4px;">신청이 완료되었습니다!</h3>
+          <div class="suc-icon"><svg class="icon icon-lg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg></div>
+          <h3 style="font-size:20px;font-weight:800;color:var(--ink);margin-bottom:12px;letter-spacing:-0.5px;">신청이 완료되었습니다!</h3>
           <p style="font-size:15px;color:var(--mid);line-height:1.8;">빠른 시일 내에 연락드리겠습니다.<br>영업일 기준 <strong style="color:var(--orange);">1일 이내</strong> 담당자가 직접 연락드립니다.</p>
           <p style="font-size:13px;color:var(--muted);margin-top:16px;">newlearnsoft@gmail.com</p>
         </div>
@@ -598,13 +1574,19 @@ footer{
 </section>
 
 <footer>
-  <div>
-    <div class="ft-logo"><div class="ft-dot"></div><span class="ft-name">수학 모의고사 · 학원 파트너</span></div>
-    <div class="ft-copy">© 2026 뉴런소프트. All rights reserved.</div>
-  </div>
-  <div class="ft-info">
-    <strong>회사</strong>(주)뉴런소프트<br>
-    <strong>이메일</strong>newlearnsoft@gmail.com
+  <div class="ft-in">
+    <div class="ft-brand">
+      <div class="ft-logo"><div class="ft-dot"></div><span class="ft-name">수학 모의고사 · 학원 파트너</span></div>
+      <div class="ft-copy">© 2026 주식회사 뉴런소프트. All rights reserved.</div>
+    </div>
+    <div class="ft-info">
+      <span class="ft-info-row"><strong>회사</strong>주식회사 뉴런소프트</span>
+      <span class="ft-info-row"><strong>대표자</strong>최영재</span>
+      <span class="ft-info-row"><strong>사업자등록번호</strong>591-88-03234</span>
+      <span class="ft-info-row"><strong>주소</strong>서울 금천구 가산동 디지털로9길 99 스타밸리 511호</span>
+      <span class="ft-info-row"><strong>전화</strong><a href="tel:01068893386">010-6889-3386</a></span>
+      <span class="ft-info-row"><strong>이메일</strong><a href="mailto:newlearnsoft@gmail.com">newlearnsoft@gmail.com</a></span>
+    </div>
   </div>
 </footer>
 
@@ -613,6 +1595,69 @@ footer{
 <script>
   const nav = document.getElementById('nav');
   window.addEventListener('scroll', () => nav.classList.toggle('up', scrollY > 10));
+
+  // 고2·고1 더보기 토글
+  const mt = document.getElementById('moreToggle');
+  const mb = document.getElementById('moreBody');
+  mt.addEventListener('click', () => {
+    const isOpen = mt.classList.toggle('open');
+    mb.classList.toggle('open', isOpen);
+    mt.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+
+  /* ─ Scroll reveal (IntersectionObserver) ─ */
+  const reduced = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  if (!reduced && 'IntersectionObserver' in window) {
+    const targets = document.querySelectorAll('.sec-tag, .sec-h2, .sec-sub, .why-card, .cont-card, .cont-haesul, .prod-card, .pricing-rule, .sub-wrap, .timeline-track, .tl-total, .proc-head, .proc-card, .more-grade, .stat-item, .inq-left, .form-box');
+    targets.forEach(el => el.classList.add('reveal'));
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // stagger siblings slightly for a wave effect
+          const parent = entry.target.parentElement;
+          if (parent) {
+            const sibs = Array.from(parent.children).filter(c => c.classList.contains('reveal'));
+            const idx = sibs.indexOf(entry.target);
+            entry.target.style.transitionDelay = (idx >= 0 ? Math.min(idx, 5) * 70 : 0) + 'ms';
+          }
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, {threshold:0.12, rootMargin:'0px 0px -40px 0px'});
+    targets.forEach(el => io.observe(el));
+  } else {
+    // Reduced motion or unsupported — show everything immediately
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
+  }
+
+  /* ─ Stat number count-up (only on first reveal of stats strip) ─ */
+  if (!reduced && 'IntersectionObserver' in window) {
+    const stats = document.querySelectorAll('.stat-num em');
+    const animateNum = (el) => {
+      const text = el.textContent.trim();
+      const target = parseInt(text, 10);
+      if (isNaN(target)) return; // "무료" 같은 텍스트는 건드리지 않음
+      const dur = 900;
+      const start = performance.now();
+      const easeOut = t => 1 - Math.pow(1 - t, 3);
+      const tick = (now) => {
+        const p = Math.min(1, (now - start) / dur);
+        el.textContent = Math.round(easeOut(p) * target).toString();
+        if (p < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    };
+    const statObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateNum(entry.target);
+          statObs.unobserve(entry.target);
+        }
+      });
+    }, {threshold:0.5});
+    stats.forEach(el => statObs.observe(el));
+  }
 
   const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwfV43wUWvb5ZBbgnax_Ot4R6dMoCGlM6DtZxo97y7SrPHPeXwup97FLF9p4nq7oXx7/exec';
 
