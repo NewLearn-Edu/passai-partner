@@ -156,7 +156,7 @@ nav.up{box-shadow:var(--sh-sm);}
 }
 .hero-in{
   max-width:1120px;margin:0 auto;padding:128px 60px 128px;
-  display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;
+  display:grid;grid-template-columns:1.1fr 0.9fr;gap:64px;align-items:center;
 }
 .hero-left{display:flex;flex-direction:column;justify-content:center;}
 
@@ -213,50 +213,23 @@ nav.up{box-shadow:var(--sh-sm);}
 }
 .btn-sub:hover{border-color:var(--navy);color:var(--navy);}
 
-/* Hero Right — DARK BOX (yigam-style premium) */
-.hero-card{
-  background:var(--navy);color:var(--white);
-  border-radius:var(--r-xl);padding:36px;
-  display:flex;flex-direction:column;gap:4px;
-  box-shadow:var(--sh-navy);
-  position:relative;overflow:hidden;
-}
-.hero-card::before{
-  content:'';position:absolute;top:-40px;right:-40px;
-  width:160px;height:160px;border-radius:50%;
-  background:radial-gradient(circle,rgba(230,57,70,0.18) 0%,rgba(230,57,70,0) 70%);
-  pointer-events:none;
-}
-.hc-label{
-  font-size:11px;font-weight:800;color:var(--orange);
-  letter-spacing:1.4px;text-transform:uppercase;margin-bottom:18px;
-  position:relative;z-index:1;
-}
-.hc-item{
-  background:var(--navy-soft);border:1px solid var(--navy-line);
-  border-radius:var(--r-md);padding:20px 22px;
-  display:flex;align-items:center;justify-content:space-between;
-  margin-bottom:8px;transition:border-color .2s,background .2s;
-  position:relative;z-index:1;
-}
-.hc-item:last-child{margin-bottom:0;}
-.hc-item:hover{border-color:var(--orange);}
-.hc-item.hl{
-  background:var(--orange);border-color:var(--orange);
-}
-.hc-item.hl .hc-title,.hc-item.hl .hc-desc{color:var(--white);}
-.hc-left{display:flex;flex-direction:column;gap:3px;}
-.hc-title{font-size:13px;font-weight:800;color:var(--white);letter-spacing:-0.3px;}
-.hc-desc{font-size:12px;color:rgba(255,255,255,0.7);line-height:1.5;letter-spacing:-0.2px;}
-.hc-num{font-size:28px;font-weight:900;color:var(--white);letter-spacing:-1px;line-height:1;}
-.hc-num.org{color:var(--orange);}
-.hc-unit{font-size:12px;color:rgba(255,255,255,0.55);font-weight:500;}
-.hc-icon{
-  width:36px;height:36px;border-radius:8px;
-  background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.9);
+/* Hero Right — Envelope mockup (실제 봉투 표지) */
+.hero-envelope{
+  margin:0;
   display:flex;align-items:center;justify-content:center;
+  position:relative;
 }
-.hc-item.hl .hc-icon{background:rgba(255,255,255,0.14);color:var(--white);}
+.hero-envelope svg,
+.hero-envelope img{
+  width:100%;height:auto;max-width:440px;display:block;
+  border-radius:6px;
+  transition:transform .5s cubic-bezier(0.2,0.8,0.2,1);
+}
+.hero-envelope:hover svg,
+.hero-envelope:hover img{
+  transform:translateY(-6px) rotate(-1deg);
+}
+
 .pr-icon{
   width:42px;height:42px;border-radius:10px;
   background:var(--orange-light);color:var(--orange);
@@ -1125,7 +1098,9 @@ footer{
   nav,footer{padding-left:24px;padding-right:24px;}
   .ft-info{text-align:left;}
   .hero-in{grid-template-columns:1fr;padding:80px 24px 64px;gap:44px;}
-  .hero-card{display:none;}
+  .hero-envelope{order:-1;}
+  .hero-envelope svg,
+  .hero-envelope img{max-width:280px;}
   .why,.products,.inquiry,.contents,.program,.packages{padding:96px 24px;}
   .schedule{padding:32px 24px;}
   .schedule-in{flex-direction:column;align-items:flex-start;gap:18px;}
@@ -1206,37 +1181,77 @@ footer{
         <a href="#why" class="btn-sub">자세히 보기</a>
       </div>
     </div>
-    <div class="hero-card">
-      <div class="hc-label">납품 구조</div>
-      <div class="hc-item">
-        <div class="hc-left">
-          <div class="hc-title">사전 검토 자료</div>
-          <div class="hc-desc">30문항 월간 모의고사</div>
-        </div>
-        <div class="hc-icon"><svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 12v8a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-8"/><path d="M2 7h20v5H2z"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 1 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 1 0 0-5C13 2 12 7 12 7z"/></svg></div>
-      </div>
-      <div class="hc-item hl">
-        <div class="hc-left">
-          <div class="hc-title">격주 납품 · 매달 선택</div>
-          <div class="hc-desc">10문항 or 20문항 · 단원·난이도 매달 학원이 지정</div>
-        </div>
-        <div class="hc-num">2<span class="hc-unit">주</span></div>
-      </div>
-      <div class="hc-item">
-        <div class="hc-left">
-          <div class="hc-title">월간 납품</div>
-          <div class="hc-desc">30문항 종합 모의고사</div>
-        </div>
-        <div class="hc-num">1<span class="hc-unit">회</span></div>
-      </div>
-      <div class="hc-item">
-        <div class="hc-left">
-          <div class="hc-title">매달 선택 옵션</div>
-          <div class="hc-desc">단원 / 난이도 / 회차 모두 학원 지정</div>
-        </div>
-        <div class="hc-icon"><svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
-      </div>
-    </div>
+    <!--
+      ⚠️ TODO: 도메인 결정 후 실제 봉투 사진(/envelope.png)으로 교체 가능
+      교체 시 아래 구조로:
+      <figure class="hero-envelope hero-envelope-photo">
+        <img src="/envelope.png" alt="뉴런모의고사 봉투 패키지" loading="eager">
+      </figure>
+      그 전까지는 SVG 일러스트로 운영
+    -->
+    <figure class="hero-envelope" aria-label="뉴런모의고사 봉투 패키지">
+      <svg viewBox="0 0 480 640" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="env-title env-desc">
+        <title id="env-title">뉴런모의고사 봉투 패키지</title>
+        <desc id="env-desc">학원에 도착하는 끈 봉투 형태의 모의고사 패키지</desc>
+        <defs>
+          <filter id="env-shadow" x="-10%" y="-5%" width="120%" height="115%">
+            <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#1A1A1A" flood-opacity="0.14"/>
+          </filter>
+          <linearGradient id="env-paper" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#FDFDFB"/>
+            <stop offset="100%" stop-color="#F4F3EE"/>
+          </linearGradient>
+        </defs>
+
+        <!-- 봉투 바디 -->
+        <rect x="20" y="40" width="440" height="580" fill="url(#env-paper)" stroke="#E8E6DF" stroke-width="1" rx="2" filter="url(#env-shadow)"/>
+
+        <!-- 거대 N 그래픽 (검정) — 봉투 중간~우측을 사선으로 가로지름 -->
+        <polygon points="265,260 335,260 335,580 265,580" fill="#1A1A1A"/>
+        <polygon points="265,260 335,260 470,580 400,580" fill="#1A1A1A"/>
+        <polygon points="400,260 470,260 470,580 400,580" fill="#1A1A1A"/>
+        <!-- 빨간 액센트 -->
+        <polygon points="415,460 455,460 455,580 415,580" fill="#E60012"/>
+
+        <!-- 봉투 플랩 (상단 접힘, N 위에 올라옴) -->
+        <path d="M 20 40 L 240 40 L 460 40 L 240 165 Z" fill="url(#env-paper)" stroke="#E8E6DF" stroke-width="1"/>
+        <path d="M 240 40 L 460 40 L 240 165 Z" fill="#1A1A1A" opacity="0.04"/>
+
+        <!-- 끈 버튼 2개 -->
+        <circle cx="240" cy="125" r="22" fill="#FAFAF7" stroke="#D8D5CC" stroke-width="1"/>
+        <circle cx="240" cy="125" r="3" fill="#9C9890"/>
+        <circle cx="240" cy="225" r="22" fill="#FAFAF7" stroke="#D8D5CC" stroke-width="1"/>
+        <circle cx="240" cy="225" r="3" fill="#9C9890"/>
+
+        <!-- 끈 (8자 모양) -->
+        <path d="M 240 147 Q 232 175 240 203 Q 248 175 240 147" stroke="#1A1A1A" stroke-width="1.5" fill="none"/>
+        <path d="M 240 147 Q 248 175 240 203 Q 232 175 240 147" stroke="#1A1A1A" stroke-width="1.5" fill="none"/>
+
+        <!-- 텍스트: 뉴런모의고사 -->
+        <text x="60" y="345" font-family="Pretendard Variable, Pretendard, sans-serif" font-size="28" font-weight="800" fill="#1A1A1A" letter-spacing="-1">뉴런모의고사</text>
+        <text x="60" y="365" font-family="Pretendard Variable, Pretendard, sans-serif" font-size="10" font-weight="600" fill="#1A1A1A" letter-spacing="2">NEURON MOCK TEST</text>
+
+        <!-- 빨간 dash 구분선 -->
+        <line x1="60" y1="395" x2="90" y2="395" stroke="#E60012" stroke-width="2.5"/>
+
+        <!-- 2026 / 수학 영역 -->
+        <text x="60" y="435" font-family="Pretendard Variable, Pretendard, sans-serif" font-size="22" font-weight="800" fill="#E60012" letter-spacing="-0.5">2026</text>
+        <text x="60" y="460" font-family="Pretendard Variable, Pretendard, sans-serif" font-size="12" font-weight="700" fill="#1A1A1A">수학 영역</text>
+
+        <!-- 하단 십자 조준점 + 가로선 -->
+        <line x1="20" y1="555" x2="460" y2="555" stroke="#1A1A1A" stroke-width="0.8"/>
+        <circle cx="55" cy="555" r="9" fill="none" stroke="#1A1A1A" stroke-width="0.8"/>
+        <line x1="44" y1="555" x2="66" y2="555" stroke="#1A1A1A" stroke-width="0.8"/>
+        <line x1="55" y1="544" x2="55" y2="566" stroke="#1A1A1A" stroke-width="0.8"/>
+        <circle cx="55" cy="555" r="2.5" fill="#E60012"/>
+
+        <!-- 하단 로고 -->
+        <rect x="55" y="592" width="14" height="14" rx="2" fill="#E60012"/>
+        <text x="62" y="604" font-family="Pretendard Variable, Pretendard, sans-serif" font-size="11" font-weight="900" fill="#FFFFFF" text-anchor="middle">N</text>
+        <text x="76" y="600" font-family="Pretendard Variable, Pretendard, sans-serif" font-size="9" font-weight="700" fill="#1A1A1A">뉴런소프트</text>
+        <text x="76" y="611" font-family="Pretendard Variable, Pretendard, sans-serif" font-size="6" font-weight="600" fill="#6B7280" letter-spacing="1">NEURON SOFT</text>
+      </svg>
+    </figure>
   </div>
 </section>
 
@@ -1324,6 +1339,7 @@ footer{
         </div>
       </div>
     </div>
+
 
     <!-- ─── Cover Preview Gallery ─── -->
     <div class="cover-gallery">
