@@ -6,15 +6,15 @@
 <title>수학 모의고사 · 학원 파트너 | 단원·난이도 맞춤 테스트지 정기 납품</title>
 
 <!-- SEO -->
-<meta name="description" content="수업 흐름에 맞는 단원·난이도 맞춤 수학 테스트지를 격주·월간으로 납품합니다. 수능특강·평가원 패러프레이징 기반 출제로 EBS 연계 대비 직결. 30문항 샘플 무료 발송.">
-<meta name="keywords" content="수학 모의고사, 학원 파트너, 단원 테스트, 평가원 패러프레이징, EBS 연계, 수능특강, 격주 모의고사, 월간 모의고사, 수학 학원, 모의고사 납품">
+<meta name="description" content="수업 흐름에 맞춰 매달 단원·난이도를 학원이 직접 선택하는 수학 테스트지. 격주·월간 정기 납품. 수능특강·평가원 변형 출제로 EBS 연계 대비 직결.">
+<meta name="keywords" content="수학 모의고사, 학원 파트너, 단원 테스트, 평가원 변형 출제, EBS 연계, 수능특강, 격주 모의고사, 월간 모의고사, 수학 학원, 모의고사 납품">
 <meta name="author" content="뉴런소프트">
 <meta name="robots" content="index, follow">
 
 <!-- Open Graph (KakaoTalk · Facebook · LinkedIn) -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="수학 모의고사 · 학원 파트너">
-<meta property="og:description" content="단원·난이도 맞춤 수학 테스트지 정기 납품. 수능특강·평가원 패러프레이징 기반 출제. 30문항 샘플 무료.">
+<meta property="og:description" content="매달 단원·난이도를 학원이 선택하는 수학 테스트지 정기 납품. 수능특강·평가원 변형 출제로 EBS 연계 대비.">
 <meta property="og:site_name" content="수학 모의고사 학원 파트너">
 <meta property="og:locale" content="ko_KR">
 <!-- og:url 과 og:image 는 실제 도메인·이미지 업로드 후 채워주세요 -->
@@ -26,7 +26,7 @@
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="수학 모의고사 · 학원 파트너">
-<meta name="twitter:description" content="단원·난이도 맞춤 수학 테스트지 정기 납품. 30문항 샘플 무료.">
+<meta name="twitter:description" content="매달 단원·난이도를 학원이 선택하는 수학 테스트지 정기 납품.">
 
 <!-- Theme & Browser UI -->
 <meta name="theme-color" content="#0F1B2D">
@@ -273,7 +273,7 @@ nav.up{box-shadow:var(--sh-sm);}
 }
 .stats-in{
   max-width:1120px;margin:0 auto;padding:48px 60px;
-  display:grid;grid-template-columns:repeat(4,1fr);gap:0;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:0;
   position:relative;
 }
 .stat-item{
@@ -844,6 +844,14 @@ nav.up{box-shadow:var(--sh-sm);}
 .privacy-contact a{color:var(--orange);text-decoration:none;}
 .privacy-contact a:hover{text-decoration:underline;}
 
+/* Honeypot — completely hidden from humans, but bots will fill it */
+.hp-field{
+  position:absolute !important;
+  left:-10000px !important;top:auto !important;
+  width:1px !important;height:1px !important;
+  overflow:hidden !important;
+}
+
 .fsub{
   background:var(--orange);color:white;border:none;
   border-radius:var(--r-md);padding:16px;font-size:15px;font-weight:700;
@@ -914,11 +922,11 @@ footer{
   .hero-in{grid-template-columns:1fr;padding:80px 24px 64px;gap:44px;}
   .hero-card{display:none;}
   .why,.products,.inquiry,.contents,.program,.packages{padding:96px 24px;}
-  .stats-in{grid-template-columns:repeat(2,1fr);gap:24px 0;padding:36px 24px;}
-  .stat-item{padding:0 12px;}
-  .stat-item:nth-child(2n){border-right:0;}
-  .stat-num{font-size:32px;}
-  .stat-num sup{font-size:14px;padding-bottom:3px;}
+  .stats-in{grid-template-columns:repeat(3,1fr);gap:0;padding:36px 16px;}
+  .stat-item{padding:0 8px;border-right:1px solid var(--line);}
+  .stat-item:last-child{border-right:0;}
+  .stat-num{font-size:28px;}
+  .stat-num sup{font-size:13px;padding-bottom:3px;}
   .hero-h1{font-size:38px;letter-spacing:-1.2px;}
   .sec-h2{font-size:30px;letter-spacing:-0.8px;}
   .inq-h3{font-size:28px;letter-spacing:-0.7px;}
@@ -966,7 +974,7 @@ footer{
     <a href="#program">운영</a>
     <a href="#inquiry">문의</a>
   </div>
-  <a href="#inquiry" class="nav-cta">샘플 무료 요청</a>
+  <a href="#inquiry" class="nav-cta">파트너 문의</a>
 </nav>
 
 <!-- HERO -->
@@ -977,8 +985,8 @@ footer{
       <h1 class="hero-h1"><b>매달 단원·난이도</b><br>학원이 직접 선택하는<br>수학 테스트지</h1>
       <ul class="hero-list">
         <li>10·20문항 격주 테스트는 학원이 진도에 맞춰 매달 단원과 난이도를 직접 지정</li>
-        <li>수능특강·평가원 패러프레이징 기반 출제 — EBS 연계 대비 직결</li>
-        <li>샘플 무료 발송 · 품질 확인 후 도입 결정</li>
+        <li>수능특강·평가원 변형 출제 기반 — EBS 연계 대비 직결</li>
+        <li>도입 전 사전 검토 자료 발송 · 품질 확인 후 결정</li>
       </ul>
       <div class="hero-badges">
         <span class="hero-badge">매달 단원 선택</span>
@@ -986,7 +994,7 @@ footer{
         <span class="hero-badge">평가원 반영</span>
       </div>
       <div class="hero-btns">
-        <a href="#inquiry" class="btn-main">샘플 무료 요청하기</a>
+        <a href="#inquiry" class="btn-main">파트너 문의하기</a>
         <a href="#why" class="btn-sub">자세히 보기</a>
       </div>
     </div>
@@ -994,8 +1002,8 @@ footer{
       <div class="hc-label">납품 구조</div>
       <div class="hc-item">
         <div class="hc-left">
-          <div class="hc-title">샘플 무료 제공</div>
-          <div class="hc-desc">30문항 월간 모의고사 샘플</div>
+          <div class="hc-title">사전 검토 자료</div>
+          <div class="hc-desc">30문항 월간 모의고사</div>
         </div>
         <div class="hc-icon"><svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 12v8a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-8"/><path d="M2 7h20v5H2z"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 1 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 1 0 0-5C13 2 12 7 12 7z"/></svg></div>
       </div>
@@ -1037,11 +1045,7 @@ footer{
     </div>
     <div class="stat-item">
       <div class="stat-num"><em>100</em><sup>%</sup></div>
-      <div class="stat-label">평가원 패러프레이징</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-num"><em>무료</em></div>
-      <div class="stat-label">30문항 샘플</div>
+      <div class="stat-label">평가원 변형 출제</div>
     </div>
   </div>
 </section>
@@ -1062,14 +1066,14 @@ footer{
       <div class="why-card">
         <div class="why-icon"><svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
         <div class="why-num">평가원 연계</div>
-        <div class="why-h3">수능특강·모평 패러프레이징<br>즉시 반영</div>
+        <div class="why-h3">수능특강·모평 변형 출제<br>즉시 반영</div>
         <p class="why-p">수능특강 기반 출제로 EBS 연계를 대비하고, 6·9월 평가원 모의고사 경향을 즉시 반영합니다.</p>
       </div>
       <div class="why-card">
         <div class="why-icon"><svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></div>
         <div class="why-num">단계적 도입</div>
-        <div class="why-h3">샘플부터 시작<br>부담 없는 첫 걸음</div>
-        <p class="why-p">무료 샘플로 품질을 먼저 확인하세요. 단품 구매로 시작해 필요에 맞게 정기 구독으로 전환할 수 있습니다.</p>
+        <div class="why-h3">사전 검토부터 시작<br>부담 없는 첫 걸음</div>
+        <p class="why-p">사전 검토 자료로 품질을 먼저 확인할 수 있습니다. 단품 구매로 시작해 필요에 맞게 정기 구독으로 전환할 수 있습니다.</p>
       </div>
     </div>
   </div>
@@ -1087,14 +1091,14 @@ footer{
         <div class="cont-ic"><svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></div>
         <div class="cont-body">
           <div class="cont-h3">평가원 트렌드 분석</div>
-          <p class="cont-p">6월·9월 모의평가와 수능 출제 경향을 즉시 분석해 다음 시즌 문항에 반영합니다. 시즌4·시즌6은 평가원 패러프레이징 회차로 운영됩니다.</p>
+          <p class="cont-p">6월·9월 모의평가와 수능 출제 경향을 즉시 분석해 다음 시즌 문항에 반영합니다. 시즌4·시즌6은 평가원 변형 출제 회차로 운영됩니다.</p>
         </div>
       </div>
       <div class="cont-card">
         <div class="cont-ic"><svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><path d="M9 6h7"/><path d="M9 10h7"/></svg></div>
         <div class="cont-body">
           <div class="cont-h3">EBS 연계 분석</div>
-          <p class="cont-p">수능특강 출제 문항을 패러프레이징해 시즌2 콘텐츠로 제공합니다. 연계 의도와 변형 포인트를 해설지에 함께 명시합니다.</p>
+          <p class="cont-p">수능특강 출제 문항을 변형해 시즌2 콘텐츠로 제공합니다. 연계 의도와 변형 포인트를 해설지에 함께 명시합니다.</p>
         </div>
       </div>
       <div class="cont-card">
@@ -1217,7 +1221,7 @@ footer{
       <div class="pr-divider"></div>
       <div class="pr-text">
         <strong>학원 공급가는 문의 시 안내드립니다</strong><br>
-        샘플 검토 후 단품 또는 정기 구독으로 시작 · 시즌 계약 시 추가 협의 가능 · PDF 공급 또는 인쇄 납품 선택 가능
+        사전 검토 후 단품 또는 정기 구독으로 시작 · 시즌 계약 시 추가 협의 가능 · PDF 공급 또는 인쇄 납품 선택 가능
       </div>
     </div>
 
@@ -1305,7 +1309,7 @@ footer{
             <div class="tl-dot">2</div>
             <div class="tl-label">SEASON 2</div>
             <div class="tl-period">3~4월 · 8주</div>
-            <div class="tl-title">수능특강 패러프레이징</div>
+            <div class="tl-title">수능특강 변형 출제</div>
             <div class="tl-scope">수학2 + 선택과목 기반 · EBS 연계 대비</div>
             <div class="tl-counts">
               <span class="tl-cnt">격주 4회</span>
@@ -1328,7 +1332,7 @@ footer{
             <div class="tl-label">SEASON 4</div>
             <div class="tl-period">6~7월 · 8주</div>
             <div class="tl-title">6월 모평 반영</div>
-            <div class="tl-scope">6월 평가원 패러프레이징 · 출제 경향 즉시 반영</div>
+            <div class="tl-scope">6월 평가원 변형 출제 · 출제 경향 즉시 반영</div>
             <div class="tl-counts">
               <span class="tl-cnt">격주 4회</span>
               <span class="tl-cnt">월간 2회</span>
@@ -1350,7 +1354,7 @@ footer{
             <div class="tl-label">SEASON 6</div>
             <div class="tl-period">9~10월 · 8주</div>
             <div class="tl-title">수능 파이널</div>
-            <div class="tl-scope">9월 평가원 패러프레이징 · 수능 직전 최종 점검</div>
+            <div class="tl-scope">9월 평가원 변형 출제 · 수능 직전 최종 점검</div>
             <div class="tl-counts">
               <span class="tl-cnt">격주 4회</span>
               <span class="tl-cnt">월간 2회</span>
@@ -1384,14 +1388,14 @@ footer{
     <!-- 도입 4단계 -->
     <div class="proc-head">
       <div class="proc-h3">도입은 부담 없이 시작합니다</div>
-      <p class="proc-p">샘플 검토부터 정기 계약까지, 4단계로 진행합니다</p>
+      <p class="proc-p">사전 검토부터 정기 계약까지, 4단계로 진행합니다</p>
     </div>
     <div class="proc-grid">
       <div class="proc-card">
         <div class="proc-step">STEP 01</div>
         <div class="proc-num">1</div>
-        <div class="proc-title">샘플 신청</div>
-        <p class="proc-desc">30문항 월간 모의고사 샘플을 무료로 발송합니다. 영업일 1일 이내 담당자 연락.</p>
+        <div class="proc-title">자료 요청</div>
+        <p class="proc-desc">30문항 월간 모의고사 사전 검토 자료를 발송합니다. 영업일 1일 이내 담당자 연락.</p>
       </div>
       <div class="proc-card">
         <div class="proc-step">STEP 02</div>
@@ -1477,11 +1481,11 @@ footer{
   <div class="inquiry-in">
     <div class="inq-wrap">
       <div class="inq-left">
-        <div class="sec-tag">파트너 신청</div>
-        <h3 class="inq-h3">먼저 <b>샘플</b>로<br>확인하세요</h3>
-        <p class="inq-p">30문항 월간 모의고사 샘플을 무료로 발송해드립니다. 품질을 직접 보신 후 도입 여부를 결정하시면 됩니다.</p>
+        <div class="sec-tag">파트너 문의</div>
+        <h3 class="inq-h3">먼저 <b>자료로</b><br>확인하세요</h3>
+        <p class="inq-p">30문항 월간 모의고사 사전 검토 자료를 발송해드립니다. 품질을 직접 보신 후 도입 여부를 결정하시면 됩니다.</p>
         <ul class="inq-checks">
-          <li><div class="chk"><svg class="icon icon-sm" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width:11px;height:11px;stroke-width:3;"><path d="M20 6 9 17l-5-5"/></svg></div>30문항 샘플 무료 발송</li>
+          <li><div class="chk"><svg class="icon icon-sm" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width:11px;height:11px;stroke-width:3;"><path d="M20 6 9 17l-5-5"/></svg></div>30문항 사전 검토 자료 발송</li>
           <li><div class="chk"><svg class="icon icon-sm" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width:11px;height:11px;stroke-width:3;"><path d="M20 6 9 17l-5-5"/></svg></div>학원 규모·단원 맞춤 상담</li>
           <li><div class="chk"><svg class="icon icon-sm" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width:11px;height:11px;stroke-width:3;"><path d="M20 6 9 17l-5-5"/></svg></div>단품 시작 → 구독 전환 가능</li>
           <li><div class="chk"><svg class="icon icon-sm" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width:11px;height:11px;stroke-width:3;"><path d="M20 6 9 17l-5-5"/></svg></div>영업일 1일 이내 담당자 연락</li>
@@ -1505,7 +1509,7 @@ footer{
       </div>
 
       <div class="form-box">
-        <div class="form-ttl">샘플 요청 · 파트너 신청</div>
+        <div class="form-ttl">파트너 도입 문의</div>
         <form id="partnerForm" class="form-wrap">
           <div class="frow">
             <div class="fg"><label>학원명 *</label><input type="text" name="academy" placeholder="학원 이름" required></div>
@@ -1534,7 +1538,7 @@ footer{
                 <option>월간 모의고사 (30문항)</option>
                 <option>월 패키지 C/D (격주 + 월간)</option>
                 <option>풀패키지 E</option>
-                <option>샘플만 먼저 검토</option>
+                <option>사전 검토만 먼저 진행</option>
               </select>
             </div>
           </div>
@@ -1548,23 +1552,28 @@ footer{
               <dt>수집 항목</dt>
               <dd>학원명, 담당자명, 연락처, 이메일, 학원 유형, 관심 상품, 문의 내용</dd>
               <dt>이용 목적</dt>
-              <dd>샘플 자료 발송 및 파트너 상담 진행</dd>
+              <dd>사전 검토 자료 발송 및 파트너 상담 진행</dd>
               <dt>보유 기간</dt>
               <dd>상담 종료 후 1년 (관계 법령에 따른 보관 의무가 있는 경우 해당 기간까지)</dd>
               <dt>동의 거부 권리</dt>
-              <dd>위 항목의 수집·이용에 동의하지 않으실 수 있으며, 거부 시 샘플 발송 및 상담이 제한됩니다.</dd>
+              <dd>위 항목의 수집·이용에 동의하지 않으실 수 있으며, 거부 시 자료 발송 및 상담이 제한됩니다.</dd>
             </dl>
             <p class="privacy-contact">개인정보 관련 문의: <a href="mailto:newlearnsoft@gmail.com">newlearnsoft@gmail.com</a></p>
           </details>
+          <!-- Honeypot field — invisible to humans, only bots fill it -->
+          <div class="hp-field" aria-hidden="true">
+            <label>이 항목은 비워두세요</label>
+            <input type="text" name="website" tabindex="-1" autocomplete="off">
+          </div>
           <label class="fcheck">
             <input type="checkbox" required>
             <span>위 개인정보 수집·이용 안내를 확인했으며, 이에 동의합니다.</span>
           </label>
-          <button type="submit" class="fsub" id="submitBtn">샘플 요청 · 파트너 신청하기</button>
+          <button type="submit" class="fsub" id="submitBtn">파트너 도입 문의하기</button>
         </form>
         <div id="formSuccess">
           <div class="suc-icon"><svg class="icon icon-lg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg></div>
-          <h3 style="font-size:20px;font-weight:800;color:var(--ink);margin-bottom:12px;letter-spacing:-0.5px;">신청이 완료되었습니다!</h3>
+          <h3 style="font-size:20px;font-weight:800;color:var(--ink);margin-bottom:12px;letter-spacing:-0.5px;">문의가 접수되었습니다</h3>
           <p style="font-size:15px;color:var(--mid);line-height:1.8;">빠른 시일 내에 연락드리겠습니다.<br>영업일 기준 <strong style="color:var(--orange);">1일 이내</strong> 담당자가 직접 연락드립니다.</p>
           <p style="font-size:13px;color:var(--muted);margin-top:16px;">newlearnsoft@gmail.com</p>
         </div>
@@ -1637,7 +1646,7 @@ footer{
     const animateNum = (el) => {
       const text = el.textContent.trim();
       const target = parseInt(text, 10);
-      if (isNaN(target)) return; // "무료" 같은 텍스트는 건드리지 않음
+      if (isNaN(target)) return; // 텍스트 라벨은 건드리지 않음
       const dur = 900;
       const start = performance.now();
       const easeOut = t => 1 - Math.pow(1 - t, 3);
@@ -1661,22 +1670,68 @@ footer{
 
   const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwfV43wUWvb5ZBbgnax_Ot4R6dMoCGlM6DtZxo97y7SrPHPeXwup97FLF9p4nq7oXx7/exec';
 
+  // Bot defense: record page load time
+  const formLoadTime = Date.now();
+
   document.getElementById('partnerForm').addEventListener('submit', function(e) {
     e.preventDefault();
+    const form = this;
     const btn = document.getElementById('submitBtn');
-    btn.disabled = true; btn.textContent = '제출 중...';
-    fetch(SCRIPT_URL, {method:'POST', body:new URLSearchParams(new FormData(this)), mode:'no-cors'})
-      .then(() => {
-        this.style.display = 'none';
-        document.getElementById('formSuccess').style.display = 'block';
+    const toast = document.getElementById('toast');
+
+    const showToast = (msg, isError) => {
+      toast.textContent = msg;
+      toast.style.background = isError ? '#C82838' : 'var(--ink)';
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 5000);
+    };
+
+    // Bot defense 1: honeypot field must be empty
+    const honeypot = form.querySelector('input[name="website"]').value;
+    if (honeypot) {
+      // Silent reject — pretend success so bot doesn't retry
+      form.style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
+      return;
+    }
+
+    // Bot defense 2: form must be open at least 3 seconds before submission
+    if (Date.now() - formLoadTime < 3000) {
+      showToast('잠시 후 다시 시도해주세요.', true);
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = '제출 중...';
+
+    // Convert form data to JSON, then send as text/plain to skip CORS preflight
+    // Apps Script will parse e.postData.contents as JSON
+    const data = {};
+    new FormData(form).forEach((v, k) => { data[k] = v; });
+    data._submitted_at = new Date().toISOString();
+    data._page_url = location.href;
+
+    fetch(SCRIPT_URL, {
+      method: 'POST',
+      headers: {'Content-Type': 'text/plain;charset=utf-8'},
+      body: JSON.stringify(data),
+      redirect: 'follow'
+    })
+      .then(res => res.text())
+      .then(text => {
+        // Apps Script returns "OK" on success, else error message
+        if (text && text.trim().startsWith('OK')) {
+          form.style.display = 'none';
+          document.getElementById('formSuccess').style.display = 'block';
+        } else {
+          throw new Error(text || 'Unknown response');
+        }
       })
-      .catch(() => {
-        btn.disabled = false; btn.textContent = '샘플 요청 · 파트너 신청하기';
-        const t = document.getElementById('toast');
-        t.textContent = '❌ 제출 실패. 이메일로 문의해주세요.';
-        t.style.background = '#e53e3e';
-        t.classList.add('show');
-        setTimeout(() => t.classList.remove('show'), 5000);
+      .catch(err => {
+        btn.disabled = false;
+        btn.textContent = '파트너 도입 문의하기';
+        showToast('제출 실패. 이메일(newlearnsoft@gmail.com)로 직접 문의해주세요.', true);
+        console.error('Form submit error:', err);
       });
   });
 </script>
