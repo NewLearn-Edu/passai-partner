@@ -13,11 +13,16 @@
 
 <!-- Open Graph (KakaoTalk · Facebook · LinkedIn) -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="수학 모의고사 · 학원 파트너">
-<meta property="og:description" content="매달 단원·난이도를 학원이 선택하는 수학 테스트지 정기 납품. 수능특강·평가원 변형 출제로 EBS 연계 대비.">
+<meta property="og:title" content="학원이 매달 직접 만드는 수학 모의고사">
+<meta property="og:description" content="격주·월간 정기 납품. 수능특강·평가원 변형 출제로 EBS 연계 대비. 매달 단원과 난이도를 학원이 직접 선택합니다.">
 <meta property="og:site_name" content="수학 모의고사 학원 파트너">
 <meta property="og:locale" content="ko_KR">
-<!-- og:url 과 og:image 는 실제 도메인·이미지 업로드 후 채워주세요 -->
+<!--
+  ⚠️ TODO (도메인 결정 후 채울 것)
+  1) og:url 의 https://your-domain.kr/ 을 실제 운영 도메인으로 교체
+  2) og-image.png (1200×630px) 를 도메인 루트에 업로드
+  3) 아래 4줄의 주석을 풀고 og:image URL 채우기
+-->
 <!-- <meta property="og:url" content="https://your-domain.kr/"> -->
 <!-- <meta property="og:image" content="https://your-domain.kr/og-image.png"> -->
 <!-- <meta property="og:image:width" content="1200"> -->
@@ -25,8 +30,8 @@
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="수학 모의고사 · 학원 파트너">
-<meta name="twitter:description" content="매달 단원·난이도를 학원이 선택하는 수학 테스트지 정기 납품.">
+<meta name="twitter:title" content="학원이 매달 직접 만드는 수학 모의고사">
+<meta name="twitter:description" content="격주·월간 정기 납품. 매달 단원과 난이도를 학원이 직접 선택합니다.">
 
 <!-- Theme & Browser UI -->
 <meta name="theme-color" content="#0F1B2D">
@@ -267,6 +272,50 @@ nav.up{box-shadow:var(--sh-sm);}
 }
 .sec-sub{font-size:16px;color:var(--mid);line-height:1.7;margin-bottom:72px;max-width:680px;}
 
+/* ─ SCHEDULE STRIP ─ */
+.schedule{
+  background:var(--navy);color:var(--white);
+  padding:36px 60px;
+  position:relative;overflow:hidden;
+}
+.schedule::before{
+  content:'';position:absolute;top:-100px;right:-50px;
+  width:300px;height:300px;border-radius:50%;
+  background:radial-gradient(circle,rgba(230,57,70,0.18) 0%,rgba(230,57,70,0) 70%);
+  pointer-events:none;
+}
+.schedule-in{
+  max-width:1120px;margin:0 auto;
+  display:flex;align-items:center;gap:28px;flex-wrap:wrap;
+  position:relative;z-index:1;
+}
+.schedule-flag{
+  font-size:11px;font-weight:800;letter-spacing:1.4px;
+  color:var(--orange);
+  background:rgba(230,57,70,0.12);
+  border:1px solid rgba(230,57,70,0.32);
+  padding:7px 14px;border-radius:20px;white-space:nowrap;
+  text-transform:uppercase;
+}
+.schedule-body{flex:1;min-width:280px;}
+.schedule-h{
+  font-size:18px;font-weight:800;letter-spacing:-0.4px;
+  margin-bottom:6px;line-height:1.3;
+}
+.schedule-h em{font-style:normal;color:var(--orange);}
+.schedule-body p{
+  font-size:13.5px;color:rgba(255,255,255,0.7);line-height:1.65;
+  letter-spacing:-0.2px;
+}
+.schedule-cta{
+  background:var(--orange);color:var(--white);
+  padding:14px 30px;border-radius:var(--r-lg);
+  font-size:14px;font-weight:700;text-decoration:none;
+  letter-spacing:-0.2px;white-space:nowrap;
+  transition:background .2s,transform .15s;
+}
+.schedule-cta:hover{background:var(--orange-dark);transform:translateY(-1px);}
+
 /* ─ STATS STRIP ─ */
 .stats{
   background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line);
@@ -382,6 +431,34 @@ nav.up{box-shadow:var(--sh-sm);}
   background:var(--white);border:1px solid var(--line);
   padding:7px 14px;border-radius:18px;
 }
+
+/* Author credibility mark */
+.cont-author{
+  display:flex;align-items:flex-start;gap:18px;
+  background:var(--navy);color:var(--white);
+  padding:24px 28px;border-radius:var(--r-md);
+  margin-bottom:18px;
+  position:relative;overflow:hidden;
+}
+.cont-author::before{
+  content:'';position:absolute;top:-30px;right:-30px;
+  width:140px;height:140px;border-radius:50%;
+  background:radial-gradient(circle,rgba(230,57,70,0.18) 0%,rgba(230,57,70,0) 70%);
+  pointer-events:none;
+}
+.cont-author > *{position:relative;z-index:1;}
+.cont-author-mark{
+  width:44px;height:44px;border-radius:10px;
+  background:rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,0.12);
+  color:var(--orange);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.cont-author-body{
+  font-size:14px;line-height:1.7;letter-spacing:-0.2px;
+  color:rgba(255,255,255,0.85);
+}
+.cont-author-body strong{color:var(--white);font-weight:700;}
 
 /* ─ PRODUCTS ─ */
 .products{background:var(--warm);padding:128px 60px;}
@@ -589,15 +666,13 @@ nav.up{box-shadow:var(--sh-sm);}
   font-size:11.5px;color:var(--mid);line-height:1.55;text-align:center;
   flex:1;min-height:54px;
 }
-.tl-counts{
-  display:flex;gap:4px;flex-wrap:wrap;justify-content:center;margin-top:auto;
-  padding-top:12px;
+.tl-tip{
+  margin-top:auto;padding-top:14px;
+  font-size:11.5px;font-weight:700;color:var(--orange);
+  text-align:center;letter-spacing:-0.2px;
+  border-top:1px dashed var(--line);
 }
-.tl-cnt{
-  font-size:10px;font-weight:700;color:var(--body);
-  background:var(--white);border:1px solid var(--line);
-  padding:3px 7px;border-radius:10px;
-}
+.tl-card:last-child .tl-tip{color:var(--orange);}
 
 .tl-total{
   background:var(--navy);color:var(--white);
@@ -755,16 +830,28 @@ nav.up{box-shadow:var(--sh-sm);}
   background:var(--orange);display:flex;align-items:center;justify-content:center;
   font-size:10px;color:white;font-weight:900;
 }
-.inq-contact{display:flex;flex-direction:column;gap:10px;}
-.inq-row{display:flex;align-items:center;gap:12px;}
-.inq-ic{
-  width:40px;height:40px;min-width:40px;border-radius:10px;
-  background:var(--white);border:1px solid var(--line);
-  color:var(--navy);
-  display:flex;align-items:center;justify-content:center;
+.inq-promise{
+  display:flex;align-items:flex-start;gap:18px;
+  padding:24px 26px;background:var(--white);
+  border:1px solid var(--line);border-radius:var(--r-md);
 }
-.inq-label-s{font-size:11px;color:var(--muted);margin-bottom:2px;}
-.inq-val{font-size:14px;color:var(--ink);font-weight:600;}
+.inq-promise-num{
+  font-size:42px;font-weight:900;color:var(--orange);
+  letter-spacing:-1.6px;line-height:1;
+  display:flex;align-items:baseline;gap:3px;flex-shrink:0;
+}
+.inq-promise-num span{
+  font-size:14px;font-weight:700;color:var(--orange);
+  letter-spacing:-0.3px;
+}
+.inq-promise-body{flex:1;}
+.inq-promise-ttl{
+  font-size:15px;font-weight:800;color:var(--ink);
+  letter-spacing:-0.4px;margin-bottom:6px;
+}
+.inq-promise-body p{
+  font-size:13px;color:var(--mid);line-height:1.7;letter-spacing:-0.2px;
+}
 
 /* Form */
 .form-box{
@@ -922,6 +1009,9 @@ footer{
   .hero-in{grid-template-columns:1fr;padding:80px 24px 64px;gap:44px;}
   .hero-card{display:none;}
   .why,.products,.inquiry,.contents,.program,.packages{padding:96px 24px;}
+  .schedule{padding:32px 24px;}
+  .schedule-in{flex-direction:column;align-items:flex-start;gap:18px;}
+  .schedule-cta{width:100%;text-align:center;}
   .stats-in{grid-template-columns:repeat(3,1fr);gap:0;padding:36px 16px;}
   .stat-item{padding:0 8px;border-right:1px solid var(--line);}
   .stat-item:last-child{border-right:0;}
@@ -964,6 +1054,7 @@ footer{
 <nav id="nav">
   <a href="#" class="logo">
     <div class="logo-dot"></div>
+    <!-- ⚠️ TODO: 브랜드명 결정 시 아래 "수학 모의고사" 한 곳, 푸터의 "수학 모의고사 · 학원 파트너" 한 곳, 총 2곳 교체 -->
     <span class="logo-name">수학 모의고사</span>
     <span class="logo-tag">학원 파트너</span>
   </a>
@@ -982,7 +1073,7 @@ footer{
   <div class="hero-in">
     <div class="hero-left">
       <div class="hero-kicker"><span></span>학원 파트너 전용 프로그램</div>
-      <h1 class="hero-h1"><b>매달 단원·난이도</b><br>학원이 직접 선택하는<br>수학 테스트지</h1>
+      <h1 class="hero-h1">학원이 매달 직접 만드는<br><b>수학 모의고사</b></h1>
       <ul class="hero-list">
         <li>10·20문항 격주 테스트는 학원이 진도에 맞춰 매달 단원과 난이도를 직접 지정</li>
         <li>수능특강·평가원 변형 출제 기반 — EBS 연계 대비 직결</li>
@@ -1023,10 +1114,10 @@ footer{
       </div>
       <div class="hc-item">
         <div class="hc-left">
-          <div class="hc-title">납품 방식</div>
-          <div class="hc-desc">PDF 파일 → 학원 자체 인쇄</div>
+          <div class="hc-title">매달 선택 옵션</div>
+          <div class="hc-desc">단원 / 난이도 / 회차 모두 학원 지정</div>
         </div>
-        <div class="hc-icon"><svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8"/><path d="M8 17h8"/></svg></div>
+        <div class="hc-icon"><svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
       </div>
     </div>
   </div>
@@ -1071,7 +1162,7 @@ footer{
       </div>
       <div class="why-card">
         <div class="why-icon"><svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></div>
-        <div class="why-num">단계적 도입</div>
+        <div class="why-num">사전 확인</div>
         <div class="why-h3">사전 검토부터 시작<br>부담 없는 첫 걸음</div>
         <p class="why-p">사전 검토 자료로 품질을 먼저 확인할 수 있습니다. 단품 구매로 시작해 필요에 맞게 정기 구독으로 전환할 수 있습니다.</p>
       </div>
@@ -1111,9 +1202,19 @@ footer{
       <div class="cont-card">
         <div class="cont-ic"><svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 3v18h18"/><path d="M7 14l4-4 4 4 5-5"/></svg></div>
         <div class="cont-body">
-          <div class="cont-h3">난이도 분포 설계</div>
-          <p class="cont-p">3점·4점 문항의 비율을 평가원 기조와 일치시킵니다. 30문항 월간 모의고사는 실전형 난이도 분포로, 격주 테스트는 학원 요청 난이도로 구성합니다.</p>
+          <div class="cont-h3">실전과 동일한 난이도</div>
+          <p class="cont-p">30문항 월간 모의고사는 평가원과 동일한 3점·4점 비율로 구성됩니다. 학생들이 받는 인상이 실제 시험과 같아 학원 평가 결과의 신뢰도가 높아집니다.</p>
         </div>
+      </div>
+    </div>
+
+    <!-- ⚠️ TODO: 출제진 정보 확정 시 아래 문구의 "수능·모의평가 출제 분석 경험을 갖춘"을 더 구체적으로 (예: "○○○ 출제 경력의" 또는 "현직 ○년차") 교체 -->
+    <div class="cont-author">
+      <div class="cont-author-mark">
+        <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L4 7v6c0 4.5 3.5 8.5 8 9 4.5-.5 8-4.5 8-9V7l-8-5z"/><path d="m9 12 2 2 4-4"/></svg>
+      </div>
+      <div class="cont-author-body">
+        <strong>수능·모의평가 출제 분석 경험을 갖춘 출제진</strong>이 매월 직접 검수합니다. 평가원 출제 경향에 대한 분석 결과를 다음 시즌 문항에 즉시 반영합니다.
       </div>
     </div>
 
@@ -1126,6 +1227,18 @@ footer{
         <span class="cont-haesul-tag">EBS·평가원 연계 표시</span>
       </div>
     </div>
+
+    <!--
+      ⚠️ TODO (샘플 이미지 어셋 준비 후 추가)
+      여기에 실제 시험지 1장의 샘플 미리보기 이미지를 넣으면 신뢰도가 크게 올라갑니다.
+      권장: 시험지 1페이지 모서리만 보이는 mockup 이미지 (정답란 모자이크 가능)
+      예시 마크업:
+        <div class="cont-preview">
+          <img src="/sample-preview.png" alt="시험지 샘플 미리보기" loading="lazy">
+          <div class="cont-preview-caption">실제 30문항 모의고사 샘플 일부</div>
+        </div>
+    -->
+
   </div>
 </section>
 
@@ -1145,21 +1258,21 @@ footer{
           <div class="prod-desc">상위권·N수반을 위한 고난도 집중 훈련</div>
           <div class="prod-pill">10문항 × 2회분</div>
           <div class="prod-feats">
-            <div class="prod-feat">단원 선택</div>
-            <div class="prod-feat">난이도 선택</div>
             <div class="prod-feat">격주 납품</div>
+            <div class="prod-feat">PDF 또는 인쇄 공급</div>
+            <div class="prod-feat">정답·해설 포함</div>
           </div>
         </div>
         <div class="prod-divider"></div>
         <div class="prod-bottom">
           <div class="prod-acad-label">매달 학원이 직접 선택</div>
           <div class="prod-pickline">
-            <span class="pl-key">단원</span>
-            <span class="pl-val">진도에 맞춰 자유 선택</span>
+            <span class="pl-key">권장 반</span>
+            <span class="pl-val">상위권 · N수반</span>
           </div>
           <div class="prod-pickline">
             <span class="pl-key">난이도</span>
-            <span class="pl-val">하 · 중 · 상 · 혼합</span>
+            <span class="pl-val">상 · 혼합 (고난도 비중)</span>
           </div>
         </div>
       </div>
@@ -1171,21 +1284,21 @@ footer{
           <div class="prod-desc">일반반 단원 마무리·확인 평가에 최적</div>
           <div class="prod-pill">20문항 × 2회분</div>
           <div class="prod-feats">
-            <div class="prod-feat">단원 선택</div>
-            <div class="prod-feat">난이도 선택</div>
             <div class="prod-feat">격주 납품</div>
+            <div class="prod-feat">PDF 또는 인쇄 공급</div>
+            <div class="prod-feat">정답·해설 포함</div>
           </div>
         </div>
         <div class="prod-divider"></div>
         <div class="prod-bottom">
           <div class="prod-acad-label">매달 학원이 직접 선택</div>
           <div class="prod-pickline">
-            <span class="pl-key">단원</span>
-            <span class="pl-val">진도에 맞춰 자유 선택</span>
+            <span class="pl-key">권장 반</span>
+            <span class="pl-val">일반반 · 단원 마무리</span>
           </div>
           <div class="prod-pickline">
             <span class="pl-key">난이도</span>
-            <span class="pl-val">하 · 중 · 상 · 혼합</span>
+            <span class="pl-val">하 · 중 (기본기 점검)</span>
           </div>
         </div>
       </div>
@@ -1300,10 +1413,7 @@ footer{
             <div class="tl-period">1~2월 · 8주</div>
             <div class="tl-title">수학1 단원 집중</div>
             <div class="tl-scope">수열 / 지수로그 / 삼각함수</div>
-            <div class="tl-counts">
-              <span class="tl-cnt">격주 4회</span>
-              <span class="tl-cnt">월간 2회</span>
-            </div>
+            <div class="tl-tip">단원 마무리 평가용</div>
           </div>
           <div class="tl-card">
             <div class="tl-dot">2</div>
@@ -1311,10 +1421,7 @@ footer{
             <div class="tl-period">3~4월 · 8주</div>
             <div class="tl-title">수능특강 변형 출제</div>
             <div class="tl-scope">수학2 + 선택과목 기반 · EBS 연계 대비</div>
-            <div class="tl-counts">
-              <span class="tl-cnt">격주 4회</span>
-              <span class="tl-cnt">월간 2회</span>
-            </div>
+            <div class="tl-tip">EBS 연계 첫 점검</div>
           </div>
           <div class="tl-card">
             <div class="tl-dot">3</div>
@@ -1322,10 +1429,7 @@ footer{
             <div class="tl-period">5월 · 4주</div>
             <div class="tl-title">6월 모평 대비</div>
             <div class="tl-scope">전체 단원 실전형</div>
-            <div class="tl-counts">
-              <span class="tl-cnt">격주 2회</span>
-              <span class="tl-cnt">월간 1회</span>
-            </div>
+            <div class="tl-tip">6월 모평 직전 점검</div>
           </div>
           <div class="tl-card">
             <div class="tl-dot">4</div>
@@ -1333,10 +1437,7 @@ footer{
             <div class="tl-period">6~7월 · 8주</div>
             <div class="tl-title">6월 모평 반영</div>
             <div class="tl-scope">6월 평가원 변형 출제 · 출제 경향 즉시 반영</div>
-            <div class="tl-counts">
-              <span class="tl-cnt">격주 4회</span>
-              <span class="tl-cnt">월간 2회</span>
-            </div>
+            <div class="tl-tip">6월 모평 직후 즉시 적용</div>
           </div>
           <div class="tl-card">
             <div class="tl-dot">5</div>
@@ -1344,10 +1445,7 @@ footer{
             <div class="tl-period">8월 · 4주</div>
             <div class="tl-title">9월 모평 대비</div>
             <div class="tl-scope">전체 단원 실전형</div>
-            <div class="tl-counts">
-              <span class="tl-cnt">격주 2회</span>
-              <span class="tl-cnt">월간 1회</span>
-            </div>
+            <div class="tl-tip">9월 모평 직전 점검</div>
           </div>
           <div class="tl-card">
             <div class="tl-dot">6</div>
@@ -1355,10 +1453,7 @@ footer{
             <div class="tl-period">9~10월 · 8주</div>
             <div class="tl-title">수능 파이널</div>
             <div class="tl-scope">9월 평가원 변형 출제 · 수능 직전 최종 점검</div>
-            <div class="tl-counts">
-              <span class="tl-cnt">격주 4회</span>
-              <span class="tl-cnt">월간 2회</span>
-            </div>
+            <div class="tl-tip">수능 직전 최종 점검</div>
           </div>
         </div>
       </div>
@@ -1476,6 +1571,19 @@ footer{
   </div>
 </section>
 
+<!-- SCHEDULE STRIP -->
+<!-- ⚠️ TODO: 운영 시즌 확정 시 아래 배지·문구를 실제 일정에 맞춰 교체 -->
+<section class="schedule" aria-label="현재 운영 시즌">
+  <div class="schedule-in">
+    <div class="schedule-flag">2026 시즌4 운영 중</div>
+    <div class="schedule-body">
+      <div class="schedule-h">6월 모평 대비 — <em>지금 신청한 학원부터 우선 배정</em></div>
+      <p>5월 신청 학원은 6월 모평 직후 평가원 변형 출제를 가장 빠르게 받아볼 수 있습니다. 시즌별 정원이 한정됩니다.</p>
+    </div>
+    <a href="#inquiry" class="schedule-cta">파트너 문의</a>
+  </div>
+</section>
+
 <!-- INQUIRY -->
 <section class="inquiry" id="inquiry">
   <div class="inquiry-in">
@@ -1488,22 +1596,13 @@ footer{
           <li><div class="chk"><svg class="icon icon-sm" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width:11px;height:11px;stroke-width:3;"><path d="M20 6 9 17l-5-5"/></svg></div>30문항 사전 검토 자료 발송</li>
           <li><div class="chk"><svg class="icon icon-sm" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width:11px;height:11px;stroke-width:3;"><path d="M20 6 9 17l-5-5"/></svg></div>학원 규모·단원 맞춤 상담</li>
           <li><div class="chk"><svg class="icon icon-sm" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width:11px;height:11px;stroke-width:3;"><path d="M20 6 9 17l-5-5"/></svg></div>단품 시작 → 구독 전환 가능</li>
-          <li><div class="chk"><svg class="icon icon-sm" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width:11px;height:11px;stroke-width:3;"><path d="M20 6 9 17l-5-5"/></svg></div>영업일 1일 이내 담당자 연락</li>
+          <li><div class="chk"><svg class="icon icon-sm" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width:11px;height:11px;stroke-width:3;"><path d="M20 6 9 17l-5-5"/></svg></div>도입 학원 의견을 콘텐츠에 직접 반영</li>
         </ul>
-        <div class="inq-contact">
-          <div class="inq-row">
-            <div class="inq-ic"><svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></div>
-            <div>
-              <div class="inq-label-s">이메일</div>
-              <div class="inq-val">newlearnsoft@gmail.com</div>
-            </div>
-          </div>
-          <div class="inq-row">
-            <div class="inq-ic"><svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="2" width="16" height="20" rx="1"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M8 10h.01"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 14h.01"/><path d="M16 14h.01"/><path d="M12 14h.01"/></svg></div>
-            <div>
-              <div class="inq-label-s">회사</div>
-              <div class="inq-val">뉴런소프트</div>
-            </div>
+        <div class="inq-promise">
+          <div class="inq-promise-num">1<span>일</span></div>
+          <div class="inq-promise-body">
+            <div class="inq-promise-ttl">영업일 1일 이내 회신</div>
+            <p>담당자가 직접 연락드립니다. 자료 발송과 도입 상담은 한 번의 통화로 진행됩니다.</p>
           </div>
         </div>
       </div>
