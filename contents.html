@@ -3,18 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>뉴런모의고사 · 학원 파트너 | 매달 단원·난이도를 학원이 직접 선택하는 수학 모의고사</title>
+<title>콘텐츠 소개 · 뉴런모의고사 학원 파트너</title>
 
 <!-- SEO -->
-<meta name="description" content="수업 흐름에 맞춰 매달 단원·난이도를 학원이 직접 선택하는 수학 테스트지. 격주·월간 정기 납품. 수능특강·평가원 변형 출제로 EBS 연계 대비 직결.">
-<meta name="keywords" content="뉴런모의고사, 수학 모의고사, 학원 파트너, 단원 테스트, 평가원 변형 출제, EBS 연계, 수능특강, 격주 모의고사, 월간 모의고사, 수학 학원, 모의고사 납품">
+<meta name="description" content="뉴런모의고사 콘텐츠 상세 — 출제 원칙, 표지 시스템, 상품 라인업, 구독 패키지, 시즌 6 운영 일정. 매달 단원·난이도를 학원이 직접 선택하는 수학 테스트지.">
+<meta name="keywords" content="뉴런모의고사 콘텐츠, 수학 모의고사 출제, 평가원 변형 출제, EBS 연계, 시즌 운영, 단원 테스트, 격주 모의고사, 월간 모의고사">
 <meta name="author" content="뉴런소프트">
 <meta name="robots" content="index, follow">
 
-<!-- Open Graph (KakaoTalk · Facebook · LinkedIn) -->
-<meta property="og:type" content="website">
-<meta property="og:title" content="학원이 매달 직접 만드는 수학 모의고사">
-<meta property="og:description" content="격주·월간 정기 납품. 수능특강·평가원 변형 출제로 EBS 연계 대비. 매달 단원과 난이도를 학원이 직접 선택합니다.">
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="콘텐츠 소개 · 뉴런모의고사">
+<meta property="og:description" content="출제 원칙, 표지 시스템, 상품 라인업, 시즌 운영 일정 — 뉴런모의고사 콘텐츠 상세.">
 <meta property="og:site_name" content="뉴런모의고사 학원 파트너">
 <meta property="og:locale" content="ko_KR">
 <!--
@@ -671,8 +671,6 @@ nav.up{box-shadow:var(--sh-sm);}
 /* ─ PROGRAM (NEW) ─ */
 .program{background:var(--white);padding:128px 60px;border-top:1px solid var(--line);}
 .program-in{max-width:1120px;margin:0 auto;}
-.process{background:var(--white);padding:128px 60px;border-top:1px solid var(--line);}
-.process-in{max-width:1120px;margin:0 auto;}
 
 .timeline-wrap{margin-bottom:60px;}
 .timeline-track{
@@ -1156,368 +1154,453 @@ footer{
 @media(max-width:560px){
   .timeline-grid{grid-template-columns:1fr;gap:24px;}
 }
+
+/* ─ PAGE HERO (콘텐츠 소개 페이지 전용) ─ */
+.page-hero{
+  padding-top:62px;background:var(--warm);
+  border-bottom:1px solid var(--line);
+}
+.page-hero-in{
+  max-width:1120px;margin:0 auto;
+  padding:96px 60px 80px;text-align:center;
+}
+.page-hero-kicker{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12px;font-weight:800;letter-spacing:0.14em;color:var(--orange);
+  margin-bottom:24px;text-transform:uppercase;
+}
+.page-hero-kicker span{
+  display:inline-block;width:20px;height:2px;
+  background:var(--orange);border-radius:1px;
+}
+.page-hero-h1{
+  font-size:48px;font-weight:800;line-height:1.2;
+  letter-spacing:-0.035em;color:var(--ink);margin-bottom:20px;
+}
+.page-hero-h1 b{font-weight:800;color:var(--orange);}
+.page-hero-p{
+  font-size:16px;color:var(--mid);line-height:1.75;
+  letter-spacing:-0.005em;max-width:540px;margin:0 auto;
+}
+
+/* nav active state for current page */
+.nav-menu a.active{
+  color:var(--orange);
+  position:relative;
+}
+
+/* ─ CTA BACK STRIP (콘텐츠 페이지 하단 → 메인 폼으로) ─ */
+.cta-back{
+  background:var(--ink);color:var(--white);
+  padding:88px 60px;
+}
+.cta-back-in{
+  max-width:1120px;margin:0 auto;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:48px;flex-wrap:wrap;
+}
+.cta-back-body{flex:1;min-width:280px;}
+.cta-back-h{
+  font-size:30px;font-weight:800;letter-spacing:-0.03em;
+  line-height:1.3;margin-bottom:12px;
+}
+.cta-back-h b{color:var(--orange);font-weight:800;}
+.cta-back-p{
+  font-size:15px;color:rgba(255,255,255,0.7);
+  line-height:1.7;letter-spacing:-0.005em;
+}
+.cta-back-cta{
+  background:var(--orange);color:var(--white);
+  padding:18px 36px;border-radius:var(--r-lg);
+  font-size:15px;font-weight:700;text-decoration:none;
+  letter-spacing:-0.015em;white-space:nowrap;
+  transition:background .2s;
+}
+.cta-back-cta:hover{background:var(--orange-dark);}
+
+@media(max-width:880px){
+  .page-hero-in{padding:64px 24px 56px;}
+  .page-hero-h1{font-size:32px;letter-spacing:-0.035em;}
+  .page-hero-p{font-size:14px;}
+  .cta-back{padding:64px 24px;}
+  .cta-back-h{font-size:24px;}
+  .cta-back-cta{width:100%;text-align:center;}
+}
 </style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav id="nav">
-  <a href="/" class="logo">
+  <a href="index.html" class="logo">
     <div class="logo-mark">N</div>
     <span class="logo-name">뉴런모의고사</span>
     <span class="logo-tag">학원 파트너</span>
   </a>
   <div class="nav-menu">
-    <a href="contents.html">콘텐츠 소개</a>
-    <a href="#inquiry">도입 문의</a>
+    <a href="contents.html" class="active" aria-current="page">콘텐츠 소개</a>
+    <a href="index.html#inquiry">도입 문의</a>
   </div>
-  <a href="#inquiry" class="nav-cta">도입 문의</a>
+  <a href="index.html#inquiry" class="nav-cta">도입 문의</a>
 </nav>
 
-<!-- HERO -->
-<section class="hero" id="hero">
-  <div class="hero-in">
-    <div class="hero-left">
-      <div class="hero-kicker"><span></span>학원 파트너 전용 프로그램</div>
-      <h1 class="hero-h1">학원이 매달 직접 만드는<br><b>수학 모의고사</b></h1>
-      <ul class="hero-list">
-        <li>10·20문항 격주 테스트는 학원이 진도에 맞춰 매달 단원과 난이도를 직접 지정</li>
-        <li>수능특강·평가원 변형 출제 기반 — EBS 연계 대비 직결</li>
-        <li>도입 전 사전 검토 자료 발송 · 품질 확인 후 결정</li>
-      </ul>
-      <div class="hero-badges">
-        <span class="hero-badge">매달 단원 선택</span>
-        <span class="hero-badge">매달 난이도 선택</span>
-        <span class="hero-badge">평가원 반영</span>
-      </div>
-      <div class="hero-btns">
-        <a href="#inquiry" class="btn-main">파트너 문의하기</a>
-        <a href="#why" class="btn-sub">자세히 보기</a>
-      </div>
-    </div>
-    <!--
-      ⚠️ TODO: 도메인 결정 후 실제 봉투 사진(/envelope.png)으로 교체 가능
-      교체 시 아래 구조로:
-      <figure class="hero-envelope hero-envelope-photo">
-        <img src="/envelope.png" alt="뉴런모의고사 봉투 패키지" loading="eager">
-      </figure>
-      그 전까지는 SVG 일러스트로 운영
-    -->
-    <figure class="hero-envelope" aria-label="뉴런모의고사 봉투 패키지">
-      <svg viewBox="0 0 480 640" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="env-title env-desc">
-        <title id="env-title">뉴런모의고사 봉투 패키지</title>
-        <desc id="env-desc">학원에 도착하는 끈 봉투 형태의 모의고사 패키지</desc>
-        <defs>
-          <filter id="env-shadow" x="-10%" y="-5%" width="120%" height="115%">
-            <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#1A1A1A" flood-opacity="0.14"/>
-          </filter>
-          <linearGradient id="env-paper" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#FDFDFB"/>
-            <stop offset="100%" stop-color="#F4F3EE"/>
-          </linearGradient>
-        </defs>
-
-        <!-- 봉투 바디 -->
-        <rect x="20" y="40" width="440" height="580" fill="url(#env-paper)" stroke="#E8E6DF" stroke-width="1" rx="2" filter="url(#env-shadow)"/>
-
-        <!-- 거대 N 그래픽 (검정) — 봉투 중간~우측을 사선으로 가로지름 -->
-        <polygon points="265,260 335,260 335,580 265,580" fill="#1A1A1A"/>
-        <polygon points="265,260 335,260 470,580 400,580" fill="#1A1A1A"/>
-        <polygon points="400,260 470,260 470,580 400,580" fill="#1A1A1A"/>
-        <!-- 빨간 액센트 -->
-        <polygon points="415,460 455,460 455,580 415,580" fill="#E60012"/>
-
-        <!-- 봉투 플랩 (상단 접힘, N 위에 올라옴) -->
-        <path d="M 20 40 L 240 40 L 460 40 L 240 165 Z" fill="url(#env-paper)" stroke="#E8E6DF" stroke-width="1"/>
-        <path d="M 240 40 L 460 40 L 240 165 Z" fill="#1A1A1A" opacity="0.04"/>
-
-        <!-- 끈 버튼 2개 -->
-        <circle cx="240" cy="125" r="22" fill="#FAFAF7" stroke="#D8D5CC" stroke-width="1"/>
-        <circle cx="240" cy="125" r="3" fill="#9C9890"/>
-        <circle cx="240" cy="225" r="22" fill="#FAFAF7" stroke="#D8D5CC" stroke-width="1"/>
-        <circle cx="240" cy="225" r="3" fill="#9C9890"/>
-
-        <!-- 끈 (8자 모양) -->
-        <path d="M 240 147 Q 232 175 240 203 Q 248 175 240 147" stroke="#1A1A1A" stroke-width="1.5" fill="none"/>
-        <path d="M 240 147 Q 248 175 240 203 Q 232 175 240 147" stroke="#1A1A1A" stroke-width="1.5" fill="none"/>
-
-        <!-- 텍스트: 뉴런모의고사 -->
-        <text x="60" y="345" font-family="Pretendard Variable, Pretendard, sans-serif" font-size="28" font-weight="800" fill="#1A1A1A" letter-spacing="-1">뉴런모의고사</text>
-        <text x="60" y="365" font-family="Pretendard Variable, Pretendard, sans-serif" font-size="10" font-weight="600" fill="#1A1A1A" letter-spacing="2">NEURON MOCK TEST</text>
-
-        <!-- 빨간 dash 구분선 -->
-        <line x1="60" y1="395" x2="90" y2="395" stroke="#E60012" stroke-width="2.5"/>
-
-        <!-- 2026 / 수학 영역 -->
-        <text x="60" y="435" font-family="Pretendard Variable, Pretendard, sans-serif" font-size="22" font-weight="800" fill="#E60012" letter-spacing="-0.5">2026</text>
-        <text x="60" y="460" font-family="Pretendard Variable, Pretendard, sans-serif" font-size="12" font-weight="700" fill="#1A1A1A">수학 영역</text>
-
-        <!-- 하단 십자 조준점 + 가로선 -->
-        <line x1="20" y1="555" x2="460" y2="555" stroke="#1A1A1A" stroke-width="0.8"/>
-        <circle cx="55" cy="555" r="9" fill="none" stroke="#1A1A1A" stroke-width="0.8"/>
-        <line x1="44" y1="555" x2="66" y2="555" stroke="#1A1A1A" stroke-width="0.8"/>
-        <line x1="55" y1="544" x2="55" y2="566" stroke="#1A1A1A" stroke-width="0.8"/>
-        <circle cx="55" cy="555" r="2.5" fill="#E60012"/>
-
-        <!-- 하단 로고 -->
-        <rect x="55" y="592" width="14" height="14" rx="2" fill="#E60012"/>
-        <text x="62" y="604" font-family="Pretendard Variable, Pretendard, sans-serif" font-size="11" font-weight="900" fill="#FFFFFF" text-anchor="middle">N</text>
-        <text x="76" y="600" font-family="Pretendard Variable, Pretendard, sans-serif" font-size="9" font-weight="700" fill="#1A1A1A">뉴런소프트</text>
-        <text x="76" y="611" font-family="Pretendard Variable, Pretendard, sans-serif" font-size="6" font-weight="600" fill="#6B7280" letter-spacing="1">NEURON SOFT</text>
-      </svg>
-    </figure>
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-in">
+    <div class="page-hero-kicker"><span></span>콘텐츠 소개</div>
+    <h1 class="page-hero-h1">학원에 매달 도착하는<br><b>모의고사 패키지</b></h1>
+    <p class="page-hero-p">출제 원칙부터 시즌 운영 일정까지 — 뉴런모의고사 콘텐츠의 모든 것</p>
   </div>
 </section>
 
-<!-- STATS STRIP -->
-<section class="stats" aria-label="핵심 수치">
-  <div class="stats-in">
-    <div class="stat-item">
-      <div class="stat-num"><em>6</em><sup>단계</sup></div>
-      <div class="stat-label">시즌 커리큘럼</div>
+<!-- CONTENTS (NEW) -->
+<section class="contents" id="contents">
+  <div class="contents-in">
+    <div class="sec-tag">출제 원칙</div>
+    <h2 class="sec-h2">검증된 출제 프로세스로 만듭니다</h2>
+    <p class="sec-sub">평가원 트렌드 분석과 EBS 연계 분석을 매 시즌 반영합니다</p>
+
+    <div class="contents-grid">
+      <div class="cont-card">
+        <div class="cont-ic"><svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></div>
+        <div class="cont-body">
+          <div class="cont-h3">평가원 트렌드 분석</div>
+          <p class="cont-p">6월·9월 모의평가와 수능 출제 경향을 즉시 분석해 다음 시즌 문항에 반영합니다. 시즌4·시즌6은 평가원 변형 출제 회차로 운영됩니다.</p>
+        </div>
+      </div>
+      <div class="cont-card">
+        <div class="cont-ic"><svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><path d="M9 6h7"/><path d="M9 10h7"/></svg></div>
+        <div class="cont-body">
+          <div class="cont-h3">EBS 연계 분석</div>
+          <p class="cont-p">수능특강 출제 문항을 변형해 시즌2 콘텐츠로 제공합니다. 연계 비중이 높은 학년·시기에 EBS 기반 변형 출제가 집중 배치됩니다.</p>
+        </div>
+      </div>
+      <div class="cont-card">
+        <div class="cont-ic"><svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
+        <div class="cont-body">
+          <div class="cont-h3">매달 단원·난이도 선택</div>
+          <p class="cont-p">10·20문항 격주 테스트는 학원이 매달 단원과 난이도(하·중·상·혼합)를 직접 지정합니다. 일반반은 단원형, 심화반은 고난도형으로 분리 운영도 가능합니다.</p>
+        </div>
+      </div>
+      <div class="cont-card">
+        <div class="cont-ic"><svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 3v18h18"/><path d="M7 14l4-4 4 4 5-5"/></svg></div>
+        <div class="cont-body">
+          <div class="cont-h3">실전과 동일한 난이도</div>
+          <p class="cont-p">30문항 월간 모의고사는 평가원과 동일한 3점·4점 비율로 구성됩니다. 학생들이 받는 인상이 실제 시험과 같아 학원 평가 결과의 신뢰도가 높아집니다.</p>
+        </div>
+      </div>
     </div>
-    <div class="stat-item">
-      <div class="stat-num"><em>30</em><sup>회분</sup></div>
-      <div class="stat-label">연간 콘텐츠</div>
+
+
+    <!-- ─── Cover Preview Gallery ─── -->
+    <div class="cover-gallery">
+      <div class="cover-gallery-head">
+        <div class="cover-gallery-tag">실제 콘텐츠</div>
+        <h3 class="cover-gallery-h">난이도별로 별도 제작되는 표지</h3>
+        <p class="cover-gallery-p">매달 학원이 선택한 난이도에 맞춰 EASY · NORMAL · HARD 3종 표지로 구분 제공됩니다. 30문항 월간 모의고사는 별도 표지로 운영되며, 모든 회차에 시험지 · 정답표 · 풀이 과정과 출제 의도가 담긴 해설지가 함께 발송됩니다.</p>
+      </div>
+      <div class="cover-grid">
+        <!-- EASY -->
+        <figure class="cover">
+          <div class="cover-art cover-easy">
+            <div class="cover-label">EASY</div>
+            <div class="cover-title">곡선과 x축<br>사이의 넓이</div>
+            <div class="cover-foot">
+              <span class="cover-mark">N</span>
+              <span class="cover-brand">뉴런소프트</span>
+            </div>
+          </div>
+          <figcaption class="cover-caption">EASY · 기본기 점검</figcaption>
+        </figure>
+        <!-- NORMAL -->
+        <figure class="cover">
+          <div class="cover-art cover-normal">
+            <div class="cover-tagline">N 뉴런소프트</div>
+            <div class="cover-label">NORMAL</div>
+            <div class="cover-title">곡선과 x축<br>사이의 넓이</div>
+            <div class="cover-foot">
+              <span class="cover-mark">N</span>
+              <span class="cover-brand">뉴런소프트</span>
+            </div>
+          </div>
+          <figcaption class="cover-caption">NORMAL · 표준 난이도</figcaption>
+        </figure>
+        <!-- HARD -->
+        <figure class="cover">
+          <div class="cover-art cover-hard">
+            <div class="cover-tagline">N 뉴런소프트</div>
+            <div class="cover-label">HARD</div>
+            <div class="cover-title">곡선과 x축<br>사이의 넓이</div>
+            <div class="cover-foot">
+              <span class="cover-mark cover-mark-light">N</span>
+              <span class="cover-brand">뉴런소프트</span>
+            </div>
+          </div>
+          <figcaption class="cover-caption">HARD · 상위권 · N수반</figcaption>
+        </figure>
+        <!-- 모의고사 -->
+        <figure class="cover">
+          <div class="cover-art cover-exam">
+            <div class="cover-exam-sub">뉴런모의고사</div>
+            <div class="cover-exam-h">수학 영역</div>
+            <div class="cover-exam-name">
+              <span class="cover-exam-name-key">성명</span>
+              <span class="cover-exam-name-line"></span>
+            </div>
+            <div class="cover-exam-warn">※ 시험이 시작될 때까지 표지를 넘기지 마시오.</div>
+          </div>
+          <figcaption class="cover-caption">월간 모의고사 · 30문항</figcaption>
+        </figure>
+      </div>
     </div>
-    <div class="stat-item">
-      <div class="stat-num"><em>100</em><sup>%</sup></div>
-      <div class="stat-label">평가원 변형 출제</div>
-    </div>
+
   </div>
 </section>
 
-<!-- WHY -->
-<section class="why" id="why">
-  <div class="why-in">
-    <div class="sec-tag">왜 이 테스트지인가</div>
-    <h2 class="sec-h2">시중 모의고사와 다른 점 3가지</h2>
-    <p class="sec-sub">전체 단원을 한 번에 다루는 시중 모의고사와 달리, 수업 흐름에 맞게 씁니다</p>
-    <div class="why-grid">
-      <div class="why-card">
-        <div class="why-icon"><svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 17v5"/><path d="M9 10.76a2 2 0 0 1-1.11 1.79l-1.78.9A2 2 0 0 0 5 15.24V16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-.76a2 2 0 0 0-1.11-1.79l-1.78-.9A2 2 0 0 1 15 10.76V7a1 1 0 0 1 1-1 2 2 0 0 0 0-4H8a2 2 0 0 0 0 4 1 1 0 0 1 1 1z"/></svg></div>
-        <div class="why-num">매달 선택</div>
-        <div class="why-h3">매달 단원·난이도를<br>학원이 직접 선택</div>
-        <p class="why-p">10·20문항 격주 테스트는 학원이 매달 단원과 난이도를 직접 지정합니다. 진도와 반 구성에 맞춰 그달의 콘텐츠를 설계할 수 있습니다.</p>
-      </div>
-      <div class="why-card">
-        <div class="why-icon"><svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
-        <div class="why-num">평가원 연계</div>
-        <div class="why-h3">수능특강·모평 변형 출제<br>즉시 반영</div>
-        <p class="why-p">수능특강 기반 출제로 EBS 연계를 대비하고, 6·9월 평가원 모의고사 경향을 즉시 반영합니다.</p>
-      </div>
-      <div class="why-card">
-        <div class="why-icon"><svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></div>
-        <div class="why-num">사전 확인</div>
-        <div class="why-h3">사전 검토부터 시작<br>부담 없는 첫 걸음</div>
-        <p class="why-p">사전 검토 자료로 품질을 먼저 확인할 수 있습니다. 단품 구매로 시작해 필요에 맞게 정기 구독으로 전환할 수 있습니다.</p>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- PRODUCTS -->
+<section class="products" id="products">
+  <div class="products-in">
+    <div class="sec-tag">상품 구성</div>
+    <h2 class="sec-h2">3가지 상품 라인업</h2>
+    <p class="sec-sub">심화·단원·월간 중 학원 운영에 맞게 선택해 사용하세요. 격주 상품(10·20문항)은 매달 단원과 난이도를 학원이 직접 지정합니다.</p>
 
-
-<!-- PROCESS — 도입 4단계 -->
-<section class="process" id="process">
-  <div class="process-in">
-    <!-- 도입 4단계 -->
-    <div class="proc-head">
-      <div class="proc-h3">도입은 부담 없이 시작합니다</div>
-      <p class="proc-p">사전 검토부터 정기 계약까지, 4단계로 진행합니다</p>
-    </div>
-    <div class="proc-grid">
-      <div class="proc-card">
-        <div class="proc-step">STEP 01</div>
-        <div class="proc-num">1</div>
-        <div class="proc-title">자료 요청</div>
-        <p class="proc-desc">30문항 월간 모의고사 사전 검토 자료를 발송합니다. 영업일 1일 이내 담당자 연락.</p>
-      </div>
-      <div class="proc-card">
-        <div class="proc-step">STEP 02</div>
-        <div class="proc-num">2</div>
-        <div class="proc-title">1:1 상담</div>
-        <p class="proc-desc">학원 규모·진도·반 구성에 맞춘 단원 및 난이도, 시즌 일정을 협의합니다.</p>
-      </div>
-      <div class="proc-card">
-        <div class="proc-step">STEP 03</div>
-        <div class="proc-num">3</div>
-        <div class="proc-title">시범 운영</div>
-        <p class="proc-desc">단품 구매로 2~4주 시범 운영. 문항 품질·운영 적합성을 직접 검증합니다.</p>
-      </div>
-      <div class="proc-card">
-        <div class="proc-step">STEP 04</div>
-        <div class="proc-num">4</div>
-        <div class="proc-title">정기 계약</div>
-        <p class="proc-desc">격주·월간 자동 납품으로 전환. 시즌 단위 계약 시 추가 협의 가능합니다.</p>
-      </div>
-    </div>
-
-    <!-- 고2·고1 더보기 -->
-    <div class="more-grade">
-      <button class="more-toggle" id="moreToggle" type="button" aria-expanded="false">
-        <div class="mt-left">
-          <div class="mt-ic"><svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V2H6.5A2.5 2.5 0 0 0 4 4.5z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20"/></svg></div>
-          <div class="mt-text">
-            <div class="mt-title">고2·고1 진도 운영 보기</div>
-            <div class="mt-sub">내신 기간 제외 · 학기제 운영 · 단원 테스트 중심</div>
+    <div class="prod-grid">
+      <div class="prod-card">
+        <div class="prod-top">
+          <div class="prod-label">상위권 · 고난도</div>
+          <div class="prod-name">심화 테스트</div>
+          <div class="prod-desc">변별력 훈련용 · 4점 문항 중심 구성</div>
+          <div class="prod-pill">10문항 × 2회분 · 격주 납품</div>
+        </div>
+        <div class="prod-divider"></div>
+        <div class="prod-bottom">
+          <div class="prod-acad-label">매달 학원이 직접 선택</div>
+          <div class="prod-pickline">
+            <span class="pl-key">권장 반</span>
+            <span class="pl-val">상위권 · N수반</span>
+          </div>
+          <div class="prod-pickline">
+            <span class="pl-key">난이도</span>
+            <span class="pl-val">상 · 혼합</span>
+          </div>
+          <div class="prod-pickline">
+            <span class="pl-key">표지</span>
+            <span class="pl-val"><span class="prod-cover-link prod-cover-hard">HARD</span></span>
           </div>
         </div>
-        <div class="mt-arrow">⌄</div>
-      </button>
-      <div class="more-body" id="moreBody">
-        <div class="more-inner">
-          <div class="grade-card">
-            <div class="grade-h">
-              <div class="grade-name">고2 운영안</div>
-              <div class="grade-period">3~12월 · 내신 제외</div>
-            </div>
-            <div class="grade-row">
-              <div class="grade-key">1학기</div>
-              <div class="grade-val"><strong>3~6월 (10주)</strong><br>수열 / 지수로그 / 삼각함수</div>
-            </div>
-            <div class="grade-row">
-              <div class="grade-key">2학기</div>
-              <div class="grade-val"><strong>9~12월 (10주)</strong><br>극한 / 미분 / 적분</div>
-            </div>
-            <div class="grade-row">
-              <div class="grade-key">연간 합계</div>
-              <div class="grade-val">격주 <strong>10회</strong> · 월간 <strong>4회</strong></div>
-            </div>
-            <div class="grade-note">20문항 중난도 중심 · 상위권반은 10문항 심화 테스트 추가 가능 · 내신 기간은 별도 내신형 테스트로 전환 가능</div>
+      </div>
+      <div class="prod-card">
+        <div class="prod-top">
+          <div class="prod-label">일반반 · 단원형</div>
+          <div class="prod-name">단원 테스트</div>
+          <div class="prod-desc">진도 직후 단원 점검 · 3점 문항 중심</div>
+          <div class="prod-pill">20문항 × 2회분 · 격주 납품</div>
+        </div>
+        <div class="prod-divider"></div>
+        <div class="prod-bottom">
+          <div class="prod-acad-label">매달 학원이 직접 선택</div>
+          <div class="prod-pickline">
+            <span class="pl-key">권장 반</span>
+            <span class="pl-val">일반반 · 단원 마무리</span>
           </div>
-          <div class="grade-card">
-            <div class="grade-h">
-              <div class="grade-name">고1 운영안</div>
-              <div class="grade-period">3~12월 · 내신 제외</div>
-            </div>
-            <div class="grade-row">
-              <div class="grade-key">1학기</div>
-              <div class="grade-val"><strong>3~6월 (10주)</strong><br>다항식 / 방정식 / 도형의 방정식</div>
-            </div>
-            <div class="grade-row">
-              <div class="grade-key">2학기</div>
-              <div class="grade-val"><strong>9~12월 (10주)</strong><br>집합 / 함수 / 경우의 수</div>
-            </div>
-            <div class="grade-row">
-              <div class="grade-key">연간 합계</div>
-              <div class="grade-val">격주 <strong>10회</strong> · 월간 <strong>4회</strong></div>
-            </div>
-            <div class="grade-note">20문항 중난도 중심 · 학원 수요에 따라 단원 테스트 위주로 먼저 운영 · 심화 10문항은 선택 옵션</div>
+          <div class="prod-pickline">
+            <span class="pl-key">난이도</span>
+            <span class="pl-val">하 · 중</span>
+          </div>
+          <div class="prod-pickline">
+            <span class="pl-key">표지</span>
+            <span class="pl-val"><span class="prod-cover-link prod-cover-normal">EASY · NORMAL</span></span>
+          </div>
+        </div>
+      </div>
+      <div class="prod-card">
+        <div class="prod-top">
+          <div class="prod-label">전 학년 · 실전형</div>
+          <div class="prod-name">월간 모의고사</div>
+          <div class="prod-desc">월 1회 실전 점검 · 평가원 동일 분포</div>
+          <div class="prod-pill">30문항 × 1회분 · 월 1회</div>
+        </div>
+        <div class="prod-divider"></div>
+        <div class="prod-bottom">
+          <div class="prod-acad-label">정기 운영</div>
+          <div class="prod-pickline">
+            <span class="pl-key">권장 반</span>
+            <span class="pl-val">전 학년 공통</span>
+          </div>
+          <div class="prod-pickline">
+            <span class="pl-key">난이도</span>
+            <span class="pl-val">평가원 동일</span>
+          </div>
+          <div class="prod-pickline">
+            <span class="pl-key">표지</span>
+            <span class="pl-val"><span class="prod-cover-link prod-cover-exam">월간 모의고사</span></span>
           </div>
         </div>
       </div>
     </div>
 
-  </div>
-</section>
-
-<!-- SCHEDULE STRIP -->
-<!-- ⚠️ TODO: 운영 시즌 확정 시 아래 배지·문구를 실제 일정에 맞춰 교체 -->
-<section class="schedule" aria-label="현재 운영 시즌">
-  <div class="schedule-in">
-    <div class="schedule-flag">2026 시즌4 운영 중</div>
-    <div class="schedule-body">
-      <div class="schedule-h">6월 모평 대비 — <em>지금 신청한 학원부터 우선 배정</em></div>
-      <p>5월 신청 학원은 6월 모평 직후 평가원 변형 출제를 가장 빠르게 받아볼 수 있습니다. 시즌별 정원이 한정됩니다.</p>
+    <div class="pricing-rule">
+      <div class="pr-icon"><svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M9 12h6"/><path d="M9 16h6"/></svg></div>
+      <div class="pr-divider"></div>
+      <div class="pr-text">
+        <strong>학원 공급가는 문의 시 안내드립니다</strong><br>
+        사전 검토 후 단품 또는 정기 구독으로 시작 · 시즌 계약 시 추가 협의 가능 · PDF 공급 또는 인쇄 납품 선택 가능
+      </div>
     </div>
-    <a href="#inquiry" class="schedule-cta">파트너 문의</a>
+
   </div>
 </section>
 
-<!-- INQUIRY -->
-<section class="inquiry" id="inquiry">
-  <div class="inquiry-in">
-    <div class="inq-wrap">
-      <div class="inq-left">
-        <div class="sec-tag">파트너 문의</div>
-        <h3 class="inq-h3">먼저 <b>자료로</b><br>확인하세요</h3>
-        <p class="inq-p">30문항 월간 모의고사 사전 검토 자료를 발송해드립니다. 품질을 직접 보신 후 도입 여부를 결정하시면 됩니다.</p>
-        <ul class="inq-checks">
-          <li><div class="chk"><svg class="icon icon-sm" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width:11px;height:11px;stroke-width:3;"><path d="M20 6 9 17l-5-5"/></svg></div>30문항 사전 검토 자료 발송</li>
-          <li><div class="chk"><svg class="icon icon-sm" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width:11px;height:11px;stroke-width:3;"><path d="M20 6 9 17l-5-5"/></svg></div>학원 규모·단원 맞춤 상담</li>
-          <li><div class="chk"><svg class="icon icon-sm" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width:11px;height:11px;stroke-width:3;"><path d="M20 6 9 17l-5-5"/></svg></div>단품 시작 → 구독 전환 가능</li>
-          <li><div class="chk"><svg class="icon icon-sm" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width:11px;height:11px;stroke-width:3;"><path d="M20 6 9 17l-5-5"/></svg></div>도입 학원 의견을 콘텐츠에 직접 반영</li>
-        </ul>
-        <div class="inq-promise">
-          <div class="inq-promise-num">1<span>일</span></div>
-          <div class="inq-promise-body">
-            <div class="inq-promise-ttl">영업일 1일 이내 회신</div>
-            <p>담당자가 직접 연락드립니다. 자료 발송과 도입 상담은 한 번의 통화로 진행됩니다.</p>
+<!-- PACKAGES (5 subscription types) -->
+<section class="packages" id="packages">
+  <div class="packages-in">
+    <div class="sec-tag">월 구독 패키지</div>
+    <h2 class="sec-h2">학원 운영에 맞는 5가지 구성</h2>
+    <p class="sec-sub">단품·월 패키지·풀패키지 중 학원 운영 형태에 맞게 선택할 수 있습니다. 격주 테스트가 포함된 모든 구성에서 단원과 난이도를 매달 선택합니다.</p>
+
+    <!-- 월 구독 패키지 5종 -->
+    <div class="sub-wrap">
+      <table class="sub-table">
+        <thead>
+          <tr>
+            <th>타입</th>
+            <th>구성</th>
+            <th>매달 선택</th>
+            <th>주기</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="sub-type">A</span> <span class="sub-name">10문항 심화형</span></td>
+            <td class="sub-comp">10문항 × 2회</td>
+            <td class="sub-pick"><span class="pick-on">단원 · 난이도</span></td>
+            <td class="sub-cycle">격주</td>
+          </tr>
+          <tr>
+            <td><span class="sub-type">B</span> <span class="sub-name">20문항 단원형</span></td>
+            <td class="sub-comp">20문항 × 2회</td>
+            <td class="sub-pick"><span class="pick-on">단원 · 난이도</span></td>
+            <td class="sub-cycle">격주</td>
+          </tr>
+          <tr>
+            <td><span class="sub-type">C</span> <span class="sub-name">10문항 + 월간 모의고사</span></td>
+            <td class="sub-comp">10문항 × 2회 + 30문항 × 1회</td>
+            <td class="sub-pick"><span class="pick-on">단원 · 난이도</span></td>
+            <td class="sub-cycle">격주 + 월간</td>
+          </tr>
+          <tr>
+            <td><span class="sub-type">D</span> <span class="sub-name">20문항 + 월간 모의고사</span></td>
+            <td class="sub-comp">20문항 × 2회 + 30문항 × 1회</td>
+            <td class="sub-pick"><span class="pick-on">단원 · 난이도</span></td>
+            <td class="sub-cycle">격주 + 월간</td>
+          </tr>
+          <tr>
+            <td><span class="sub-type">E</span> <span class="sub-name">풀패키지</span></td>
+            <td class="sub-comp">10·20·30문항 모두 포함</td>
+            <td class="sub-pick"><span class="pick-on">단원 · 난이도</span></td>
+            <td class="sub-cycle">격주 + 월간</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="sub-note"><strong>매달 단원·난이도 선택</strong>  격주 테스트(10·20문항)가 포함된 모든 구성은 학원이 매달 직접 단원과 난이도를 지정합니다. 30문항 월간 모의고사는 전체 단원 실전형으로 고정 운영됩니다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAM (NEW) -->
+<section class="program" id="program">
+  <div class="program-in">
+    <div class="sec-tag">연간 운영</div>
+    <h2 class="sec-h2">시즌1부터 시즌6까지, 1년이 설계되어 있습니다</h2>
+    <p class="sec-sub">고3·N수 대상 10개월 커리큘럼 · 평가원 일정에 맞춘 6시즌 구성</p>
+
+    <div class="timeline-wrap">
+      <div class="timeline-track">
+        <div class="timeline-grid">
+          <div class="tl-card">
+            <div class="tl-dot">1</div>
+            <div class="tl-label">SEASON 1</div>
+            <div class="tl-period">1~2월 · 8주</div>
+            <div class="tl-title">수학1 단원 집중</div>
+            <div class="tl-scope">수열 / 지수로그 / 삼각함수</div>
+            <div class="tl-tip">단원 마무리 평가용</div>
+          </div>
+          <div class="tl-card">
+            <div class="tl-dot">2</div>
+            <div class="tl-label">SEASON 2</div>
+            <div class="tl-period">3~4월 · 8주</div>
+            <div class="tl-title">수능특강 변형 출제</div>
+            <div class="tl-scope">수학2 + 선택과목 기반 · EBS 연계 대비</div>
+            <div class="tl-tip">EBS 연계 첫 점검</div>
+          </div>
+          <div class="tl-card">
+            <div class="tl-dot">3</div>
+            <div class="tl-label">SEASON 3</div>
+            <div class="tl-period">5월 · 4주</div>
+            <div class="tl-title">6월 모평 대비</div>
+            <div class="tl-scope">전체 단원 실전형</div>
+            <div class="tl-tip">6월 모평 직전 점검</div>
+          </div>
+          <div class="tl-card">
+            <div class="tl-dot">4</div>
+            <div class="tl-label">SEASON 4</div>
+            <div class="tl-period">6~7월 · 8주</div>
+            <div class="tl-title">6월 모평 반영</div>
+            <div class="tl-scope">6월 평가원 변형 출제 · 출제 경향 즉시 반영</div>
+            <div class="tl-tip">6월 모평 직후 즉시 적용</div>
+          </div>
+          <div class="tl-card">
+            <div class="tl-dot">5</div>
+            <div class="tl-label">SEASON 5</div>
+            <div class="tl-period">8월 · 4주</div>
+            <div class="tl-title">9월 모평 대비</div>
+            <div class="tl-scope">전체 단원 실전형</div>
+            <div class="tl-tip">9월 모평 직전 점검</div>
+          </div>
+          <div class="tl-card">
+            <div class="tl-dot">6</div>
+            <div class="tl-label">SEASON 6</div>
+            <div class="tl-period">9~10월 · 8주</div>
+            <div class="tl-title">수능 파이널</div>
+            <div class="tl-scope">9월 평가원 변형 출제 · 수능 직전 최종 점검</div>
+            <div class="tl-tip">수능 직전 최종 점검</div>
           </div>
         </div>
       </div>
 
-      <div class="form-box">
-        <div class="form-ttl">파트너 도입 문의</div>
-        <form id="partnerForm" class="form-wrap">
-          <div class="frow">
-            <div class="fg"><label>학원명 *</label><input type="text" name="academy" placeholder="학원 이름" required></div>
-            <div class="fg"><label>담당자명 *</label><input type="text" name="name" placeholder="이름" required></div>
+      <div class="tl-total">
+        <div>
+          <div class="tl-total-label">고3·N수 연간 합계</div>
+          <div class="tl-total-main">10개월 · 40주 운영</div>
+        </div>
+        <div class="tl-total-stats">
+          <div class="tl-stat">
+            <div class="tl-stat-num">20<span>회</span></div>
+            <div class="tl-stat-label">격주 테스트</div>
           </div>
-          <div class="frow">
-            <div class="fg"><label>연락처 *</label><input type="tel" name="phone" placeholder="010-0000-0000" required></div>
-            <div class="fg"><label>이메일 *</label><input type="email" name="email" placeholder="academy@example.com" required></div>
+          <div class="tl-stat">
+            <div class="tl-stat-num">10<span>회</span></div>
+            <div class="tl-stat-label">월간 모의고사</div>
           </div>
-          <div class="frow">
-            <div class="fg">
-              <label>학원 유형</label>
-              <select name="type">
-                <option value="">선택</option>
-                <option>재종반</option><option>독재학원</option>
-                <option>단과학원</option><option>종합학원</option>
-                <option>스터디카페</option><option>기타</option>
-              </select>
-            </div>
-            <div class="fg">
-              <label>관심 상품</label>
-              <select name="plan">
-                <option value="">선택</option>
-                <option>심화 테스트 (10문항)</option>
-                <option>단원 테스트 (20문항)</option>
-                <option>월간 모의고사 (30문항)</option>
-                <option>월 패키지 C/D (격주 + 월간)</option>
-                <option>풀패키지 E</option>
-                <option>사전 검토만 먼저 진행</option>
-              </select>
-            </div>
+          <div class="tl-stat">
+            <div class="tl-stat-num">30<span>회분</span></div>
+            <div class="tl-stat-label">총 콘텐츠</div>
           </div>
-          <div class="fg">
-            <label>문의 내용</label>
-            <textarea name="message" placeholder="학원 규모, 희망 단원, 시작 시기 등 자유롭게 작성해주세요"></textarea>
-          </div>
-          <details class="privacy-notice">
-            <summary>개인정보 수집·이용 안내 <span>자세히 보기</span></summary>
-            <dl>
-              <dt>수집 항목</dt>
-              <dd>학원명, 담당자명, 연락처, 이메일, 학원 유형, 관심 상품, 문의 내용</dd>
-              <dt>이용 목적</dt>
-              <dd>사전 검토 자료 발송 및 파트너 상담 진행</dd>
-              <dt>보유 기간</dt>
-              <dd>상담 종료 후 1년 (관계 법령에 따른 보관 의무가 있는 경우 해당 기간까지)</dd>
-              <dt>동의 거부 권리</dt>
-              <dd>위 항목의 수집·이용에 동의하지 않으실 수 있으며, 거부 시 자료 발송 및 상담이 제한됩니다.</dd>
-            </dl>
-            <p class="privacy-contact">개인정보 관련 문의: <a href="mailto:newlearnsoft@gmail.com">newlearnsoft@gmail.com</a></p>
-          </details>
-          <!-- Honeypot field — invisible to humans, only bots fill it -->
-          <div class="hp-field" aria-hidden="true">
-            <label>이 항목은 비워두세요</label>
-            <input type="text" name="website" tabindex="-1" autocomplete="off">
-          </div>
-          <label class="fcheck">
-            <input type="checkbox" required>
-            <span>위 개인정보 수집·이용 안내를 확인했으며, 이에 동의합니다.</span>
-          </label>
-          <button type="submit" class="fsub" id="submitBtn">파트너 도입 문의하기</button>
-        </form>
-        <div id="formSuccess">
-          <div class="suc-icon"><svg class="icon icon-lg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg></div>
-          <h3 style="font-size:20px;font-weight:800;color:var(--ink);margin-bottom:12px;letter-spacing:-0.025em;line-height:1.4;">문의가 접수되었습니다</h3>
-          <p style="font-size:15px;color:var(--mid);line-height:1.8;">빠른 시일 내에 연락드리겠습니다.<br>영업일 기준 <strong style="color:var(--orange);">1일 이내</strong> 담당자가 직접 연락드립니다.</p>
-          <p style="font-size:13px;color:var(--muted);margin-top:16px;">newlearnsoft@gmail.com</p>
         </div>
       </div>
     </div>
+
+  </div>
+</section>
+
+<!-- CTA BACK STRIP — 메인 페이지 도입 문의로 유도 -->
+<section class="cta-back">
+  <div class="cta-back-in">
+    <div class="cta-back-body">
+      <div class="cta-back-h">샘플로 콘텐츠를 직접 확인하시겠어요? <b>도입 문의</b>로 연결됩니다</div>
+      <p class="cta-back-p">학원 규모와 진도에 맞춰 사전 검토 자료를 보내드립니다. 영업일 1일 이내 담당자가 직접 연락드립니다.</p>
+    </div>
+    <a href="index.html#inquiry" class="cta-back-cta">도입 문의 하러 가기 →</a>
   </div>
 </section>
 
@@ -1544,24 +1627,14 @@ footer{
   const nav = document.getElementById('nav');
   window.addEventListener('scroll', () => nav.classList.toggle('up', scrollY > 10));
 
-  // 고2·고1 더보기 토글
-  const mt = document.getElementById('moreToggle');
-  const mb = document.getElementById('moreBody');
-  mt.addEventListener('click', () => {
-    const isOpen = mt.classList.toggle('open');
-    mb.classList.toggle('open', isOpen);
-    mt.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-  });
-
   /* ─ Scroll reveal (IntersectionObserver) ─ */
   const reduced = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
   if (!reduced && 'IntersectionObserver' in window) {
-    const targets = document.querySelectorAll('.sec-tag, .sec-h2, .sec-sub, .why-card, .proc-head, .proc-card, .more-grade, .stat-item, .inq-left, .form-box');
+    const targets = document.querySelectorAll('.sec-tag, .sec-h2, .sec-sub, .cont-card, .cover-gallery, .prod-card, .pricing-rule, .sub-wrap, .timeline-track, .tl-total, .cta-back-body');
     targets.forEach(el => el.classList.add('reveal'));
     const io = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          // stagger siblings slightly for a wave effect
           const parent = entry.target.parentElement;
           if (parent) {
             const sibs = Array.from(parent.children).filter(c => c.classList.contains('reveal'));
@@ -1575,104 +1648,8 @@ footer{
     }, {threshold:0.12, rootMargin:'0px 0px -40px 0px'});
     targets.forEach(el => io.observe(el));
   } else {
-    // Reduced motion or unsupported — show everything immediately
     document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
   }
-
-  /* ─ Stat number count-up (only on first reveal of stats strip) ─ */
-  if (!reduced && 'IntersectionObserver' in window) {
-    const stats = document.querySelectorAll('.stat-num em');
-    const animateNum = (el) => {
-      const text = el.textContent.trim();
-      const target = parseInt(text, 10);
-      if (isNaN(target)) return; // 텍스트 라벨은 건드리지 않음
-      const dur = 900;
-      const start = performance.now();
-      const easeOut = t => 1 - Math.pow(1 - t, 3);
-      const tick = (now) => {
-        const p = Math.min(1, (now - start) / dur);
-        el.textContent = Math.round(easeOut(p) * target).toString();
-        if (p < 1) requestAnimationFrame(tick);
-      };
-      requestAnimationFrame(tick);
-    };
-    const statObs = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          animateNum(entry.target);
-          statObs.unobserve(entry.target);
-        }
-      });
-    }, {threshold:0.5});
-    stats.forEach(el => statObs.observe(el));
-  }
-
-  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwfV43wUWvb5ZBbgnax_Ot4R6dMoCGlM6DtZxo97y7SrPHPeXwup97FLF9p4nq7oXx7/exec';
-
-  // Bot defense: record page load time
-  const formLoadTime = Date.now();
-
-  document.getElementById('partnerForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const form = this;
-    const btn = document.getElementById('submitBtn');
-    const toast = document.getElementById('toast');
-
-    const showToast = (msg, isError) => {
-      toast.textContent = msg;
-      toast.style.background = isError ? '#C82838' : 'var(--ink)';
-      toast.classList.add('show');
-      setTimeout(() => toast.classList.remove('show'), 5000);
-    };
-
-    // Bot defense 1: honeypot field must be empty
-    const honeypot = form.querySelector('input[name="website"]').value;
-    if (honeypot) {
-      // Silent reject — pretend success so bot doesn't retry
-      form.style.display = 'none';
-      document.getElementById('formSuccess').style.display = 'block';
-      return;
-    }
-
-    // Bot defense 2: form must be open at least 3 seconds before submission
-    if (Date.now() - formLoadTime < 3000) {
-      showToast('잠시 후 다시 시도해주세요.', true);
-      return;
-    }
-
-    btn.disabled = true;
-    btn.textContent = '제출 중...';
-
-    // Convert form data to JSON, then send as text/plain to skip CORS preflight
-    // Apps Script will parse e.postData.contents as JSON
-    const data = {};
-    new FormData(form).forEach((v, k) => { data[k] = v; });
-    data._submitted_at = new Date().toISOString();
-    data._page_url = location.href;
-
-    fetch(SCRIPT_URL, {
-      method: 'POST',
-      headers: {'Content-Type': 'text/plain;charset=utf-8'},
-      body: JSON.stringify(data),
-      redirect: 'follow'
-    })
-      .then(res => res.text())
-      .then(text => {
-        // Apps Script returns "OK" on success, else error message
-        if (text && text.trim().startsWith('OK')) {
-          form.style.display = 'none';
-          document.getElementById('formSuccess').style.display = 'block';
-        } else {
-          throw new Error(text || 'Unknown response');
-        }
-      })
-      .catch(err => {
-        btn.disabled = false;
-        btn.textContent = '파트너 도입 문의하기';
-        showToast('제출 실패. 이메일(newlearnsoft@gmail.com)로 직접 문의해주세요.', true);
-        console.error('Form submit error:', err);
-      });
-  });
 </script>
 </body>
 </html>
