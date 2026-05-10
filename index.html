@@ -951,18 +951,18 @@ nav.up{box-shadow:var(--sh-sm);}
 }
 .form-ttl{
   font-size:18px;font-weight:800;color:var(--ink);
-  margin-bottom:28px;letter-spacing:-0.025em;line-height:1.4;
+  margin-bottom:24px;letter-spacing:-0.025em;line-height:1.4;
 }
-.form-wrap{display:flex;flex-direction:column;gap:14px;}
-.frow{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
-.fg{display:flex;flex-direction:column;gap:6px;}
+.form-wrap{display:flex;flex-direction:column;gap:12px;}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.fg{display:flex;flex-direction:column;gap:5px;}
 .fg label{
   font-size:12px;font-weight:700;color:var(--mid);
   letter-spacing:-0.005em;
 }
 .fg input,.fg select,.fg textarea{
   border:1.5px solid var(--line);border-radius:var(--r-sm);
-  padding:12px 14px;font-size:14px;font-family:inherit;
+  padding:11px 13px;font-size:14px;font-family:inherit;
   color:var(--ink);background:var(--warm);letter-spacing:-0.005em;
   outline:none;transition:border-color .2s,background .2s,box-shadow .2s;
 }
@@ -971,11 +971,11 @@ nav.up{box-shadow:var(--sh-sm);}
   border-color:var(--orange);background:var(--white);
   box-shadow:0 0 0 3px rgba(232,74,15,0.08);
 }
-.fg textarea{resize:vertical;min-height:88px;line-height:1.7;}
+.fg textarea{resize:vertical;min-height:72px;line-height:1.7;}
 .fg select{
   appearance:none;cursor:pointer;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23BBBBBB' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-  background-repeat:no-repeat;background-position:right 14px center;padding-right:36px;
+  background-repeat:no-repeat;background-position:right 12px center;padding-right:32px;
 }
 .fcheck{
   display:flex;align-items:flex-start;gap:10px;
@@ -1460,18 +1460,60 @@ footer{
           </div>
           <div class="frow">
             <div class="fg">
-              <label>학원 유형</label>
-              <select name="type">
-                <option value="">선택</option>
-                <option>재종반</option><option>독재학원</option>
-                <option>단과학원</option><option>종합학원</option>
-                <option>스터디카페</option><option>기타</option>
+              <label>학원 유형 *</label>
+              <select name="type" required>
+                <option value="">선택해주세요</option>
+                <option>재종반</option>
+                <option>독재학원</option>
+                <option>단과학원</option>
+                <option>종합학원</option>
+                <option>스터디카페</option>
+                <option>기타</option>
               </select>
             </div>
             <div class="fg">
-              <label>관심 상품</label>
-              <select name="plan">
-                <option value="">선택</option>
+              <label>학생 수 *</label>
+              <select name="students" required>
+                <option value="">선택해주세요</option>
+                <option>30명 미만</option>
+                <option>30~50명</option>
+                <option>50~100명</option>
+                <option>100~200명</option>
+                <option>200명 이상</option>
+              </select>
+            </div>
+          </div>
+          <div class="frow">
+            <div class="fg">
+              <label>대상 학년 *</label>
+              <select name="grade" required>
+                <option value="">선택해주세요</option>
+                <option>고3 · N수</option>
+                <option>고2</option>
+                <option>고1</option>
+                <option>여러 학년 운영</option>
+                <option>상담 후 결정</option>
+              </select>
+            </div>
+            <div class="fg">
+              <label>희망 단원 *</label>
+              <select name="unit" required>
+                <option value="">선택해주세요</option>
+                <option>미적분</option>
+                <option>확률과 통계</option>
+                <option>기하</option>
+                <option>수학Ⅰ</option>
+                <option>수학Ⅱ</option>
+                <option>여러 단원 조합</option>
+                <option>상담 후 결정</option>
+              </select>
+            </div>
+          </div>
+          <div class="frow">
+            <div class="fg">
+              <label>관심 상품 *</label>
+              <select name="plan" required>
+                <option value="">선택해주세요</option>
                 <option>심화 테스트 (10문항)</option>
                 <option>단원 테스트 (20문항)</option>
                 <option>월간 모의고사 (30문항)</option>
@@ -1480,16 +1522,26 @@ footer{
                 <option>사전 검토만 먼저 진행</option>
               </select>
             </div>
+            <div class="fg">
+              <label>시작 희망 시기 *</label>
+              <select name="start" required>
+                <option value="">선택해주세요</option>
+                <option>즉시 · 1개월 내</option>
+                <option>2~3개월 내</option>
+                <option>다음 시즌부터</option>
+                <option>미정 · 상담 후 결정</option>
+              </select>
+            </div>
           </div>
           <div class="fg">
-            <label>문의 내용</label>
-            <textarea name="message" placeholder="학원 규모, 희망 단원, 시작 시기 등 자유롭게 작성해주세요"></textarea>
+            <label>추가 문의 사항</label>
+            <textarea name="message" placeholder="추가로 전달하실 내용이 있다면 자유롭게 작성해주세요 (선택)"></textarea>
           </div>
           <details class="privacy-notice">
             <summary>개인정보 수집·이용 안내 <span>자세히 보기</span></summary>
             <dl>
               <dt>수집 항목</dt>
-              <dd>학원명, 담당자명, 연락처, 이메일, 학원 유형, 관심 상품, 문의 내용</dd>
+              <dd>학원명, 담당자명, 연락처, 이메일, 학원 유형, 학생 수, 대상 학년, 희망 단원, 관심 상품, 시작 희망 시기, 문의 내용</dd>
               <dt>이용 목적</dt>
               <dd>사전 검토 자료 발송 및 파트너 상담 진행</dd>
               <dt>보유 기간</dt>
