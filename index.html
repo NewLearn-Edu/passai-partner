@@ -140,6 +140,7 @@ nav.up{box-shadow:var(--sh-sm);}
   letter-spacing:-0.005em;transition:color .2s,background .2s;
 }
 .nav-menu a:hover{color:var(--orange);}
+.nav-menu a.active{color:var(--ink);font-weight:800;}
 .nav-cta{
   background:var(--orange);color:white;
   padding:9px 22px;border-radius:22px;font-size:13px;font-weight:700;
@@ -1162,14 +1163,14 @@ footer{
 
 <!-- NAV -->
 <nav id="nav">
-  <a href="/" class="logo">
+  <a href="index.html" class="logo">
     <div class="logo-mark">N</div>
     <span class="logo-name">뉴런모의고사</span>
     <span class="logo-tag">학원 파트너</span>
   </a>
   <div class="nav-menu">
+    <a href="index.html" class="active" aria-current="page">홈</a>
     <a href="contents.html">콘텐츠 소개</a>
-    <a href="#inquiry">도입 문의</a>
   </div>
   <a href="#inquiry" class="nav-cta">도입 문의</a>
 </nav>
@@ -1455,10 +1456,7 @@ footer{
             <div class="fg"><label>담당자명 *</label><input type="text" name="name" placeholder="이름" required></div>
           </div>
           <div class="frow">
-            <div class="fg"><label>연락처 *</label><input type="tel" name="phone" placeholder="010-0000-0000" required></div>
             <div class="fg"><label>이메일 *</label><input type="email" name="email" placeholder="academy@example.com" required></div>
-          </div>
-          <div class="frow">
             <div class="fg">
               <label>학원 유형 *</label>
               <select name="type" required>
@@ -1471,6 +1469,8 @@ footer{
                 <option>기타</option>
               </select>
             </div>
+          </div>
+          <div class="frow">
             <div class="fg">
               <label>학생 수 *</label>
               <select name="students" required>
@@ -1482,8 +1482,6 @@ footer{
                 <option>200명 이상</option>
               </select>
             </div>
-          </div>
-          <div class="frow">
             <div class="fg">
               <label>대상 학년 *</label>
               <select name="grade" required>
@@ -1495,6 +1493,8 @@ footer{
                 <option>상담 후 결정</option>
               </select>
             </div>
+          </div>
+          <div class="frow">
             <div class="fg">
               <label>희망 단원 *</label>
               <select name="unit" required>
@@ -1506,20 +1506,6 @@ footer{
                 <option>수학Ⅱ</option>
                 <option>여러 단원 조합</option>
                 <option>상담 후 결정</option>
-              </select>
-            </div>
-          </div>
-          <div class="frow">
-            <div class="fg">
-              <label>관심 상품 *</label>
-              <select name="plan" required>
-                <option value="">선택해주세요</option>
-                <option>심화 테스트 (10문항)</option>
-                <option>단원 테스트 (20문항)</option>
-                <option>월간 모의고사 (30문항)</option>
-                <option>월 패키지 C/D (격주 + 월간)</option>
-                <option>풀패키지 E</option>
-                <option>사전 검토만 먼저 진행</option>
               </select>
             </div>
             <div class="fg">
@@ -1534,6 +1520,18 @@ footer{
             </div>
           </div>
           <div class="fg">
+            <label>관심 상품 *</label>
+            <select name="plan" required>
+              <option value="">선택해주세요</option>
+              <option>심화 테스트 (10문항)</option>
+              <option>단원 테스트 (20문항)</option>
+              <option>월간 모의고사 (30문항)</option>
+              <option>월 패키지 C/D (격주 + 월간)</option>
+              <option>풀패키지 E</option>
+              <option>사전 검토만 먼저 진행</option>
+            </select>
+          </div>
+          <div class="fg">
             <label>추가 문의 사항</label>
             <textarea name="message" placeholder="추가로 전달하실 내용이 있다면 자유롭게 작성해주세요 (선택)"></textarea>
           </div>
@@ -1541,7 +1539,7 @@ footer{
             <summary>개인정보 수집·이용 안내 <span>자세히 보기</span></summary>
             <dl>
               <dt>수집 항목</dt>
-              <dd>학원명, 담당자명, 연락처, 이메일, 학원 유형, 학생 수, 대상 학년, 희망 단원, 관심 상품, 시작 희망 시기, 문의 내용</dd>
+              <dd>학원명, 담당자명, 이메일, 학원 유형, 학생 수, 대상 학년, 희망 단원, 관심 상품, 시작 희망 시기, 문의 내용</dd>
               <dt>이용 목적</dt>
               <dd>사전 검토 자료 발송 및 파트너 상담 진행</dd>
               <dt>보유 기간</dt>
