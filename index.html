@@ -3,1061 +3,563 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>뉴런모의고사 · 학원 파트너 | 매달 단원·난이도를 학원이 직접 선택하는 수학 모의고사</title>
+<title>뉴런 연구소 · 학원 파트너 | 매달 단원·난이도를 학원이 직접 선택하는 수학 모의고사</title>
 
-<!-- SEO -->
-<meta name="description" content="수업 흐름에 맞춰 매달 단원·난이도를 학원이 직접 선택하는 수학 테스트지. 격주·월간 정기 납품. 수능특강·평가원 변형 출제로 EBS 연계 대비 직결.">
-<meta name="keywords" content="뉴런모의고사, 수학 모의고사, 학원 파트너, 단원 테스트, 평가원 변형 출제, EBS 연계, 수능특강, 격주 모의고사, 월간 모의고사, 수학 학원, 모의고사 납품">
-<meta name="author" content="뉴런소프트">
-<meta name="robots" content="index, follow">
-
-<!-- Open Graph (KakaoTalk · Facebook · LinkedIn) -->
-<meta property="og:type" content="website">
-<meta property="og:title" content="학원이 매달 직접 만드는 수학 모의고사">
-<meta property="og:description" content="격주·월간 정기 납품. 수능특강·평가원 변형 출제로 EBS 연계 대비. 매달 단원과 난이도를 학원이 직접 선택합니다.">
-<meta property="og:site_name" content="뉴런모의고사 학원 파트너">
-<meta property="og:locale" content="ko_KR">
-<!--
-  ⚠️ TODO (도메인 결정 후 채울 것)
-  1) og:url 의 https://your-domain.kr/ 을 실제 운영 도메인으로 교체
-  2) og-image.png (1200×630px) 를 도메인 루트에 업로드
-  3) 아래 4줄의 주석을 풀고 og:image URL 채우기
--->
-<!-- <meta property="og:url" content="https://your-domain.kr/"> -->
-<!-- <meta property="og:image" content="https://your-domain.kr/og-image.png"> -->
-<!-- <meta property="og:image:width" content="1200"> -->
-<!-- <meta property="og:image:height" content="630"> -->
-
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="학원이 매달 직접 만드는 수학 모의고사">
-<meta name="twitter:description" content="격주·월간 정기 납품. 매달 단원과 난이도를 학원이 직접 선택합니다.">
-
-<!-- Theme & Browser UI -->
+<meta name="description" content="뉴런 연구소가 검증한 수학 모의고사 콘텐츠. 수업 흐름에 맞춰 매달 단원·난이도를 학원이 직접 선택. 격주·월간 정기 납품. 수능특강·평가원 변형 출제로 EBS 연계 대비 직결.">
+<meta property="og:title" content="뉴런 연구소 — 학원이 매달 직접 만드는 수학 모의고사">
+<meta property="og:description" content="격주·월간 정기 납품. 매달 단원과 난이도를 학원이 직접 선택합니다.">
 <meta name="theme-color" content="#1A1A1A">
-<meta name="apple-mobile-web-app-title" content="뉴런모의고사">
 
-<!-- Favicon (data URI - 빨간 사각형 + 흰 N) -->
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%23E60012'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='-apple-system,sans-serif' font-size='20' font-weight='900' fill='white'%3EN%3C/text%3E%3C/svg%3E">
 
 <style>
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
 
-:root {
-  /* ── Color: 뉴런모의고사 브랜드 (표지 디자인 일치) ── */
-  --navy:         #1A1A1A;   /* 메인 다크 — 차콜 (NORMAL 표지 톤) */
-  --navy-soft:    #2A2A2A;   /* 다크 박스 내부 보조 */
-  --navy-line:    #3A3A3A;   /* 다크 박스 내부 라인 */
-  --orange:       #E60012;   /* 브랜드 레드 (HARD 표지 톤) */
-  --orange-dark:  #B8000F;   /* hover */
-  --orange-light: #FFE8EA;   /* 매우 옅은 레드 (배지 배경) */
-  --orange-bdr:   #F5C0C5;   /* 레드 보더 */
-  --warm:         #F7F8FA;   /* 깨끗한 콜드 그레이 베이스 */
-  --white:        #FFFFFF;
-  --ink:          #1A1A1A;   /* 제목·강조 = 메인 차콜과 동일 */
-  --body:         #2D3748;   /* 본문 차콜 */
-  --mid:          #6B7280;   /* 차가운 그레이 */
-  --muted:        #9CA3AF;   /* 차가운 뮤티드 */
-  --line:         #E5E7EB;   /* 차가운 라인 */
-  --line-soft:    #F1F3F5;   /* 차가운 약한 라인 */
-  /* ── Typography ── */
-  --f-sans:  'Pretendard Variable', 'Pretendard', -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
-  /* ── Radius·Shadow ── */
-  --r-sm:  6px;
-  --r-md:  10px;
-  --r-lg:  14px;
-  --r-xl:  18px;
-  --sh-sm: 0 1px 3px rgba(26,26,26,0.05);
-  --sh-md: 0 4px 16px rgba(26,26,26,0.06);
-  --sh-lg: 0 12px 40px rgba(26,26,26,0.08);
-  --sh-or: 0 6px 18px rgba(230,0,18,0.22);
-  --sh-navy: 0 16px 48px rgba(26,26,26,0.18);
+:root{
+  --navy:#1A1A1A; --navy-soft:#2A2A2A; --navy-line:#3A3A3A;
+  --orange:#E60012; --orange-dark:#B8000F;
+  --orange-light:#FFE8EA; --orange-bdr:#F5C0C5;
+  --warm:#F7F8FA; --white:#FFFFFF;
+  --ink:#1A1A1A; --body:#2D3748;
+  --mid:#6B7280; --muted:#9CA3AF;
+  --line:#E5E7EB; --line-soft:#F1F3F5;
+
+  --f-sans:'Pretendard Variable','Pretendard',-apple-system,'Apple SD Gothic Neo','Noto Sans KR',sans-serif;
+
+  --r-sm:6px; --r-md:10px; --r-lg:14px; --r-xl:18px;
+  --sh-sm:0 1px 3px rgba(26,26,26,0.05);
+  --sh-md:0 4px 16px rgba(26,26,26,0.06);
+  --sh-lg:0 12px 40px rgba(26,26,26,0.08);
+  --sh-or:0 6px 18px rgba(230,0,18,0.22);
+  --sh-navy:0 16px 48px rgba(26,26,26,0.18);
+
+  /* tweakable */
+  --max:1200px;
+  --pad-sec:140px;
+  --hero-bg:#FFFFFF;
+  --pick-bg:#FAFAFA;
+  --proof-bg:#1A1A1A;
 }
 
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-
-/* ─ Scroll reveal animation ─ */
-.reveal{
-  opacity:0;transform:translateY(16px);
-  transition:opacity .7s cubic-bezier(.2,.6,.2,1), transform .7s cubic-bezier(.2,.6,.2,1);
-  will-change:opacity,transform;
-}
-.reveal.in{opacity:1;transform:translateY(0);}
-@media(prefers-reduced-motion:reduce){
-  .reveal,.reveal.in{
-    opacity:1;transform:none;transition:none;
-  }
-}
 body{
-  font-family:var(--f-sans);
-  color:var(--body);background:var(--white);
-  -webkit-font-smoothing:antialiased;
-  word-break:keep-all;line-height:1.7;font-weight:400;
+  font-family:var(--f-sans); color:var(--body); background:var(--white);
+  -webkit-font-smoothing:antialiased; word-break:keep-all; line-height:1.7; font-weight:400;
 }
+a{color:inherit;}
 
-/* ─ Icon system (Phosphor-style monoline 1.5px) ─ */
-.icon{
-  width:24px;height:24px;
-  stroke:currentColor;fill:none;
-  stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;
-  flex-shrink:0;
-}
+.icon{width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;}
 .icon-sm{width:16px;height:16px;stroke-width:1.8;}
-.icon-lg{width:28px;height:28px;}
+.icon-lg{width:32px;height:32px;}
 
-/* ─ NAV ─ */
+/* ── Reveal ── */
+.reveal{opacity:1;transform:none;}
+.reveal.in{opacity:1;transform:none;}
+@media(prefers-reduced-motion:reduce){.reveal,.reveal.in{opacity:1;transform:none;transition:none;}}
+
+/* ── NAV ── */
 nav{
   position:fixed;top:0;left:0;right:0;z-index:100;
-  height:62px;padding:0 60px;
+  height:68px;padding:0 60px;
   display:flex;align-items:center;justify-content:space-between;
   background:rgba(255,255,255,0.96);backdrop-filter:blur(16px);
   border-bottom:1px solid var(--line-soft);
   transition:box-shadow .3s;
 }
 nav.up{box-shadow:var(--sh-sm);}
-.logo{display:flex;align-items:center;gap:8px;text-decoration:none;}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
 .logo-mark{
-  width:24px;height:24px;border-radius:4px;
-  background:var(--orange);
+  width:28px;height:28px;border-radius:5px;background:var(--orange);
   display:flex;align-items:center;justify-content:center;
-  color:var(--white);font-weight:900;font-size:14px;
-  letter-spacing:-0.04em;line-height:1;
-  font-family:var(--f-sans);
+  color:var(--white);font-weight:900;font-size:16px;letter-spacing:-0.04em;line-height:1;
 }
-.logo-name{
-  font-size:15px;font-weight:800;color:var(--ink);letter-spacing:-0.025em;
-}
+.logo-name{font-size:16px;font-weight:800;color:var(--ink);letter-spacing:-0.025em;}
 .logo-tag{
   font-size:11px;font-weight:700;color:var(--orange);
   background:var(--orange-light);border:1px solid var(--orange-bdr);
-  padding:2px 9px;border-radius:20px;letter-spacing:-0.005em;
+  padding:3px 10px;border-radius:20px;letter-spacing:-0.005em;
 }
 .nav-menu{display:flex;align-items:center;gap:4px;}
 .nav-menu a{
-  font-size:13px;font-weight:600;color:var(--mid);
-  text-decoration:none;padding:8px 14px;border-radius:8px;
-  letter-spacing:-0.005em;transition:color .2s,background .2s;
+  font-size:14px;font-weight:600;color:var(--mid);text-decoration:none;
+  padding:10px 16px;border-radius:8px;letter-spacing:-0.005em;
+  transition:color .2s,background .2s;
 }
 .nav-menu a:hover{color:var(--orange);}
 .nav-menu a.active{color:var(--ink);font-weight:800;}
 .nav-cta{
   background:var(--orange);color:white;
-  padding:9px 22px;border-radius:22px;font-size:13px;font-weight:700;
-  text-decoration:none;letter-spacing:-0.015em;
-  box-shadow:var(--sh-or);
-  transition:background .2s,transform .15s,box-shadow .2s;
-}
-.nav-cta:hover{background:var(--orange-dark);}
-
-/* ─ HERO ─ */
-.hero{
-  padding-top:62px;
-  background:var(--white);
-}
-.hero-in{
-  max-width:1120px;margin:0 auto;padding:128px 60px 128px;
-  display:grid;grid-template-columns:1.1fr 0.9fr;gap:64px;align-items:center;
-}
-.hero-left{display:flex;flex-direction:column;justify-content:center;}
-
-.hero-kicker{
-  display:inline-flex;align-items:center;gap:8px;
-  font-size:12px;font-weight:800;letter-spacing:0.14em;color:var(--orange);
-  margin-bottom:24px;text-transform:uppercase;
-}
-.hero-kicker span{
-  display:inline-block;width:20px;height:2px;
-  background:var(--orange);border-radius:1px;
-}
-.hero-h1{
-  font-size:64px;font-weight:800;line-height:1.15;
-  letter-spacing:-0.04em;color:var(--ink);margin-bottom:32px;
-}
-.hero-h1 b{
-  font-weight:800;color:var(--orange);
-}
-.hero-list{
-  list-style:none;display:flex;flex-direction:column;gap:10px;
-  margin-bottom:32px;
-}
-.hero-list li{
-  display:flex;align-items:flex-start;gap:10px;
-  font-size:15px;color:var(--mid);line-height:1.7;
-  letter-spacing:-0.005em;
-}
-.hero-list li::before{
-  content:'';width:5px;height:5px;min-width:5px;
-  border-radius:50%;background:var(--orange);margin-top:10px;
-}
-.hero-badges{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:36px;}
-.hero-badge{
-  display:inline-flex;align-items:center;gap:6px;
-  font-size:12px;font-weight:700;color:var(--orange);
-  background:var(--orange-light);border:1.5px solid var(--orange-bdr);
-  padding:7px 14px;border-radius:20px;letter-spacing:-0.005em;
-}
-.hero-badge::before{content:'✓';font-weight:900;}
-.hero-btns{display:flex;gap:10px;flex-wrap:wrap;}
-.btn-main{
-  display:inline-block;background:var(--orange);color:white;
-  padding:18px 40px;border-radius:var(--r-lg);font-size:16px;font-weight:700;
-  text-decoration:none;letter-spacing:-0.02em;
-  box-shadow:var(--sh-or);
-  transition:background .2s,transform .15s,box-shadow .2s;
-}
-.btn-main:hover{background:var(--orange-dark);}
-.btn-sub{
-  display:inline-block;background:var(--warm);color:var(--body);
-  padding:18px 36px;border-radius:var(--r-lg);font-size:16px;font-weight:700;
-  text-decoration:none;border:1px solid var(--line);
-  transition:all .2s;letter-spacing:-0.02em;
-}
-.btn-sub:hover{border-color:var(--navy);color:var(--navy);}
-
-/* Hero Right — Envelope mockup (실제 봉투 표지) */
-.hero-envelope{
-  margin:0;
-  display:flex;align-items:center;justify-content:center;
-  position:relative;
-}
-.hero-envelope svg,
-.hero-envelope img{
-  width:100%;height:auto;max-width:440px;display:block;
-  border-radius:6px;
-}
-
-.pr-icon{
-  width:42px;height:42px;border-radius:10px;
-  background:var(--orange-light);color:var(--orange);
-  display:flex;align-items:center;justify-content:center;
-}
-
-/* ─ Section common ─ */
-.sec-tag{
-  display:inline-flex;align-items:center;gap:10px;
-  font-size:12px;font-weight:800;color:var(--orange);letter-spacing:0.14em;
-  margin-bottom:20px;text-transform:uppercase;
-}
-.sec-tag::before{content:'';width:18px;height:2px;background:var(--orange);border-radius:1px;}
-.sec-h2{
-  font-size:48px;font-weight:800;letter-spacing:-0.035em;
-  color:var(--ink);margin-bottom:16px;line-height:1.2;
-}
-.sec-sub{
-  font-size:16px;color:var(--mid);line-height:1.75;
-  letter-spacing:-0.005em;
-  margin-bottom:72px;max-width:680px;
-}
-
-/* ─ SCHEDULE STRIP ─ */
-.schedule{
-  background:var(--navy);color:var(--white);
-  padding:36px 60px;
-  position:relative;overflow:hidden;
-}
-.schedule::before{
-  content:'';position:absolute;top:-100px;right:-50px;
-  width:300px;height:300px;border-radius:50%;
-  background:radial-gradient(circle,rgba(230,57,70,0.18) 0%,rgba(230,57,70,0) 70%);
-  pointer-events:none;
-}
-.schedule-in{
-  max-width:1120px;margin:0 auto;
-  display:flex;align-items:center;gap:28px;flex-wrap:wrap;
-  position:relative;z-index:1;
-}
-.schedule-flag{
-  font-size:11px;font-weight:800;letter-spacing:0.14em;
-  color:var(--orange);
-  background:rgba(230,57,70,0.12);
-  border:1px solid rgba(230,57,70,0.32);
-  padding:7px 14px;border-radius:20px;white-space:nowrap;
-  text-transform:uppercase;
-}
-.schedule-body{flex:1;min-width:280px;}
-.schedule-h{
-  font-size:20px;font-weight:800;letter-spacing:-0.025em;
-  margin-bottom:6px;line-height:1.35;
-}
-.schedule-h em{font-style:normal;color:var(--orange);}
-.schedule-body p{
-  font-size:14px;color:rgba(255,255,255,0.7);line-height:1.65;
-  letter-spacing:-0.005em;
-}
-.schedule-cta{
-  background:var(--orange);color:var(--white);
-  padding:14px 30px;border-radius:var(--r-lg);
-  font-size:14px;font-weight:700;text-decoration:none;
-  letter-spacing:-0.015em;white-space:nowrap;
+  padding:10px 24px;border-radius:24px;font-size:13px;font-weight:700;
+  text-decoration:none;letter-spacing:-0.015em;box-shadow:var(--sh-or);
   transition:background .2s,transform .15s;
 }
-.schedule-cta:hover{background:var(--orange-dark);}
+.nav-cta:hover{background:var(--orange-dark);transform:translateY(-1px);}
 
-/* ─ STATS STRIP ─ */
-.stats{
-  background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line);
-}
-.stats-in{
-  max-width:1120px;margin:0 auto;padding:48px 60px;
-  display:grid;grid-template-columns:repeat(3,1fr);gap:0;
-  position:relative;
-}
-.stat-item{
-  display:flex;flex-direction:column;align-items:center;gap:10px;
-  padding:0 24px;text-align:center;
-  border-right:1px solid var(--line);
-}
-.stat-item:last-child{border-right:0;}
-.stat-num{
-  font-size:42px;font-weight:800;color:var(--ink);
-  letter-spacing:-0.04em;line-height:1;
-  display:inline-flex;align-items:baseline;gap:4px;
-}
-.stat-num em{font-style:normal;color:var(--orange);font-weight:800;}
-.stat-num sup{
-  font-size:18px;font-weight:700;color:var(--orange);
-  letter-spacing:-0.015em;line-height:1;
-  position:static;align-self:flex-end;padding-bottom:5px;
-  margin-left:1px;
-}
-.stat-label{
-  font-size:13px;color:var(--mid);font-weight:600;
-  letter-spacing:-0.005em;
-}
-
-/* ─ WHY ─ */
-.why{background:var(--warm);padding:128px 60px;}
-.why-in{max-width:1120px;margin:0 auto;}
-.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
-.why-card{
-  background:var(--white);border:1.5px solid var(--line);
-  border-radius:var(--r-lg);padding:36px 30px;
-  position:relative;
-}
-.why-icon{
-  width:48px;height:48px;border-radius:12px;
-  background:var(--navy);color:var(--white);
-  display:flex;align-items:center;justify-content:center;
-  margin-bottom:24px;
-}
-.why-num{
-  font-size:11px;font-weight:800;color:var(--orange);
-  letter-spacing:0.14em;text-transform:uppercase;
-  margin-bottom:14px;line-height:1;
-  display:inline-block;
-}
-.why-h3{
-  font-size:18px;font-weight:800;color:var(--ink);
-  margin-bottom:10px;letter-spacing:-0.025em;line-height:1.4;
+/* ── HERO ── */
+.hero{padding-top:68px;background:var(--hero-bg);position:relative;overflow:hidden;}
+.hero-in{
+  max-width:var(--max);margin:0 auto;padding:140px 60px 140px;
+  display:grid;grid-template-columns:1.05fr 0.95fr;gap:80px;align-items:center;
   position:relative;z-index:1;
 }
-.why-p{
-  font-size:14px;color:var(--mid);line-height:1.75;
-  letter-spacing:-0.005em;
-  position:relative;z-index:1;
-}
-
-/* ─ CONTENTS (NEW) ─ */
-.contents{background:var(--white);padding:128px 60px;}
-.contents-in{max-width:1120px;margin:0 auto;}
-.contents-grid{
-  display:grid;grid-template-columns:repeat(2,1fr);gap:16px;
-  margin-bottom:24px;
-}
-.cont-card{
-  background:var(--warm);border:1.5px solid var(--line);
-  border-radius:var(--r-lg);padding:32px;
-  display:flex;gap:22px;align-items:flex-start;
-}
-.cont-ic{
-  width:52px;height:52px;min-width:52px;border-radius:12px;
-  background:var(--white);border:1px solid var(--line);
-  color:var(--navy);
-  display:flex;align-items:center;justify-content:center;
-}
-.cont-body{flex:1;}
-.cont-h3{
-  font-size:18px;font-weight:800;color:var(--ink);
-  margin-bottom:8px;letter-spacing:-0.025em;line-height:1.4;
-}
-.cont-p{
-  font-size:14px;color:var(--mid);line-height:1.75;
-  letter-spacing:-0.005em;
-}
-
-/* ─ Cover Preview Gallery ─ */
-.cover-gallery{
-  margin-top:48px;
-  padding-top:48px;border-top:1px solid var(--line);
-}
-.cover-gallery-head{margin-bottom:36px;text-align:center;}
-.cover-gallery-tag{
+.hero-kicker{
   display:inline-flex;align-items:center;gap:10px;
-  font-size:11px;font-weight:800;color:var(--orange);letter-spacing:0.16em;
-  margin-bottom:14px;text-transform:uppercase;
+  font-size:12px;font-weight:800;letter-spacing:0.18em;color:var(--orange);
+  margin-bottom:28px;text-transform:uppercase;
 }
-.cover-gallery-tag::before{content:'';width:18px;height:2px;background:var(--orange);border-radius:1px;}
-.cover-gallery-h{
-  font-size:28px;font-weight:800;color:var(--ink);
-  letter-spacing:-0.03em;line-height:1.3;margin-bottom:12px;
+.hero-kicker span{display:inline-block;width:24px;height:2px;background:var(--orange);border-radius:1px;}
+.hero-h1{
+  font-size:68px;font-weight:800;line-height:1.12;
+  letter-spacing:-0.045em;color:var(--ink);margin-bottom:28px;
 }
-.cover-gallery-p{
-  font-size:14px;color:var(--mid);line-height:1.75;
-  letter-spacing:-0.005em;
-  max-width:580px;margin:0 auto;
+.hero-h1 .b{color:var(--orange);}
+.hero-h1 .acc{display:inline-block;position:relative;}
+.hero-h1 .acc::after{
+  content:'';position:absolute;left:-6px;right:-6px;bottom:6px;height:14px;
+  background:var(--orange-light);border-radius:3px;z-index:-1;
 }
+.hero-sub{
+  font-size:17px;color:var(--mid);line-height:1.75;
+  letter-spacing:-0.005em;margin-bottom:36px;max-width:520px;
+}
+.hero-sub b{color:var(--ink);font-weight:700;}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;}
+.btn-main{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--orange);color:white;
+  padding:18px 36px;border-radius:var(--r-lg);font-size:16px;font-weight:700;
+  text-decoration:none;letter-spacing:-0.02em;box-shadow:var(--sh-or);
+  transition:background .2s,transform .15s,box-shadow .2s;
+}
+.btn-main:hover{background:var(--orange-dark);transform:translateY(-2px);box-shadow:0 10px 24px rgba(230,0,18,0.32);}
+.btn-main .arr{transition:transform .2s;}
+.btn-main:hover .arr{transform:translateX(4px);}
+.btn-sub{
+  display:inline-flex;align-items:center;gap:8px;
+  background:transparent;color:var(--ink);
+  padding:18px 32px;border-radius:var(--r-lg);font-size:16px;font-weight:700;
+  text-decoration:none;border:1.5px solid var(--ink);
+  transition:all .2s;letter-spacing:-0.02em;
+}
+.btn-sub:hover{background:var(--ink);color:var(--white);}
 
-.cover-grid{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:16px;
-}
-.cover{margin:0;}
-.cover-art{
-  aspect-ratio:1/1.414;          /* A4 ratio */
+.hero-envelope{margin:0;display:flex;align-items:center;justify-content:center;position:relative;}
+.hero-envelope svg,.hero-envelope img{width:100%;height:auto;max-width:560px;display:block;border-radius:6px;}
+.hero-pdf{
+  width:100%;max-width:480px;
+  aspect-ratio:1/1.414;
+  border:1px solid var(--line);
   border-radius:6px;
-  padding:18px 16px 14px;
-  display:flex;flex-direction:column;
-  position:relative;
-  font-family:var(--f-sans);
-  box-shadow:0 4px 18px rgba(26,26,26,0.10);
+  background:var(--white);
+  box-shadow:0 12px 40px rgba(26,26,26,0.10), 0 2px 8px rgba(26,26,26,0.05);
+  display:block;
   overflow:hidden;
 }
-
-/* EASY — white / black / red label */
-.cover-easy{
-  background:var(--white);
-  border:1px solid var(--line);
+.hero-pdf-fallback{
+  width:100%;height:100%;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:10px;text-decoration:none;
+  background:var(--warm);color:var(--ink);
+  padding:40px;text-align:center;
 }
-.cover-easy .cover-label{color:var(--orange);}
-.cover-easy .cover-title{color:var(--ink);}
-.cover-easy .cover-mark{background:var(--orange);color:var(--white);}
-.cover-easy .cover-brand{color:var(--ink);}
-
-/* NORMAL — charcoal / white / red label */
-.cover-normal{background:#1A1A1A;}
-.cover-normal .cover-label{color:var(--orange);}
-.cover-normal .cover-title{color:var(--white);}
-.cover-normal .cover-tagline{color:rgba(255,255,255,0.7);}
-.cover-normal .cover-mark{background:var(--orange);color:var(--white);}
-.cover-normal .cover-brand{color:var(--white);}
-
-/* HARD — full red */
-.cover-hard{background:var(--orange);}
-.cover-hard .cover-label{color:var(--white);}
-.cover-hard .cover-title{color:var(--white);}
-.cover-hard .cover-tagline{color:rgba(255,255,255,0.85);}
-.cover-hard .cover-mark{background:var(--white);color:var(--orange);}
-.cover-hard .cover-brand{color:var(--white);}
-
-/* Common cover elements */
-.cover-tagline{
-  font-size:7px;font-weight:600;letter-spacing:0.5px;
-  margin-bottom:auto;
-  display:flex;align-items:center;gap:3px;
+.hero-pdf-fallback-h{
+  font-size:18px;font-weight:800;letter-spacing:-0.025em;
 }
-.cover-label{
-  font-size:8px;font-weight:800;letter-spacing:1.6px;
-  margin-bottom:4px;
-  position:relative;padding-bottom:6px;
-}
-.cover-label::after{
-  content:'';position:absolute;bottom:0;left:0;
-  width:14px;height:1px;background:currentColor;
-}
-.cover-easy .cover-label,
-.cover-normal .cover-label{margin-top:18px;}
-.cover-hard .cover-label{margin-top:8px;}
-.cover-easy .cover-tagline{visibility:hidden;}  /* easy 표지엔 상단 로고 없음 */
-.cover-title{
-  font-size:13px;font-weight:800;letter-spacing:-0.4px;line-height:1.25;
-  margin-top:2px;
-}
-.cover-foot{
-  margin-top:auto;display:flex;align-items:center;gap:4px;
-}
-.cover-mark{
-  width:13px;height:13px;border-radius:2px;
-  display:flex;align-items:center;justify-content:center;
-  font-size:9px;font-weight:900;line-height:1;
-}
-.cover-brand{font-size:7px;font-weight:700;letter-spacing:-0.2px;}
-
-/* Exam cover — white with serif-style title */
-.cover-exam{
-  background:var(--white);
-  border:1px solid var(--line);
-  align-items:center;text-align:center;
-  padding-top:32px;
-}
-.cover-exam-sub{
-  font-size:9px;color:var(--ink);font-weight:500;
-  letter-spacing:-0.2px;margin-bottom:10px;
-}
-.cover-exam-h{
-  font-size:18px;font-weight:900;color:var(--ink);
-  letter-spacing:-0.8px;margin-bottom:auto;line-height:1.2;
-}
-.cover-exam-name{
-  display:flex;align-items:center;gap:4px;
-  width:100%;border:1px solid var(--ink);
-  padding:4px 6px;font-size:7px;
-  margin-bottom:auto;
-}
-.cover-exam-name-key{
-  font-weight:800;color:var(--ink);letter-spacing:-0.2px;
-  padding-right:6px;border-right:1px solid var(--ink);
-}
-.cover-exam-name-line{flex:1;}
-.cover-exam-warn{
-  width:100%;font-size:7px;font-weight:700;color:var(--ink);
-  letter-spacing:-0.2px;background:#E5E7EB;
-  padding:5px 4px;text-align:center;
-  border-radius:1px;margin-top:0;
+.hero-pdf-fallback-sub{
+  font-size:13px;font-weight:700;color:var(--orange);
 }
 
-.cover-caption{
-  font-size:12px;font-weight:700;color:var(--ink);
-  text-align:center;margin-top:14px;letter-spacing:-0.005em;
+/* ── PICK (이감 "선택한다는 것은" — big counter strip) ── */
+.pick{
+  background:var(--pick-bg);
+  padding:var(--pad-sec) 60px;
+  position:relative;overflow:hidden;
+  border-top:1px solid var(--line);
 }
+.pick-in{max-width:var(--max);margin:0 auto;}
+.pick-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;
+}
+.pick-left{}
+.pick-tag{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:12px;font-weight:800;color:var(--orange);letter-spacing:0.18em;
+  margin-bottom:22px;text-transform:uppercase;
+}
+.pick-tag::before{content:'';width:20px;height:2px;background:var(--orange);border-radius:1px;}
+.pick-h2{
+  font-size:54px;font-weight:800;letter-spacing:-0.04em;
+  color:var(--ink);line-height:1.18;margin-bottom:22px;
+}
+.pick-h2 .small{display:block;font-size:32px;font-weight:700;color:var(--mid);margin-top:6px;letter-spacing:-0.025em;}
+.pick-h2 b{color:var(--orange);}
+.pick-desc{
+  font-size:16px;color:var(--mid);line-height:1.8;
+  letter-spacing:-0.005em;max-width:480px;
+}
+.pick-desc b{color:var(--ink);font-weight:700;}
 
-@media(max-width:960px){
-  .cover-grid{grid-template-columns:repeat(2,1fr);gap:14px;}
-}
-@media(max-width:480px){
-  .cover-grid{grid-template-columns:repeat(2,1fr);gap:10px;}
-  .cover-title{font-size:11px;}
-  .cover-gallery-h{font-size:22px;}
-}
-
-/* ─ PRODUCTS ─ */
-.products{background:var(--warm);padding:128px 60px;}
-.products-in{max-width:1120px;margin:0 auto;}
-
-.prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:28px;}
-.prod-card{
-  background:var(--white);
-  border:1px solid var(--line);border-radius:var(--r-lg);
-  overflow:hidden;
-  display:flex;flex-direction:column;position:relative;
-}
-.prod-top{
-  padding:28px 28px 4px;
-  border-bottom:0;
-}
-.prod-label{
-  font-size:12px;font-weight:700;letter-spacing:-0.01em;color:var(--orange);
-  background:var(--orange-light);border:1px solid var(--orange-bdr);
-  padding:5px 12px;border-radius:14px;
-  margin-bottom:18px;
-  display:inline-block;line-height:1.4;
-}
-.prod-cover-link{
-  display:inline-block;
-  font-size:10px;font-weight:800;letter-spacing:0.06em;
-  padding:3px 8px;border-radius:4px;
-  white-space:nowrap;text-transform:uppercase;
-  vertical-align:middle;
-}
-.prod-cover-hard{background:var(--orange);color:var(--white);}
-.prod-cover-normal{background:var(--ink);color:var(--white);}
-.prod-cover-exam{
-  background:var(--warm);color:var(--ink);border:1px solid var(--line);
-  letter-spacing:-0.005em;text-transform:none;
-  font-size:11px;
-}
-.prod-name{
-  font-size:22px;font-weight:800;color:var(--ink);
-  letter-spacing:-0.03em;margin-bottom:8px;line-height:1.3;
-}
-.prod-desc{
-  font-size:14px;color:var(--mid);line-height:1.65;
-  letter-spacing:-0.005em;margin-bottom:18px;
-}
-.prod-pill{
-  display:inline-flex;align-items:center;gap:5px;
-  font-size:12px;font-weight:700;color:var(--ink);
-  background:transparent;border:1px solid var(--line);
-  padding:6px 12px;border-radius:6px;margin-bottom:24px;
-  letter-spacing:-0.005em;
-}
-.prod-divider{height:1px;background:var(--line-soft);margin:0 28px;}
-.prod-bottom{padding:22px 28px 28px;background:var(--warm);flex:1;}
-.prod-acad-label{
-  font-size:12px;font-weight:800;color:var(--orange);
-  letter-spacing:-0.005em;margin-bottom:14px;
-}
-.prod-pickline{
-  display:flex;align-items:center;gap:12px;
-  padding:9px 0;border-bottom:1px dashed var(--line);
-  font-size:13px;min-height:32px;
-}
-.prod-pickline:last-child{border-bottom:0;}
-.pl-key{
-  color:var(--mid);font-weight:600;min-width:48px;
-  font-size:12px;letter-spacing:-0.005em;
-  flex-shrink:0;
-}
-.pl-val{
-  color:var(--ink);font-weight:700;
-  font-size:13px;letter-spacing:-0.015em;
-  display:inline-flex;align-items:center;gap:4px;
-}
-
-.pricing-rule{
+.pick-stats{display:flex;flex-direction:column;gap:18px;}
+.pick-stat{
   background:var(--white);border:1px solid var(--line);
-  border-left:3px solid var(--orange);
-  border-radius:var(--r-sm);padding:20px 28px;
-  display:flex;align-items:center;gap:24px;flex-wrap:wrap;
-  margin-bottom:36px;
-}
-.pr-num{
-  font-size:38px;font-weight:900;color:var(--orange);
-  letter-spacing:-0.04em;line-height:1;
-}
-.pr-divider{width:1px;height:40px;background:var(--orange-bdr);}
-.pr-text{
-  font-size:14px;color:var(--body);line-height:1.75;
-  letter-spacing:-0.005em;
-}
-.pr-text strong{color:var(--ink);font-weight:800;}
-
-/* Subscription packages 5종 */
-.packages{background:var(--white);padding:128px 60px;border-top:1px solid var(--line);}
-.packages-in{max-width:1120px;margin:0 auto;}
-.sub-wrap{
-  background:var(--warm);border:1px solid var(--line);
-  border-radius:var(--r-lg);padding:36px;
-}
-.sub-h3,.sub-p,.sub-head,.sub-head-left,.sub-badge{display:none;}
-.sub-table{
-  width:100%;border-collapse:separate;border-spacing:0;
-  font-size:13px;
-}
-.sub-table thead th{
-  font-size:11px;font-weight:800;color:var(--muted);
-  text-align:left;padding:10px 14px;
-  background:var(--warm);
-  border-bottom:1px solid var(--line);
-  letter-spacing:0.06em;text-transform:uppercase;
-}
-.sub-table thead th:first-child{border-radius:var(--r-sm) 0 0 0;}
-.sub-table thead th:last-child{border-radius:0 var(--r-sm) 0 0;}
-.sub-table tbody td{
-  padding:14px;border-bottom:1px solid var(--line-soft);
-  vertical-align:middle;
-}
-.sub-table tbody tr:last-child td{border-bottom:0;}
-.sub-type{
-  display:inline-flex;align-items:center;justify-content:center;
-  width:26px;height:26px;border-radius:50%;
-  background:var(--orange-light);border:1px solid var(--orange-bdr);
-  color:var(--orange);font-weight:800;font-size:12px;margin-right:6px;
-}
-.sub-name{font-weight:800;color:var(--ink);font-size:14px;letter-spacing:-0.015em;}
-.sub-comp{color:var(--mid);font-size:13px;letter-spacing:-0.005em;}
-.sub-pick{white-space:nowrap;}
-.pick-on{
-  display:inline-block;
-  font-size:12px;font-weight:700;color:var(--orange);
-  background:var(--orange-light);border:1px solid var(--orange-bdr);
-  padding:4px 10px;border-radius:14px;letter-spacing:-0.005em;
-}
-.sub-cycle{font-size:13px;color:var(--body);font-weight:600;letter-spacing:-0.005em;}
-.sub-note{
-  font-size:13px;color:var(--mid);margin-top:18px;line-height:1.75;
-  letter-spacing:-0.005em;
-}
-.sub-note strong{color:var(--ink);font-weight:800;}
-
-/* ─ PROGRAM (NEW) ─ */
-.program{background:var(--white);padding:128px 60px;border-top:1px solid var(--line);}
-.program-in{max-width:1120px;margin:0 auto;}
-.process{background:var(--white);padding:128px 60px;border-top:1px solid var(--line);}
-.process-in{max-width:1120px;margin:0 auto;}
-
-.timeline-wrap{margin-bottom:60px;}
-.timeline-track{
-  position:relative;padding-top:24px;margin-bottom:18px;
-}
-.timeline-track::before{
-  content:'';position:absolute;
-  top:33px;left:6%;right:6%;height:2px;
-  background:linear-gradient(to right,
-    var(--line) 0%,
-    var(--orange-bdr) 50%,
-    var(--orange) 100%);
-  z-index:0;
-}
-.timeline-grid{
-  display:grid;grid-template-columns:repeat(6,1fr);gap:10px;
-  position:relative;z-index:1;
-  align-items:stretch;
-}
-.tl-card{
-  background:var(--white);border:1px solid var(--line);
-  border-radius:12px;padding:36px 16px 20px;
-  display:flex;flex-direction:column;gap:8px;
-  position:relative;
-  min-height:240px;
-}
-.tl-card:last-child{
-  border-color:var(--orange);
-  box-shadow:0 0 0 1px var(--orange);
-}
-.tl-dot{
-  position:absolute;top:0;left:50%;transform:translateX(-50%);
-  width:20px;height:20px;border-radius:50%;
-  background:var(--white);border:2px solid var(--line);
-  color:var(--mid);
-  display:flex;align-items:center;justify-content:center;
-  font-size:10px;font-weight:800;
-  z-index:2;
-}
-.tl-card:last-child .tl-dot{
-  background:var(--orange);border-color:var(--orange);color:var(--white);
-}
-.tl-num{
-  display:none;
-}
-.tl-label{
-  font-size:10px;font-weight:800;color:var(--orange);
-  letter-spacing:0.14em;text-align:center;
-}
-.tl-period{
-  font-size:12px;color:var(--mid);font-weight:600;text-align:center;
-  letter-spacing:-0.005em;
-  padding-bottom:10px;border-bottom:1px solid var(--line-soft);
-  margin-bottom:4px;
-}
-.tl-title{
-  font-size:14px;font-weight:800;color:var(--ink);
-  letter-spacing:-0.025em;line-height:1.4;text-align:center;
-  min-height:39px;
-  display:flex;align-items:center;justify-content:center;
-}
-.tl-scope{
-  font-size:12px;color:var(--mid);line-height:1.6;text-align:center;
-  letter-spacing:-0.005em;
-  flex:1;min-height:54px;
-}
-.tl-tip{
-  margin-top:auto;padding-top:14px;
-  font-size:12px;font-weight:700;color:var(--orange);
-  text-align:center;letter-spacing:-0.005em;
-  border-top:1px dashed var(--line);
-}
-.tl-card:last-child .tl-tip{color:var(--orange);}
-
-.tl-total{
-  background:var(--navy);color:var(--white);
-  border-radius:var(--r-md);padding:24px 32px;
-  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;
-  box-shadow:var(--sh-navy);
+  border-radius:var(--r-lg);padding:32px 36px;
+  display:flex;align-items:center;justify-content:space-between;gap:24px;
+  transition:transform .25s,box-shadow .25s,border-color .25s;
   position:relative;overflow:hidden;
 }
-.tl-total::before{
-  content:'';position:absolute;top:-30px;right:-30px;
-  width:140px;height:140px;border-radius:50%;
-  background:radial-gradient(circle,rgba(230,57,70,0.20) 0%,rgba(230,57,70,0) 70%);
-  pointer-events:none;
+.pick-stat:hover{
+  transform:translateX(8px);
+  box-shadow:var(--sh-md);
+  border-color:var(--orange-bdr);
 }
-.tl-total > *{position:relative;z-index:1;}
-.tl-total-label{
-  font-size:11px;font-weight:800;letter-spacing:0.14em;
-  color:var(--orange);text-transform:uppercase;
+.pick-stat::before{
+  content:'';position:absolute;left:0;top:0;bottom:0;width:3px;
+  background:var(--orange);transform:scaleY(0);transform-origin:top;
+  transition:transform .3s;
 }
-.tl-total-main{
-  font-size:18px;font-weight:800;letter-spacing:-0.025em;margin-top:4px;
-  line-height:1.4;
+.pick-stat:hover::before{transform:scaleY(1);}
+.ps-label{
+  font-size:13px;font-weight:700;color:var(--mid);
+  letter-spacing:-0.005em;margin-bottom:8px;line-height:1.4;
 }
-.tl-total-stats{display:flex;gap:32px;}
-.tl-stat{display:flex;flex-direction:column;gap:2px;}
-.tl-stat-num{
-  font-size:28px;font-weight:900;letter-spacing:-0.04em;line-height:1;
-  color:var(--orange);
+.ps-label .footmark{
+  display:inline-block;color:var(--orange);font-weight:900;
+  margin-left:3px;font-size:11px;vertical-align:super;
 }
-.tl-stat-num span{
-  font-size:13px;font-weight:700;color:rgba(255,255,255,0.7);
-  letter-spacing:-0.005em;
+.ps-sub{
+  font-size:12px;color:var(--muted);letter-spacing:-0.005em;
 }
-.tl-stat-label{
-  font-size:11px;color:rgba(255,255,255,0.65);
-  letter-spacing:0.04em;font-weight:600;text-transform:uppercase;
+.ps-num{
+  font-size:62px;font-weight:900;color:var(--ink);
+  letter-spacing:-0.05em;line-height:1;
+  display:inline-flex;align-items:baseline;gap:6px;flex-shrink:0;
+  font-variant-numeric:tabular-nums;
+}
+.ps-num .unit{
+  font-size:18px;font-weight:800;color:var(--orange);
+  letter-spacing:-0.01em;
+}
+.ps-num .plus{
+  font-size:32px;font-weight:900;color:var(--orange);
+  margin-left:-4px;
 }
 
-/* Process 4-step */
-.proc-head{margin-top:60px;margin-bottom:28px;}
-.proc-h3{
-  font-size:26px;font-weight:800;color:var(--ink);
-  letter-spacing:-0.03em;margin-bottom:8px;line-height:1.3;
+.pick-foot{
+  margin-top:28px;font-size:12px;color:var(--muted);
+  line-height:1.9;letter-spacing:-0.005em;
 }
-.proc-p{
-  font-size:14px;color:var(--mid);line-height:1.75;
+.pick-foot .footmark{color:var(--orange);font-weight:800;}
+
+/* ── PROOF (다크 트러스트 밴드) ── */
+.proof{
+  background:var(--proof-bg);color:var(--white);
+  padding:var(--pad-sec) 60px;position:relative;overflow:hidden;
+}
+.proof::before{
+  content:'';position:absolute;top:-100px;right:-100px;
+  width:480px;height:480px;border-radius:50%;
+  background:radial-gradient(circle,rgba(230,0,18,0.18) 0%,rgba(230,0,18,0) 65%);
+  pointer-events:none;
+}
+.proof-in{max-width:var(--max);margin:0 auto;position:relative;z-index:1;}
+.proof-grid{display:grid;grid-template-columns:0.85fr 1.15fr;gap:96px;align-items:center;}
+
+.proof-tag{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:12px;font-weight:800;color:var(--orange);letter-spacing:0.18em;
+  margin-bottom:22px;text-transform:uppercase;
+}
+.proof-tag::before{content:'';width:20px;height:2px;background:var(--orange);border-radius:1px;}
+
+.proof-h2{
+  font-size:52px;font-weight:800;letter-spacing:-0.04em;
+  color:var(--white);line-height:1.18;margin-bottom:26px;
+}
+.proof-h2 b{color:var(--orange);}
+.proof-desc{
+  font-size:16px;color:rgba(255,255,255,0.72);line-height:1.85;
   letter-spacing:-0.005em;
+}
+.proof-desc b{color:var(--white);font-weight:700;}
+
+.proof-cards{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:14px;
+}
+.proof-card{
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.10);
+  border-radius:var(--r-lg);padding:30px 28px;
+  position:relative;
+  transition:background .25s,border-color .25s,transform .25s;
+}
+.proof-card:hover{
+  background:rgba(255,255,255,0.07);
+  border-color:rgba(230,0,18,0.45);
+  transform:translateY(-4px);
+}
+.pc-num{
+  font-size:11px;font-weight:800;color:var(--orange);
+  letter-spacing:0.18em;margin-bottom:14px;line-height:1;
+}
+.pc-h3{
+  font-size:20px;font-weight:800;color:var(--white);
+  letter-spacing:-0.025em;line-height:1.35;margin-bottom:10px;
+}
+.pc-p{
+  font-size:14px;color:rgba(255,255,255,0.62);line-height:1.7;
+  letter-spacing:-0.005em;
+}
+
+/* ── PROCESS (이감 "프로그램 절차" 4단계 — 브랜드 컬러 백그라운드) ── */
+.process{
+  background:linear-gradient(180deg, #FFF1F2 0%, #FFE8EA 100%);
+  padding:var(--pad-sec) 60px;
+  position:relative;overflow:hidden;
+}
+.process::before{
+  content:'';position:absolute;top:-160px;left:-160px;
+  width:520px;height:520px;border-radius:50%;
+  background:radial-gradient(circle,rgba(230,0,18,0.10) 0%,rgba(230,0,18,0) 70%);
+  pointer-events:none;
+}
+.process::after{
+  content:'';position:absolute;bottom:-200px;right:-200px;
+  width:600px;height:600px;border-radius:50%;
+  background:radial-gradient(circle,rgba(230,0,18,0.08) 0%,rgba(230,0,18,0) 70%);
+  pointer-events:none;
+}
+.process-in{
+  max-width:var(--max);margin:0 auto;position:relative;z-index:1;
+  display:grid;grid-template-columns:0.85fr 1.15fr;gap:88px;align-items:start;
+}
+.process-head{position:sticky;top:120px;}
+.process-head .sec-tag-center{
+  display:inline-flex;align-items:center;gap:10px;
+  margin-bottom:22px;
+}
+.process-head .sec-tag-center::before{content:'';width:20px;height:2px;background:var(--orange);border-radius:1px;}
+.process-head .sec-tag-center::after{display:none;}
+.process-h2{
+  font-size:48px;font-weight:800;letter-spacing:-0.04em;
+  color:var(--ink);line-height:1.2;margin-bottom:18px;
+}
+.process-h2 b{color:var(--orange);}
+.process-desc{
+  font-size:16px;color:var(--mid);line-height:1.75;
+  letter-spacing:-0.005em;max-width:none;margin:0;
 }
 
 .proc-grid{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:12px;
+  display:flex;flex-direction:column;gap:18px;
+  max-width:none;margin:0;
   position:relative;
+}
+.proc-grid::before{
+  content:'';position:absolute;top:60px;bottom:60px;left:76px;width:2px;
+  background:linear-gradient(to bottom,var(--orange-bdr) 0%,var(--orange) 100%);
+  z-index:0;
 }
 .proc-card{
-  background:var(--warm);border:1px solid var(--line);
-  border-radius:var(--r-md);padding:24px;
-  position:relative;
+  background:var(--white);
+  border:1.5px solid var(--line);
+  border-radius:var(--r-lg);padding:32px 36px 32px 32px;
+  position:relative;z-index:1;
+  display:grid;grid-template-columns:88px 1fr;gap:28px;align-items:center;
+  transition:transform .25s,box-shadow .25s,border-color .25s;
+  text-align:left;
 }
-.proc-card:not(:last-child)::after{
-  content:'→';position:absolute;
-  top:50%;right:-14px;transform:translateY(-50%);
-  font-size:22px;color:var(--muted);font-weight:300;
-  z-index:2;
+.proc-card:hover{
+  transform:translateX(6px);
+  border-color:var(--orange-bdr);
+  box-shadow:var(--sh-lg);
 }
+.proc-card:last-child{border-color:var(--orange);box-shadow:0 0 0 1px var(--orange);}
+.proc-icon{
+  width:88px;height:88px;border-radius:18px;
+  background:var(--orange-light);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--orange);
+  position:relative;flex-shrink:0;
+}
+.proc-card:last-child .proc-icon{background:var(--orange);color:var(--white);}
+.proc-icon .icon{width:40px;height:40px;stroke-width:1.6;}
 .proc-step{
-  font-size:11px;font-weight:800;letter-spacing:0.14em;
-  color:var(--orange);text-transform:uppercase;
-  display:inline-block;margin-bottom:8px;line-height:1;
-}
-.proc-num{
-  display:inline-flex;align-items:center;justify-content:center;
+  position:absolute;top:-12px;right:-12px;
   width:32px;height:32px;border-radius:50%;
-  background:var(--orange);color:white;
-  font-size:13px;font-weight:900;margin-bottom:14px;
+  background:var(--ink);color:var(--white);
+  display:flex;align-items:center;justify-content:center;
+  font-size:13px;font-weight:900;letter-spacing:-0.02em;
+}
+.proc-label{
+  font-size:11px;font-weight:800;color:var(--orange);
+  letter-spacing:0.18em;text-transform:uppercase;margin-bottom:6px;
 }
 .proc-title{
-  font-size:16px;font-weight:800;color:var(--ink);
-  margin-bottom:6px;letter-spacing:-0.025em;line-height:1.4;
+  font-size:22px;font-weight:800;color:var(--ink);
+  letter-spacing:-0.025em;line-height:1.35;margin-bottom:8px;
 }
 .proc-desc{
-  font-size:13px;color:var(--mid);line-height:1.7;
+  font-size:14.5px;color:var(--mid);line-height:1.7;
+  letter-spacing:-0.005em;
+}
+.proc-body{display:flex;flex-direction:column;justify-content:center;}
+
+/* ── WHY (흰색 배경) ── */
+.why{background:var(--white);padding:var(--pad-sec) 60px;}
+.why-in{max-width:var(--max);margin:0 auto;}
+.why-head{margin-bottom:64px;}
+.why-tag{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:12px;font-weight:800;color:var(--orange);letter-spacing:0.18em;
+  margin-bottom:22px;text-transform:uppercase;
+}
+.why-tag::before{content:'';width:20px;height:2px;background:var(--orange);border-radius:1px;}
+.why-h2{
+  font-size:48px;font-weight:800;letter-spacing:-0.04em;
+  color:var(--ink);line-height:1.2;margin-bottom:18px;
+}
+.why-h2 b{color:var(--orange);}
+.why-desc{font-size:16px;color:var(--mid);line-height:1.75;letter-spacing:-0.005em;max-width:600px;}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.why-card{
+  background:var(--warm);border:1.5px solid var(--line);
+  border-radius:var(--r-lg);padding:40px 32px;
+  transition:transform .25s,box-shadow .25s,border-color .25s;
+  position:relative;
+}
+.why-card:hover{
+  transform:translateY(-6px);
+  box-shadow:var(--sh-lg);
+  border-color:var(--orange-bdr);
+}
+.why-num-badge{
+  position:absolute;top:24px;right:24px;
+  font-size:14px;font-weight:900;color:var(--orange);
+  font-variant-numeric:tabular-nums;letter-spacing:-0.02em;
+  opacity:0.5;
+}
+.why-icon{
+  width:56px;height:56px;border-radius:14px;
+  background:var(--ink);color:var(--white);
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:28px;
+}
+.why-icon .icon{width:28px;height:28px;}
+.why-h3{
+  font-size:22px;font-weight:800;color:var(--ink);
+  margin-bottom:12px;letter-spacing:-0.03em;line-height:1.35;
+}
+.why-p{
+  font-size:14.5px;color:var(--mid);line-height:1.75;
   letter-spacing:-0.005em;
 }
 
-/* More-grade (고2/고1) accordion */
-.more-grade{
-  margin-top:48px;
-  background:var(--warm);border:1px solid var(--line);
-  border-radius:var(--r-lg);overflow:hidden;
-}
-.more-toggle{
-  width:100%;border:0;background:transparent;
-  padding:22px 28px;cursor:pointer;
-  display:flex;align-items:center;justify-content:space-between;
-  font-family:inherit;text-align:left;
-}
-.mt-left{display:flex;align-items:center;gap:14px;}
-.mt-ic{
-  width:36px;height:36px;border-radius:10px;
-  background:var(--white);border:1px solid var(--line);
-  color:var(--navy);
-  display:flex;align-items:center;justify-content:center;
-}
-.mt-text{display:flex;flex-direction:column;gap:2px;}
-.mt-title{
-  font-size:14px;font-weight:800;color:var(--ink);letter-spacing:-0.025em;
-}
-.mt-sub{font-size:12px;color:var(--mid);letter-spacing:-0.005em;}
-.mt-arrow{font-size:18px;color:var(--muted);transition:transform .3s;}
-.more-toggle.open .mt-arrow{transform:rotate(180deg);}
-.more-body{
-  max-height:0;overflow:hidden;
-  transition:max-height .35s ease;
-}
-.more-body.open{max-height:1200px;}
-.more-inner{
-  padding:0 28px 28px;
-  display:grid;grid-template-columns:1fr 1fr;gap:16px;
-}
-.grade-card{
-  background:var(--white);border:1px solid var(--line);
-  border-radius:var(--r-md);padding:22px;
-}
-.grade-h{
-  display:flex;align-items:center;justify-content:space-between;
-  margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid var(--line-soft);
-}
-.grade-name{
-  font-size:16px;font-weight:800;color:var(--ink);letter-spacing:-0.025em;
-}
-.grade-period{
-  font-size:11px;color:var(--muted);font-weight:700;
-  letter-spacing:0.04em;
-}
-.grade-row{
-  display:flex;justify-content:space-between;align-items:flex-start;gap:12px;
-  font-size:13px;padding:8px 0;letter-spacing:-0.005em;
-}
-.grade-row + .grade-row{border-top:1px dashed var(--line-soft);}
-.grade-key{color:var(--mid);font-weight:600;min-width:60px;}
-.grade-val{color:var(--body);text-align:right;flex:1;}
-.grade-val strong{color:var(--ink);font-weight:800;}
-.grade-note{
-  margin-top:14px;padding:10px 12px;
-  background:var(--orange-light);border-radius:var(--r-sm);
-  font-size:12px;color:var(--body);line-height:1.7;letter-spacing:-0.005em;
-}
+/* ── INQUIRY ── */
+.inquiry{background:var(--white);padding:var(--pad-sec) 60px;border-top:1px solid var(--line);}
+.inquiry-in{max-width:var(--max);margin:0 auto;}
+.inq-wrap{display:grid;grid-template-columns:1fr 1.5fr;gap:80px;align-items:start;}
 
-/* ─ INQUIRY ─ */
-.inquiry{background:var(--warm);padding:128px 60px;}
-.inquiry-in{max-width:1120px;margin:0 auto;}
-
-.inq-wrap{display:grid;grid-template-columns:1fr 1.55fr;gap:72px;align-items:start;}
-
-.inq-left{}
+.inq-tag{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:12px;font-weight:800;color:var(--orange);letter-spacing:0.18em;
+  margin-bottom:22px;text-transform:uppercase;
+}
+.inq-tag::before{content:'';width:20px;height:2px;background:var(--orange);border-radius:1px;}
 .inq-h3{
-  font-size:42px;font-weight:800;letter-spacing:-0.035em;
-  color:var(--ink);margin-bottom:18px;line-height:1.2;
+  font-size:46px;font-weight:800;letter-spacing:-0.04em;
+  color:var(--ink);margin-bottom:22px;line-height:1.2;
 }
 .inq-h3 b{color:var(--orange);}
-.inq-p{
-  font-size:15px;color:var(--mid);line-height:1.75;
-  letter-spacing:-0.005em;margin-bottom:32px;
-}
-.inq-checks{list-style:none;display:flex;flex-direction:column;gap:12px;margin-bottom:36px;}
-.inq-checks li{
-  display:flex;align-items:center;gap:12px;
-  font-size:14px;color:var(--body);letter-spacing:-0.005em;
-}
+.inq-p{font-size:16px;color:var(--mid);line-height:1.8;letter-spacing:-0.005em;margin-bottom:36px;}
+
+.inq-checks{list-style:none;display:flex;flex-direction:column;gap:14px;margin-bottom:36px;}
+.inq-checks li{display:flex;align-items:center;gap:14px;font-size:15px;color:var(--body);letter-spacing:-0.005em;}
 .chk{
-  width:22px;height:22px;min-width:22px;border-radius:50%;
+  width:26px;height:26px;min-width:26px;border-radius:50%;
   background:var(--orange);display:flex;align-items:center;justify-content:center;
-  font-size:10px;color:white;font-weight:900;
+  font-size:12px;color:white;
 }
 .inq-promise{
-  display:flex;align-items:flex-start;gap:18px;
-  padding:24px 26px;background:var(--white);
-  border:1px solid var(--line);border-radius:var(--r-md);
+  display:flex;align-items:flex-start;gap:20px;
+  padding:28px 30px;background:var(--warm);
+  border:1px solid var(--line);border-radius:var(--r-lg);
 }
 .inq-promise-num{
-  font-size:42px;font-weight:900;color:var(--orange);
+  font-size:48px;font-weight:900;color:var(--orange);
   letter-spacing:-0.04em;line-height:1;
   display:flex;align-items:baseline;gap:3px;flex-shrink:0;
 }
-.inq-promise-num span{
-  font-size:14px;font-weight:700;color:var(--orange);
-  letter-spacing:-0.015em;
-}
-.inq-promise-body{flex:1;}
-.inq-promise-ttl{
-  font-size:16px;font-weight:800;color:var(--ink);
-  letter-spacing:-0.025em;margin-bottom:6px;line-height:1.4;
-}
-.inq-promise-body p{
-  font-size:13px;color:var(--mid);line-height:1.7;letter-spacing:-0.005em;
-}
+.inq-promise-num span{font-size:15px;font-weight:700;color:var(--orange);letter-spacing:-0.015em;}
+.inq-promise-ttl{font-size:17px;font-weight:800;color:var(--ink);letter-spacing:-0.025em;margin-bottom:6px;line-height:1.4;}
+.inq-promise p{font-size:14px;color:var(--mid);line-height:1.7;letter-spacing:-0.005em;}
 
-/* Form */
 .form-box{
   background:var(--white);border-radius:var(--r-xl);
-  border:1.5px solid var(--line);padding:40px;
+  border:1.5px solid var(--line);padding:44px;
   box-shadow:var(--sh-lg);
 }
-.form-ttl{
-  font-size:18px;font-weight:800;color:var(--ink);
-  margin-bottom:24px;letter-spacing:-0.025em;line-height:1.4;
-}
-.form-wrap{display:flex;flex-direction:column;gap:12px;}
-.frow{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
-.fg{display:flex;flex-direction:column;gap:5px;}
-.fg label{
-  font-size:12px;font-weight:700;color:var(--mid);
-  letter-spacing:-0.005em;
-}
-.fg input,.fg select,.fg textarea{
+.form-ttl{font-size:20px;font-weight:800;color:var(--ink);margin-bottom:26px;letter-spacing:-0.025em;line-height:1.4;}
+.form-wrap{display:flex;flex-direction:column;gap:14px;}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.fg{display:flex;flex-direction:column;gap:6px;}
+.fg label{font-size:12px;font-weight:700;color:var(--mid);letter-spacing:-0.005em;}
+.fg input,.fg textarea,.fg select{
   border:1.5px solid var(--line);border-radius:var(--r-sm);
-  padding:11px 13px;font-size:14px;font-family:inherit;
+  padding:12px 14px;font-size:14px;font-family:inherit;
   color:var(--ink);background:var(--warm);letter-spacing:-0.005em;
   outline:none;transition:border-color .2s,background .2s,box-shadow .2s;
 }
 .fg input::placeholder,.fg textarea::placeholder{color:var(--muted);}
-.fg input:focus,.fg select:focus,.fg textarea:focus{
+.fg input:focus,.fg textarea:focus,.fg select:focus{
   border-color:var(--orange);background:var(--white);
-  box-shadow:0 0 0 3px rgba(232,74,15,0.08);
+  box-shadow:0 0 0 3px rgba(230,0,18,0.08);
 }
-.fg textarea{resize:vertical;min-height:72px;line-height:1.7;}
-.fg select{
-  appearance:none;cursor:pointer;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23BBBBBB' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-  background-repeat:no-repeat;background-position:right 12px center;padding-right:32px;
+.fg textarea{resize:vertical;min-height:80px;line-height:1.7;}
+.fradio-group{display:grid;gap:6px;}
+.fradio-group.cols-4{grid-template-columns:repeat(4,1fr);}
+.fradio{position:relative;}
+.fradio input{position:absolute;opacity:0;width:0;height:0;}
+.fradio label{
+  display:flex;align-items:center;justify-content:center;
+  border:1.5px solid var(--line);border-radius:var(--r-sm);
+  background:var(--warm);padding:12px 8px;
+  font-size:13px;font-weight:600;color:var(--mid);
+  letter-spacing:-0.005em;cursor:pointer;text-align:center;line-height:1.3;
+  transition:all .18s;user-select:none;
 }
-.fcheck{
-  display:flex;align-items:flex-start;gap:10px;
-  font-size:13px;color:var(--mid);cursor:pointer;line-height:1.6;
-  letter-spacing:-0.005em;
-}
+.fradio input:checked+label{background:var(--ink);color:var(--white);border-color:var(--ink);font-weight:700;}
+.fradio label:hover{border-color:var(--muted);color:var(--ink);}
+.fradio input:checked+label:hover{background:#000;color:var(--white);border-color:#000;}
+
+.fcheck{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--mid);cursor:pointer;line-height:1.6;letter-spacing:-0.005em;}
 .fcheck input{margin-top:3px;accent-color:var(--orange);width:16px;height:16px;min-width:16px;cursor:pointer;}
-.fcheck span{flex:1;}
-
-/* Privacy notice (details/summary) */
-.privacy-notice{
-  background:var(--warm);border:1px solid var(--line);
-  border-radius:var(--r-sm);padding:12px 16px;
-  font-size:13px;color:var(--mid);line-height:1.7;
-  letter-spacing:-0.005em;
-}
-.privacy-notice summary{
-  cursor:pointer;font-weight:700;color:var(--body);
-  display:flex;align-items:center;justify-content:space-between;
-  list-style:none;letter-spacing:-0.015em;
-  padding:2px 0;
-}
+.privacy-notice{background:var(--warm);border:1px solid var(--line);border-radius:var(--r-sm);padding:12px 16px;font-size:13px;color:var(--mid);line-height:1.7;letter-spacing:-0.005em;}
+.privacy-notice summary{cursor:pointer;font-weight:700;color:var(--body);display:flex;align-items:center;justify-content:space-between;list-style:none;}
 .privacy-notice summary::-webkit-details-marker{display:none;}
-.privacy-notice summary::after{
-  content:'+';font-weight:700;color:var(--mid);
-  font-size:16px;line-height:1;width:16px;text-align:center;
-  transition:transform .25s;
-}
-.privacy-notice[open] summary::after{transform:rotate(45deg);}
-.privacy-notice summary span{
-  font-size:11px;font-weight:600;color:var(--muted);
-  letter-spacing:-0.005em;
-}
-.privacy-notice dl{
-  margin:14px 0 8px;display:grid;
-  grid-template-columns:auto 1fr;gap:8px 14px;
-}
-.privacy-notice dt{
-  color:var(--ink);font-weight:700;font-size:12px;
-  letter-spacing:-0.005em;white-space:nowrap;
-  padding-top:1px;
-}
-.privacy-notice dd{
-  font-size:12px;color:var(--mid);line-height:1.65;
-  letter-spacing:-0.005em;
-}
-.privacy-contact{
-  margin-top:6px;padding-top:10px;border-top:1px dashed var(--line);
-  font-size:12px;color:var(--muted);letter-spacing:-0.005em;
-}
-.privacy-contact a{color:var(--orange);text-decoration:none;}
-.privacy-contact a:hover{text-decoration:underline;}
-
-/* Honeypot — completely hidden from humans, but bots will fill it */
-.hp-field{
-  position:absolute !important;
-  left:-10000px !important;top:auto !important;
-  width:1px !important;height:1px !important;
-  overflow:hidden !important;
-}
-
+.privacy-notice summary::after{content:'+';font-weight:700;color:var(--mid);font-size:16px;line-height:1;}
+.privacy-notice[open] summary::after{content:'−';}
+.privacy-notice dl{margin:14px 0 8px;display:grid;grid-template-columns:auto 1fr;gap:8px 14px;}
+.privacy-notice dt{color:var(--ink);font-weight:700;font-size:12px;}
+.privacy-notice dd{font-size:12px;color:var(--mid);line-height:1.65;}
+.hp-field{position:absolute!important;left:-10000px!important;width:1px!important;height:1px!important;overflow:hidden!important;}
 .fsub{
   background:var(--orange);color:white;border:none;
-  border-radius:var(--r-md);padding:16px;font-size:15px;font-weight:700;
-  font-family:inherit;cursor:pointer;letter-spacing:-0.02em;margin-top:2px;
-  box-shadow:var(--sh-or);
-  transition:background .2s,transform .15s,box-shadow .2s;
+  border-radius:var(--r-md);padding:18px;font-size:16px;font-weight:700;
+  font-family:inherit;cursor:pointer;letter-spacing:-0.02em;margin-top:4px;
+  box-shadow:var(--sh-or);transition:background .2s,transform .15s,box-shadow .2s;
 }
-.fsub:hover{background:var(--orange-dark);}
+.fsub:hover{background:var(--orange-dark);transform:translateY(-1px);}
 .fsub:disabled{opacity:.6;cursor:not-allowed;transform:none;}
 
-/* Success */
 #formSuccess{display:none;text-align:center;padding:56px 16px;}
 .suc-icon{
   width:72px;height:72px;border-radius:50%;
   background:var(--orange-light);border:2px solid var(--orange-bdr);
   display:flex;align-items:center;justify-content:center;
-  font-size:28px;margin:0 auto 22px;
+  color:var(--orange);margin:0 auto 22px;
 }
 
-/* Toast */
 #toast{
   position:fixed;bottom:36px;left:50%;
   transform:translateX(-50%) translateY(20px);
@@ -1068,109 +570,88 @@ nav.up{box-shadow:var(--sh-sm);}
 }
 #toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
 
-/* Footer */
 footer{
   background:#0B1220;color:rgba(255,255,255,0.7);
-  padding:48px 60px 36px;
-  border-top:1px solid rgba(255,255,255,0.06);
+  padding:56px 60px 44px;border-top:1px solid rgba(255,255,255,0.06);
 }
-.ft-in{
-  max-width:1120px;margin:0 auto;
-  display:flex;align-items:flex-start;justify-content:space-between;gap:32px;flex-wrap:wrap;
-}
+.ft-in{max-width:var(--max);margin:0 auto;display:flex;align-items:flex-start;justify-content:space-between;gap:32px;flex-wrap:wrap;}
 .ft-brand{display:flex;flex-direction:column;gap:8px;min-width:200px;}
-.ft-logo{display:flex;align-items:center;gap:8px;}
+.ft-logo{display:flex;align-items:center;gap:10px;}
 .ft-mark{
-  width:22px;height:22px;border-radius:4px;
-  background:var(--orange);
+  width:24px;height:24px;border-radius:5px;background:var(--orange);
   display:flex;align-items:center;justify-content:center;
-  color:var(--white);font-weight:900;font-size:13px;
-  letter-spacing:-0.5px;line-height:1;
+  color:var(--white);font-weight:900;font-size:14px;letter-spacing:-0.5px;line-height:1;
 }
-.ft-name{
-  font-size:14px;font-weight:800;letter-spacing:-0.015em;color:var(--white);
-}
-.ft-copy{
-  font-size:12px;color:rgba(255,255,255,0.4);margin-top:6px;
-  letter-spacing:-0.005em;
-}
-.ft-info{
-  font-size:12px;color:rgba(255,255,255,0.55);line-height:1.9;
-  letter-spacing:-0.005em;
-  display:flex;flex-direction:column;gap:2px;
-  text-align:right;
-}
+.ft-name{font-size:15px;font-weight:800;letter-spacing:-0.015em;color:var(--white);}
+.ft-copy{font-size:12px;color:rgba(255,255,255,0.4);margin-top:6px;letter-spacing:-0.005em;}
+.ft-info{font-size:12px;color:rgba(255,255,255,0.55);line-height:1.9;letter-spacing:-0.005em;display:flex;flex-direction:column;gap:2px;text-align:right;}
 .ft-info-row{display:block;}
-.ft-info-row strong{
-  color:rgba(255,255,255,0.4);font-weight:600;
-  margin-right:8px;letter-spacing:-0.005em;
-}
-.ft-info a{color:inherit;text-decoration:none;border-bottom:1px solid transparent;transition:border-color .2s;}
+.ft-info-row strong{color:rgba(255,255,255,0.4);font-weight:600;margin-right:8px;}
+.ft-info a{color:inherit;text-decoration:none;border-bottom:1px solid transparent;}
 .ft-info a:hover{border-bottom-color:rgba(255,255,255,0.4);}
 
-/* Responsive */
+/* ── Layout variants (Tweaks) ── */
+body[data-layout="centered"] .hero-in{grid-template-columns:1fr;text-align:center;max-width:920px;}
+body[data-layout="centered"] .hero-envelope{display:none;}
+body[data-layout="centered"] .hero-h1{font-size:84px;}
+body[data-layout="centered"] .hero-kicker,
+body[data-layout="centered"] .hero-btns{justify-content:center;}
+body[data-layout="centered"] .hero-sub{margin-left:auto;margin-right:auto;}
+
+body[data-layout="split"] .pick-grid{grid-template-columns:1fr;gap:48px;}
+body[data-layout="split"] .pick-stats{flex-direction:row;}
+body[data-layout="split"] .pick-stat{flex-direction:column;align-items:flex-start;gap:18px;flex:1;}
+body[data-layout="split"] .ps-num{font-size:54px;}
+
+/* ── Counter style variants ── */
+body[data-counter-style="huge"] .ps-num{font-size:88px;letter-spacing:-0.06em;}
+body[data-counter-style="huge"] .ps-num .unit{font-size:22px;}
+body[data-counter-style="accent"] .ps-num{color:var(--orange);}
+body[data-counter-style="accent"] .ps-num .unit{color:var(--ink);}
+
+/* ── Responsive ── */
 @media(max-width:1100px){
   .nav-menu{display:none;}
 }
 @media(max-width:960px){
+  :root{--pad-sec:80px;}
   nav,footer{padding-left:24px;padding-right:24px;}
-  .ft-info{text-align:left;}
-  .hero-in{grid-template-columns:1fr;padding:80px 24px 64px;gap:44px;}
+  .hero-in{grid-template-columns:1fr;padding:96px 24px 72px;gap:48px;}
   .hero-envelope{order:-1;}
-  .hero-envelope svg,
-  .hero-envelope img{max-width:280px;}
-  .why,.products,.inquiry,.contents,.program,.packages{padding:96px 24px;}
-  .schedule{padding:32px 24px;}
-  .schedule-in{flex-direction:column;align-items:flex-start;gap:18px;}
-  .schedule-cta{width:100%;text-align:center;}
-  .stats-in{grid-template-columns:repeat(3,1fr);gap:0;padding:36px 16px;}
-  .stat-item{padding:0 8px;border-right:1px solid var(--line);}
-  .stat-item:last-child{border-right:0;}
-  .stat-num{font-size:28px;}
-  .stat-num sup{font-size:13px;padding-bottom:3px;}
-  .hero-h1{font-size:40px;letter-spacing:-0.04em;}
-  .sec-h2{font-size:32px;letter-spacing:-0.035em;}
-  .inq-h3{font-size:30px;letter-spacing:-0.035em;}
-  .sec-sub{margin-bottom:48px;}
-  .why-grid,.prod-grid,.contents-grid{grid-template-columns:1fr;}
-  .timeline-grid{grid-template-columns:repeat(2,1fr);gap:24px 10px;}
-  .timeline-track::before{display:none;}
-  .tl-card{min-height:auto;}
-  .tl-title,.tl-scope{min-height:auto;}
-  .proc-grid{grid-template-columns:1fr;gap:20px;}
-  .proc-card:not(:last-child)::after{
-    content:'↓';top:auto;bottom:-20px;right:50%;transform:translateX(50%);
-  }
-  .more-inner{grid-template-columns:1fr;}
-  .inq-wrap{grid-template-columns:1fr;gap:40px;}
-  .sub-wrap{padding:24px;}
-  .sub-table thead{display:none;}
-  .sub-table,.sub-table tbody,.sub-table tr,.sub-table td{display:block;width:100%;}
-  .sub-table tr{
-    border:1px solid var(--line);border-radius:var(--r-sm);
-    padding:12px;margin-bottom:8px;
-  }
-  .sub-table td{border:0!important;padding:4px 0;}
-  .sub-cycle{font-size:13px;}
-  .tl-total-stats{gap:20px;}
+  .hero-envelope svg,.hero-envelope img{max-width:300px;}
+  .hero-pdf{max-width:300px;}
+  .hero-h1{font-size:42px;}
+  .pick,.proof,.process,.why,.inquiry{padding-left:24px;padding-right:24px;}
+  .pick-grid,.proof-grid,.inq-wrap,.process-in{grid-template-columns:1fr;gap:48px;}
+  .process-head{position:static;}
+  .pick-h2,.proof-h2,.process-h2,.why-h2{font-size:34px;}
+  .inq-h3{font-size:32px;}
+  .ps-num{font-size:46px;}
+  .proof-cards,.why-grid{grid-template-columns:1fr 1fr;}
+  .ft-info{text-align:left;}
 }
-@media(max-width:560px){
-  .timeline-grid{grid-template-columns:1fr;gap:24px;}
+@media(max-width:600px){
+  .proof-cards,.why-grid{grid-template-columns:1fr;}
+  .pick-stat{flex-direction:column;align-items:flex-start;}
+  .frow{grid-template-columns:1fr;}
+  .fradio-group.cols-4{grid-template-columns:repeat(2,1fr);}
 }
 </style>
 </head>
-<body>
+<body data-screen-label="01 Landing" data-layout="default" data-counter-style="default">
 
 <!-- NAV -->
 <nav id="nav">
   <a href="index.html" class="logo">
     <div class="logo-mark">N</div>
-    <span class="logo-name">뉴런모의고사</span>
+    <span class="logo-name">뉴런 연구소</span>
     <span class="logo-tag">학원 파트너</span>
   </a>
   <div class="nav-menu">
-    <a href="index.html" class="active" aria-current="page">홈</a>
+    <a href="#hero" class="active">홈</a>
+    <a href="#proof">왜 뉴런인가</a>
     <a href="contents.html">콘텐츠 소개</a>
+    <a href="#process">도입 절차</a>
   </div>
   <a href="#inquiry" class="nav-cta">도입 문의</a>
 </nav>
@@ -1180,248 +661,156 @@ footer{
   <div class="hero-in">
     <div class="hero-left">
       <div class="hero-kicker"><span></span>학원 파트너 전용 프로그램</div>
-      <h1 class="hero-h1">학원이 매달 직접 만드는<br><b>수학 모의고사</b></h1>
-      <ul class="hero-list">
-        <li>10·20문항 격주 테스트는 학원이 진도에 맞춰 매달 단원과 난이도를 직접 지정</li>
-        <li>수능특강·평가원 변형 출제 기반 — EBS 연계 대비 직결</li>
-        <li>도입 전 사전 검토 자료 발송 · 품질 확인 후 결정</li>
-      </ul>
-      <div class="hero-badges">
-        <span class="hero-badge">매달 단원 선택</span>
-        <span class="hero-badge">매달 난이도 선택</span>
-        <span class="hero-badge">평가원 반영</span>
-      </div>
+      <h1 class="hero-h1">
+        선생님을 <span class="acc">돕는</span><br>
+        <b>뉴런 연구소.</b>
+      </h1>
+      <p class="hero-sub">
+        매년·매월·매일 <b>평가원·EBS를 분석</b>하는 연구 조직.<br>
+        학원 진도에 맞춰 매달 운영, 출제·인쇄·발송 모두 대행합니다.
+      </p>
       <div class="hero-btns">
-        <a href="#inquiry" class="btn-main">파트너 문의하기</a>
-        <a href="#why" class="btn-sub">자세히 보기</a>
+        <a href="#inquiry" class="btn-main">도입 문의하기 <span class="arr">→</span></a>
+        <a href="contents.html" class="btn-sub">Level-X 보기</a>
       </div>
     </div>
-    <!--
-      ⚠️ TODO: 도메인 결정 후 실제 봉투 사진(/envelope.png)으로 교체 가능
-      교체 시 아래 구조로:
-      <figure class="hero-envelope hero-envelope-photo">
-        <img src="/envelope.png" alt="뉴런모의고사 봉투 패키지" loading="eager">
-      </figure>
-      그 전까지는 SVG 일러스트로 운영
-    -->
-    <figure class="hero-envelope" aria-label="뉴런모의고사 봉투 패키지">
-      <svg viewBox="0 0 480 640" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="env-title env-desc">
-        <title id="env-title">뉴런모의고사 봉투 패키지</title>
-        <desc id="env-desc">학원에 도착하는 끈 봉투 형태의 모의고사 패키지</desc>
-        <defs>
-          <filter id="env-shadow" x="-10%" y="-5%" width="120%" height="115%">
-            <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#1A1A1A" flood-opacity="0.14"/>
-          </filter>
-          <linearGradient id="env-paper" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#FDFDFB"/>
-            <stop offset="100%" stop-color="#F4F3EE"/>
-          </linearGradient>
-        </defs>
-
-        <!-- 봉투 바디 -->
-        <rect x="20" y="40" width="440" height="580" fill="url(#env-paper)" stroke="#E8E6DF" stroke-width="1" rx="2" filter="url(#env-shadow)"/>
-
-        <!-- 거대 N 그래픽 (검정) — 봉투 중간~우측을 사선으로 가로지름 -->
-        <polygon points="265,260 335,260 335,580 265,580" fill="#1A1A1A"/>
-        <polygon points="265,260 335,260 470,580 400,580" fill="#1A1A1A"/>
-        <polygon points="400,260 470,260 470,580 400,580" fill="#1A1A1A"/>
-        <!-- 빨간 액센트 -->
-        <polygon points="415,460 455,460 455,580 415,580" fill="#E60012"/>
-
-        <!-- 봉투 플랩 (상단 접힘, N 위에 올라옴) -->
-        <path d="M 20 40 L 240 40 L 460 40 L 240 165 Z" fill="url(#env-paper)" stroke="#E8E6DF" stroke-width="1"/>
-        <path d="M 240 40 L 460 40 L 240 165 Z" fill="#1A1A1A" opacity="0.04"/>
-
-        <!-- 끈 버튼 2개 -->
-        <circle cx="240" cy="125" r="22" fill="#FAFAF7" stroke="#D8D5CC" stroke-width="1"/>
-        <circle cx="240" cy="125" r="3" fill="#9C9890"/>
-        <circle cx="240" cy="225" r="22" fill="#FAFAF7" stroke="#D8D5CC" stroke-width="1"/>
-        <circle cx="240" cy="225" r="3" fill="#9C9890"/>
-
-        <!-- 끈 (8자 모양) -->
-        <path d="M 240 147 Q 232 175 240 203 Q 248 175 240 147" stroke="#1A1A1A" stroke-width="1.5" fill="none"/>
-        <path d="M 240 147 Q 248 175 240 203 Q 232 175 240 147" stroke="#1A1A1A" stroke-width="1.5" fill="none"/>
-
-        <!-- 텍스트: 뉴런모의고사 -->
-        <text x="60" y="345" font-family="Pretendard Variable, Pretendard, sans-serif" font-size="28" font-weight="800" fill="#1A1A1A" letter-spacing="-1">뉴런모의고사</text>
-        <text x="60" y="365" font-family="Pretendard Variable, Pretendard, sans-serif" font-size="10" font-weight="600" fill="#1A1A1A" letter-spacing="2">NEURON MOCK TEST</text>
-
-        <!-- 빨간 dash 구분선 -->
-        <line x1="60" y1="395" x2="90" y2="395" stroke="#E60012" stroke-width="2.5"/>
-
-        <!-- 2026 / 수학 영역 -->
-        <text x="60" y="435" font-family="Pretendard Variable, Pretendard, sans-serif" font-size="22" font-weight="800" fill="#E60012" letter-spacing="-0.5">2026</text>
-        <text x="60" y="460" font-family="Pretendard Variable, Pretendard, sans-serif" font-size="12" font-weight="700" fill="#1A1A1A">수학 영역</text>
-
-        <!-- 하단 십자 조준점 + 가로선 -->
-        <line x1="20" y1="555" x2="460" y2="555" stroke="#1A1A1A" stroke-width="0.8"/>
-        <circle cx="55" cy="555" r="9" fill="none" stroke="#1A1A1A" stroke-width="0.8"/>
-        <line x1="44" y1="555" x2="66" y2="555" stroke="#1A1A1A" stroke-width="0.8"/>
-        <line x1="55" y1="544" x2="55" y2="566" stroke="#1A1A1A" stroke-width="0.8"/>
-        <circle cx="55" cy="555" r="2.5" fill="#E60012"/>
-
-        <!-- 하단 로고 -->
-        <rect x="55" y="592" width="14" height="14" rx="2" fill="#E60012"/>
-        <text x="62" y="604" font-family="Pretendard Variable, Pretendard, sans-serif" font-size="11" font-weight="900" fill="#FFFFFF" text-anchor="middle">N</text>
-        <text x="76" y="600" font-family="Pretendard Variable, Pretendard, sans-serif" font-size="9" font-weight="700" fill="#1A1A1A">뉴런소프트</text>
-        <text x="76" y="611" font-family="Pretendard Variable, Pretendard, sans-serif" font-size="6" font-weight="600" fill="#6B7280" letter-spacing="1">NEURON SOFT</text>
-      </svg>
+    <figure class="hero-envelope" aria-label="Level-X 봉투 패키지">
+      <object data="level-x-envelope.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" type="application/pdf" class="hero-pdf">
+        <a href="level-x-envelope.pdf" class="hero-pdf-fallback">
+          <span class="hero-pdf-fallback-h">Level-X 봉투 패키지</span>
+          <span class="hero-pdf-fallback-sub">PDF 보기 →</span>
+        </a>
+      </object>
     </figure>
   </div>
 </section>
 
-<!-- STATS STRIP -->
-<section class="stats" aria-label="핵심 수치">
-  <div class="stats-in">
-    <div class="stat-item">
-      <div class="stat-num"><em>6</em><sup>단계</sup></div>
-      <div class="stat-label">시즌 커리큘럼</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-num"><em>30</em><sup>회분</sup></div>
-      <div class="stat-label">연간 콘텐츠</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-num"><em>100</em><sup>%</sup></div>
-      <div class="stat-label">평가원 변형 출제</div>
+<!-- PROOF — 다크 트러스트 밴드: 1등급권 콘텐츠 4 증거 카드 -->
+<section class="proof" id="proof">
+  <div class="proof-in">
+    <div class="proof-grid">
+      <div class="proof-left">
+        <div class="proof-tag">뉴런 연구소가 하는 일</div>
+        <h2 class="proof-h2">
+          분석부터 배송까지<br>
+          <b>전 과정</b>을 책임집니다.
+        </h2>
+        <p class="proof-desc">
+          평가원·EBS·수능을 매일 연구하고, 학원 진도에 맞춘 콘텐츠를 매달 출제·인쇄·발송합니다.
+          선생님은 <b>가르치는 데만</b> 집중하세요.
+        </p>
+      </div>
+      <div class="proof-cards">
+        <div class="proof-card">
+          <div class="pc-num">01</div>
+          <div class="pc-h3">평가원·EBS<br>매일 분석</div>
+          <p class="pc-p">매년 평가원, 매월 EBS, 매일 수능을 분석한 변형 출제로 적중도를 자신합니다.</p>
+        </div>
+        <div class="proof-card">
+          <div class="pc-num">02</div>
+          <div class="pc-h3">학원 진도<br>맞춤 운영</div>
+          <p class="pc-p">매달 단원·난이도를 학원이 직접 선택. 진도 다음 날 바로 푸는 확인 평가.</p>
+        </div>
+        <div class="proof-card">
+          <div class="pc-num">03</div>
+          <div class="pc-h3">출제·인쇄·발송<br>전 과정 대행</div>
+          <p class="pc-p">콘텐츠 부담 없이 가르치는 데만 집중하실 수 있도록 모든 운영을 대행합니다.</p>
+        </div>
+        <div class="proof-card">
+          <div class="pc-num">04</div>
+          <div class="pc-h3">격주·월간<br>정기 배송</div>
+          <p class="pc-p">시즌 커리큘럼에 맞춰 매주 정해진 요일에 봉투로 도착합니다.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- WHY -->
+<!-- WHY (가까운 콘텐츠) -->
 <section class="why" id="why">
   <div class="why-in">
-    <div class="sec-tag">왜 이 테스트지인가</div>
-    <h2 class="sec-h2">시중 모의고사와 다른 점 3가지</h2>
-    <p class="sec-sub">전체 단원을 한 번에 다루는 시중 모의고사와 달리, 수업 흐름에 맞게 씁니다</p>
+    <div class="why-head">
+      <div class="why-tag">콘텐츠 가치</div>
+      <h2 class="why-h2">선생님이 가르치는 데만<br><b>집중할 수 있도록.</b></h2>
+      <p class="why-desc">평가원과 가장 가까운 문제, 학원 진도에 맞춘 운영, 콘텐츠 부담 제로.</p>
+    </div>
     <div class="why-grid">
       <div class="why-card">
-        <div class="why-icon"><svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 17v5"/><path d="M9 10.76a2 2 0 0 1-1.11 1.79l-1.78.9A2 2 0 0 0 5 15.24V16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-.76a2 2 0 0 0-1.11-1.79l-1.78-.9A2 2 0 0 1 15 10.76V7a1 1 0 0 1 1-1 2 2 0 0 0 0-4H8a2 2 0 0 0 0 4 1 1 0 0 1 1 1z"/></svg></div>
-        <div class="why-num">매달 선택</div>
-        <div class="why-h3">매달 단원·난이도를<br>학원이 직접 선택</div>
-        <p class="why-p">10·20문항 격주 테스트는 학원이 매달 단원과 난이도를 직접 지정합니다. 진도와 반 구성에 맞춰 그달의 콘텐츠를 설계할 수 있습니다.</p>
-      </div>
-      <div class="why-card">
+        <div class="why-num-badge">01</div>
         <div class="why-icon"><svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
-        <div class="why-num">평가원 연계</div>
-        <div class="why-h3">수능특강·모평 변형 출제<br>즉시 반영</div>
-        <p class="why-p">수능특강 기반 출제로 EBS 연계를 대비하고, 6·9월 평가원 모의고사 경향을 즉시 반영합니다.</p>
+        <h3 class="why-h3">평가원과<br>가장 유사한 문제</h3>
+        <p class="why-p">매년 평가원, 매월 EBS, 매일 수능을 분석한 변형 출제. 적중도를 자신합니다.</p>
       </div>
       <div class="why-card">
-        <div class="why-icon"><svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></div>
-        <div class="why-num">사전 확인</div>
-        <div class="why-h3">사전 검토부터 시작<br>부담 없는 첫 걸음</div>
-        <p class="why-p">사전 검토 자료로 품질을 먼저 확인할 수 있습니다. 단품 구매로 시작해 필요에 맞게 정기 구독으로 전환할 수 있습니다.</p>
+        <div class="why-num-badge">02</div>
+        <div class="why-icon"><svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg></div>
+        <h3 class="why-h3">매달 단원·난이도<br>학원이 직접 선택</h3>
+        <p class="why-p">진도 다음 날 바로 푸는 확인 평가. 수업 흐름이 끊기지 않습니다.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-num-badge">03</div>
+        <div class="why-icon"><svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div>
+        <h3 class="why-h3">출제·인쇄·발송<br>모든 운영 대행</h3>
+        <p class="why-p">출제부터 봉투 배송까지 전 과정을 뉴런이 책임집니다. 가르치는 데만 집중하세요.</p>
       </div>
     </div>
   </div>
 </section>
 
-
-<!-- PROCESS — 도입 4단계 -->
+<!-- PROCESS — 이감 4단계 절차 -->
 <section class="process" id="process">
   <div class="process-in">
-    <!-- 도입 4단계 -->
-    <div class="proc-head">
-      <div class="proc-h3">도입은 부담 없이 시작합니다</div>
-      <p class="proc-p">사전 검토부터 정기 계약까지, 4단계로 진행합니다</p>
+    <div class="process-head">
+      <div class="sec-tag-center">프로그램 절차</div>
+      <h2 class="process-h2">문의부터 배송까지, <b>4단계</b></h2>
+      <p class="process-desc">담당자와 1:1로 진행하며, 영업일 1일 이내 직접 연락드립니다.</p>
     </div>
     <div class="proc-grid">
       <div class="proc-card">
-        <div class="proc-step">STEP 01</div>
-        <div class="proc-num">1</div>
-        <div class="proc-title">자료 요청</div>
-        <p class="proc-desc">30문항 월간 모의고사 사전 검토 자료를 발송합니다. 영업일 1일 이내 담당자 연락.</p>
-      </div>
-      <div class="proc-card">
-        <div class="proc-step">STEP 02</div>
-        <div class="proc-num">2</div>
-        <div class="proc-title">1:1 상담</div>
-        <p class="proc-desc">학원 규모·진도·반 구성에 맞춘 단원 및 난이도, 시즌 일정을 협의합니다.</p>
-      </div>
-      <div class="proc-card">
-        <div class="proc-step">STEP 03</div>
-        <div class="proc-num">3</div>
-        <div class="proc-title">시범 운영</div>
-        <p class="proc-desc">단품 구매로 2~4주 시범 운영. 문항 품질·운영 적합성을 직접 검증합니다.</p>
-      </div>
-      <div class="proc-card">
-        <div class="proc-step">STEP 04</div>
-        <div class="proc-num">4</div>
-        <div class="proc-title">정기 계약</div>
-        <p class="proc-desc">격주·월간 자동 납품으로 전환. 시즌 단위 계약 시 추가 협의 가능합니다.</p>
-      </div>
-    </div>
-
-    <!-- 고2·고1 더보기 -->
-    <div class="more-grade">
-      <button class="more-toggle" id="moreToggle" type="button" aria-expanded="false">
-        <div class="mt-left">
-          <div class="mt-ic"><svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V2H6.5A2.5 2.5 0 0 0 4 4.5z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20"/></svg></div>
-          <div class="mt-text">
-            <div class="mt-title">고2·고1 진도 운영 보기</div>
-            <div class="mt-sub">내신 기간 제외 · 학기제 운영 · 단원 테스트 중심</div>
-          </div>
+        <div class="proc-icon">
+          <span class="proc-step">1</span>
+          <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
         </div>
-        <div class="mt-arrow">⌄</div>
-      </button>
-      <div class="more-body" id="moreBody">
-        <div class="more-inner">
-          <div class="grade-card">
-            <div class="grade-h">
-              <div class="grade-name">고2 운영안</div>
-              <div class="grade-period">3~12월 · 내신 제외</div>
-            </div>
-            <div class="grade-row">
-              <div class="grade-key">1학기</div>
-              <div class="grade-val"><strong>3~6월 (10주)</strong><br>수열 / 지수로그 / 삼각함수</div>
-            </div>
-            <div class="grade-row">
-              <div class="grade-key">2학기</div>
-              <div class="grade-val"><strong>9~12월 (10주)</strong><br>극한 / 미분 / 적분</div>
-            </div>
-            <div class="grade-row">
-              <div class="grade-key">연간 합계</div>
-              <div class="grade-val">격주 <strong>10회</strong> · 월간 <strong>4회</strong></div>
-            </div>
-            <div class="grade-note">20문항 중난도 중심 · 상위권반은 10문항 심화 테스트 추가 가능 · 내신 기간은 별도 내신형 테스트로 전환 가능</div>
-          </div>
-          <div class="grade-card">
-            <div class="grade-h">
-              <div class="grade-name">고1 운영안</div>
-              <div class="grade-period">3~12월 · 내신 제외</div>
-            </div>
-            <div class="grade-row">
-              <div class="grade-key">1학기</div>
-              <div class="grade-val"><strong>3~6월 (10주)</strong><br>다항식 / 방정식 / 도형의 방정식</div>
-            </div>
-            <div class="grade-row">
-              <div class="grade-key">2학기</div>
-              <div class="grade-val"><strong>9~12월 (10주)</strong><br>집합 / 함수 / 경우의 수</div>
-            </div>
-            <div class="grade-row">
-              <div class="grade-key">연간 합계</div>
-              <div class="grade-val">격주 <strong>10회</strong> · 월간 <strong>4회</strong></div>
-            </div>
-            <div class="grade-note">20문항 중난도 중심 · 학원 수요에 따라 단원 테스트 위주로 먼저 운영 · 심화 10문항은 선택 옵션</div>
-          </div>
+        <div class="proc-body">
+          <div class="proc-label">STEP 01</div>
+          <div class="proc-title">도입 문의</div>
+          <p class="proc-desc">하단 폼 작성으로 시작합니다. 1분이면 충분합니다.</p>
+        </div>
+      </div>
+      <div class="proc-card">
+        <div class="proc-icon">
+          <span class="proc-step">2</span>
+          <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M20 8v6"/><path d="M23 11h-6"/></svg>
+        </div>
+        <div class="proc-body">
+          <div class="proc-label">STEP 02</div>
+          <div class="proc-title">1:1 상담</div>
+          <p class="proc-desc">담당자가 진도·난이도·일정을 직접 협의합니다.</p>
+        </div>
+      </div>
+      <div class="proc-card">
+        <div class="proc-icon">
+          <span class="proc-step">3</span>
+          <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+        </div>
+        <div class="proc-body">
+          <div class="proc-label">STEP 03</div>
+          <div class="proc-title">제작·검수</div>
+          <p class="proc-desc">평가원 변형 출제 후 다단계 검수로 오류 0을 목표합니다.</p>
+        </div>
+      </div>
+      <div class="proc-card">
+        <div class="proc-icon">
+          <span class="proc-step">4</span>
+          <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        </div>
+        <div class="proc-body">
+          <div class="proc-label">STEP 04</div>
+          <div class="proc-title">정기 배송</div>
+          <p class="proc-desc">교육 프로그램 일정에 맞춰 <b>매주 봉투로 배송</b>됩니다.</p>
         </div>
       </div>
     </div>
-
-  </div>
-</section>
-
-<!-- SCHEDULE STRIP -->
-<!-- ⚠️ TODO: 운영 시즌 확정 시 아래 배지·문구를 실제 일정에 맞춰 교체 -->
-<section class="schedule" aria-label="현재 운영 시즌">
-  <div class="schedule-in">
-    <div class="schedule-flag">2026 시즌4 운영 중</div>
-    <div class="schedule-body">
-      <div class="schedule-h">6월 모평 대비 — <em>지금 신청한 학원부터 우선 배정</em></div>
-      <p>5월 신청 학원은 6월 모평 직후 평가원 변형 출제를 가장 빠르게 받아볼 수 있습니다. 시즌별 정원이 한정됩니다.</p>
-    </div>
-    <a href="#inquiry" class="schedule-cta">파트너 문의</a>
   </div>
 </section>
 
@@ -1430,20 +819,20 @@ footer{
   <div class="inquiry-in">
     <div class="inq-wrap">
       <div class="inq-left">
-        <div class="sec-tag">파트너 문의</div>
-        <h3 class="inq-h3">먼저 <b>자료로</b><br>확인하세요</h3>
-        <p class="inq-p">30문항 월간 모의고사 사전 검토 자료를 발송해드립니다. 품질을 직접 보신 후 도입 여부를 결정하시면 됩니다.</p>
+        <div class="inq-tag">도입 문의</div>
+        <h3 class="inq-h3">뉴런과<br><b>함께하세요.</b></h3>
+        <p class="inq-p">짧게 작성하시면 담당자가 직접 연락드립니다.</p>
         <ul class="inq-checks">
-          <li><div class="chk"><svg class="icon icon-sm" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width:11px;height:11px;stroke-width:3;"><path d="M20 6 9 17l-5-5"/></svg></div>30문항 사전 검토 자료 발송</li>
-          <li><div class="chk"><svg class="icon icon-sm" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width:11px;height:11px;stroke-width:3;"><path d="M20 6 9 17l-5-5"/></svg></div>학원 규모·단원 맞춤 상담</li>
-          <li><div class="chk"><svg class="icon icon-sm" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width:11px;height:11px;stroke-width:3;"><path d="M20 6 9 17l-5-5"/></svg></div>단품 시작 → 구독 전환 가능</li>
-          <li><div class="chk"><svg class="icon icon-sm" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width:11px;height:11px;stroke-width:3;"><path d="M20 6 9 17l-5-5"/></svg></div>도입 학원 의견을 콘텐츠에 직접 반영</li>
+          <li><div class="chk"><svg class="icon icon-sm" viewBox="0 0 24 24" style="width:12px;height:12px;stroke-width:3;"><path d="M20 6 9 17l-5-5"/></svg></div>1분 작성 · 클릭만으로</li>
+          <li><div class="chk"><svg class="icon icon-sm" viewBox="0 0 24 24" style="width:12px;height:12px;stroke-width:3;"><path d="M20 6 9 17l-5-5"/></svg></div>학원 진도 맞춤 협의</li>
+          <li><div class="chk"><svg class="icon icon-sm" viewBox="0 0 24 24" style="width:12px;height:12px;stroke-width:3;"><path d="M20 6 9 17l-5-5"/></svg></div>출제·인쇄·발송 대행</li>
+          <li><div class="chk"><svg class="icon icon-sm" viewBox="0 0 24 24" style="width:12px;height:12px;stroke-width:3;"><path d="M20 6 9 17l-5-5"/></svg></div>피드백 즉시 반영</li>
         </ul>
         <div class="inq-promise">
           <div class="inq-promise-num">1<span>일</span></div>
-          <div class="inq-promise-body">
-            <div class="inq-promise-ttl">영업일 1일 이내 회신</div>
-            <p>담당자가 직접 연락드립니다. 자료 발송과 도입 상담은 한 번의 통화로 진행됩니다.</p>
+          <div>
+            <div class="inq-promise-ttl">영업일 1일 이내</div>
+            <p>담당자가 직접 연락드립니다.</p>
           </div>
         </div>
       </div>
@@ -1451,105 +840,64 @@ footer{
       <div class="form-box">
         <div class="form-ttl">파트너 도입 문의</div>
         <form id="partnerForm" class="form-wrap">
+          <div class="fg">
+            <label>학원 분류 *</label>
+            <div class="fradio-group cols-4">
+              <div class="fradio"><input id="type-1" type="radio" name="type" value="재종반" required><label for="type-1">재종반</label></div>
+              <div class="fradio"><input id="type-2" type="radio" name="type" value="단과"><label for="type-2">단과</label></div>
+              <div class="fradio"><input id="type-3" type="radio" name="type" value="종합"><label for="type-3">종합</label></div>
+              <div class="fradio"><input id="type-4" type="radio" name="type" value="기타"><label for="type-4">기타</label></div>
+            </div>
+          </div>
           <div class="frow">
-            <div class="fg"><label>학원명 *</label><input type="text" name="academy" placeholder="학원 이름" required></div>
             <div class="fg"><label>담당자명 *</label><input type="text" name="name" placeholder="이름" required></div>
+            <div class="fg"><label>연락처 *</label><input type="tel" name="phone" placeholder="010-0000-0000" required></div>
           </div>
-          <div class="frow">
-            <div class="fg"><label>이메일 *</label><input type="email" name="email" placeholder="academy@example.com" required></div>
-            <div class="fg">
-              <label>학원 유형 *</label>
-              <select name="type" required>
-                <option value="">선택해주세요</option>
-                <option>재종반</option>
-                <option>독재학원</option>
-                <option>단과학원</option>
-                <option>종합학원</option>
-                <option>스터디카페</option>
-                <option>기타</option>
-              </select>
-            </div>
+          <div class="fg">
+            <label>학원명 *</label>
+            <input type="text" name="academy" placeholder="학원 이름 · 분점이면 캠퍼스명 포함" required>
           </div>
-          <div class="frow">
-            <div class="fg">
-              <label>학생 수 *</label>
-              <select name="students" required>
-                <option value="">선택해주세요</option>
-                <option>30명 미만</option>
-                <option>30~50명</option>
-                <option>50~100명</option>
-                <option>100~200명</option>
-                <option>200명 이상</option>
-              </select>
-            </div>
-            <div class="fg">
-              <label>대상 학년 *</label>
-              <select name="grade" required>
-                <option value="">선택해주세요</option>
-                <option>고3 · N수</option>
-                <option>고2</option>
-                <option>고1</option>
-                <option>여러 학년 운영</option>
-                <option>상담 후 결정</option>
-              </select>
+          <div class="fg">
+            <label>학생 수 *</label>
+            <div class="fradio-group cols-4">
+              <div class="fradio"><input id="students-1" type="radio" name="students" value="~50명" required><label for="students-1">~50명</label></div>
+              <div class="fradio"><input id="students-2" type="radio" name="students" value="50~100명"><label for="students-2">50~100명</label></div>
+              <div class="fradio"><input id="students-3" type="radio" name="students" value="100~200명"><label for="students-3">100~200명</label></div>
+              <div class="fradio"><input id="students-4" type="radio" name="students" value="200명 이상"><label for="students-4">200명+</label></div>
             </div>
           </div>
-          <div class="frow">
-            <div class="fg">
-              <label>희망 단원 *</label>
-              <select name="unit" required>
-                <option value="">선택해주세요</option>
-                <option>미적분</option>
-                <option>확률과 통계</option>
-                <option>기하</option>
-                <option>수학Ⅰ</option>
-                <option>수학Ⅱ</option>
-                <option>여러 단원 조합</option>
-                <option>상담 후 결정</option>
-              </select>
-            </div>
-            <div class="fg">
-              <label>시작 희망 시기 *</label>
-              <select name="start" required>
-                <option value="">선택해주세요</option>
-                <option>즉시 · 1개월 내</option>
-                <option>2~3개월 내</option>
-                <option>다음 시즌부터</option>
-                <option>미정 · 상담 후 결정</option>
-              </select>
+          <div class="fg">
+            <label>대상 학년 *</label>
+            <div class="fradio-group cols-4">
+              <div class="fradio"><input id="grade-1" type="radio" name="grade" value="고3·N수" required><label for="grade-1">고3·N수</label></div>
+              <div class="fradio"><input id="grade-2" type="radio" name="grade" value="고2"><label for="grade-2">고2</label></div>
+              <div class="fradio"><input id="grade-3" type="radio" name="grade" value="고1"><label for="grade-3">고1</label></div>
+              <div class="fradio"><input id="grade-4" type="radio" name="grade" value="여러 학년"><label for="grade-4">여러 학년</label></div>
             </div>
           </div>
           <div class="fg">
             <label>관심 상품 *</label>
-            <select name="plan" required>
-              <option value="">선택해주세요</option>
-              <option>심화 테스트 (10문항)</option>
-              <option>단원 테스트 (20문항)</option>
-              <option>월간 모의고사 (30문항)</option>
-              <option>월 패키지 C/D (격주 + 월간)</option>
-              <option>풀패키지 E</option>
-              <option>사전 검토만 먼저 진행</option>
-            </select>
+            <div class="fradio-group cols-4">
+              <div class="fradio"><input id="plan-1" type="radio" name="plan" value="Level-X 패키지 1 (Basic+Intermediate+Final)" required><label for="plan-1">패키지 1<br>일반반</label></div>
+              <div class="fradio"><input id="plan-2" type="radio" name="plan" value="Level-X 패키지 2 (Intermediate+Killer+Final)"><label for="plan-2">패키지 2<br>상위권·N수반</label></div>
+              <div class="fradio"><input id="plan-3" type="radio" name="plan" value="Level-Final 단독"><label for="plan-3">Final<br>(30문항)</label></div>
+              <div class="fradio"><input id="plan-4" type="radio" name="plan" value="상담 후 결정"><label for="plan-4">상담 후<br>결정</label></div>
+            </div>
           </div>
           <div class="fg">
-            <label>추가 문의 사항</label>
-            <textarea name="message" placeholder="추가로 전달하실 내용이 있다면 자유롭게 작성해주세요 (선택)"></textarea>
+            <label>요청사항</label>
+            <textarea name="message" placeholder="추가 요청사항이 있다면 자유롭게 작성해주세요 (선택)"></textarea>
           </div>
           <details class="privacy-notice">
-            <summary>개인정보 수집·이용 안내 <span>자세히 보기</span></summary>
+            <summary>개인정보 수집·이용 안내 <span style="font-size:11px;font-weight:600;color:var(--muted);">자세히 보기</span></summary>
             <dl>
-              <dt>수집 항목</dt>
-              <dd>학원명, 담당자명, 이메일, 학원 유형, 학생 수, 대상 학년, 희망 단원, 관심 상품, 시작 희망 시기, 문의 내용</dd>
-              <dt>이용 목적</dt>
-              <dd>사전 검토 자료 발송 및 파트너 상담 진행</dd>
-              <dt>보유 기간</dt>
-              <dd>상담 종료 후 1년 (관계 법령에 따른 보관 의무가 있는 경우 해당 기간까지)</dd>
-              <dt>동의 거부 권리</dt>
-              <dd>위 항목의 수집·이용에 동의하지 않으실 수 있으며, 거부 시 자료 발송 및 상담이 제한됩니다.</dd>
+              <dt>수집 항목</dt><dd>학원 분류, 담당자명, 연락처, 학원명, 학생 수, 대상 학년, 관심 상품, 요청사항</dd>
+              <dt>이용 목적</dt><dd>도입 상담 및 콘텐츠 안내</dd>
+              <dt>보유 기간</dt><dd>상담 종료 후 1년 (관계 법령에 따른 보관 의무가 있는 경우 해당 기간까지)</dd>
+              <dt>동의 거부 권리</dt><dd>위 항목의 수집·이용에 동의하지 않으실 수 있으며, 거부 시 상담이 제한됩니다.</dd>
             </dl>
-            <p class="privacy-contact">개인정보 관련 문의: <a href="mailto:newlearnsoft@gmail.com">newlearnsoft@gmail.com</a></p>
+            <p style="margin-top:6px;padding-top:10px;border-top:1px dashed var(--line);font-size:12px;color:var(--muted);">개인정보 관련 문의: <a href="mailto:newlearnsoft@gmail.com" style="color:var(--orange);text-decoration:none;">newlearnsoft@gmail.com</a></p>
           </details>
-          <!-- Honeypot field — invisible to humans, only bots fill it -->
           <div class="hp-field" aria-hidden="true">
             <label>이 항목은 비워두세요</label>
             <input type="text" name="website" tabindex="-1" autocomplete="off">
@@ -1558,13 +906,13 @@ footer{
             <input type="checkbox" required>
             <span>위 개인정보 수집·이용 안내를 확인했으며, 이에 동의합니다.</span>
           </label>
-          <button type="submit" class="fsub" id="submitBtn">파트너 도입 문의하기</button>
+          <button type="submit" class="fsub" id="submitBtn">도입 문의 보내기</button>
         </form>
         <div id="formSuccess">
           <div class="suc-icon"><svg class="icon icon-lg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg></div>
-          <h3 style="font-size:20px;font-weight:800;color:var(--ink);margin-bottom:12px;letter-spacing:-0.025em;line-height:1.4;">문의가 접수되었습니다</h3>
-          <p style="font-size:15px;color:var(--mid);line-height:1.8;">빠른 시일 내에 연락드리겠습니다.<br>영업일 기준 <strong style="color:var(--orange);">1일 이내</strong> 담당자가 직접 연락드립니다.</p>
-          <p style="font-size:13px;color:var(--muted);margin-top:16px;">newlearnsoft@gmail.com</p>
+          <h3 style="font-size:22px;font-weight:800;color:var(--ink);margin-bottom:12px;letter-spacing:-0.025em;">접수 완료</h3>
+          <p style="font-size:15px;color:var(--mid);line-height:1.8;">영업일 <strong style="color:var(--orange);">1일 이내</strong> 직접 연락드립니다.</p>
+          <p style="font-size:13px;color:var(--muted);margin-top:16px;"><a href="mailto:newlearnsoft@gmail.com" style="color:inherit;">newlearnsoft@gmail.com</a></p>
         </div>
       </div>
     </div>
@@ -1574,15 +922,14 @@ footer{
 <footer>
   <div class="ft-in">
     <div class="ft-brand">
-      <div class="ft-logo"><div class="ft-mark">N</div><span class="ft-name">뉴런모의고사 · 학원 파트너</span></div>
-      <div class="ft-copy">© 2026 뉴런모의고사 by 주식회사 뉴런소프트. All rights reserved.</div>
+      <div class="ft-logo"><div class="ft-mark">N</div><span class="ft-name">뉴런 연구소 · Level-X</span></div>
+      <div class="ft-copy">© 2026 뉴런 연구소 by 주식회사 뉴런소프트. All rights reserved.</div>
     </div>
     <div class="ft-info">
       <span class="ft-info-row"><strong>회사</strong>주식회사 뉴런소프트</span>
       <span class="ft-info-row"><strong>대표자</strong>최영재</span>
       <span class="ft-info-row"><strong>사업자등록번호</strong>591-88-03234</span>
       <span class="ft-info-row"><strong>주소</strong>서울 금천구 가산동 디지털로9길 99 스타밸리 511호</span>
-      <span class="ft-info-row"><strong>전화</strong><a href="tel:01068893386">010-6889-3386</a></span>
       <span class="ft-info-row"><strong>이메일</strong><a href="mailto:newlearnsoft@gmail.com">newlearnsoft@gmail.com</a></span>
     </div>
   </div>
@@ -1591,32 +938,34 @@ footer{
 <div id="toast"></div>
 
 <script>
+  // ─ Nav scroll shadow
   const nav = document.getElementById('nav');
   window.addEventListener('scroll', () => nav.classList.toggle('up', scrollY > 10));
 
-  // 고2·고1 더보기 토글
-  const mt = document.getElementById('moreToggle');
-  const mb = document.getElementById('moreBody');
-  mt.addEventListener('click', () => {
-    const isOpen = mt.classList.toggle('open');
-    mb.classList.toggle('open', isOpen);
-    mt.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  // ─ Smooth scroll for hash
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const id = a.getAttribute('href');
+      if (id.length > 1) {
+        const t = document.querySelector(id);
+        if (t) { e.preventDefault(); t.scrollIntoView({behavior:'smooth', block:'start'}); }
+      }
+    });
   });
 
-  /* ─ Scroll reveal (IntersectionObserver) ─ */
+  // ─ Scroll reveal (fade-up)
   const reduced = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
   if (!reduced && 'IntersectionObserver' in window) {
-    const targets = document.querySelectorAll('.sec-tag, .sec-h2, .sec-sub, .why-card, .proc-head, .proc-card, .more-grade, .stat-item, .inq-left, .form-box');
+    const targets = document.querySelectorAll('.hero-kicker, .hero-h1, .hero-sub, .hero-btns, .hero-envelope, .pick-tag, .pick-h2, .pick-desc, .pick-foot, .pick-stat, .proof-tag, .proof-h2, .proof-desc, .proof-card, .sec-tag-center, .process-h2, .process-desc, .proc-card, .why-tag, .why-h2, .why-desc, .why-card, .inq-tag, .inq-h3, .inq-p, .inq-checks, .inq-promise, .form-box');
     targets.forEach(el => el.classList.add('reveal'));
-    const io = new IntersectionObserver((entries) => {
+    const io = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          // stagger siblings slightly for a wave effect
           const parent = entry.target.parentElement;
           if (parent) {
             const sibs = Array.from(parent.children).filter(c => c.classList.contains('reveal'));
             const idx = sibs.indexOf(entry.target);
-            entry.target.style.transitionDelay = (idx >= 0 ? Math.min(idx, 5) * 70 : 0) + 'ms';
+            entry.target.style.transitionDelay = (idx >= 0 ? Math.min(idx, 5) * 90 : 0) + 'ms';
           }
           entry.target.classList.add('in');
           io.unobserve(entry.target);
@@ -1625,104 +974,83 @@ footer{
     }, {threshold:0.12, rootMargin:'0px 0px -40px 0px'});
     targets.forEach(el => io.observe(el));
   } else {
-    // Reduced motion or unsupported — show everything immediately
     document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
   }
 
-  /* ─ Stat number count-up (only on first reveal of stats strip) ─ */
+  // ─ Counter rolling animation
   if (!reduced && 'IntersectionObserver' in window) {
-    const stats = document.querySelectorAll('.stat-num em');
-    const animateNum = (el) => {
-      const text = el.textContent.trim();
-      const target = parseInt(text, 10);
-      if (isNaN(target)) return; // 텍스트 라벨은 건드리지 않음
-      const dur = 900;
+    const nums = document.querySelectorAll('.ps-num .num');
+    const fmt = (n) => n.toLocaleString('ko-KR');
+    const animate = (el) => {
+      const target = parseInt(el.dataset.target, 10);
+      if (isNaN(target)) return;
+      const dur = 1800;
       const start = performance.now();
       const easeOut = t => 1 - Math.pow(1 - t, 3);
       const tick = (now) => {
         const p = Math.min(1, (now - start) / dur);
-        el.textContent = Math.round(easeOut(p) * target).toString();
+        el.textContent = fmt(Math.round(easeOut(p) * target));
         if (p < 1) requestAnimationFrame(tick);
       };
       requestAnimationFrame(tick);
     };
-    const statObs = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          animateNum(entry.target);
-          statObs.unobserve(entry.target);
-        }
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { animate(e.target); obs.unobserve(e.target); }
       });
-    }, {threshold:0.5});
-    stats.forEach(el => statObs.observe(el));
+    }, {threshold:0.4});
+    nums.forEach(n => obs.observe(n));
+  } else {
+    document.querySelectorAll('.ps-num .num').forEach(el => {
+      const t = parseInt(el.dataset.target, 10);
+      if (!isNaN(t)) el.textContent = t.toLocaleString('ko-KR');
+    });
   }
 
+  // ─ Form submit (best-effort; this is design-only, network may fail)
   const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwfV43wUWvb5ZBbgnax_Ot4R6dMoCGlM6DtZxo97y7SrPHPeXwup97FLF9p4nq7oXx7/exec';
-
-  // Bot defense: record page load time
   const formLoadTime = Date.now();
-
   document.getElementById('partnerForm').addEventListener('submit', function(e) {
     e.preventDefault();
     const form = this;
     const btn = document.getElementById('submitBtn');
     const toast = document.getElementById('toast');
-
     const showToast = (msg, isError) => {
       toast.textContent = msg;
       toast.style.background = isError ? '#C82838' : 'var(--ink)';
       toast.classList.add('show');
       setTimeout(() => toast.classList.remove('show'), 5000);
     };
-
-    // Bot defense 1: honeypot field must be empty
     const honeypot = form.querySelector('input[name="website"]').value;
     if (honeypot) {
-      // Silent reject — pretend success so bot doesn't retry
       form.style.display = 'none';
       document.getElementById('formSuccess').style.display = 'block';
       return;
     }
-
-    // Bot defense 2: form must be open at least 3 seconds before submission
     if (Date.now() - formLoadTime < 3000) {
       showToast('잠시 후 다시 시도해주세요.', true);
       return;
     }
-
-    btn.disabled = true;
-    btn.textContent = '제출 중...';
-
-    // Convert form data to JSON, then send as text/plain to skip CORS preflight
-    // Apps Script will parse e.postData.contents as JSON
+    btn.disabled = true; btn.textContent = '제출 중...';
     const data = {};
     new FormData(form).forEach((v, k) => { data[k] = v; });
     data._submitted_at = new Date().toISOString();
     data._page_url = location.href;
-
     fetch(SCRIPT_URL, {
-      method: 'POST',
-      headers: {'Content-Type': 'text/plain;charset=utf-8'},
-      body: JSON.stringify(data),
-      redirect: 'follow'
-    })
-      .then(res => res.text())
-      .then(text => {
-        // Apps Script returns "OK" on success, else error message
-        if (text && text.trim().startsWith('OK')) {
-          form.style.display = 'none';
-          document.getElementById('formSuccess').style.display = 'block';
-        } else {
-          throw new Error(text || 'Unknown response');
-        }
-      })
-      .catch(err => {
-        btn.disabled = false;
-        btn.textContent = '파트너 도입 문의하기';
-        showToast('제출 실패. 이메일(newlearnsoft@gmail.com)로 직접 문의해주세요.', true);
-        console.error('Form submit error:', err);
-      });
+      method:'POST', headers:{'Content-Type':'text/plain;charset=utf-8'},
+      body:JSON.stringify(data), redirect:'follow'
+    }).then(res => res.text()).then(text => {
+      if (text && text.trim().startsWith('OK')) {
+        form.style.display = 'none';
+        document.getElementById('formSuccess').style.display = 'block';
+      } else { throw new Error(text || 'Unknown response'); }
+    }).catch(err => {
+      btn.disabled = false; btn.textContent = '도입 문의 보내기';
+      showToast('제출 실패. 이메일(newlearnsoft@gmail.com)로 직접 문의해주세요.', true);
+      console.error('Form submit error:', err);
+    });
   });
 </script>
+
 </body>
 </html>

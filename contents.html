@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>콘텐츠 소개 · 뉴런모의고사 학원 파트너</title>
+<title>콘텐츠 소개 · Level-X 학원 파트너</title>
 
 <!-- SEO -->
-<meta name="description" content="뉴런모의고사 콘텐츠 상세 — 출제 원칙, 표지 시스템, 상품 라인업, 구독 패키지, 시즌 6 운영 일정. 매달 단원·난이도를 학원이 직접 선택하는 수학 테스트지.">
-<meta name="keywords" content="뉴런모의고사 콘텐츠, 수학 모의고사 출제, 평가원 변형 출제, EBS 연계, 시즌 운영, 단원 테스트, 격주 모의고사, 월간 모의고사">
+<meta name="description" content="Level-X 콘텐츠 상세 — 출제 원칙, 표지 시스템, 상품 라인업, 구독 패키지, 시즌 6 운영 일정. 매달 단원·난이도를 학원이 직접 선택하는 수학 테스트지.">
+<meta name="keywords" content="Level-X 콘텐츠, 수학 모의고사 출제, 평가원 변형 출제, EBS 연계, 시즌 운영, 단원 테스트, 격주 모의고사, 월간 모의고사">
 <meta name="author" content="뉴런소프트">
 <meta name="robots" content="index, follow">
 
 <!-- Open Graph -->
 <meta property="og:type" content="article">
-<meta property="og:title" content="콘텐츠 소개 · 뉴런모의고사">
-<meta property="og:description" content="출제 원칙, 표지 시스템, 상품 라인업, 시즌 운영 일정 — 뉴런모의고사 콘텐츠 상세.">
-<meta property="og:site_name" content="뉴런모의고사 학원 파트너">
+<meta property="og:title" content="콘텐츠 소개 · Level-X">
+<meta property="og:description" content="출제 원칙, 표지 시스템, 상품 라인업, 시즌 운영 일정 — Level-X 콘텐츠 상세.">
+<meta property="og:site_name" content="Level-X 학원 파트너">
 <meta property="og:locale" content="ko_KR">
 <!--
   ⚠️ TODO (도메인 결정 후 채울 것)
@@ -35,16 +35,15 @@
 
 <!-- Theme & Browser UI -->
 <meta name="theme-color" content="#1A1A1A">
-<meta name="apple-mobile-web-app-title" content="뉴런모의고사">
+<meta name="apple-mobile-web-app-title" content="Level-X">
 
 <!-- Favicon (data URI - 빨간 사각형 + 흰 N) -->
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%23E60012'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='-apple-system,sans-serif' font-size='20' font-weight='900' fill='white'%3EN%3C/text%3E%3C/svg%3E">
 
 <style>
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
-
-:root {
-  /* ── Color: 뉴런모의고사 브랜드 (표지 디자인 일치) ── */
+:root{
+  /* ── Color: Level-X 브랜드 (표지 디자인 일치) ── */
   --navy:         #1A1A1A;   /* 메인 다크 — 차콜 (NORMAL 표지 톤) */
   --navy-soft:    #2A2A2A;   /* 다크 박스 내부 보조 */
   --navy-line:    #3A3A3A;   /* 다크 박스 내부 라인 */
@@ -73,10 +72,8 @@
   --sh-or: 0 6px 18px rgba(230,0,18,0.22);
   --sh-navy: 0 16px 48px rgba(26,26,26,0.18);
 }
-
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-
 /* ─ Scroll reveal animation ─ */
 .reveal{
   opacity:0;transform:translateY(16px);
@@ -85,7 +82,7 @@ html{scroll-behavior:smooth;}
 }
 .reveal.in{opacity:1;transform:translateY(0);}
 @media(prefers-reduced-motion:reduce){
-  .reveal,.reveal.in{
+  .reveal, .reveal.in{
     opacity:1;transform:none;transition:none;
   }
 }
@@ -95,7 +92,6 @@ body{
   -webkit-font-smoothing:antialiased;
   word-break:keep-all;line-height:1.7;font-weight:400;
 }
-
 /* ─ Icon system (Phosphor-style monoline 1.5px) ─ */
 .icon{
   width:24px;height:24px;
@@ -103,9 +99,6 @@ body{
   stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;
   flex-shrink:0;
 }
-.icon-sm{width:16px;height:16px;stroke-width:1.8;}
-.icon-lg{width:28px;height:28px;}
-
 /* ─ NAV ─ */
 nav{
   position:fixed;top:0;left:0;right:0;z-index:100;
@@ -148,90 +141,6 @@ nav.up{box-shadow:var(--sh-sm);}
   transition:background .2s,transform .15s,box-shadow .2s;
 }
 .nav-cta:hover{background:var(--orange-dark);}
-
-/* ─ HERO ─ */
-.hero{
-  padding-top:62px;
-  background:var(--white);
-}
-.hero-in{
-  max-width:1120px;margin:0 auto;padding:128px 60px 128px;
-  display:grid;grid-template-columns:1.1fr 0.9fr;gap:64px;align-items:center;
-}
-.hero-left{display:flex;flex-direction:column;justify-content:center;}
-
-.hero-kicker{
-  display:inline-flex;align-items:center;gap:8px;
-  font-size:12px;font-weight:800;letter-spacing:0.14em;color:var(--orange);
-  margin-bottom:24px;text-transform:uppercase;
-}
-.hero-kicker span{
-  display:inline-block;width:20px;height:2px;
-  background:var(--orange);border-radius:1px;
-}
-.hero-h1{
-  font-size:64px;font-weight:800;line-height:1.15;
-  letter-spacing:-0.04em;color:var(--ink);margin-bottom:32px;
-}
-.hero-h1 b{
-  font-weight:800;color:var(--orange);
-}
-.hero-list{
-  list-style:none;display:flex;flex-direction:column;gap:10px;
-  margin-bottom:32px;
-}
-.hero-list li{
-  display:flex;align-items:flex-start;gap:10px;
-  font-size:15px;color:var(--mid);line-height:1.7;
-  letter-spacing:-0.005em;
-}
-.hero-list li::before{
-  content:'';width:5px;height:5px;min-width:5px;
-  border-radius:50%;background:var(--orange);margin-top:10px;
-}
-.hero-badges{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:36px;}
-.hero-badge{
-  display:inline-flex;align-items:center;gap:6px;
-  font-size:12px;font-weight:700;color:var(--orange);
-  background:var(--orange-light);border:1.5px solid var(--orange-bdr);
-  padding:7px 14px;border-radius:20px;letter-spacing:-0.005em;
-}
-.hero-badge::before{content:'✓';font-weight:900;}
-.hero-btns{display:flex;gap:10px;flex-wrap:wrap;}
-.btn-main{
-  display:inline-block;background:var(--orange);color:white;
-  padding:18px 40px;border-radius:var(--r-lg);font-size:16px;font-weight:700;
-  text-decoration:none;letter-spacing:-0.02em;
-  box-shadow:var(--sh-or);
-  transition:background .2s,transform .15s,box-shadow .2s;
-}
-.btn-main:hover{background:var(--orange-dark);}
-.btn-sub{
-  display:inline-block;background:var(--warm);color:var(--body);
-  padding:18px 36px;border-radius:var(--r-lg);font-size:16px;font-weight:700;
-  text-decoration:none;border:1px solid var(--line);
-  transition:all .2s;letter-spacing:-0.02em;
-}
-.btn-sub:hover{border-color:var(--navy);color:var(--navy);}
-
-/* Hero Right — Envelope mockup (실제 봉투 표지) */
-.hero-envelope{
-  margin:0;
-  display:flex;align-items:center;justify-content:center;
-  position:relative;
-}
-.hero-envelope svg,
-.hero-envelope img{
-  width:100%;height:auto;max-width:440px;display:block;
-  border-radius:6px;
-}
-
-.pr-icon{
-  width:42px;height:42px;border-radius:10px;
-  background:var(--orange-light);color:var(--orange);
-  display:flex;align-items:center;justify-content:center;
-}
-
 /* ─ Section common ─ */
 .sec-tag{
   display:inline-flex;align-items:center;gap:10px;
@@ -248,117 +157,8 @@ nav.up{box-shadow:var(--sh-sm);}
   letter-spacing:-0.005em;
   margin-bottom:72px;max-width:680px;
 }
-
-/* ─ SCHEDULE STRIP ─ */
-.schedule{
-  background:var(--navy);color:var(--white);
-  padding:36px 60px;
-  position:relative;overflow:hidden;
-}
-.schedule::before{
-  content:'';position:absolute;top:-100px;right:-50px;
-  width:300px;height:300px;border-radius:50%;
-  background:radial-gradient(circle,rgba(230,57,70,0.18) 0%,rgba(230,57,70,0) 70%);
-  pointer-events:none;
-}
-.schedule-in{
-  max-width:1120px;margin:0 auto;
-  display:flex;align-items:center;gap:28px;flex-wrap:wrap;
-  position:relative;z-index:1;
-}
-.schedule-flag{
-  font-size:11px;font-weight:800;letter-spacing:0.14em;
-  color:var(--orange);
-  background:rgba(230,57,70,0.12);
-  border:1px solid rgba(230,57,70,0.32);
-  padding:7px 14px;border-radius:20px;white-space:nowrap;
-  text-transform:uppercase;
-}
-.schedule-body{flex:1;min-width:280px;}
-.schedule-h{
-  font-size:20px;font-weight:800;letter-spacing:-0.025em;
-  margin-bottom:6px;line-height:1.35;
-}
-.schedule-h em{font-style:normal;color:var(--orange);}
-.schedule-body p{
-  font-size:14px;color:rgba(255,255,255,0.7);line-height:1.65;
-  letter-spacing:-0.005em;
-}
-.schedule-cta{
-  background:var(--orange);color:var(--white);
-  padding:14px 30px;border-radius:var(--r-lg);
-  font-size:14px;font-weight:700;text-decoration:none;
-  letter-spacing:-0.015em;white-space:nowrap;
-  transition:background .2s,transform .15s;
-}
-.schedule-cta:hover{background:var(--orange-dark);}
-
-/* ─ STATS STRIP ─ */
-.stats{
-  background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line);
-}
-.stats-in{
-  max-width:1120px;margin:0 auto;padding:48px 60px;
-  display:grid;grid-template-columns:repeat(3,1fr);gap:0;
-  position:relative;
-}
-.stat-item{
-  display:flex;flex-direction:column;align-items:center;gap:10px;
-  padding:0 24px;text-align:center;
-  border-right:1px solid var(--line);
-}
-.stat-item:last-child{border-right:0;}
-.stat-num{
-  font-size:42px;font-weight:800;color:var(--ink);
-  letter-spacing:-0.04em;line-height:1;
-  display:inline-flex;align-items:baseline;gap:4px;
-}
-.stat-num em{font-style:normal;color:var(--orange);font-weight:800;}
-.stat-num sup{
-  font-size:18px;font-weight:700;color:var(--orange);
-  letter-spacing:-0.015em;line-height:1;
-  position:static;align-self:flex-end;padding-bottom:5px;
-  margin-left:1px;
-}
-.stat-label{
-  font-size:13px;color:var(--mid);font-weight:600;
-  letter-spacing:-0.005em;
-}
-
-/* ─ WHY ─ */
-.why{background:var(--warm);padding:128px 60px;}
-.why-in{max-width:1120px;margin:0 auto;}
-.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
-.why-card{
-  background:var(--white);border:1.5px solid var(--line);
-  border-radius:var(--r-lg);padding:36px 30px;
-  position:relative;
-}
-.why-icon{
-  width:48px;height:48px;border-radius:12px;
-  background:var(--navy);color:var(--white);
-  display:flex;align-items:center;justify-content:center;
-  margin-bottom:24px;
-}
-.why-num{
-  font-size:11px;font-weight:800;color:var(--orange);
-  letter-spacing:0.14em;text-transform:uppercase;
-  margin-bottom:14px;line-height:1;
-  display:inline-block;
-}
-.why-h3{
-  font-size:18px;font-weight:800;color:var(--ink);
-  margin-bottom:10px;letter-spacing:-0.025em;line-height:1.4;
-  position:relative;z-index:1;
-}
-.why-p{
-  font-size:14px;color:var(--mid);line-height:1.75;
-  letter-spacing:-0.005em;
-  position:relative;z-index:1;
-}
-
 /* ─ CONTENTS (NEW) ─ */
-.contents{background:var(--white);padding:128px 60px;}
+.contents{background:var(--white);padding:96px 60px;}
 .contents-in{max-width:1120px;margin:0 auto;}
 .contents-grid{
   display:grid;grid-template-columns:repeat(2,1fr);gap:16px;
@@ -384,294 +184,9 @@ nav.up{box-shadow:var(--sh-sm);}
   font-size:14px;color:var(--mid);line-height:1.75;
   letter-spacing:-0.005em;
 }
-
-/* ─ Cover Preview Gallery ─ */
-.cover-gallery{
-  margin-top:48px;
-  padding-top:48px;border-top:1px solid var(--line);
-}
-.cover-gallery-head{margin-bottom:36px;text-align:center;}
-.cover-gallery-tag{
-  display:inline-flex;align-items:center;gap:10px;
-  font-size:11px;font-weight:800;color:var(--orange);letter-spacing:0.16em;
-  margin-bottom:14px;text-transform:uppercase;
-}
-.cover-gallery-tag::before{content:'';width:18px;height:2px;background:var(--orange);border-radius:1px;}
-.cover-gallery-h{
-  font-size:28px;font-weight:800;color:var(--ink);
-  letter-spacing:-0.03em;line-height:1.3;margin-bottom:12px;
-}
-.cover-gallery-p{
-  font-size:14px;color:var(--mid);line-height:1.75;
-  letter-spacing:-0.005em;
-  max-width:580px;margin:0 auto;
-}
-
-.cover-grid{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:16px;
-}
-.cover{margin:0;}
-.cover-art{
-  aspect-ratio:1/1.414;          /* A4 ratio */
-  border-radius:6px;
-  padding:18px 16px 14px;
-  display:flex;flex-direction:column;
-  position:relative;
-  font-family:var(--f-sans);
-  box-shadow:0 4px 18px rgba(26,26,26,0.10);
-  overflow:hidden;
-}
-
-/* EASY — white / black / red label */
-.cover-easy{
-  background:var(--white);
-  border:1px solid var(--line);
-}
-.cover-easy .cover-label{color:var(--orange);}
-.cover-easy .cover-title{color:var(--ink);}
-.cover-easy .cover-mark{background:var(--orange);color:var(--white);}
-.cover-easy .cover-brand{color:var(--ink);}
-
-/* NORMAL — charcoal / white / red label */
-.cover-normal{background:#1A1A1A;}
-.cover-normal .cover-label{color:var(--orange);}
-.cover-normal .cover-title{color:var(--white);}
-.cover-normal .cover-tagline{color:rgba(255,255,255,0.7);}
-.cover-normal .cover-mark{background:var(--orange);color:var(--white);}
-.cover-normal .cover-brand{color:var(--white);}
-
-/* HARD — full red */
-.cover-hard{background:var(--orange);}
-.cover-hard .cover-label{color:var(--white);}
-.cover-hard .cover-title{color:var(--white);}
-.cover-hard .cover-tagline{color:rgba(255,255,255,0.85);}
-.cover-hard .cover-mark{background:var(--white);color:var(--orange);}
-.cover-hard .cover-brand{color:var(--white);}
-
-/* Common cover elements */
-.cover-tagline{
-  font-size:7px;font-weight:600;letter-spacing:0.5px;
-  margin-bottom:auto;
-  display:flex;align-items:center;gap:3px;
-}
-.cover-label{
-  font-size:8px;font-weight:800;letter-spacing:1.6px;
-  margin-bottom:4px;
-  position:relative;padding-bottom:6px;
-}
-.cover-label::after{
-  content:'';position:absolute;bottom:0;left:0;
-  width:14px;height:1px;background:currentColor;
-}
-.cover-easy .cover-label,
-.cover-normal .cover-label{margin-top:18px;}
-.cover-hard .cover-label{margin-top:8px;}
-.cover-easy .cover-tagline{visibility:hidden;}  /* easy 표지엔 상단 로고 없음 */
-.cover-title{
-  font-size:13px;font-weight:800;letter-spacing:-0.4px;line-height:1.25;
-  margin-top:2px;
-}
-.cover-foot{
-  margin-top:auto;display:flex;align-items:center;gap:4px;
-}
-.cover-mark{
-  width:13px;height:13px;border-radius:2px;
-  display:flex;align-items:center;justify-content:center;
-  font-size:9px;font-weight:900;line-height:1;
-}
-.cover-brand{font-size:7px;font-weight:700;letter-spacing:-0.2px;}
-
-/* Exam cover — white with serif-style title */
-.cover-exam{
-  background:var(--white);
-  border:1px solid var(--line);
-  align-items:center;text-align:center;
-  padding-top:32px;
-}
-.cover-exam-sub{
-  font-size:9px;color:var(--ink);font-weight:500;
-  letter-spacing:-0.2px;margin-bottom:10px;
-}
-.cover-exam-h{
-  font-size:18px;font-weight:900;color:var(--ink);
-  letter-spacing:-0.8px;margin-bottom:auto;line-height:1.2;
-}
-.cover-exam-name{
-  display:flex;align-items:center;gap:4px;
-  width:100%;border:1px solid var(--ink);
-  padding:4px 6px;font-size:7px;
-  margin-bottom:auto;
-}
-.cover-exam-name-key{
-  font-weight:800;color:var(--ink);letter-spacing:-0.2px;
-  padding-right:6px;border-right:1px solid var(--ink);
-}
-.cover-exam-name-line{flex:1;}
-.cover-exam-warn{
-  width:100%;font-size:7px;font-weight:700;color:var(--ink);
-  letter-spacing:-0.2px;background:#E5E7EB;
-  padding:5px 4px;text-align:center;
-  border-radius:1px;margin-top:0;
-}
-
-.cover-caption{
-  font-size:12px;font-weight:700;color:var(--ink);
-  text-align:center;margin-top:14px;letter-spacing:-0.005em;
-}
-
-@media(max-width:960px){
-  .cover-grid{grid-template-columns:repeat(2,1fr);gap:14px;}
-}
-@media(max-width:480px){
-  .cover-grid{grid-template-columns:repeat(2,1fr);gap:10px;}
-  .cover-title{font-size:11px;}
-  .cover-gallery-h{font-size:22px;}
-}
-
-/* ─ PRODUCTS ─ */
-.products{background:var(--warm);padding:128px 60px;}
-.products-in{max-width:1120px;margin:0 auto;}
-
-.prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:28px;}
-.prod-card{
-  background:var(--white);
-  border:1px solid var(--line);border-radius:var(--r-lg);
-  overflow:hidden;
-  display:flex;flex-direction:column;position:relative;
-}
-.prod-top{
-  padding:28px 28px 4px;
-  border-bottom:0;
-}
-.prod-label{
-  font-size:12px;font-weight:700;letter-spacing:-0.01em;color:var(--orange);
-  background:var(--orange-light);border:1px solid var(--orange-bdr);
-  padding:5px 12px;border-radius:14px;
-  margin-bottom:18px;
-  display:inline-block;line-height:1.4;
-}
-.prod-cover-link{
-  display:inline-block;
-  font-size:10px;font-weight:800;letter-spacing:0.06em;
-  padding:3px 8px;border-radius:4px;
-  white-space:nowrap;text-transform:uppercase;
-  vertical-align:middle;
-}
-.prod-cover-hard{background:var(--orange);color:var(--white);}
-.prod-cover-normal{background:var(--ink);color:var(--white);}
-.prod-cover-exam{
-  background:var(--warm);color:var(--ink);border:1px solid var(--line);
-  letter-spacing:-0.005em;text-transform:none;
-  font-size:11px;
-}
-.prod-name{
-  font-size:22px;font-weight:800;color:var(--ink);
-  letter-spacing:-0.03em;margin-bottom:8px;line-height:1.3;
-}
-.prod-desc{
-  font-size:14px;color:var(--mid);line-height:1.65;
-  letter-spacing:-0.005em;margin-bottom:18px;
-}
-.prod-pill{
-  display:inline-flex;align-items:center;gap:5px;
-  font-size:12px;font-weight:700;color:var(--ink);
-  background:transparent;border:1px solid var(--line);
-  padding:6px 12px;border-radius:6px;margin-bottom:24px;
-  letter-spacing:-0.005em;
-}
-.prod-divider{height:1px;background:var(--line-soft);margin:0 28px;}
-.prod-bottom{padding:22px 28px 28px;background:var(--warm);flex:1;}
-.prod-acad-label{
-  font-size:12px;font-weight:800;color:var(--orange);
-  letter-spacing:-0.005em;margin-bottom:14px;
-}
-.prod-pickline{
-  display:flex;align-items:center;gap:12px;
-  padding:9px 0;border-bottom:1px dashed var(--line);
-  font-size:13px;min-height:32px;
-}
-.prod-pickline:last-child{border-bottom:0;}
-.pl-key{
-  color:var(--mid);font-weight:600;min-width:48px;
-  font-size:12px;letter-spacing:-0.005em;
-  flex-shrink:0;
-}
-.pl-val{
-  color:var(--ink);font-weight:700;
-  font-size:13px;letter-spacing:-0.015em;
-  display:inline-flex;align-items:center;gap:4px;
-}
-
-.pricing-rule{
-  background:var(--white);border:1px solid var(--line);
-  border-left:3px solid var(--orange);
-  border-radius:var(--r-sm);padding:20px 28px;
-  display:flex;align-items:center;gap:24px;flex-wrap:wrap;
-  margin-bottom:36px;
-}
-.pr-num{
-  font-size:38px;font-weight:900;color:var(--orange);
-  letter-spacing:-0.04em;line-height:1;
-}
-.pr-divider{width:1px;height:40px;background:var(--orange-bdr);}
-.pr-text{
-  font-size:14px;color:var(--body);line-height:1.75;
-  letter-spacing:-0.005em;
-}
-.pr-text strong{color:var(--ink);font-weight:800;}
-
-/* Subscription packages 5종 */
-.packages{background:var(--white);padding:128px 60px;border-top:1px solid var(--line);}
-.packages-in{max-width:1120px;margin:0 auto;}
-.sub-wrap{
-  background:var(--warm);border:1px solid var(--line);
-  border-radius:var(--r-lg);padding:36px;
-}
-.sub-h3,.sub-p,.sub-head,.sub-head-left,.sub-badge{display:none;}
-.sub-table{
-  width:100%;border-collapse:separate;border-spacing:0;
-  font-size:13px;
-}
-.sub-table thead th{
-  font-size:11px;font-weight:800;color:var(--muted);
-  text-align:left;padding:10px 14px;
-  background:var(--warm);
-  border-bottom:1px solid var(--line);
-  letter-spacing:0.06em;text-transform:uppercase;
-}
-.sub-table thead th:first-child{border-radius:var(--r-sm) 0 0 0;}
-.sub-table thead th:last-child{border-radius:0 var(--r-sm) 0 0;}
-.sub-table tbody td{
-  padding:14px;border-bottom:1px solid var(--line-soft);
-  vertical-align:middle;
-}
-.sub-table tbody tr:last-child td{border-bottom:0;}
-.sub-type{
-  display:inline-flex;align-items:center;justify-content:center;
-  width:26px;height:26px;border-radius:50%;
-  background:var(--orange-light);border:1px solid var(--orange-bdr);
-  color:var(--orange);font-weight:800;font-size:12px;margin-right:6px;
-}
-.sub-name{font-weight:800;color:var(--ink);font-size:14px;letter-spacing:-0.015em;}
-.sub-comp{color:var(--mid);font-size:13px;letter-spacing:-0.005em;}
-.sub-pick{white-space:nowrap;}
-.pick-on{
-  display:inline-block;
-  font-size:12px;font-weight:700;color:var(--orange);
-  background:var(--orange-light);border:1px solid var(--orange-bdr);
-  padding:4px 10px;border-radius:14px;letter-spacing:-0.005em;
-}
-.sub-cycle{font-size:13px;color:var(--body);font-weight:600;letter-spacing:-0.005em;}
-.sub-note{
-  font-size:13px;color:var(--mid);margin-top:18px;line-height:1.75;
-  letter-spacing:-0.005em;
-}
-.sub-note strong{color:var(--ink);font-weight:800;}
-
 /* ─ PROGRAM (NEW) ─ */
-.program{background:var(--white);padding:128px 60px;border-top:1px solid var(--line);}
+.program{background:var(--white);padding:96px 60px;border-top:1px solid var(--line);}
 .program-in{max-width:1120px;margin:0 auto;}
-
 .timeline-wrap{margin-bottom:60px;}
 .timeline-track{
   position:relative;padding-top:24px;margin-bottom:18px;
@@ -713,9 +228,6 @@ nav.up{box-shadow:var(--sh-sm);}
 .tl-card:last-child .tl-dot{
   background:var(--orange);border-color:var(--orange);color:var(--white);
 }
-.tl-num{
-  display:none;
-}
 .tl-label{
   font-size:10px;font-weight:800;color:var(--orange);
   letter-spacing:0.14em;text-align:center;
@@ -744,7 +256,6 @@ nav.up{box-shadow:var(--sh-sm);}
   border-top:1px dashed var(--line);
 }
 .tl-card:last-child .tl-tip{color:var(--orange);}
-
 .tl-total{
   background:var(--navy);color:var(--white);
   border-radius:var(--r-md);padding:24px 32px;
@@ -781,279 +292,10 @@ nav.up{box-shadow:var(--sh-sm);}
   font-size:11px;color:rgba(255,255,255,0.65);
   letter-spacing:0.04em;font-weight:600;text-transform:uppercase;
 }
-
-/* Process 4-step */
-.proc-head{margin-top:60px;margin-bottom:28px;}
-.proc-h3{
-  font-size:26px;font-weight:800;color:var(--ink);
-  letter-spacing:-0.03em;margin-bottom:8px;line-height:1.3;
-}
-.proc-p{
-  font-size:14px;color:var(--mid);line-height:1.75;
-  letter-spacing:-0.005em;
-}
-
-.proc-grid{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:12px;
-  position:relative;
-}
-.proc-card{
-  background:var(--warm);border:1px solid var(--line);
-  border-radius:var(--r-md);padding:24px;
-  position:relative;
-}
-.proc-card:not(:last-child)::after{
-  content:'→';position:absolute;
-  top:50%;right:-14px;transform:translateY(-50%);
-  font-size:22px;color:var(--muted);font-weight:300;
-  z-index:2;
-}
-.proc-step{
-  font-size:11px;font-weight:800;letter-spacing:0.14em;
-  color:var(--orange);text-transform:uppercase;
-  display:inline-block;margin-bottom:8px;line-height:1;
-}
-.proc-num{
-  display:inline-flex;align-items:center;justify-content:center;
-  width:32px;height:32px;border-radius:50%;
-  background:var(--orange);color:white;
-  font-size:13px;font-weight:900;margin-bottom:14px;
-}
-.proc-title{
-  font-size:16px;font-weight:800;color:var(--ink);
-  margin-bottom:6px;letter-spacing:-0.025em;line-height:1.4;
-}
-.proc-desc{
-  font-size:13px;color:var(--mid);line-height:1.7;
-  letter-spacing:-0.005em;
-}
-
 /* More-grade (고2/고1) accordion */
-.more-grade{
-  margin-top:48px;
-  background:var(--warm);border:1px solid var(--line);
-  border-radius:var(--r-lg);overflow:hidden;
-}
-.more-toggle{
-  width:100%;border:0;background:transparent;
-  padding:22px 28px;cursor:pointer;
-  display:flex;align-items:center;justify-content:space-between;
-  font-family:inherit;text-align:left;
-}
-.mt-left{display:flex;align-items:center;gap:14px;}
-.mt-ic{
-  width:36px;height:36px;border-radius:10px;
-  background:var(--white);border:1px solid var(--line);
-  color:var(--navy);
-  display:flex;align-items:center;justify-content:center;
-}
-.mt-text{display:flex;flex-direction:column;gap:2px;}
-.mt-title{
-  font-size:14px;font-weight:800;color:var(--ink);letter-spacing:-0.025em;
-}
-.mt-sub{font-size:12px;color:var(--mid);letter-spacing:-0.005em;}
-.mt-arrow{font-size:18px;color:var(--muted);transition:transform .3s;}
-.more-toggle.open .mt-arrow{transform:rotate(180deg);}
-.more-body{
-  max-height:0;overflow:hidden;
-  transition:max-height .35s ease;
-}
-.more-body.open{max-height:1200px;}
-.more-inner{
-  padding:0 28px 28px;
-  display:grid;grid-template-columns:1fr 1fr;gap:16px;
-}
-.grade-card{
-  background:var(--white);border:1px solid var(--line);
-  border-radius:var(--r-md);padding:22px;
-}
-.grade-h{
-  display:flex;align-items:center;justify-content:space-between;
-  margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid var(--line-soft);
-}
-.grade-name{
-  font-size:16px;font-weight:800;color:var(--ink);letter-spacing:-0.025em;
-}
-.grade-period{
-  font-size:11px;color:var(--muted);font-weight:700;
-  letter-spacing:0.04em;
-}
-.grade-row{
-  display:flex;justify-content:space-between;align-items:flex-start;gap:12px;
-  font-size:13px;padding:8px 0;letter-spacing:-0.005em;
-}
-.grade-row + .grade-row{border-top:1px dashed var(--line-soft);}
-.grade-key{color:var(--mid);font-weight:600;min-width:60px;}
-.grade-val{color:var(--body);text-align:right;flex:1;}
-.grade-val strong{color:var(--ink);font-weight:800;}
-.grade-note{
-  margin-top:14px;padding:10px 12px;
-  background:var(--orange-light);border-radius:var(--r-sm);
-  font-size:12px;color:var(--body);line-height:1.7;letter-spacing:-0.005em;
-}
-
-/* ─ INQUIRY ─ */
-.inquiry{background:var(--warm);padding:128px 60px;}
-.inquiry-in{max-width:1120px;margin:0 auto;}
-
-.inq-wrap{display:grid;grid-template-columns:1fr 1.55fr;gap:72px;align-items:start;}
-
-.inq-left{}
-.inq-h3{
-  font-size:42px;font-weight:800;letter-spacing:-0.035em;
-  color:var(--ink);margin-bottom:18px;line-height:1.2;
-}
-.inq-h3 b{color:var(--orange);}
-.inq-p{
-  font-size:15px;color:var(--mid);line-height:1.75;
-  letter-spacing:-0.005em;margin-bottom:32px;
-}
-.inq-checks{list-style:none;display:flex;flex-direction:column;gap:12px;margin-bottom:36px;}
-.inq-checks li{
-  display:flex;align-items:center;gap:12px;
-  font-size:14px;color:var(--body);letter-spacing:-0.005em;
-}
-.chk{
-  width:22px;height:22px;min-width:22px;border-radius:50%;
-  background:var(--orange);display:flex;align-items:center;justify-content:center;
-  font-size:10px;color:white;font-weight:900;
-}
-.inq-promise{
-  display:flex;align-items:flex-start;gap:18px;
-  padding:24px 26px;background:var(--white);
-  border:1px solid var(--line);border-radius:var(--r-md);
-}
-.inq-promise-num{
-  font-size:42px;font-weight:900;color:var(--orange);
-  letter-spacing:-0.04em;line-height:1;
-  display:flex;align-items:baseline;gap:3px;flex-shrink:0;
-}
-.inq-promise-num span{
-  font-size:14px;font-weight:700;color:var(--orange);
-  letter-spacing:-0.015em;
-}
-.inq-promise-body{flex:1;}
-.inq-promise-ttl{
-  font-size:16px;font-weight:800;color:var(--ink);
-  letter-spacing:-0.025em;margin-bottom:6px;line-height:1.4;
-}
-.inq-promise-body p{
-  font-size:13px;color:var(--mid);line-height:1.7;letter-spacing:-0.005em;
-}
-
-/* Form */
-.form-box{
-  background:var(--white);border-radius:var(--r-xl);
-  border:1.5px solid var(--line);padding:40px;
-  box-shadow:var(--sh-lg);
-}
-.form-ttl{
-  font-size:18px;font-weight:800;color:var(--ink);
-  margin-bottom:28px;letter-spacing:-0.025em;line-height:1.4;
-}
-.form-wrap{display:flex;flex-direction:column;gap:14px;}
-.frow{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
-.fg{display:flex;flex-direction:column;gap:6px;}
-.fg label{
-  font-size:12px;font-weight:700;color:var(--mid);
-  letter-spacing:-0.005em;
-}
-.fg input,.fg select,.fg textarea{
-  border:1.5px solid var(--line);border-radius:var(--r-sm);
-  padding:12px 14px;font-size:14px;font-family:inherit;
-  color:var(--ink);background:var(--warm);letter-spacing:-0.005em;
-  outline:none;transition:border-color .2s,background .2s,box-shadow .2s;
-}
-.fg input::placeholder,.fg textarea::placeholder{color:var(--muted);}
-.fg input:focus,.fg select:focus,.fg textarea:focus{
-  border-color:var(--orange);background:var(--white);
-  box-shadow:0 0 0 3px rgba(232,74,15,0.08);
-}
-.fg textarea{resize:vertical;min-height:88px;line-height:1.7;}
-.fg select{
-  appearance:none;cursor:pointer;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23BBBBBB' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-  background-repeat:no-repeat;background-position:right 14px center;padding-right:36px;
-}
-.fcheck{
-  display:flex;align-items:flex-start;gap:10px;
-  font-size:13px;color:var(--mid);cursor:pointer;line-height:1.6;
-  letter-spacing:-0.005em;
-}
-.fcheck input{margin-top:3px;accent-color:var(--orange);width:16px;height:16px;min-width:16px;cursor:pointer;}
-.fcheck span{flex:1;}
-
-/* Privacy notice (details/summary) */
-.privacy-notice{
-  background:var(--warm);border:1px solid var(--line);
-  border-radius:var(--r-sm);padding:12px 16px;
-  font-size:13px;color:var(--mid);line-height:1.7;
-  letter-spacing:-0.005em;
-}
-.privacy-notice summary{
-  cursor:pointer;font-weight:700;color:var(--body);
-  display:flex;align-items:center;justify-content:space-between;
-  list-style:none;letter-spacing:-0.015em;
-  padding:2px 0;
-}
-.privacy-notice summary::-webkit-details-marker{display:none;}
-.privacy-notice summary::after{
-  content:'+';font-weight:700;color:var(--mid);
-  font-size:16px;line-height:1;width:16px;text-align:center;
-  transition:transform .25s;
-}
-.privacy-notice[open] summary::after{transform:rotate(45deg);}
-.privacy-notice summary span{
-  font-size:11px;font-weight:600;color:var(--muted);
-  letter-spacing:-0.005em;
-}
-.privacy-notice dl{
-  margin:14px 0 8px;display:grid;
-  grid-template-columns:auto 1fr;gap:8px 14px;
-}
-.privacy-notice dt{
-  color:var(--ink);font-weight:700;font-size:12px;
-  letter-spacing:-0.005em;white-space:nowrap;
-  padding-top:1px;
-}
-.privacy-notice dd{
-  font-size:12px;color:var(--mid);line-height:1.65;
-  letter-spacing:-0.005em;
-}
-.privacy-contact{
-  margin-top:6px;padding-top:10px;border-top:1px dashed var(--line);
-  font-size:12px;color:var(--muted);letter-spacing:-0.005em;
-}
-.privacy-contact a{color:var(--orange);text-decoration:none;}
-.privacy-contact a:hover{text-decoration:underline;}
-
-/* Honeypot — completely hidden from humans, but bots will fill it */
-.hp-field{
-  position:absolute !important;
-  left:-10000px !important;top:auto !important;
-  width:1px !important;height:1px !important;
-  overflow:hidden !important;
-}
-
-.fsub{
-  background:var(--orange);color:white;border:none;
-  border-radius:var(--r-md);padding:16px;font-size:15px;font-weight:700;
-  font-family:inherit;cursor:pointer;letter-spacing:-0.02em;margin-top:2px;
-  box-shadow:var(--sh-or);
-  transition:background .2s,transform .15s,box-shadow .2s;
-}
-.fsub:hover{background:var(--orange-dark);}
-.fsub:disabled{opacity:.6;cursor:not-allowed;transform:none;}
-
+.more-toggle.open .more-body.open{max-height:1200px;}
 /* Success */
 #formSuccess{display:none;text-align:center;padding:56px 16px;}
-.suc-icon{
-  width:72px;height:72px;border-radius:50%;
-  background:var(--orange-light);border:2px solid var(--orange-bdr);
-  display:flex;align-items:center;justify-content:center;
-  font-size:28px;margin:0 auto 22px;
-}
-
 /* Toast */
 #toast{
   position:fixed;bottom:36px;left:50%;
@@ -1063,9 +305,7 @@ nav.up{box-shadow:var(--sh-sm);}
   white-space:nowrap;opacity:0;pointer-events:none;z-index:999;
   box-shadow:var(--sh-md);transition:opacity .3s,transform .3s;
 }
-#toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
-
-/* Footer */
+#toast/* Footer */
 footer{
   background:#0B1220;color:rgba(255,255,255,0.7);
   padding:48px 60px 36px;
@@ -1104,57 +344,719 @@ footer{
 }
 .ft-info a{color:inherit;text-decoration:none;border-bottom:1px solid transparent;transition:border-color .2s;}
 .ft-info a:hover{border-bottom-color:rgba(255,255,255,0.4);}
-
 /* Responsive */
 @media(max-width:1100px){
   .nav-menu{display:none;}
 }
 @media(max-width:960px){
-  nav,footer{padding-left:24px;padding-right:24px;}
+  nav, footer{padding-left:24px;padding-right:24px;}
   .ft-info{text-align:left;}
-  .hero-in{grid-template-columns:1fr;padding:80px 24px 64px;gap:44px;}
-  .hero-envelope{order:-1;}
-  .hero-envelope svg,
-  .hero-envelope img{max-width:280px;}
-  .why,.products,.inquiry,.contents,.program,.packages{padding:96px 24px;}
-  .schedule{padding:32px 24px;}
-  .schedule-in{flex-direction:column;align-items:flex-start;gap:18px;}
-  .schedule-cta{width:100%;text-align:center;}
-  .stats-in{grid-template-columns:repeat(3,1fr);gap:0;padding:36px 16px;}
-  .stat-item{padding:0 8px;border-right:1px solid var(--line);}
-  .stat-item:last-child{border-right:0;}
-  .stat-num{font-size:28px;}
-  .stat-num sup{font-size:13px;padding-bottom:3px;}
-  .hero-h1{font-size:40px;letter-spacing:-0.04em;}
+  .contents, .program{padding:96px 24px;}
   .sec-h2{font-size:32px;letter-spacing:-0.035em;}
-  .inq-h3{font-size:30px;letter-spacing:-0.035em;}
   .sec-sub{margin-bottom:48px;}
-  .why-grid,.prod-grid,.contents-grid{grid-template-columns:1fr;}
+  .contents-grid{grid-template-columns:1fr;}
   .timeline-grid{grid-template-columns:repeat(2,1fr);gap:24px 10px;}
   .timeline-track::before{display:none;}
   .tl-card{min-height:auto;}
-  .tl-title,.tl-scope{min-height:auto;}
-  .proc-grid{grid-template-columns:1fr;gap:20px;}
-  .proc-card:not(:last-child)::after{
-    content:'↓';top:auto;bottom:-20px;right:50%;transform:translateX(50%);
-  }
-  .more-inner{grid-template-columns:1fr;}
-  .inq-wrap{grid-template-columns:1fr;gap:40px;}
-  .sub-wrap{padding:24px;}
-  .sub-table thead{display:none;}
-  .sub-table,.sub-table tbody,.sub-table tr,.sub-table td{display:block;width:100%;}
-  .sub-table tr{
-    border:1px solid var(--line);border-radius:var(--r-sm);
-    padding:12px;margin-bottom:8px;
-  }
-  .sub-table td{border:0!important;padding:4px 0;}
-  .sub-cycle{font-size:13px;}
+  .tl-title, .tl-scope{min-height:auto;}
   .tl-total-stats{gap:20px;}
 }
 @media(max-width:560px){
   .timeline-grid{grid-template-columns:1fr;gap:24px;}
+  .logo-tag{display:none;}
 }
-
+/* Wrapper section inside curriculum */
+.cur-units-section{
+  margin-top:48px;
+}
+.cur-units-head{
+  margin-bottom:24px;
+}
+.cur-units-tag{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:11px;font-weight:800;color:var(--orange);letter-spacing:0.12em;
+  margin-bottom:12px;text-transform:uppercase;
+}
+.cur-units-tag::before{
+  content:'';width:18px;height:2px;background:var(--orange);border-radius:1px;
+}
+.cur-units-h3{
+  font-size:24px;font-weight:800;color:var(--ink);
+  letter-spacing:-0.025em;line-height:1.3;margin-bottom:8px;
+}
+.cur-units-p{
+  font-size:14px;color:var(--mid);line-height:1.7;
+  letter-spacing:-0.005em;
+}
+/* Outer wrapper card */
+.uacc-wrap{
+  background:var(--white);
+  border:1px solid var(--line);
+  border-radius:var(--r-lg);
+  overflow:hidden;
+  box-shadow:var(--sh-sm);
+}
+.uacc-head{
+  background:var(--navy);color:var(--white);
+  padding:18px 28px;
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;
+}
+.uacc-head-ttl{
+  font-size:15px;font-weight:800;letter-spacing:-0.02em;
+}
+.uacc-head-meta{
+  font-size:12px;color:rgba(255,255,255,0.7);
+  letter-spacing:-0.005em;
+}
+/* Subject row (accordion item) */
+.uacc-subj{
+  border-bottom:1px solid var(--line);
+}
+.uacc-subj:last-child{border-bottom:0;}
+/* Accordion trigger (clickable header) */
+.uacc-toggle{
+  width:100%;
+  background:var(--white);border:0;
+  padding:22px 28px;
+  cursor:pointer;font-family:inherit;text-align:left;
+  display:grid;grid-template-columns:auto 1fr auto auto;
+  align-items:center;gap:18px;
+  transition:background .2s;
+}
+.uacc-toggle:hover{background:var(--warm);}
+.uacc-toggle.open{
+  background:var(--warm);
+  border-bottom:1px solid var(--line);
+}
+.uacc-subj-num{
+  width:36px;height:36px;border-radius:8px;
+  background:var(--ink);color:var(--white);
+  display:flex;align-items:center;justify-content:center;
+  font-size:13px;font-weight:900;letter-spacing:-0.02em;line-height:1;
+  flex-shrink:0;
+}
+.uacc-toggle.open .uacc-subj-num{
+  background:var(--orange);
+}
+.uacc-subj-info{display:flex;flex-direction:column;gap:2px;min-width:0;}
+.uacc-subj-name{
+  font-size:17px;font-weight:800;color:var(--ink);
+  letter-spacing:-0.025em;line-height:1.3;
+}
+.uacc-subj-meta{
+  font-size:12px;color:var(--mid);font-weight:600;
+  letter-spacing:-0.005em;
+}
+.uacc-subj-count{
+  font-size:11px;font-weight:800;color:var(--orange);
+  background:var(--orange-light);border:1px solid var(--orange-bdr);
+  padding:5px 11px;border-radius:14px;
+  letter-spacing:-0.005em;white-space:nowrap;
+}
+.uacc-icon{
+  width:28px;height:28px;border-radius:50%;
+  background:var(--white);border:1.5px solid var(--line);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--mid);
+  flex-shrink:0;
+  transition:transform .3s, background .2s, border-color .2s, color .2s;
+}
+.uacc-toggle.open .uacc-icon{
+  background:var(--ink);border-color:var(--ink);color:var(--white);
+  transform:rotate(180deg);
+}
+.uacc-icon svg{width:14px;height:14px;}
+/* Accordion body (collapsible) */
+.uacc-body{
+  max-height:0;overflow:hidden;
+  transition:max-height .4s cubic-bezier(.2,.6,.2,1);
+}
+.uacc-body.open{max-height:1400px;}
+.uacc-table-wrap{
+  background:#FAFAFA;
+  padding:0;
+}
+.uacc-table{
+  width:100%;
+  border-collapse:separate;border-spacing:0;
+  font-size:13px;
+}
+.uacc-table thead th{
+  background:#F2EFED;
+  font-size:10.5px;font-weight:800;
+  color:var(--mid);
+  letter-spacing:0.08em;text-transform:uppercase;
+  padding:12px 18px;text-align:left;
+  border-bottom:1px solid var(--line);
+  white-space:nowrap;
+}
+.uacc-table thead th.col-num{text-align:center;}
+.uacc-table tbody td{
+  padding:13px 18px;
+  border-bottom:1px solid var(--line-soft);
+  letter-spacing:-0.005em;
+  vertical-align:middle;
+}
+.uacc-table tbody tr:last-child td{border-bottom:0;}
+.uacc-table tbody tr:hover td{background:rgba(255,255,255,0.6);}
+.uacc-table .col-grp{
+  color:var(--mid);font-weight:600;font-size:12.5px;
+  white-space:nowrap;
+}
+.uacc-table .col-unit{
+  color:var(--ink);font-weight:700;font-size:13.5px;
+  letter-spacing:-0.015em;
+}
+.uacc-table .col-num{
+  text-align:center;
+  font-size:13px;font-weight:700;
+  white-space:nowrap;
+}
+.uacc-table .col-num.basic{color:var(--body);}
+.uacc-table .col-num.inter{color:var(--ink);}
+.uacc-table .col-num.killer{
+  color:var(--orange);
+  background:var(--orange-light);
+}
+/* Footer */
+.uacc-foot{
+  padding:16px 28px;background:var(--warm);
+  border-top:1px solid var(--line);
+  font-size:13px;color:var(--mid);letter-spacing:-0.005em;
+  display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+}
+.uacc-foot strong{color:var(--ink);font-weight:800;}
+.uacc-foot::before{
+  content:'※';color:var(--orange);font-weight:700;
+}
+/* Expand/collapse all link */
+.uacc-controls{
+  display:flex;justify-content:flex-end;
+  margin-bottom:14px;
+}
+.uacc-controls button{
+  background:transparent;border:0;cursor:pointer;
+  font-family:inherit;font-size:12px;font-weight:700;
+  color:var(--orange);letter-spacing:-0.005em;
+  padding:6px 12px;border-radius:6px;
+  transition:background .2s;
+}
+.uacc-controls button:hover{background:var(--orange-light);}
+@media(max-width:720px){
+  .uacc-head, .uacc-foot{padding:14px 18px;}
+  .uacc-toggle{padding:18px 18px;gap:12px;grid-template-columns:auto 1fr auto;}
+  .uacc-subj-count{display:none;}
+  .uacc-subj-name{font-size:15px;}
+  .uacc-table thead th{padding:10px 14px;font-size:10px;}
+  .uacc-table tbody td{padding:11px 14px;font-size:12px;}
+  .uacc-table .col-grp{display:none;}
+  .uacc-table thead th.col-grp-h{display:none;}
+}
+/* ─ CURRICULUM (등급표 커버 막대 테이블) ─ */
+.curriculum{background:var(--warm);padding:96px 60px;}
+.curriculum-in{max-width:1120px;margin:0 auto;}
+/* Outer card */
+.cur-wrap{
+  background:var(--white);
+  border:1px solid var(--line);
+  border-radius:var(--r-lg);
+  overflow:hidden;
+  box-shadow:var(--sh-sm);
+  margin-bottom:36px;
+}
+.cur-scroll{overflow-x:auto;}
+.cur-table{
+  width:100%;
+  border-collapse:separate;border-spacing:0;
+  font-size:13px;
+  min-width:880px;
+  table-layout:fixed;
+}
+/* Column widths */
+.cur-table col.col-content{width:200px;}
+.cur-table col.col-diff{width:130px;}
+.cur-table col.col-grade-cell{width:auto;}
+/* Header — two-tier */
+.cur-table thead th{
+  background:var(--navy);
+  color:rgba(255,255,255,0.9);
+  font-weight:800;
+  letter-spacing:-0.005em;
+  padding:14px 8px;
+  text-align:center;
+  border-bottom:1px solid var(--navy-line);
+  border-right:1px solid var(--navy-line);
+  white-space:nowrap;
+  vertical-align:middle;
+}
+.cur-table thead th:last-child{border-right:0;}
+.cur-table thead .th-rowspan{
+  background:var(--navy);
+  font-size:13px;font-weight:800;
+  color:rgba(255,255,255,0.85);
+  padding:18px 8px;
+}
+.cur-table thead .th-major{
+  background:var(--navy);
+  font-size:14px;font-weight:800;
+  color:var(--white);
+  padding:18px 8px;
+  letter-spacing:-0.005em;
+}
+.cur-table thead .th-grade{
+  background:#2A2A2A;
+  font-size:12px;font-weight:700;
+  color:rgba(255,255,255,0.85);
+  padding:11px 8px;
+  border-top:1px solid var(--navy-line);
+  letter-spacing:-0.005em;
+}
+/* Body cells */
+.cur-table tbody td{
+  background:var(--white);
+  border-bottom:1px solid var(--line);
+  border-right:1px solid var(--line);
+  vertical-align:middle;
+  padding:0;
+  text-align:center;
+  letter-spacing:-0.005em;
+}
+.cur-table tbody tr:last-child td{border-bottom:0;}
+.cur-table tbody td:last-child{border-right:0;}
+/* Content cell (left) */
+.cur-cell-content{
+  background:#F4F6FA !important;
+  padding:24px 16px;
+}
+.cur-content-badge{
+  display:flex;flex-direction:column;
+  width:74px;
+  aspect-ratio:1/1.414;            /* A4 ratio - 표지처럼 */
+  margin:0 auto 14px;
+  padding:9px 8px 7px;
+  border-radius:5px;
+  position:relative;
+  font-family:var(--f-sans);
+  box-shadow:0 6px 18px rgba(26,26,26,0.15), 0 1px 3px rgba(26,26,26,0.10);
+  overflow:hidden;
+}
+.cur-content-badge .cb-label{
+  font-size:7px;font-weight:800;letter-spacing:0.16em;
+  margin-top:6px;margin-bottom:4px;
+  position:relative;padding-bottom:4px;
+  text-transform:uppercase;
+}
+.cur-content-badge .cb-label::after{
+  content:'';position:absolute;bottom:0;left:0;
+  width:14px;height:1px;background:currentColor;
+}
+.cur-content-badge .cb-mark{
+  font-size:24px;font-weight:900;letter-spacing:-0.04em;line-height:1;
+  margin-top:2px;
+}
+.cur-content-badge .cb-foot{
+  margin-top:auto;display:flex;align-items:center;gap:3px;
+}
+.cur-content-badge .cb-foot-mark{
+  width:10px;height:10px;border-radius:2px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:7px;font-weight:900;line-height:1;
+}
+.cur-content-badge .cb-foot-brand{
+  font-size:6px;font-weight:600;letter-spacing:-0.005em;
+}
+/* Basic — white card, charcoal text, red accent */
+.cur-content-badge.cb-basic{
+  background:var(--white);
+  border:1px solid var(--line);
+  color:var(--ink);
+}
+.cur-content-badge.cb-basic .cb-label{color:var(--orange);}
+.cur-content-badge.cb-basic .cb-foot-mark{background:var(--orange);color:var(--white);}
+.cur-content-badge.cb-basic .cb-foot-brand{color:var(--ink);}
+/* Intermediate — charcoal card, white text, red label */
+.cur-content-badge.cb-inter{
+  background:#1A1A1A;
+  color:var(--white);
+}
+.cur-content-badge.cb-inter .cb-label{color:var(--orange);}
+.cur-content-badge.cb-inter .cb-foot-mark{background:var(--orange);color:var(--white);}
+.cur-content-badge.cb-inter .cb-foot-brand{color:var(--white);}
+/* Killer — full red card */
+.cur-content-badge.cb-killer{
+  background:var(--orange);
+  color:var(--white);
+}
+.cur-content-badge.cb-killer .cb-label{color:var(--white);}
+.cur-content-badge.cb-killer .cb-foot-mark{background:var(--white);color:var(--orange);}
+.cur-content-badge.cb-killer .cb-foot-brand{color:var(--white);}
+/* Final — exam paper style (white, center-aligned, name field) */
+.cur-content-badge.cb-final{
+  background:var(--white);
+  border:1px solid var(--line);
+  align-items:center;text-align:center;
+  padding:14px 6px 7px;
+}
+.cur-content-badge.cb-final .cb-label{
+  display:none;
+}
+.cur-content-badge.cb-final .cb-exam-sub{
+  font-size:5px;color:var(--ink);font-weight:500;
+  letter-spacing:-0.005em;line-height:1.4;
+  margin-bottom:6px;
+  display:block;
+}
+.cur-content-badge.cb-final .cb-mark{
+  font-size:17px;font-weight:900;color:var(--ink);
+  letter-spacing:-0.035em;line-height:1;
+  margin:0 0 auto;
+}
+.cur-content-badge.cb-final .cb-exam-name{
+  display:flex;align-items:center;
+  width:100%;border:1px solid var(--ink);
+  padding:2px 3px;font-size:5px;
+  margin-top:6px;margin-bottom:auto;
+}
+.cur-content-badge.cb-final .cb-exam-name-key{
+  font-weight:800;color:var(--ink);
+  padding-right:3px;border-right:1px solid var(--ink);
+  letter-spacing:-0.005em;
+}
+.cur-content-badge.cb-final .cb-exam-warn{
+  width:100%;font-size:4.5px;font-weight:700;color:var(--ink);
+  background:#D8D8D8;
+  padding:3px 2px;text-align:center;
+  margin-top:0;
+  letter-spacing:-0.005em;line-height:1.2;
+}
+.cur-content-badge.cb-final .cb-foot{display:none;}
+.cur-content-name{
+  font-size:14px;font-weight:800;color:var(--ink);
+  letter-spacing:-0.02em;line-height:1.3;
+}
+/* Difficulty cell */
+.cur-cell-diff{
+  background:#F4F6FA !important;
+  padding:18px 8px;
+}
+.cur-diff-dots{
+  display:inline-flex;gap:7px;
+  letter-spacing:0;
+}
+.cur-diff-dots span{
+  width:12px;height:12px;border-radius:50%;
+  border:1.5px solid var(--ink);
+  display:inline-block;
+}
+.cur-diff-dots span.on{background:var(--ink);}
+/* Grade cells (right 3 columns) */
+.cur-cell-grade{
+  padding:0;
+  vertical-align:middle;
+  height:130px;
+}
+.cur-grade-empty{
+  background:#FCFCFC;
+  background-image:
+    linear-gradient(135deg, transparent 49%, var(--line-soft) 49%, var(--line-soft) 51%, transparent 51%),
+    linear-gradient(135deg, transparent 49%, var(--line-soft) 49%, var(--line-soft) 51%, transparent 51%);
+  background-size:14px 14px;
+  background-position:0 0, 7px 7px;
+}
+.cur-grade-cover{
+  padding:14px;
+}
+.cur-cover{
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  gap:4px;
+  width:100%;height:100%;
+  min-height:100px;
+  padding:18px 16px;
+  border-radius:var(--r-md);
+  border:1px solid transparent;
+  text-align:center;
+}
+.cur-cover-h{
+  font-size:14.5px;font-weight:800;
+  letter-spacing:-0.02em;line-height:1.3;
+}
+.cur-cover-sub{
+  font-size:12.5px;font-weight:600;
+  letter-spacing:-0.005em;line-height:1.5;
+}
+/* Bar color variants */
+.cur-cover-basic{
+  background:#E5E9F2;
+  border-color:#D0D6E0;
+}
+.cur-cover-basic .cur-cover-h{color:var(--ink);}
+.cur-cover-basic .cur-cover-sub{color:var(--mid);}
+.cur-cover-inter{
+  background:#1A1A1A;
+  border-color:#1A1A1A;
+  box-shadow:0 3px 10px rgba(26,26,26,0.20);
+}
+.cur-cover-inter .cur-cover-h{color:var(--white);}
+.cur-cover-inter .cur-cover-sub{color:rgba(255,255,255,0.7);}
+.cur-cover-killer{
+  background:linear-gradient(135deg,#E60012 0%,#B8000F 100%);
+  border-color:#B8000F;
+  box-shadow:0 4px 16px rgba(230,0,18,0.22);
+}
+.cur-cover-killer .cur-cover-h{color:var(--white);}
+.cur-cover-killer .cur-cover-sub{color:rgba(255,255,255,0.88);}
+/* Final — spans all 3 grade cells */
+.cur-grade-cover-all{
+  padding:14px;
+  border-right:0 !important;
+}
+.cur-cover-final{
+  background:linear-gradient(90deg, #E5E9F2 0%, #D7DDE6 50%, #E5E9F2 100%);
+  border-color:#C5CCD8;
+  border-left:4px solid var(--navy);
+  border-radius:var(--r-md);
+}
+.cur-cover-final .cur-cover-h{color:var(--navy);font-weight:800;}
+.cur-cover-final .cur-cover-sub{color:var(--body);font-weight:600;}
+/* Footer note */
+.cur-foot{
+  padding:18px 28px;
+  background:var(--warm);
+  border-top:1px solid var(--line);
+  font-size:13px;color:var(--mid);
+  letter-spacing:-0.005em;
+  line-height:1.7;
+}
+.cur-foot strong{color:var(--ink);font-weight:800;}
+.cur-foot::before{
+  content:'※ ';color:var(--orange);font-weight:800;
+}
+/* Operation points box */
+.curr-ops{
+  background:var(--white);border:1px solid var(--line);
+  border-left:4px solid var(--orange);
+  border-radius:var(--r-sm);
+  padding:24px 28px;
+}
+.curr-ops-h{
+  font-size:13px;font-weight:800;color:var(--ink);
+  letter-spacing:-0.015em;margin-bottom:12px;
+  display:flex;align-items:center;gap:8px;
+}
+.curr-ops-h::before{
+  content:'';width:6px;height:6px;border-radius:50%;
+  background:var(--orange);
+}
+.curr-ops-list{
+  list-style:none;display:flex;flex-direction:column;gap:8px;
+}
+.curr-ops-list li{
+  font-size:13px;color:var(--body);line-height:1.7;
+  letter-spacing:-0.005em;
+  padding-left:14px;position:relative;
+}
+.curr-ops-list li::before{
+  content:'•';position:absolute;left:0;top:0;
+  color:var(--orange);font-weight:700;
+}
+.curr-ops-list li strong{color:var(--ink);font-weight:800;}
+.curr-note{
+  margin-top:24px;
+  padding:18px 24px;background:var(--white);
+  border:1px solid var(--line);
+  border-left:3px solid var(--mid);
+  font-size:13px;color:var(--mid);line-height:1.75;
+  border-radius:var(--r-sm);
+  letter-spacing:-0.005em;
+}
+.curr-note strong{color:var(--ink);font-weight:800;}
+@media(max-width:960px){
+  .curriculum{padding:96px 24px;}
+  .cur-foot{padding:14px 18px;}
+  .cur-cell-grade{height:110px;}
+  .cur-cover{padding:14px 12px;min-height:84px;}
+  .cur-cover-h{font-size:13px;}
+  .cur-cover-sub{font-size:11.5px;}
+  .cur-units-h3{font-size:20px;}
+  .curr-ops{padding:20px 22px;}
+}
+/* ─ LEVEL DETAIL (이감 SURVIVAL 스타일 - 미니멀 흰 배경) ─ */
+.lvl-detail{
+  padding:96px 60px;
+  background:var(--white);
+}
+.lvl-detail-in{
+  max-width:880px;margin:0 auto;
+}
+.lvl-detail-grid{
+  display:grid;grid-template-columns:1fr 1.1fr;gap:80px;
+  align-items:start;
+}
+/* Cover area (left) — large minimal photo-like mockup */
+.lvl-cover-wrap{
+  display:flex;align-items:flex-start;justify-content:center;
+  position:relative;
+}
+.lvl-cover-art{
+  width:100%;max-width:320px;
+  aspect-ratio:1/1.414;
+  border-radius:3px;
+  padding:36px 28px 26px;
+  display:flex;flex-direction:column;
+  position:relative;
+  font-family:var(--f-sans);
+  box-shadow:0 24px 50px rgba(40,40,40,0.10), 0 4px 12px rgba(40,40,40,0.04);
+}
+.lvl-cover-label{
+  font-size:11px;font-weight:700;letter-spacing:0.24em;
+  margin-bottom:8px;position:relative;padding-bottom:8px;
+  text-transform:uppercase;
+}
+.lvl-cover-label::after{
+  content:'';position:absolute;bottom:0;left:0;
+  width:24px;height:1px;background:currentColor;
+}
+.lvl-cover-mark{
+  font-size:84px;font-weight:900;letter-spacing:-0.05em;line-height:1;
+  margin-top:6px;
+}
+.lvl-cover-title{
+  font-size:16px;font-weight:700;letter-spacing:-0.02em;line-height:1.3;
+  margin-top:12px;
+}
+.lvl-cover-foot{
+  margin-top:auto;display:flex;align-items:center;gap:6px;
+}
+.lvl-cover-foot-mark{
+  width:16px;height:16px;border-radius:2px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:10px;font-weight:900;line-height:1;
+}
+.lvl-cover-foot-brand{font-size:9px;font-weight:500;letter-spacing:-0.005em;}
+/* Cover variants — keep visual identity */
+.lvl-cover-basic{
+  background:var(--white);
+  border:1px solid var(--line);
+  color:var(--ink);
+}
+.lvl-cover-basic .lvl-cover-label{color:var(--orange);}
+.lvl-cover-basic .lvl-cover-foot-mark{background:var(--orange);color:var(--white);}
+.lvl-cover-inter{
+  background:#1A1A1A;
+  color:var(--white);
+}
+.lvl-cover-inter .lvl-cover-label{color:var(--orange);}
+.lvl-cover-inter .lvl-cover-foot-mark{background:var(--orange);color:var(--white);}
+.lvl-cover-killer{
+  background:var(--orange);
+  color:var(--white);
+}
+.lvl-cover-killer .lvl-cover-label{color:var(--white);}
+.lvl-cover-killer .lvl-cover-foot-mark{background:var(--white);color:var(--orange);}
+.lvl-cover-final{
+  background:var(--white);
+  border:1px solid var(--line);
+  align-items:center;text-align:center;
+  padding:44px 24px 24px;
+  color:var(--ink);
+}
+.lvl-cover-final .lvl-cover-label{display:none;}
+.lvl-cover-final .lvl-exam-sub{
+  font-size:11px;color:var(--ink);font-weight:500;
+  letter-spacing:-0.005em;margin-bottom:24px;line-height:1.6;
+}
+.lvl-cover-final .lvl-cover-mark{
+  font-size:30px;font-weight:900;letter-spacing:-0.04em;
+  margin:0 0 auto;color:var(--ink);
+}
+.lvl-cover-final .lvl-exam-name{
+  display:flex;align-items:center;
+  width:100%;border:1px solid var(--ink);
+  padding:8px 10px;font-size:10px;
+  margin-top:24px;
+}
+.lvl-cover-final .lvl-exam-name-key{
+  font-weight:700;color:var(--ink);
+  padding-right:10px;border-right:1px solid var(--ink);
+  letter-spacing:-0.005em;
+}
+.lvl-cover-final .lvl-exam-warn{
+  width:100%;font-size:10px;font-weight:600;color:var(--ink);
+  background:#D8D8D8;
+  padding:8px 4px;text-align:center;
+  margin-top:6px;
+  letter-spacing:-0.005em;
+}
+/* Right side content — minimal */
+.lvl-info{
+  padding-top:10px;
+}
+/* Remove orange tag, keep things clean */
+.lvl-name{
+  font-size:28px;font-weight:700;color:var(--ink);
+  letter-spacing:-0.04em;line-height:1.35;
+  margin-bottom:10px;
+}
+.lvl-sub{
+  font-size:14px;color:var(--mid);
+  line-height:1.7;letter-spacing:-0.01em;
+  margin-bottom:36px;
+  font-weight:500;
+}
+/* Survival-style list with small pill label */
+.lvl-list-card{
+  margin-bottom:28px;
+  padding:0;
+  background:transparent;
+  border:0;
+  border-radius:0;
+}
+.lvl-list-card:last-of-type{margin-bottom:32px;}
+.lvl-list-h{
+  display:inline-block;
+  font-size:11px;font-weight:600;color:var(--mid);
+  letter-spacing:-0.005em;
+  background:#F2F2F0;
+  padding:5px 11px;border-radius:3px;
+  margin-bottom:14px;
+}
+.lvl-list-h::before{display:none;}
+.lvl-list{
+  list-style:none;display:flex;flex-direction:column;gap:4px;
+  padding-left:0;
+}
+.lvl-list li{
+  font-size:13.5px;color:var(--body);line-height:1.85;
+  letter-spacing:-0.005em;
+  padding-left:14px;position:relative;
+  font-weight:500;
+}
+.lvl-list li::before{
+  content:'•';position:absolute;left:0;top:0;
+  color:var(--ink);font-weight:700;font-size:13px;line-height:1.85;
+}
+/* Section divider (subtle hairline) */
+.lvl-divider{
+  max-width:880px;margin:0 auto;
+  height:1px;background:var(--line-soft);
+}
+/* All sections use same layout (no reverse for clean grid) */
+.lvl-detail.lvl-reverse .lvl-detail-grid{
+  grid-template-columns:1fr 1.1fr;
+}
+.lvl-detail.lvl-reverse .lvl-cover-wrap{order:initial;}
+.lvl-detail.lvl-reverse .lvl-info{order:initial;}
+@media(max-width:960px){
+  .lvl-detail{padding:64px 24px;}
+  .lvl-detail-grid{
+    grid-template-columns:1fr;gap:36px;
+  }
+  .lvl-cover-art{max-width:240px;}
+  .lvl-cover-mark{font-size:60px;}
+  .lvl-name{font-size:22px;}
+  .lvl-sub{font-size:13.5px;margin-bottom:28px;}
+}
 /* ─ PAGE HERO (콘텐츠 소개 페이지 전용) ─ */
 .page-hero{
   padding-top:62px;background:var(--warm);
@@ -1182,10 +1084,8 @@ footer{
   font-size:16px;color:var(--mid);line-height:1.75;
   letter-spacing:-0.005em;max-width:540px;margin:0 auto;
 }
-
 /* nav active state for current page */
 .nav-menu a.active{color:var(--ink);font-weight:800;}
-
 /* ─ CTA BACK STRIP (콘텐츠 페이지 하단 → 메인 폼으로) ─ */
 .cta-back{
   background:var(--ink);color:var(--white);
@@ -1214,7 +1114,6 @@ footer{
   transition:background .2s;
 }
 .cta-back-cta:hover{background:var(--orange-dark);}
-
 @media(max-width:880px){
   .page-hero-in{padding:64px 24px 56px;}
   .page-hero-h1{font-size:32px;letter-spacing:-0.035em;}
@@ -1231,7 +1130,7 @@ footer{
 <nav id="nav">
   <a href="index.html" class="logo">
     <div class="logo-mark">N</div>
-    <span class="logo-name">뉴런모의고사</span>
+    <span class="logo-name">뉴런 연구소</span>
     <span class="logo-tag">학원 파트너</span>
   </a>
   <div class="nav-menu">
@@ -1245,8 +1144,8 @@ footer{
 <section class="page-hero">
   <div class="page-hero-in">
     <div class="page-hero-kicker"><span></span>콘텐츠 소개</div>
-    <h1 class="page-hero-h1">학원에 매달 도착하는<br><b>모의고사 패키지</b></h1>
-    <p class="page-hero-p">출제 원칙부터 시즌 운영 일정까지 — 뉴런모의고사 콘텐츠의 모든 것</p>
+    <h1 class="page-hero-h1">수능에 <b>가장 가까운</b><br>Level-X</h1>
+    <p class="page-hero-p">평가원·EBS와 가장 유사한 변형 문항. 격주 단원 테스트 + 월간 모의평가로 구성된 수학 학원 운영 콘텐츠 — 출제 원칙, 표지 시스템, 상품 라인업, 시즌 운영 일정까지 모두 보여드립니다</p>
   </div>
 </section>
 
@@ -1275,231 +1174,680 @@ footer{
       <div class="cont-card">
         <div class="cont-ic"><svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
         <div class="cont-body">
-          <div class="cont-h3">매달 단원·난이도 선택</div>
-          <p class="cont-p">10·20문항 격주 테스트는 학원이 매달 단원과 난이도(하·중·상·혼합)를 직접 지정합니다. 일반반은 단원형, 심화반은 고난도형으로 분리 운영도 가능합니다.</p>
+          <div class="cont-h3">매달 단원·Level 선택</div>
+          <p class="cont-p">Level-Basic · Intermediate · Killer 격주 테스트는 학원이 매달 단원과 Level을 직접 지정합니다. 일반반은 Basic·Intermediate 중심, 심화반은 Killer 중심으로 분리 운영도 가능합니다.</p>
         </div>
       </div>
       <div class="cont-card">
         <div class="cont-ic"><svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 3v18h18"/><path d="M7 14l4-4 4 4 5-5"/></svg></div>
         <div class="cont-body">
-          <div class="cont-h3">실전과 동일한 난이도</div>
-          <p class="cont-p">30문항 월간 모의고사는 평가원과 동일한 3점·4점 비율로 구성됩니다. 학생들이 받는 인상이 실제 시험과 같아 학원 평가 결과의 신뢰도가 높아집니다.</p>
+          <div class="cont-h3">실전과 동일한 구성</div>
+          <p class="cont-p">Level-Final 30문항 월간 모의평가는 평가원과 동일한 3점·4점 비율로 구성됩니다. 학생들이 받는 인상이 실제 시험과 같아 학원 평가 결과의 신뢰도가 높아집니다.</p>
         </div>
-      </div>
-    </div>
-
-
-    <!-- ─── Cover Preview Gallery ─── -->
-    <div class="cover-gallery">
-      <div class="cover-gallery-head">
-        <div class="cover-gallery-tag">실제 콘텐츠</div>
-        <h3 class="cover-gallery-h">난이도별로 별도 제작되는 표지</h3>
-        <p class="cover-gallery-p">매달 학원이 선택한 난이도에 맞춰 EASY · NORMAL · HARD 3종 표지로 구분 제공됩니다. 30문항 월간 모의고사는 별도 표지로 운영되며, 모든 회차에 시험지 · 정답표 · 풀이 과정과 출제 의도가 담긴 해설지가 함께 발송됩니다.</p>
-      </div>
-      <div class="cover-grid">
-        <!-- EASY -->
-        <figure class="cover">
-          <div class="cover-art cover-easy">
-            <div class="cover-label">EASY</div>
-            <div class="cover-title">곡선과 x축<br>사이의 넓이</div>
-            <div class="cover-foot">
-              <span class="cover-mark">N</span>
-              <span class="cover-brand">뉴런소프트</span>
-            </div>
-          </div>
-          <figcaption class="cover-caption">EASY · 기본기 점검</figcaption>
-        </figure>
-        <!-- NORMAL -->
-        <figure class="cover">
-          <div class="cover-art cover-normal">
-            <div class="cover-tagline">N 뉴런소프트</div>
-            <div class="cover-label">NORMAL</div>
-            <div class="cover-title">곡선과 x축<br>사이의 넓이</div>
-            <div class="cover-foot">
-              <span class="cover-mark">N</span>
-              <span class="cover-brand">뉴런소프트</span>
-            </div>
-          </div>
-          <figcaption class="cover-caption">NORMAL · 표준 난이도</figcaption>
-        </figure>
-        <!-- HARD -->
-        <figure class="cover">
-          <div class="cover-art cover-hard">
-            <div class="cover-tagline">N 뉴런소프트</div>
-            <div class="cover-label">HARD</div>
-            <div class="cover-title">곡선과 x축<br>사이의 넓이</div>
-            <div class="cover-foot">
-              <span class="cover-mark cover-mark-light">N</span>
-              <span class="cover-brand">뉴런소프트</span>
-            </div>
-          </div>
-          <figcaption class="cover-caption">HARD · 상위권 · N수반</figcaption>
-        </figure>
-        <!-- 모의고사 -->
-        <figure class="cover">
-          <div class="cover-art cover-exam">
-            <div class="cover-exam-sub">뉴런모의고사</div>
-            <div class="cover-exam-h">수학 영역</div>
-            <div class="cover-exam-name">
-              <span class="cover-exam-name-key">성명</span>
-              <span class="cover-exam-name-line"></span>
-            </div>
-            <div class="cover-exam-warn">※ 시험이 시작될 때까지 표지를 넘기지 마시오.</div>
-          </div>
-          <figcaption class="cover-caption">월간 모의고사 · 30문항</figcaption>
-        </figure>
       </div>
     </div>
 
   </div>
 </section>
 
-<!-- PRODUCTS -->
-<section class="products" id="products">
-  <div class="products-in">
-    <div class="sec-tag">상품 구성</div>
-    <h2 class="sec-h2">3가지 상품 라인업</h2>
-    <p class="sec-sub">심화·단원·월간 중 학원 운영에 맞게 선택해 사용하세요. 격주 상품(10·20문항)은 매달 단원과 난이도를 학원이 직접 지정합니다.</p>
+<!-- CURRICULUM (Level-X Contents 커리큘럼) -->
+<section class="curriculum" id="curriculum">
+  <div class="curriculum-in">
+    <div class="sec-tag">Level-X Contents 커리큘럼</div>
+    <h2 class="sec-h2">콘텐츠별 난이도 · 등급표</h2>
+    <p class="sec-sub">Level-X 4종 콘텐츠의 난이도와 권장 등급 커버 범위를 한 표에서 확인하세요. Level-Final 월간 모의평가는 전 등급 공통으로 운영됩니다.</p>
 
-    <div class="prod-grid">
-      <div class="prod-card">
-        <div class="prod-top">
-          <div class="prod-label">상위권 · 고난도</div>
-          <div class="prod-name">심화 테스트</div>
-          <div class="prod-desc">변별력 훈련용 · 4점 문항 중심 구성</div>
-          <div class="prod-pill">10문항 × 2회분 · 격주 납품</div>
-        </div>
-        <div class="prod-divider"></div>
-        <div class="prod-bottom">
-          <div class="prod-acad-label">매달 학원이 직접 선택</div>
-          <div class="prod-pickline">
-            <span class="pl-key">권장 반</span>
-            <span class="pl-val">상위권 · N수반</span>
-          </div>
-          <div class="prod-pickline">
-            <span class="pl-key">난이도</span>
-            <span class="pl-val">상 · 혼합</span>
-          </div>
-          <div class="prod-pickline">
-            <span class="pl-key">표지</span>
-            <span class="pl-val"><span class="prod-cover-link prod-cover-hard">HARD</span></span>
-          </div>
-        </div>
+    <div class="cur-wrap">
+      <div class="cur-scroll">
+        <table class="cur-table">
+          <colgroup>
+            <col class="col-content">
+            <col class="col-diff">
+            <col class="col-grade-cell">
+            <col class="col-grade-cell">
+            <col class="col-grade-cell">
+          </colgroup>
+          <thead>
+            <tr>
+              <th class="th-rowspan" rowspan="2">콘텐츠</th>
+              <th class="th-rowspan" rowspan="2">난이도</th>
+              <th class="th-major" colspan="3">등급표</th>
+            </tr>
+            <tr>
+              <th class="th-grade">1~2등급</th>
+              <th class="th-grade">3~4등급</th>
+              <th class="th-grade">5등급 이하</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Level-Basic -->
+            <tr>
+              <td class="cur-cell-content">
+                <div class="cur-content-badge cb-basic">
+                  <span class="cb-label">BASIC</span>
+                  <span class="cb-mark">B</span>
+                  <div class="cb-foot">
+                    <span class="cb-foot-mark">N</span>
+                    <span class="cb-foot-brand">뉴런</span>
+                  </div>
+                </div>
+                <div class="cur-content-name">Level-Basic</div>
+              </td>
+              <td class="cur-cell-diff">
+                <span class="cur-diff-dots"><span class="on"></span><span></span><span></span></span>
+              </td>
+              <td class="cur-cell-grade cur-grade-empty"></td>
+              <td class="cur-cell-grade cur-grade-cover" colspan="2">
+                <div class="cur-cover cur-cover-basic">
+                  <span class="cur-cover-h">27개 단원 × 3 Level</span>
+                  <span class="cur-cover-sub">단원당 20문항</span>
+                </div>
+              </td>
+            </tr>
+            <!-- Level-Intermediate -->
+            <tr>
+              <td class="cur-cell-content">
+                <div class="cur-content-badge cb-inter">
+                  <span class="cb-label">INTER.</span>
+                  <span class="cb-mark">I</span>
+                  <div class="cb-foot">
+                    <span class="cb-foot-mark">N</span>
+                    <span class="cb-foot-brand">뉴런</span>
+                  </div>
+                </div>
+                <div class="cur-content-name">Level-Intermediate</div>
+              </td>
+              <td class="cur-cell-diff">
+                <span class="cur-diff-dots"><span class="on"></span><span class="on"></span><span></span></span>
+              </td>
+              <td class="cur-cell-grade cur-grade-cover" colspan="2">
+                <div class="cur-cover cur-cover-inter">
+                  <span class="cur-cover-h">27개 단원 × 3 Level</span>
+                  <span class="cur-cover-sub">단원당 20문항</span>
+                </div>
+              </td>
+              <td class="cur-cell-grade cur-grade-empty"></td>
+            </tr>
+            <!-- Level-Killer -->
+            <tr>
+              <td class="cur-cell-content">
+                <div class="cur-content-badge cb-killer">
+                  <span class="cb-label">KILLER</span>
+                  <span class="cb-mark">K</span>
+                  <div class="cb-foot">
+                    <span class="cb-foot-mark">N</span>
+                    <span class="cb-foot-brand">뉴런</span>
+                  </div>
+                </div>
+                <div class="cur-content-name">Level-Killer</div>
+              </td>
+              <td class="cur-cell-diff">
+                <span class="cur-diff-dots"><span class="on"></span><span class="on"></span><span class="on"></span></span>
+              </td>
+              <td class="cur-cell-grade cur-grade-cover">
+                <div class="cur-cover cur-cover-killer">
+                  <span class="cur-cover-h">27개 단원 × 3 Level</span>
+                  <span class="cur-cover-sub">단원당 10문항</span>
+                </div>
+              </td>
+              <td class="cur-cell-grade cur-grade-empty"></td>
+              <td class="cur-cell-grade cur-grade-empty"></td>
+            </tr>
+            <!-- Level-Final -->
+            <tr>
+              <td class="cur-cell-content">
+                <div class="cur-content-badge cb-final">
+                  <span class="cb-exam-sub">2027학년도<br>Level-Final 모의평가</span>
+                  <span class="cb-mark">수학영역</span>
+                  <span class="cb-exam-name">
+                    <span class="cb-exam-name-key">성명</span>
+                  </span>
+                  <span class="cb-exam-warn">※ 표지를 넘기지 마시오</span>
+                </div>
+                <div class="cur-content-name">Level-Final</div>
+              </td>
+              <td class="cur-cell-diff">
+                <span class="cur-diff-dots"><span class="on"></span><span class="on"></span><span class="on"></span></span>
+              </td>
+              <td class="cur-cell-grade cur-grade-cover cur-grade-cover-all" colspan="3">
+                <div class="cur-cover cur-cover-final">
+                  <span class="cur-cover-h">총 8회 (매월 1회 · 3~10월)</span>
+                  <span class="cur-cover-sub">월별 30문항 · 전 등급 공통</span>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-      <div class="prod-card">
-        <div class="prod-top">
-          <div class="prod-label">일반반 · 단원형</div>
-          <div class="prod-name">단원 테스트</div>
-          <div class="prod-desc">진도 직후 단원 점검 · 3점 문항 중심</div>
-          <div class="prod-pill">20문항 × 2회분 · 격주 납품</div>
-        </div>
-        <div class="prod-divider"></div>
-        <div class="prod-bottom">
-          <div class="prod-acad-label">매달 학원이 직접 선택</div>
-          <div class="prod-pickline">
-            <span class="pl-key">권장 반</span>
-            <span class="pl-val">일반반 · 단원 마무리</span>
-          </div>
-          <div class="prod-pickline">
-            <span class="pl-key">난이도</span>
-            <span class="pl-val">하 · 중</span>
-          </div>
-          <div class="prod-pickline">
-            <span class="pl-key">표지</span>
-            <span class="pl-val"><span class="prod-cover-link prod-cover-normal">EASY · NORMAL</span></span>
-          </div>
-        </div>
-      </div>
-      <div class="prod-card">
-        <div class="prod-top">
-          <div class="prod-label">전 학년 · 실전형</div>
-          <div class="prod-name">월간 모의고사</div>
-          <div class="prod-desc">월 1회 실전 점검 · 평가원 동일 분포</div>
-          <div class="prod-pill">30문항 × 1회분 · 월 1회</div>
-        </div>
-        <div class="prod-divider"></div>
-        <div class="prod-bottom">
-          <div class="prod-acad-label">정기 운영</div>
-          <div class="prod-pickline">
-            <span class="pl-key">권장 반</span>
-            <span class="pl-val">전 학년 공통</span>
-          </div>
-          <div class="prod-pickline">
-            <span class="pl-key">난이도</span>
-            <span class="pl-val">평가원 동일</span>
-          </div>
-          <div class="prod-pickline">
-            <span class="pl-key">표지</span>
-            <span class="pl-val"><span class="prod-cover-link prod-cover-exam">월간 모의고사</span></span>
-          </div>
-        </div>
+      <div class="cur-foot">
+        <strong>위 커리큘럼은 학습 설계를 위한 참고 자료입니다.</strong> 학원 진도와 학생 개인의 학습 수준에 따라 콘텐츠와 Level을 자유롭게 선택하여 활용할 수 있습니다.
       </div>
     </div>
 
-    <div class="pricing-rule">
-      <div class="pr-icon"><svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M9 12h6"/><path d="M9 16h6"/></svg></div>
-      <div class="pr-divider"></div>
-      <div class="pr-text">
-        <strong>학원 공급가는 문의 시 안내드립니다</strong><br>
-        사전 검토 후 단품 또는 정기 구독으로 시작 · 시즌 계약 시 추가 협의 가능 · PDF 공급 또는 인쇄 납품 선택 가능
+    <!-- Unit Accordion (moved from UNITS section) -->
+    <div class="cur-units-section">
+      <div class="cur-units-head">
+        <div class="cur-units-tag">27개 단원 × 3단계 Level</div>
+        <h3 class="cur-units-h3">단원별 문항 구성</h3>
+        <p class="cur-units-p">과목을 클릭하면 단원별 Basic · Intermediate · Killer 문항 수를 확인할 수 있습니다.</p>
+      </div>
+      <div class="uacc-controls">
+        <button type="button" id="uaccToggleAll" aria-label="모든 과목 펼치기/접기">모두 펼치기</button>
+      </div>
+
+    <div class="uacc-wrap">
+      <div class="uacc-head">
+        <div class="uacc-head-ttl">보유 단원 및 Level 구성</div>
+        <div class="uacc-head-meta">수학Ⅰ · 수학Ⅱ · 확률과통계 · 미적분 · 총 27개 단원</div>
+      </div>
+
+      <!-- 수학Ⅰ -->
+      <div class="uacc-subj">
+        <button type="button" class="uacc-toggle open" aria-expanded="true" aria-controls="uacc-body-1">
+          <div class="uacc-subj-num">Ⅰ</div>
+          <div class="uacc-subj-info">
+            <div class="uacc-subj-name">수학Ⅰ</div>
+            <div class="uacc-subj-meta">지수함수·로그함수 · 삼각함수 · 수열</div>
+          </div>
+          <div class="uacc-subj-count">6개 단원</div>
+          <div class="uacc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+        </button>
+        <div class="uacc-body open" id="uacc-body-1">
+          <div class="uacc-table-wrap">
+            <table class="uacc-table">
+              <thead>
+                <tr>
+                  <th class="col-grp-h">대단원</th>
+                  <th>중단원</th>
+                  <th class="col-num">Basic</th>
+                  <th class="col-num">Intermediate</th>
+                  <th class="col-num">Killer</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="col-grp">지수함수와 로그함수</td>
+                  <td class="col-unit">지수와 로그</td>
+                  <td class="col-num basic">20문항</td>
+                  <td class="col-num inter">20문항</td>
+                  <td class="col-num killer">10문항</td>
+                </tr>
+                <tr>
+                  <td class="col-grp">지수함수와 로그함수</td>
+                  <td class="col-unit">지수함수와 로그함수</td>
+                  <td class="col-num basic">20문항</td>
+                  <td class="col-num inter">20문항</td>
+                  <td class="col-num killer">10문항</td>
+                </tr>
+                <tr>
+                  <td class="col-grp">삼각함수</td>
+                  <td class="col-unit">삼각함수</td>
+                  <td class="col-num basic">20문항</td>
+                  <td class="col-num inter">20문항</td>
+                  <td class="col-num killer">10문항</td>
+                </tr>
+                <tr>
+                  <td class="col-grp">수열</td>
+                  <td class="col-unit">등차수열과 등비수열</td>
+                  <td class="col-num basic">20문항</td>
+                  <td class="col-num inter">20문항</td>
+                  <td class="col-num killer">10문항</td>
+                </tr>
+                <tr>
+                  <td class="col-grp">수열</td>
+                  <td class="col-unit">수열의 합</td>
+                  <td class="col-num basic">20문항</td>
+                  <td class="col-num inter">20문항</td>
+                  <td class="col-num killer">10문항</td>
+                </tr>
+                <tr>
+                  <td class="col-grp">수열</td>
+                  <td class="col-unit">수학적 귀납법</td>
+                  <td class="col-num basic">20문항</td>
+                  <td class="col-num inter">20문항</td>
+                  <td class="col-num killer">10문항</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- 수학Ⅱ -->
+      <div class="uacc-subj">
+        <button type="button" class="uacc-toggle" aria-expanded="false" aria-controls="uacc-body-2">
+          <div class="uacc-subj-num">Ⅱ</div>
+          <div class="uacc-subj-info">
+            <div class="uacc-subj-name">수학Ⅱ</div>
+            <div class="uacc-subj-meta">함수의 극한과 연속 · 미분 · 적분</div>
+          </div>
+          <div class="uacc-subj-count">8개 단원</div>
+          <div class="uacc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+        </button>
+        <div class="uacc-body" id="uacc-body-2">
+          <div class="uacc-table-wrap">
+            <table class="uacc-table">
+              <thead>
+                <tr>
+                  <th class="col-grp-h">대단원</th>
+                  <th>중단원</th>
+                  <th class="col-num">Basic</th>
+                  <th class="col-num">Intermediate</th>
+                  <th class="col-num">Killer</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="col-grp">함수의 극한과 연속</td>
+                  <td class="col-unit">함수의 극한</td>
+                  <td class="col-num basic">20문항</td>
+                  <td class="col-num inter">20문항</td>
+                  <td class="col-num killer">10문항</td>
+                </tr>
+                <tr>
+                  <td class="col-grp">함수의 극한과 연속</td>
+                  <td class="col-unit">함수의 연속</td>
+                  <td class="col-num basic">20문항</td>
+                  <td class="col-num inter">20문항</td>
+                  <td class="col-num killer">10문항</td>
+                </tr>
+                <tr>
+                  <td class="col-grp">미분</td>
+                  <td class="col-unit">미분계수</td>
+                  <td class="col-num basic">20문항</td>
+                  <td class="col-num inter">20문항</td>
+                  <td class="col-num killer">10문항</td>
+                </tr>
+                <tr>
+                  <td class="col-grp">미분</td>
+                  <td class="col-unit">도함수</td>
+                  <td class="col-num basic">20문항</td>
+                  <td class="col-num inter">20문항</td>
+                  <td class="col-num killer">10문항</td>
+                </tr>
+                <tr>
+                  <td class="col-grp">미분</td>
+                  <td class="col-unit">도함수의 활용</td>
+                  <td class="col-num basic">20문항</td>
+                  <td class="col-num inter">20문항</td>
+                  <td class="col-num killer">10문항</td>
+                </tr>
+                <tr>
+                  <td class="col-grp">적분</td>
+                  <td class="col-unit">부정적분</td>
+                  <td class="col-num basic">20문항</td>
+                  <td class="col-num inter">20문항</td>
+                  <td class="col-num killer">10문항</td>
+                </tr>
+                <tr>
+                  <td class="col-grp">적분</td>
+                  <td class="col-unit">정적분</td>
+                  <td class="col-num basic">20문항</td>
+                  <td class="col-num inter">20문항</td>
+                  <td class="col-num killer">10문항</td>
+                </tr>
+                <tr>
+                  <td class="col-grp">적분</td>
+                  <td class="col-unit">정적분의 활용</td>
+                  <td class="col-num basic">20문항</td>
+                  <td class="col-num inter">20문항</td>
+                  <td class="col-num killer">10문항</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- 확률과 통계 -->
+      <div class="uacc-subj">
+        <button type="button" class="uacc-toggle" aria-expanded="false" aria-controls="uacc-body-3">
+          <div class="uacc-subj-num">확</div>
+          <div class="uacc-subj-info">
+            <div class="uacc-subj-name">확률과 통계</div>
+            <div class="uacc-subj-meta">경우의 수 · 확률 · 통계</div>
+          </div>
+          <div class="uacc-subj-count">6개 단원</div>
+          <div class="uacc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+        </button>
+        <div class="uacc-body" id="uacc-body-3">
+          <div class="uacc-table-wrap">
+            <table class="uacc-table">
+              <thead>
+                <tr>
+                  <th class="col-grp-h">대단원</th>
+                  <th>중단원</th>
+                  <th class="col-num">Basic</th>
+                  <th class="col-num">Intermediate</th>
+                  <th class="col-num">Killer</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="col-grp">경우의 수</td>
+                  <td class="col-unit">순열과 조합</td>
+                  <td class="col-num basic">20문항</td>
+                  <td class="col-num inter">20문항</td>
+                  <td class="col-num killer">10문항</td>
+                </tr>
+                <tr>
+                  <td class="col-grp">경우의 수</td>
+                  <td class="col-unit">이항정리</td>
+                  <td class="col-num basic">20문항</td>
+                  <td class="col-num inter">20문항</td>
+                  <td class="col-num killer">10문항</td>
+                </tr>
+                <tr>
+                  <td class="col-grp">확률</td>
+                  <td class="col-unit">확률의 뜻과 활용</td>
+                  <td class="col-num basic">20문항</td>
+                  <td class="col-num inter">20문항</td>
+                  <td class="col-num killer">10문항</td>
+                </tr>
+                <tr>
+                  <td class="col-grp">확률</td>
+                  <td class="col-unit">조건부확률</td>
+                  <td class="col-num basic">20문항</td>
+                  <td class="col-num inter">20문항</td>
+                  <td class="col-num killer">10문항</td>
+                </tr>
+                <tr>
+                  <td class="col-grp">통계</td>
+                  <td class="col-unit">확률분포</td>
+                  <td class="col-num basic">20문항</td>
+                  <td class="col-num inter">20문항</td>
+                  <td class="col-num killer">10문항</td>
+                </tr>
+                <tr>
+                  <td class="col-grp">통계</td>
+                  <td class="col-unit">통계적 추정</td>
+                  <td class="col-num basic">20문항</td>
+                  <td class="col-num inter">20문항</td>
+                  <td class="col-num killer">10문항</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- 미적분 -->
+      <div class="uacc-subj">
+        <button type="button" class="uacc-toggle" aria-expanded="false" aria-controls="uacc-body-4">
+          <div class="uacc-subj-num">미</div>
+          <div class="uacc-subj-info">
+            <div class="uacc-subj-name">미적분</div>
+            <div class="uacc-subj-meta">수열의 극한 · 미분법 · 적분법</div>
+          </div>
+          <div class="uacc-subj-count">7개 단원</div>
+          <div class="uacc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+        </button>
+        <div class="uacc-body" id="uacc-body-4">
+          <div class="uacc-table-wrap">
+            <table class="uacc-table">
+              <thead>
+                <tr>
+                  <th class="col-grp-h">대단원</th>
+                  <th>중단원</th>
+                  <th class="col-num">Basic</th>
+                  <th class="col-num">Intermediate</th>
+                  <th class="col-num">Killer</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="col-grp">수열의 극한</td>
+                  <td class="col-unit">수열의 극한</td>
+                  <td class="col-num basic">20문항</td>
+                  <td class="col-num inter">20문항</td>
+                  <td class="col-num killer">10문항</td>
+                </tr>
+                <tr>
+                  <td class="col-grp">수열의 극한</td>
+                  <td class="col-unit">급수</td>
+                  <td class="col-num basic">20문항</td>
+                  <td class="col-num inter">20문항</td>
+                  <td class="col-num killer">10문항</td>
+                </tr>
+                <tr>
+                  <td class="col-grp">미분법</td>
+                  <td class="col-unit">여러 가지 함수의 미분</td>
+                  <td class="col-num basic">20문항</td>
+                  <td class="col-num inter">20문항</td>
+                  <td class="col-num killer">10문항</td>
+                </tr>
+                <tr>
+                  <td class="col-grp">미분법</td>
+                  <td class="col-unit">여러 가지 미분법</td>
+                  <td class="col-num basic">20문항</td>
+                  <td class="col-num inter">20문항</td>
+                  <td class="col-num killer">10문항</td>
+                </tr>
+                <tr>
+                  <td class="col-grp">미분법</td>
+                  <td class="col-unit">도함수의 활용</td>
+                  <td class="col-num basic">20문항</td>
+                  <td class="col-num inter">20문항</td>
+                  <td class="col-num killer">10문항</td>
+                </tr>
+                <tr>
+                  <td class="col-grp">적분법</td>
+                  <td class="col-unit">여러 가지 적분법</td>
+                  <td class="col-num basic">20문항</td>
+                  <td class="col-num inter">20문항</td>
+                  <td class="col-num killer">10문항</td>
+                </tr>
+                <tr>
+                  <td class="col-grp">적분법</td>
+                  <td class="col-unit">정적분의 활용</td>
+                  <td class="col-num basic">20문항</td>
+                  <td class="col-num inter">20문항</td>
+                  <td class="col-num killer">10문항</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="uacc-foot">
+        <strong>학원 진도와 반 수준에 맞춰 Level을 선택해 운영할 수 있습니다.</strong>
       </div>
     </div>
+    </div>
 
+    <!-- Operation points -->
+    <div class="curr-ops">
+      <div class="curr-ops-h">운영 포인트</div>
+      <ul class="curr-ops-list">
+        <li><strong>등급별 단원 테스트:</strong> 1~2등급은 Killer, 3~4등급은 Intermediate, 5등급 이하는 Basic을 중심으로 27개 단원 운영</li>
+        <li><strong>Level-Final 모의평가:</strong> 3~10월 총 8회 매월 운영 · 전 등급 공통으로 실전 감각 점검</li>
+        <li><strong>등급은 권장값:</strong> 학원 진도와 반 수준에 따라 Level은 자유롭게 조합 가능합니다</li>
+      </ul>
+    </div>
+
+    <div class="curr-note">
+      <strong>※ 위 커리큘럼은 권장 예시입니다.</strong>
+      실제 학원 진도·반 구성·시기에 맞춰 단원과 Level을 자유롭게 선택할 수 있으며, 상세 운영 상담은 도입 문의 시 함께 안내드립니다.
+    </div>
   </div>
 </section>
 
-<!-- PACKAGES (5 subscription types) -->
-<section class="packages" id="packages">
-  <div class="packages-in">
-    <div class="sec-tag">월 구독 패키지</div>
-    <h2 class="sec-h2">학원 운영에 맞는 5가지 구성</h2>
-    <p class="sec-sub">단품·월 패키지·풀패키지 중 학원 운영 형태에 맞게 선택할 수 있습니다. 격주 테스트가 포함된 모든 구성에서 단원과 난이도를 매달 선택합니다.</p>
+<!-- LEVEL DETAILS (이감 SURVIVAL 스타일 · 4종 콘텐츠 소개) -->
 
-    <!-- 월 구독 패키지 5종 -->
-    <div class="sub-wrap">
-      <table class="sub-table">
-        <thead>
-          <tr>
-            <th>타입</th>
-            <th>구성</th>
-            <th>매달 선택</th>
-            <th>주기</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><span class="sub-type">A</span> <span class="sub-name">10문항 심화형</span></td>
-            <td class="sub-comp">10문항 × 2회</td>
-            <td class="sub-pick"><span class="pick-on">단원 · 난이도</span></td>
-            <td class="sub-cycle">격주</td>
-          </tr>
-          <tr>
-            <td><span class="sub-type">B</span> <span class="sub-name">20문항 단원형</span></td>
-            <td class="sub-comp">20문항 × 2회</td>
-            <td class="sub-pick"><span class="pick-on">단원 · 난이도</span></td>
-            <td class="sub-cycle">격주</td>
-          </tr>
-          <tr>
-            <td><span class="sub-type">C</span> <span class="sub-name">10문항 + 월간 모의고사</span></td>
-            <td class="sub-comp">10문항 × 2회 + 30문항 × 1회</td>
-            <td class="sub-pick"><span class="pick-on">단원 · 난이도</span></td>
-            <td class="sub-cycle">격주 + 월간</td>
-          </tr>
-          <tr>
-            <td><span class="sub-type">D</span> <span class="sub-name">20문항 + 월간 모의고사</span></td>
-            <td class="sub-comp">20문항 × 2회 + 30문항 × 1회</td>
-            <td class="sub-pick"><span class="pick-on">단원 · 난이도</span></td>
-            <td class="sub-cycle">격주 + 월간</td>
-          </tr>
-          <tr>
-            <td><span class="sub-type">E</span> <span class="sub-name">풀패키지</span></td>
-            <td class="sub-comp">10·20·30문항 모두 포함</td>
-            <td class="sub-pick"><span class="pick-on">단원 · 난이도</span></td>
-            <td class="sub-cycle">격주 + 월간</td>
-          </tr>
-        </tbody>
-      </table>
-      <p class="sub-note"><strong>매달 단원·난이도 선택</strong>  격주 테스트(10·20문항)가 포함된 모든 구성은 학원이 매달 직접 단원과 난이도를 지정합니다. 30문항 월간 모의고사는 전체 단원 실전형으로 고정 운영됩니다.</p>
+<!-- 1. Level-Basic -->
+<section class="lvl-detail" id="level-basic">
+  <div class="lvl-detail-in">
+    <div class="lvl-detail-grid">
+      <div class="lvl-cover-wrap">
+        <div class="lvl-cover-art lvl-cover-basic">
+          <span class="lvl-cover-label">BASIC</span>
+          <span class="lvl-cover-mark">B</span>
+          <span class="lvl-cover-title">Level-Basic<br>단원 테스트</span>
+          <div class="lvl-cover-foot">
+            <span class="lvl-cover-foot-mark">N</span>
+            <span class="lvl-cover-foot-brand">뉴런 연구소</span>
+          </div>
+        </div>
+      </div>
+      <div class="lvl-info">
+        <h3 class="lvl-name">개념과 기본기를 다지는<br>단원별 진단 테스트</h3>
+        <p class="lvl-sub">2~3점 기본 문항 중심의 20문항 단원 테스트. 개념 정착이 필요한 학생, 취약 단원 보강이 필요한 학생을 위한 진단·반복 학습 도구입니다.</p>
+
+        <div class="lvl-list-card">
+          <div class="lvl-list-h">추천 학생</div>
+          <ul class="lvl-list">
+            <li>개념 학습은 마쳤으나 기본 문제 풀이가 흔들리는 학생</li>
+            <li>5등급 이하·실수가 잦은 학생, 한 단원 마무리 진단이 필요한 학생</li>
+            <li>약점 단원을 반복 학습으로 정착시키고 싶은 학생</li>
+          </ul>
+        </div>
+
+        <div class="lvl-list-card">
+          <div class="lvl-list-h">활용 가이드</div>
+          <ul class="lvl-list">
+            <li>수업이 끝난 단원의 바로 다음 날 확인 평가로 활용</li>
+            <li>오답 문항은 개념 단계로 돌아가 보강 후 재테스트</li>
+            <li>일반반 · 보강반 · 단원 마무리 시점에 단원당 1회 운영</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. Level-Intermediate -->
+<div class="lvl-divider"></div>
+
+<section class="lvl-detail" id="level-intermediate">
+  <div class="lvl-detail-in">
+    <div class="lvl-detail-grid">
+      <div class="lvl-cover-wrap">
+        <div class="lvl-cover-art lvl-cover-inter">
+          <span class="lvl-cover-label">INTERMEDIATE</span>
+          <span class="lvl-cover-mark">I</span>
+          <span class="lvl-cover-title">Level-Intermediate<br>단원 테스트</span>
+          <div class="lvl-cover-foot">
+            <span class="lvl-cover-foot-mark">N</span>
+            <span class="lvl-cover-foot-brand">뉴런 연구소</span>
+          </div>
+        </div>
+      </div>
+      <div class="lvl-info">
+        <h3 class="lvl-name">실전 적용력을 키우는<br>중상 단원 테스트</h3>
+        <p class="lvl-sub">3~4점 중상 문항 중심의 20문항 단원 테스트. 개념은 이해했지만 실전 적용·시간 관리가 필요한 학생을 위한 단원 마무리 훈련.</p>
+
+        <div class="lvl-list-card">
+          <div class="lvl-list-h">추천 학생</div>
+          <ul class="lvl-list">
+            <li>개념 학습은 완료되었으나 실전 점수가 정체된 학생</li>
+            <li>3~4등급 학생, 단원별 실전 감각을 키우고 싶은 학생</li>
+            <li>안정적인 2등급 이상을 목표로 하는 학생</li>
+          </ul>
+        </div>
+
+        <div class="lvl-list-card">
+          <div class="lvl-list-h">활용 가이드</div>
+          <ul class="lvl-list">
+            <li>단원 학습 후 시간 제한을 두고 실전과 유사한 환경에서 풀이</li>
+            <li>일반반·상위반의 단원 마무리 평가로 운영</li>
+            <li>오답 분석을 통해 실전 풀이 시간·접근 방식 점검</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. Level-Killer -->
+<div class="lvl-divider"></div>
+
+<section class="lvl-detail" id="level-killer">
+  <div class="lvl-detail-in">
+    <div class="lvl-detail-grid">
+      <div class="lvl-cover-wrap">
+        <div class="lvl-cover-art lvl-cover-killer">
+          <span class="lvl-cover-label">KILLER</span>
+          <span class="lvl-cover-mark">K</span>
+          <span class="lvl-cover-title">Level-Killer<br>심화 단원 테스트</span>
+          <div class="lvl-cover-foot">
+            <span class="lvl-cover-foot-mark">N</span>
+            <span class="lvl-cover-foot-brand">뉴런 연구소</span>
+          </div>
+        </div>
+      </div>
+      <div class="lvl-info">
+        <h3 class="lvl-name">최상위권을 위한<br>고난도 변별 문항 훈련</h3>
+        <p class="lvl-sub">킬러급 4점 문항 중심의 10문항 단원 테스트. 1~2등급 학생의 만점·변별 문항 대비와 N수반 심화 훈련을 위한 고난도 콘텐츠.</p>
+
+        <div class="lvl-list-card">
+          <div class="lvl-list-h">추천 학생</div>
+          <ul class="lvl-list">
+            <li>1~2등급 학생, 만점·고정 1등급을 목표로 하는 학생</li>
+            <li>킬러 문항·변별 문항에 대한 추가 훈련이 필요한 학생</li>
+            <li>N수반 · 심화반 · 의대 준비반 학생</li>
+          </ul>
+        </div>
+
+        <div class="lvl-list-card">
+          <div class="lvl-list-h">활용 가이드</div>
+          <ul class="lvl-list">
+            <li>단원 학습 완료 후 고난도 응용으로 마무리 훈련</li>
+            <li>단원당 10문항 집중 풀이 — 시간 압박 환경에서 진행</li>
+            <li>풀이 과정을 노트화해 출제 패턴 학습으로 연결</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. Level-Final -->
+<div class="lvl-divider"></div>
+
+<section class="lvl-detail" id="level-final">
+  <div class="lvl-detail-in">
+    <div class="lvl-detail-grid">
+      <div class="lvl-cover-wrap">
+        <div class="lvl-cover-art lvl-cover-final">
+          <span class="lvl-exam-sub">2027학년도<br>Level-Final 모의평가</span>
+          <span class="lvl-cover-mark">수학영역</span>
+          <span class="lvl-exam-name">
+            <span class="lvl-exam-name-key">성명</span>
+          </span>
+          <span class="lvl-exam-warn">※ 표지를 넘기지 마시오</span>
+        </div>
+      </div>
+      <div class="lvl-info">
+        <h3 class="lvl-name">매월 실전 감각을 점검하는<br>30문항 모의평가</h3>
+        <p class="lvl-sub">3~10월 매월 1회 · 평가원과 동일한 3점·4점 비율로 구성된 30문항 종합 모의평가. 전 등급 공통 운영으로 매달 학습 결과를 실전 환경에서 점검합니다.</p>
+
+        <div class="lvl-list-card">
+          <div class="lvl-list-h">추천 학생</div>
+          <ul class="lvl-list">
+            <li>전 등급 공통 — 매달 실전 감각 점검이 필요한 모든 학생</li>
+            <li>시간 관리·실전 적응이 약한 학생</li>
+            <li>학원 단위로 학생별 진단·약점 분석이 필요한 경우</li>
+          </ul>
+        </div>
+
+        <div class="lvl-list-card">
+          <div class="lvl-list-h">활용 가이드</div>
+          <ul class="lvl-list">
+            <li>매월 마지막 주 · 실제 시험과 동일한 시간 분량으로 운영</li>
+            <li>응시 후 학원 단위 성적 분석 · 약점 단원 진단</li>
+            <li>약점 단원은 Basic·Intermediate·Killer로 분기 보완</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -1594,25 +1942,24 @@ footer{
 <section class="cta-back">
   <div class="cta-back-in">
     <div class="cta-back-body">
-      <div class="cta-back-h">샘플로 콘텐츠를 직접 확인하시겠어요? <b>도입 문의</b>로 연결됩니다</div>
-      <p class="cta-back-p">학원 규모와 진도에 맞춰 사전 검토 자료를 보내드립니다. 영업일 1일 이내 담당자가 직접 연락드립니다.</p>
+      <div class="cta-back-h">Level-X가 마음에 드셨나요?<br><b>뉴런 연구소</b>가 학원 운영을 책임집니다</div>
+      <p class="cta-back-p">학원 규모와 진도에 맞춰 도입 상담을 진행합니다. 영업일 1일 이내 담당자가 직접 연락드리며 출제·인쇄·발송까지 전 과정을 안내합니다.</p>
     </div>
-    <a href="index.html#inquiry" class="cta-back-cta">도입 문의 하러 가기 →</a>
+    <a href="index.html#inquiry" class="cta-back-cta">도입 문의하기 →</a>
   </div>
 </section>
 
 <footer>
   <div class="ft-in">
     <div class="ft-brand">
-      <div class="ft-logo"><div class="ft-mark">N</div><span class="ft-name">뉴런모의고사 · 학원 파트너</span></div>
-      <div class="ft-copy">© 2026 뉴런모의고사 by 주식회사 뉴런소프트. All rights reserved.</div>
+      <div class="ft-logo"><div class="ft-mark">N</div><span class="ft-name">뉴런 연구소 · Level-X</span></div>
+      <div class="ft-copy">© 2026 뉴런 연구소 by 주식회사 뉴런소프트. All rights reserved.</div>
     </div>
     <div class="ft-info">
       <span class="ft-info-row"><strong>회사</strong>주식회사 뉴런소프트</span>
       <span class="ft-info-row"><strong>대표자</strong>최영재</span>
       <span class="ft-info-row"><strong>사업자등록번호</strong>591-88-03234</span>
       <span class="ft-info-row"><strong>주소</strong>서울 금천구 가산동 디지털로9길 99 스타밸리 511호</span>
-      <span class="ft-info-row"><strong>전화</strong><a href="tel:01068893386">010-6889-3386</a></span>
       <span class="ft-info-row"><strong>이메일</strong><a href="mailto:newlearnsoft@gmail.com">newlearnsoft@gmail.com</a></span>
     </div>
   </div>
@@ -1624,10 +1971,46 @@ footer{
   const nav = document.getElementById('nav');
   window.addEventListener('scroll', () => nav.classList.toggle('up', scrollY > 10));
 
+  /* ─ Units accordion ─ */
+  (function(){
+    const toggles = document.querySelectorAll('.uacc-toggle');
+    toggles.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const body = document.getElementById(btn.getAttribute('aria-controls'));
+        if (!body) return;
+        const isOpen = btn.classList.toggle('open');
+        body.classList.toggle('open', isOpen);
+        btn.setAttribute('aria-expanded', String(isOpen));
+        updateToggleAllLabel();
+      });
+    });
+
+    const allBtn = document.getElementById('uaccToggleAll');
+    function updateToggleAllLabel(){
+      if (!allBtn) return;
+      const allOpen = Array.from(toggles).every(b => b.classList.contains('open'));
+      allBtn.textContent = allOpen ? '모두 접기' : '모두 펼치기';
+    }
+    if (allBtn) {
+      allBtn.addEventListener('click', () => {
+        const allOpen = Array.from(toggles).every(b => b.classList.contains('open'));
+        const shouldOpen = !allOpen;
+        toggles.forEach(btn => {
+          btn.classList.toggle('open', shouldOpen);
+          btn.setAttribute('aria-expanded', String(shouldOpen));
+          const body = document.getElementById(btn.getAttribute('aria-controls'));
+          if (body) body.classList.toggle('open', shouldOpen);
+        });
+        updateToggleAllLabel();
+      });
+      updateToggleAllLabel();
+    }
+  })();
+
   /* ─ Scroll reveal (IntersectionObserver) ─ */
   const reduced = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
   if (!reduced && 'IntersectionObserver' in window) {
-    const targets = document.querySelectorAll('.sec-tag, .sec-h2, .sec-sub, .cont-card, .cover-gallery, .prod-card, .pricing-rule, .sub-wrap, .timeline-track, .tl-total, .cta-back-body');
+    const targets = document.querySelectorAll('.sec-tag, .sec-h2, .sec-sub, .cont-card, .lvl-detail-grid, .timeline-track, .tl-total, .cta-back-body, .uacc-wrap, .cur-wrap, .curr-ops, .curr-note');
     targets.forEach(el => el.classList.add('reveal'));
     const io = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
