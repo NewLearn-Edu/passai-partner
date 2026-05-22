@@ -1153,6 +1153,114 @@ footer{
   .cta-back-h{font-size:24px;}
   .cta-back-cta{width:100%;text-align:center;}
 }
+
+/* ─ PDF Preview Modal ─ */
+.pdf-preview-card{
+  cursor:pointer;
+  outline:none;
+}
+.pdf-preview-card .cur-card-inner{
+  transition:transform .18s ease, box-shadow .18s ease;
+}
+.pdf-preview-card:hover .cur-card-inner,
+.pdf-preview-card:focus-visible .cur-card-inner{
+  transform:translateY(-4px);
+  box-shadow:0 10px 26px rgba(26,26,26,0.16);
+}
+.pdf-preview-card:focus-visible{
+  border-radius:12px;
+  box-shadow:0 0 0 3px rgba(230,0,18,0.18);
+}
+.pdf-modal{
+  position:fixed;
+  inset:0;
+  z-index:1000;
+  display:none;
+}
+.pdf-modal.open{display:block;}
+.pdf-modal-backdrop{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.62);
+  backdrop-filter:blur(4px);
+}
+.pdf-modal-panel{
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  width:min(1120px, calc(100vw - 32px));
+  height:min(820px, calc(100vh - 32px));
+  background:var(--white);
+  border-radius:18px;
+  box-shadow:0 24px 80px rgba(0,0,0,.32);
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+}
+.pdf-modal-head{
+  height:58px;
+  padding:0 16px 0 22px;
+  border-bottom:1px solid var(--line);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+.pdf-modal-title{
+  font-size:15px;
+  font-weight:800;
+  color:var(--ink);
+  letter-spacing:-0.02em;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.pdf-modal-actions{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  flex-shrink:0;
+}
+.pdf-modal-open{
+  font-size:12px;
+  font-weight:800;
+  color:var(--orange);
+  text-decoration:none;
+  padding:8px 12px;
+  border:1px solid var(--orange-bdr);
+  border-radius:8px;
+  background:var(--orange-light);
+}
+.pdf-modal-close{
+  width:36px;
+  height:36px;
+  border:0;
+  border-radius:50%;
+  background:var(--warm);
+  color:var(--ink);
+  font-size:24px;
+  line-height:1;
+  cursor:pointer;
+}
+.pdf-modal-close:hover{background:var(--line);}
+.pdf-modal-frame{
+  width:100%;
+  flex:1;
+  border:0;
+  background:#f3f4f6;
+}
+@media(max-width:720px){
+  .pdf-modal-panel{
+    width:100vw;
+    height:100vh;
+    border-radius:0;
+  }
+  .pdf-modal-head{
+    padding-left:16px;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -1229,7 +1337,7 @@ footer{
 
     <div class="cur-cards-wrap">
       <div class="cur-cards">
-        <div class="cur-card cur-card-basic">
+        <div class="cur-card cur-card-basic pdf-preview-card" role="button" tabindex="0" data-pdf="SAMPLE/도함수의활용_BASIC.pdf" data-title="Level-Basic 샘플 PDF">
           <div class="cur-card-inner">
             <div class="cur-card-unit">단원별 테스트</div>
             <div class="cur-card-level">Basic</div>
@@ -1240,7 +1348,7 @@ footer{
             <div class="cur-card-desc">2~3점 기초 완성</div>
           </div>
         </div>
-        <div class="cur-card cur-card-standard">
+        <div class="cur-card cur-card-standard pdf-preview-card" role="button" tabindex="0" data-pdf="SAMPLE/도함수의활용_STANDARD.pdf" data-title="Level-Standard 샘플 PDF">
           <div class="cur-card-inner">
             <div class="cur-card-unit">단원별 테스트</div>
             <div class="cur-card-level">Standard</div>
@@ -1251,7 +1359,7 @@ footer{
             <div class="cur-card-desc">3~4점 개념 완성</div>
           </div>
         </div>
-        <div class="cur-card cur-card-killer">
+        <div class="cur-card cur-card-killer pdf-preview-card" role="button" tabindex="0" data-pdf="SAMPLE/도함수의 활용_KILLER.pdf" data-title="Level-Killer 샘플 PDF">
           <div class="cur-card-inner">
             <div class="cur-card-unit">단원별 테스트</div>
             <div class="cur-card-level">Killer</div>
@@ -1263,7 +1371,7 @@ footer{
           </div>
         </div>
         <div class="cur-card-plus">+</div>
-        <div class="cur-card cur-card-final">
+        <div class="cur-card cur-card-final pdf-preview-card" role="button" tabindex="0" data-pdf="SAMPLE/Level-F-모의고사-수학.pdf" data-title="Level-Final 샘플 PDF">
           <div class="cur-card-inner cur-card-inner-final">
             <div class="cur-card-unit">전 범위</div>
             <div class="cur-card-level">Final</div>
@@ -1971,6 +2079,77 @@ footer{
   } else {
     document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
   }
+
+  /* ─ PDF preview modal ─ */
+  (function(){
+    const cards = document.querySelectorAll('.pdf-preview-card[data-pdf]');
+    const modal = document.getElementById('pdfPreviewModal');
+    const frame = document.getElementById('pdfPreviewFrame');
+    const title = document.getElementById('pdfPreviewTitle');
+    const openLink = document.getElementById('pdfPreviewOpen');
+    if (!cards.length || !modal || !frame || !title || !openLink) return;
+
+    let lastFocused = null;
+
+    function openPdf(card){
+      const pdf = card.dataset.pdf;
+      const pdfTitle = card.dataset.title || '샘플 PDF 미리보기';
+      if (!pdf) return;
+
+      lastFocused = document.activeElement;
+      title.textContent = pdfTitle;
+      frame.src = encodeURI(pdf) + '#view=FitH';
+      openLink.href = encodeURI(pdf);
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+
+      const closeBtn = modal.querySelector('.pdf-modal-close');
+      if (closeBtn) closeBtn.focus();
+    }
+
+    function closePdf(){
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden', 'true');
+      frame.src = 'about:blank';
+      document.body.style.overflow = '';
+      if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
+    }
+
+    cards.forEach(card => {
+      card.addEventListener('click', () => openPdf(card));
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openPdf(card);
+        }
+      });
+    });
+
+    modal.querySelectorAll('[data-pdf-close]').forEach(el => {
+      el.addEventListener('click', closePdf);
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('open')) closePdf();
+    });
+  })();
+
 </script>
+
+<div class="pdf-modal" id="pdfPreviewModal" aria-hidden="true">
+  <div class="pdf-modal-backdrop" data-pdf-close></div>
+  <div class="pdf-modal-panel" role="dialog" aria-modal="true" aria-labelledby="pdfPreviewTitle">
+    <div class="pdf-modal-head">
+      <div class="pdf-modal-title" id="pdfPreviewTitle">샘플 PDF 미리보기</div>
+      <div class="pdf-modal-actions">
+        <a class="pdf-modal-open" id="pdfPreviewOpen" href="#" target="_blank" rel="noopener">새 창으로 열기</a>
+        <button type="button" class="pdf-modal-close" data-pdf-close aria-label="PDF 미리보기 닫기">×</button>
+      </div>
+    </div>
+    <iframe class="pdf-modal-frame" id="pdfPreviewFrame" title="PDF Preview"></iframe>
+  </div>
+</div>
+
 </body>
 </html>
