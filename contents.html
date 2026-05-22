@@ -188,139 +188,99 @@ nav.up{box-shadow:var(--sh-sm);}
 .program{background:var(--white);padding:96px 60px;border-top:1px solid var(--line);}
 .program-in{max-width:1120px;margin:0 auto;}
 .timeline-wrap{margin-bottom:60px;}
-.timeline-track{
-  position:relative;
-  padding-top:10px;
-  margin-bottom:24px;
-}
+.timeline-track{position:relative;margin-bottom:28px;}
 .timeline-track::before{display:none;}
 .timeline-grid{
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:14px;
-  position:relative;
-  z-index:1;
+  gap:0;
   align-items:stretch;
-}
-.timeline-grid::before{
-  content:'';
-  position:absolute;
-  top:31px;
-  left:calc((100% - 42px) / 8);
-  right:calc((100% - 42px) / 8);
-  height:2px;
-  background:#E5E7EB;
-  z-index:0;
-}
-.timeline-grid::after{display:none;}
-.tl-card{
   background:var(--white);
-  border:1px solid var(--line);
-  border-radius:16px;
-  padding:56px 24px 28px;
+}
+.timeline-grid::before,.timeline-grid::after{display:none;}
+.tl-card{
+  background:#F8F8F8;
+  border:8px solid var(--white);
+  border-radius:0;
+  padding:34px 28px 36px;
   display:flex;
   flex-direction:column;
-  gap:10px;
-  position:relative;
-  min-height:238px;
-  box-shadow:0 8px 22px rgba(26,26,26,0.04);
-  transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  min-height:330px;
+  box-shadow:none;
+  transition:background .2s ease, transform .2s ease, box-shadow .2s ease;
 }
 .tl-card:hover{
-  transform:translateY(-3px);
-  box-shadow:0 14px 34px rgba(26,26,26,0.08);
-  border-color:var(--orange-bdr);
+  background:#F4F4F4;
+  transform:translateY(-2px);
+  box-shadow:0 12px 28px rgba(26,26,26,0.06);
 }
 .tl-card:nth-child(4){
-  border-color:var(--orange);
-  box-shadow:0 0 0 1px var(--orange), 0 12px 30px rgba(230,0,18,0.08);
+  background:#F8F8F8;
+  border:8px solid var(--white);
+  box-shadow:none;
 }
-.tl-dot{
-  position:absolute;
-  top:20px;
-  left:50%;
-  transform:translateX(-50%);
-  width:22px;
-  height:22px;
-  border-radius:50%;
-  background:#F8FAFC;
-  border:1.5px solid #DDE3EA;
-  color:#6B7280;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:11px;
-  font-weight:900;
-  z-index:2;
-  line-height:1;
-}
-.tl-card:nth-child(4) .tl-dot{
-  background:var(--orange);
-  border-color:var(--orange);
-  color:var(--white);
-}
+.tl-dot{display:none;}
 .tl-label{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  align-self:center;
-  padding:5px 12px;
-  border-radius:999px;
-  background:var(--orange-light);
-  border:1px solid var(--orange-bdr);
-  font-size:11px;
+  display:block;
+  text-align:center;
+  margin-bottom:8px;
+  font-size:42px;
   font-weight:900;
-  color:var(--orange);
-  letter-spacing:0.14em;
-  text-align:center;
-  line-height:1;
+  color:#3E3E3E;
+  letter-spacing:-0.06em;
+  line-height:1.05;
 }
+.tl-label::first-letter{letter-spacing:-0.08em;}
 .tl-period{
-  font-size:15px;
-  color:var(--ink);
+  order:3;
+  font-size:18px;
+  color:var(--orange);
   font-weight:800;
-  text-align:center;
-  letter-spacing:-0.02em;
-  padding-bottom:14px;
-  border-bottom:1px solid var(--line-soft);
-  margin-bottom:10px;
-  line-height:1.2;
+  text-align:left;
+  letter-spacing:-0.035em;
+  padding:0;
+  border-bottom:0;
+  margin:0;
+  line-height:1.6;
 }
 .tl-title{
-  font-size:18px;
+  order:2;
+  font-size:24px;
   font-weight:900;
-  color:var(--ink);
-  letter-spacing:-0.035em;
-  line-height:1.35;
+  color:var(--orange);
+  letter-spacing:-0.055em;
+  line-height:1.25;
   text-align:center;
-  min-height:48px;
+  min-height:64px;
   display:flex;
-  align-items:center;
+  align-items:flex-start;
   justify-content:center;
+  margin-bottom:18px;
 }
 .tl-scope{
-  font-size:14px;
-  color:var(--mid);
-  line-height:1.65;
-  text-align:center;
-  letter-spacing:-0.015em;
-  flex:1;
-  min-height:56px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  order:4;
+  font-size:16px;
+  color:#4A4A4A;
+  line-height:1.85;
+  text-align:left;
+  letter-spacing:-0.035em;
+  flex:0;
+  min-height:auto;
+  display:block;
+  margin-top:4px;
 }
-.tl-tip{
-  margin-top:auto;
-  padding-top:14px;
-  font-size:13px;
-  font-weight:800;
-  color:var(--orange);
-  text-align:center;
-  letter-spacing:-0.005em;
-  border-top:1px dashed var(--line);
+.tl-list{
+  order:5;
+  margin:14px 0 0 0;
+  padding-left:20px;
+  color:#4A4A4A;
+  font-size:16px;
+  line-height:1.9;
+  letter-spacing:-0.035em;
 }
-.tl-card:nth-child(4) .tl-tip{color:var(--orange);}
+.tl-list li{margin:4px 0;}
+.tl-list strong{color:var(--orange);font-weight:800;}
+.tl-tip{display:none;}
 .tl-total{
   background:var(--navy);color:var(--white);
   border-radius:var(--r-md);padding:24px 32px;
@@ -356,6 +316,16 @@ nav.up{box-shadow:var(--sh-sm);}
 .tl-stat-label{
   font-size:11px;color:rgba(255,255,255,0.65);
   letter-spacing:0.04em;font-weight:600;text-transform:uppercase;
+}
+@media(max-width:1100px){
+  .timeline-grid{grid-template-columns:repeat(2,1fr);}
+  .tl-card{min-height:300px;}
+}
+@media(max-width:560px){
+  .timeline-grid{grid-template-columns:1fr;}
+  .tl-card{min-height:auto;padding:34px 28px;}
+  .tl-label{font-size:38px;}
+  .tl-title{font-size:23px;min-height:auto;}
 }
 /* More-grade (고2/고1) accordion */
 .more-toggle.open .more-body.open{max-height:1200px;}
@@ -1965,59 +1935,91 @@ footer{
         <div class="timeline-grid">
           <div class="tl-card">
             <div class="tl-dot">1</div>
-            <div class="tl-label">SEASON 1</div>
+            <div class="tl-label">시즌1</div>
+            <div class="tl-title">수능특강<br>기출 학습</div>
             <div class="tl-period">3월</div>
-            <div class="tl-title">수능특강 기출</div>
-            <div class="tl-scope">EBS 수능특강 기출 문항 기반 단원별 점검</div>
+            <div class="tl-scope">EBS 수능특강 기출 문항 기반</div>
+            <ul class="tl-list">
+              <li>단원별 핵심 개념 점검</li>
+              <li><strong>기초 구조</strong> 확인</li>
+            </ul>
           </div>
           <div class="tl-card">
             <div class="tl-dot">2</div>
-            <div class="tl-label">SEASON 2</div>
+            <div class="tl-label">시즌2</div>
+            <div class="tl-title">EBS 수특<br>변형 학습</div>
             <div class="tl-period">4월</div>
-            <div class="tl-title">수능특강 변형 기출</div>
-            <div class="tl-scope">EBS 수능특강 변형 출제 · 연계 대비</div>
+            <div class="tl-scope">수능특강 변형 출제 · 연계 대비</div>
+            <ul class="tl-list">
+              <li>3월 학습 이후 연계 훈련</li>
+              <li><strong>변형 유형</strong> 집중 점검</li>
+            </ul>
           </div>
           <div class="tl-card">
             <div class="tl-dot">3</div>
-            <div class="tl-label">SEASON 3</div>
+            <div class="tl-label">시즌3</div>
+            <div class="tl-title">6모 대비<br>실전 연습</div>
             <div class="tl-period">5월</div>
-            <div class="tl-title">6월 평가원 대비</div>
-            <div class="tl-scope">6월 모의고사 직전 실전 점검</div>
+            <div class="tl-scope">6월 모의평가 직전 실전 점검</div>
+            <ul class="tl-list">
+              <li>출제 경향을 심도 있게 반영</li>
+              <li><strong>실전 감각</strong> 강화</li>
+            </ul>
           </div>
           <div class="tl-card">
             <div class="tl-dot">4</div>
-            <div class="tl-label">SEASON 4</div>
+            <div class="tl-label">시즌4</div>
+            <div class="tl-title">평가원<br>반영 학습</div>
             <div class="tl-period">6월</div>
-            <div class="tl-title">평가원 반영</div>
             <div class="tl-scope">6월 평가원 출제 경향 즉시 반영</div>
+            <ul class="tl-list">
+              <li>6모 이후 약점 보완</li>
+              <li><strong>최신 경향</strong> 반영</li>
+            </ul>
           </div>
           <div class="tl-card">
             <div class="tl-dot">5</div>
-            <div class="tl-label">SEASON 5</div>
+            <div class="tl-label">시즌5</div>
+            <div class="tl-title">평가원<br>변형 훈련</div>
             <div class="tl-period">7월</div>
-            <div class="tl-title">평가원 변형</div>
             <div class="tl-scope">6월 평가원 변형 출제 · 심화 훈련</div>
+            <ul class="tl-list">
+              <li>여름방학 실전 훈련</li>
+              <li><strong>심화 문항</strong> 대비</li>
+            </ul>
           </div>
           <div class="tl-card">
             <div class="tl-dot">6</div>
-            <div class="tl-label">SEASON 6</div>
+            <div class="tl-label">시즌6</div>
+            <div class="tl-title">9모 대비<br>실전 점검</div>
             <div class="tl-period">8월</div>
-            <div class="tl-title">9월 평가원 대비</div>
-            <div class="tl-scope">9월 모의고사 직전 실전 점검</div>
+            <div class="tl-scope">9월 모의평가 직전 실전 점검</div>
+            <ul class="tl-list">
+              <li>취약 단원 재점검</li>
+              <li><strong>실전 운영</strong> 강화</li>
+            </ul>
           </div>
           <div class="tl-card">
             <div class="tl-dot">7</div>
-            <div class="tl-label">SEASON 7</div>
+            <div class="tl-label">시즌7</div>
+            <div class="tl-title">평가원<br>기출 분석</div>
             <div class="tl-period">9월</div>
-            <div class="tl-title">평가원 기출</div>
             <div class="tl-scope">9월 평가원 기출 분석 · 출제 경향 반영</div>
+            <ul class="tl-list">
+              <li>9모 이후 방향 조정</li>
+              <li><strong>출제 구조</strong> 재정리</li>
+            </ul>
           </div>
           <div class="tl-card">
             <div class="tl-dot">8</div>
-            <div class="tl-label">SEASON 8</div>
+            <div class="tl-label">시즌8</div>
+            <div class="tl-title">수능 대비<br>파이널</div>
             <div class="tl-period">10월</div>
-            <div class="tl-title">수능 대비</div>
             <div class="tl-scope">수능 직전 최종 점검 · 파이널</div>
+            <ul class="tl-list">
+              <li>마지막 실전 감각 유지</li>
+              <li><strong>최종 점검</strong> 구성</li>
+            </ul>
           </div>
         </div>
       </div>
