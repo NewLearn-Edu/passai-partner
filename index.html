@@ -998,7 +998,7 @@ body[data-counter-style="accent"] .ps-num .unit{color:var(--ink);}
   }
 
   // ─ Form submit (best-effort; this is design-only, network may fail)
-  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwfV43wUWvb5ZBbgnax_Ot4R6dMoCGlM6DtZxo97y7SrPHPeXwup97FLF9p4nq7oXx7/exec';
+  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxUYKcqSbe6reggGMi1fKBamKy81YoMeccYDOcl-12-oZPiQoIac8P56C3kf0CZbbaC/exec';
   const formLoadTime = Date.now();
   document.getElementById('partnerForm').addEventListener('submit', function(e) {
     e.preventDefault();
@@ -1023,18 +1023,42 @@ body[data-counter-style="accent"] .ps-num .unit{color:var(--ink);}
     }
     btn.disabled = true; btn.textContent = '제출 중...';
     const data = {};
-    new FormData(form).forEach((v, k) => { data[k] = v; });
+    new FormData(form).forEach((v, k) => {
+      if (data[k]) {
+        data[k] = Array.isArray(data[k]) ? [...data[k], v] : [data[k], v];
+      } else {
+        data[k] = v;
+      }
+    });
     data._submitted_at = new Date().toISOString();
     data._page_url = location.href;
+
     fetch(SCRIPT_URL, {
-      method:'POST', headers:{'Content-Type':'text/plain;charset=utf-8'},
-      body:JSON.stringify(data), redirect:'follow'
-    }).then(res => res.text()).then(text => {
-      if (text && text.trim().startsWith('OK')) {
+      method:'POST',
+      headers:{'Content-Type':'text/plain;charset=utf-8'},
+      body:JSON.stringify(data),
+      redirect:'follow'
+    })
+    .then(res => res.text())
+    .then(text => {
+      const trimmed = (text || '').trim();
+      let isSuccess = false;
+
+      try {
+        const json = JSON.parse(trimmed);
+        isSuccess = json.result === 'success' || json.status === 'success';
+      } catch (err) {
+        isSuccess = trimmed.startsWith('OK');
+      }
+
+      if (isSuccess) {
         form.style.display = 'none';
         document.getElementById('formSuccess').style.display = 'block';
-      } else { throw new Error(text || 'Unknown response'); }
-    }).catch(err => {
+      } else {
+        throw new Error(trimmed || 'Unknown response');
+      }
+    })
+    .catch(err => {
       btn.disabled = false; btn.textContent = '도입문의 보내기';
       showToast('제출 실패. 이메일(newlearnsoft@gmail.com)로 직접 문의해주세요.', true);
       console.error('Form submit error:', err);
