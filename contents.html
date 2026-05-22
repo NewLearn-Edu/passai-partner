@@ -2016,6 +2016,21 @@ footer{
 
 <div id="toast"></div>
 
+<div class="pdf-modal" id="pdfPreviewModal" aria-hidden="true">
+  <div class="pdf-modal-backdrop" data-pdf-close></div>
+  <div class="pdf-modal-panel" role="dialog" aria-modal="true" aria-labelledby="pdfPreviewTitle">
+    <div class="pdf-modal-head">
+      <div class="pdf-modal-title" id="pdfPreviewTitle">샘플 PDF 미리보기</div>
+      <div class="pdf-modal-actions">
+        <a class="pdf-modal-open" id="pdfPreviewOpen" href="#" target="_blank" rel="noopener">새 창으로 열기</a>
+        <button type="button" class="pdf-modal-close" data-pdf-close aria-label="PDF 미리보기 닫기">×</button>
+      </div>
+    </div>
+    <iframe class="pdf-modal-frame" id="pdfPreviewFrame" title="PDF Preview"></iframe>
+  </div>
+</div>
+
+
 <script>
   const nav = document.getElementById('nav');
   window.addEventListener('scroll', () => nav.classList.toggle('up', scrollY > 10));
@@ -2136,20 +2151,6 @@ footer{
   })();
 
 </script>
-
-<div class="pdf-modal" id="pdfPreviewModal" aria-hidden="true">
-  <div class="pdf-modal-backdrop" data-pdf-close></div>
-  <div class="pdf-modal-panel" role="dialog" aria-modal="true" aria-labelledby="pdfPreviewTitle">
-    <div class="pdf-modal-head">
-      <div class="pdf-modal-title" id="pdfPreviewTitle">샘플 PDF 미리보기</div>
-      <div class="pdf-modal-actions">
-        <a class="pdf-modal-open" id="pdfPreviewOpen" href="#" target="_blank" rel="noopener">새 창으로 열기</a>
-        <button type="button" class="pdf-modal-close" data-pdf-close aria-label="PDF 미리보기 닫기">×</button>
-      </div>
-    </div>
-    <iframe class="pdf-modal-frame" id="pdfPreviewFrame" title="PDF Preview"></iframe>
-  </div>
-</div>
 
 </body>
 </html>
