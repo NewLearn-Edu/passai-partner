@@ -196,13 +196,16 @@ nav.up{box-shadow:var(--sh-sm);}
 }
 .timeline-grid::before{
   content:'';position:absolute;
-  top:34px;left:12.5%;right:12.5%;height:2px;
+  /* 카드 상단 원(.tl-dot)의 정중앙: top 0 + height 20px / 2 */
+  top:10px;
+  /* grid gap(12px)을 고려해 첫/마지막 카드의 중심에 정확히 맞춤 */
+  left:calc((100% - 36px) / 8);
+  right:calc((100% - 36px) / 8);
+  height:2px;
   background:#E5E5E5;z-index:0;
 }
 .timeline-grid::after{
-  content:'';position:absolute;
-  top:calc(50% + 34px);left:12.5%;right:12.5%;height:2px;
-  background:#E5E5E5;z-index:0;
+  display:none;
 }
 .timeline-grid{
   display:grid;grid-template-columns:repeat(4,1fr);gap:12px;
@@ -343,7 +346,7 @@ footer{
   .sec-sub{margin-bottom:48px;}
   .contents-grid{grid-template-columns:1fr;}
   .timeline-grid{grid-template-columns:repeat(2,1fr);gap:24px 10px;}
-  .timeline-track::before{display:none;}
+  .timeline-grid::before, .timeline-grid::after{display:none;}
   .tl-card{min-height:auto;}
   .tl-title, .tl-scope{min-height:auto;}
   .tl-total-stats{gap:20px;}
@@ -2113,8 +2116,8 @@ footer{
 
       lastFocused = document.activeElement;
       title.textContent = pdfTitle;
-      frame.src = encodeURI(pdf) + '#view=FitH';
-      openLink.href = encodeURI(pdf);
+      frame.src = encodeURI(pdf) + '#page=1&zoom=80';
+      openLink.href = encodeURI(pdf) + '#page=1&zoom=80';
       modal.classList.add('open');
       modal.setAttribute('aria-hidden', 'false');
       document.body.style.overflow = 'hidden';
