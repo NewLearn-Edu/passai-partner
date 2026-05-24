@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://partner.newlearn-soft.com/sitemap.xml
