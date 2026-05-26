@@ -136,19 +136,31 @@ nav.up{box-shadow:var(--sh-sm);}
   transition:background .2s,transform .15s,box-shadow .2s;
 }
 .nav-cta:hover{background:var(--orange-dark);}
+/* ─ Shared eyebrow labels ─ */
+.sec-tag,
+.page-hero-kicker,
+.cur-units-tag,
+.lvl-info::before{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:16px;font-weight:800;color:var(--orange);letter-spacing:0.18em;
+  text-transform:uppercase;
+}
+.sec-tag::before,
+.page-hero-kicker span,
+.cur-units-tag::before{
+  content:'';display:inline-block;width:20px;height:2px;
+  background:var(--orange);border-radius:1px;flex-shrink:0;
+}
 /* ─ Section common ─ */
 .sec-tag{
-  display:inline-flex;align-items:center;gap:10px;
-  font-size:12px;font-weight:800;color:var(--orange);letter-spacing:0.18em;
-  margin-bottom:22px;text-transform:uppercase;
+  margin-bottom:22px;
 }
-.sec-tag::before{content:'';width:20px;height:2px;background:var(--orange);border-radius:1px;}
 .sec-h2{
   font-size:48px;font-weight:800;letter-spacing:-0.04em;
   color:var(--ink);margin-bottom:16px;line-height:1.2;
 }
 .sec-sub{
-  font-size:16px;color:var(--mid);line-height:1.75;
+  color:var(--mid);line-height:1.75;
   letter-spacing:-0.005em;
   margin-bottom:72px;max-width:680px;
 }
@@ -176,7 +188,7 @@ nav.up{box-shadow:var(--sh-sm);}
   margin-bottom:8px;letter-spacing:-0.025em;line-height:1.4;
 }
 .cont-p{
-  font-size:14px;color:var(--mid);line-height:1.75;
+  font-size:16px;color:var(--mid);line-height:1.75;
   letter-spacing:-0.005em;
 }
 /* ─ PROGRAM (NEW) ─ */
@@ -189,7 +201,7 @@ nav.up{box-shadow:var(--sh-sm);}
   display:grid;
   grid-template-columns:repeat(4,1fr);
   gap:14px;
-  align-items:stretch;
+  align-items:start;
   background:transparent;
 }
 .timeline-grid::before,.timeline-grid::after{display:none;}
@@ -198,9 +210,18 @@ nav.up{box-shadow:var(--sh-sm);}
   border:1px solid var(--line);
   border-radius:var(--r-lg);
   padding:28px 24px;
-  display:flex;
-  flex-direction:column;
-  min-height:300px;
+  display:grid;
+  grid-template-columns:max-content max-content 1fr;
+  grid-template-areas:
+    "label period ."
+    "title title title"
+    "scope scope scope"
+    "list list list";
+  column-gap:12px;
+  row-gap:20px;
+  align-content:start;
+  align-self:start;
+  min-height:auto;
   box-shadow:var(--sh-sm);
   transition:background .2s ease, transform .2s ease, box-shadow .2s ease, border-color .2s ease;
 }
@@ -217,14 +238,16 @@ nav.up{box-shadow:var(--sh-sm);}
 }
 .tl-dot{display:none;}
 .tl-label{
+  grid-area:label;
   display:inline-flex;
-  align-self:flex-start;
-  margin-bottom:18px;
+  align-items:center;justify-content:center;
+  align-self:start;
+  margin-bottom:0;
   padding:6px 12px;
   border-radius:999px;
   background:var(--white);
   border:1px solid var(--line);
-  font-size:12px;
+  font-size:14px;
   font-weight:800;
   color:var(--orange);
   letter-spacing:-0.01em;
@@ -232,34 +255,40 @@ nav.up{box-shadow:var(--sh-sm);}
 }
 .tl-label::first-letter{letter-spacing:-0.01em;}
 .tl-period{
-  order:3;
+  grid-area:period;
+  display:inline-flex;
+  align-items:center;justify-content:center;
+  align-self:start;
   font-size:14px;
   color:var(--orange);
   font-weight:800;
   text-align:left;
-  letter-spacing:-0.015em;
-  padding:0;
-  border-bottom:0;
+  letter-spacing:-0.01em;
+  padding:6px 12px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  background:var(--white);
   margin:0;
-  line-height:1.6;
+  line-height:1.2;
 }
 .tl-title{
-  order:2;
+  grid-area:title;
   font-size:22px;
   font-weight:800;
   color:var(--ink);
   letter-spacing:-0.035em;
   line-height:1.32;
   text-align:left;
-  min-height:58px;
+  min-height:auto;
   display:flex;
   align-items:flex-start;
   justify-content:flex-start;
-  margin-bottom:18px;
+  margin-bottom:0;
 }
+.tl-title br{display:none;}
 .tl-scope{
-  order:4;
-  font-size:14px;
+  grid-area:scope;
+  font-size:18px;
   color:var(--mid);
   line-height:1.7;
   text-align:left;
@@ -267,14 +296,14 @@ nav.up{box-shadow:var(--sh-sm);}
   flex:0;
   min-height:auto;
   display:block;
-  margin-top:4px;
+  margin-top:0;
 }
 .tl-list{
-  order:5;
-  margin:14px 0 0 0;
+  grid-area:list;
+  margin:0;
   padding-left:18px;
   color:var(--body);
-  font-size:14px;
+  font-size:16px;
   line-height:1.75;
   letter-spacing:-0.005em;
 }
@@ -293,11 +322,11 @@ nav.up{box-shadow:var(--sh-sm);}
 }
 .tl-total > *{position:relative;z-index:1;}
 .tl-total-label{
-  font-size:11px;font-weight:800;letter-spacing:0.14em;
+  font-size:16px;font-weight:800;letter-spacing:0.14em;
   color:var(--orange);text-transform:uppercase;
 }
 .tl-total-main{
-  font-size:18px;font-weight:800;letter-spacing:-0.025em;margin-top:4px;
+  font-size:22px;font-weight:800;letter-spacing:-0.025em;margin-top:4px;
   line-height:1.4;
 }
 .tl-total-stats{display:flex;gap:32px;}
@@ -316,12 +345,12 @@ nav.up{box-shadow:var(--sh-sm);}
 }
 @media(max-width:1100px){
   .timeline-grid{grid-template-columns:repeat(2,1fr);}
-  .tl-card{min-height:300px;}
+  .tl-card{min-height:auto;}
 }
 @media(max-width:560px){
   .timeline-grid{grid-template-columns:1fr;}
   .tl-card{min-height:auto;padding:34px 28px;}
-  .tl-label{font-size:12px;}
+  .tl-label,.tl-period{font-size:14px;}
   .tl-title{font-size:20px;min-height:auto;}
 }
 /* More-grade (고2/고1) accordion */
@@ -397,19 +426,14 @@ footer{
   margin-bottom:24px;
 }
 .cur-units-tag{
-  display:inline-flex;align-items:center;gap:10px;
-  font-size:11px;font-weight:800;color:var(--orange);letter-spacing:0.12em;
-  margin-bottom:12px;text-transform:uppercase;
-}
-.cur-units-tag::before{
-  content:'';width:18px;height:2px;background:var(--orange);border-radius:1px;
+  margin-bottom:12px;
 }
 .cur-units-h3{
   font-size:24px;font-weight:800;color:var(--ink);
   letter-spacing:-0.025em;line-height:1.3;margin-bottom:8px;
 }
 .cur-units-p{
-  font-size:14px;color:var(--mid);line-height:1.7;
+  color:var(--mid);line-height:1.7;
   letter-spacing:-0.005em;
 }
 /* Outer wrapper card */
@@ -468,11 +492,11 @@ footer{
   letter-spacing:-0.025em;line-height:1.3;
 }
 .uacc-subj-meta{
-  font-size:12px;color:var(--mid);font-weight:600;
+  font-size:13px;color:var(--mid);font-weight:600;
   letter-spacing:-0.005em;
 }
 .uacc-subj-count{
-  font-size:11px;font-weight:800;color:var(--orange);
+  font-size:12.5px;font-weight:800;color:var(--orange);
   background:var(--orange-light);border:1px solid var(--orange-bdr);
   padding:5px 11px;border-radius:14px;
   letter-spacing:-0.005em;white-space:nowrap;
@@ -514,6 +538,10 @@ footer{
   border-bottom:1px solid var(--line);
   white-space:nowrap;
 }
+.uacc-table thead th.col-grp-h,
+.uacc-table .col-num{
+  font-size:12.5px;
+}
 .uacc-table thead th.col-num{text-align:center;}
 .uacc-table tbody td{
   padding:13px 18px;
@@ -524,17 +552,20 @@ footer{
 .uacc-table tbody tr:last-child td{border-bottom:0;}
 .uacc-table tbody tr:hover td{background:rgba(255,255,255,0.6);}
 .uacc-table .col-grp{
-  color:var(--mid);font-weight:600;font-size:12.5px;
+  color:var(--mid);font-weight:600;font-size:13.5px;
   white-space:nowrap;
 }
 .uacc-table .col-unit{
-  color:var(--ink);font-weight:700;font-size:13.5px;
+  color:var(--ink);font-weight:700;font-size:14.5px;
   letter-spacing:-0.015em;
 }
 .uacc-table .col-num{
   text-align:center;
-  font-size:13px;font-weight:700;
+  font-weight:700;
   white-space:nowrap;
+}
+.uacc-table tbody td.col-num{
+  font-size:14.5px;
 }
 .uacc-table .col-num.basic{color:var(--body);}
 .uacc-table .col-num.inter{color:var(--ink);}
@@ -589,15 +620,22 @@ footer{
 .cur-card-standard .cur-card-inner{background:var(--standard-c,#EE7B3A);}
 .cur-card-killer .cur-card-inner{background:var(--killer-c,#E71F19);}
 .cur-card-inner-final{background:var(--white,#fff);border:2px solid var(--line,#E5E5E5);}
-.cur-card-unit{font-size:14px;font-weight:700;color:white;margin-bottom:4px;}
-.cur-card-level{font-size:12px;font-weight:600;color:rgba(255,255,255,.75);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;}
+.cur-card-unit{font-size:16px;font-weight:700;color:white;margin-bottom:4px;}
+.cur-card-level{font-size:18px;font-weight:600;color:rgba(255,255,255,.75);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;}
 .cur-card-count{font-size:15px;font-weight:900;color:white;padding:4px 14px;background:rgba(0,0,0,.15);border-radius:6px;}
 .cur-card-inner-final .cur-card-unit{color:var(--ink);}
 .cur-card-inner-final .cur-card-level{color:var(--mid);}
 .cur-card-inner-final .cur-card-count{color:var(--ink);background:var(--warm,#F5F6F8);}
-.cur-card-meta{text-align:center;}
+.cur-card-meta{
+  display:flex;flex-direction:column;align-items:center;
+  text-align:center;
+}
 .cur-card-name{font-size:15px;font-weight:800;color:var(--ink);margin-bottom:2px;}
-.cur-card-desc{font-size:13px;color:var(--mid);font-weight:500;}
+.cur-card-desc{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:7px 14px;
+  font-size:14px;color:var(--mid);font-weight:500;line-height:1.3;
+}
 .cur-card-action{
   display:inline-flex;align-items:center;justify-content:center;
   margin-top:8px;padding:5px 10px;border-radius:999px;
@@ -611,7 +649,7 @@ footer{
   background:var(--orange);color:var(--white);border-color:var(--orange);
 }
 .cur-card-plus{display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:300;color:var(--line);padding:0 4px;align-self:center;}
-.cur-foot{margin-top:16px;font-size:13px;color:var(--mid);text-align:center;font-weight:500;}
+.cur-foot{margin-top:16px;font-size:15px;color:var(--mid);text-align:center;font-weight:500;}
 @media(max-width:768px){
   .cur-cards{
     display:grid;
@@ -898,7 +936,7 @@ footer{
   padding:18px 28px;
   background:var(--warm);
   border-top:1px solid var(--line);
-  font-size:13px;color:var(--mid);
+  font-size:15px;color:var(--mid);
   letter-spacing:-0.005em;
   line-height:1.7;
 }
@@ -965,11 +1003,11 @@ footer{
 }
 .lvl-detail-grid{
   display:grid;grid-template-columns:1fr 1.1fr;gap:80px;
-  align-items:start;
+  align-items:center;
 }
 /* Cover area (left) — large minimal photo-like mockup */
 .lvl-cover-wrap{
-  display:flex;align-items:flex-start;justify-content:center;
+  display:flex;align-items:center;justify-content:center;
   position:relative;
 }
 .lvl-cover-art{
@@ -1073,9 +1111,7 @@ footer{
   padding-top:10px;
 }
 .lvl-info::before{
-  display:inline-flex;align-items:center;gap:10px;
-  font-size:12px;font-weight:800;color:var(--orange);letter-spacing:0.18em;
-  margin-bottom:20px;text-transform:uppercase;
+  margin-bottom:20px;
 }
 .lvl-info::before{content:'Level-X';}
 #level-basic .lvl-info::before{content:'Level-Basic';}
@@ -1088,7 +1124,7 @@ footer{
   margin-bottom:14px;
 }
 .lvl-sub{
-  font-size:15px;color:var(--mid);
+  color:var(--mid);
   line-height:1.75;letter-spacing:-0.005em;
   margin-bottom:28px;
   font-weight:500;
@@ -1103,7 +1139,7 @@ footer{
 .lvl-list-card:last-of-type{margin-bottom:0;}
 .lvl-list-h{
   display:inline-block;
-  font-size:11px;font-weight:800;color:var(--orange);
+  font-size:15px;font-weight:800;color:var(--orange);
   letter-spacing:0.12em;
   background:transparent;
   padding:0;border-radius:0;
@@ -1115,14 +1151,14 @@ footer{
   padding-left:0;
 }
 .lvl-list li{
-  font-size:13.5px;color:var(--body);line-height:1.85;
+  font-size:16px;color:var(--body);line-height:1.85;
   letter-spacing:-0.005em;
   padding-left:14px;position:relative;
   font-weight:500;
 }
 .lvl-list li::before{
   content:'•';position:absolute;left:0;top:0;
-  color:var(--orange);font-weight:700;font-size:13px;line-height:1.85;
+  color:var(--orange);font-weight:700;font-size:16px;line-height:1.85;
 }
 /* Section divider (subtle hairline) */
 .lvl-divider{
@@ -1143,7 +1179,7 @@ footer{
   .lvl-cover-art{max-width:240px;}
   .lvl-cover-mark{font-size:60px;}
   .lvl-name{font-size:24px;font-weight:800;}
-  .lvl-sub{font-size:13.5px;margin-bottom:28px;}
+  .lvl-sub{margin-bottom:28px;}
 }
 /* ─ PAGE HERO (콘텐츠 소개 페이지 전용) ─ */
 .page-hero{
@@ -1155,13 +1191,7 @@ footer{
   padding:112px 60px 92px;text-align:center;
 }
 .page-hero-kicker{
-  display:inline-flex;align-items:center;gap:10px;
-  font-size:12px;font-weight:800;letter-spacing:0.18em;color:var(--orange);
-  margin-bottom:28px;text-transform:uppercase;
-}
-.page-hero-kicker span{
-  display:inline-block;width:24px;height:2px;
-  background:var(--orange);border-radius:1px;
+  margin-bottom:28px;
 }
 .page-hero-h1{
   font-size:48px;font-weight:800;line-height:1.2;
@@ -1169,7 +1199,7 @@ footer{
 }
 .page-hero-h1 b{font-weight:800;color:var(--orange);}
 .page-hero-p{
-  font-size:16px;color:var(--mid);line-height:1.75;
+  color:var(--mid);line-height:1.75;
   letter-spacing:-0.005em;max-width:540px;margin:0 auto;
 }
 /* nav active state for current page */
@@ -1184,37 +1214,45 @@ footer{
   background:#1F2227;color:#ffffff;
   border-radius:14px;
   padding:48px 52px;
-  display:flex;align-items:center;justify-content:space-between;
-  gap:48px;flex-wrap:wrap;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:28px;text-align:center;
   box-shadow:0 8px 32px rgba(0,0,0,.12);
 }
-.cta-back-body{flex:1;min-width:280px;}
+.cta-back-body{width:100%;max-width:620px;margin:0 auto;}
 .cta-back-h{
   font-size:30px;font-weight:800;letter-spacing:-0.03em;
   line-height:1.3;margin-bottom:12px;
 }
 .cta-back-h b{color:#E60012;font-weight:800;}
 .cta-back-p{
-  font-size:15px;color:rgba(255,255,255,0.65);
-  line-height:1.7;letter-spacing:-0.005em;
+  color:rgba(255,255,255,0.65);
+  line-height:1.7;letter-spacing:-0.005em;margin:0 auto;
+}
+.sec-sub,
+.page-hero-p,
+.cur-units-p,
+.lvl-sub,
+.cta-back-p{
+  font-size:18px;
 }
 .cta-back-cta{
   background:#E60012;color:#ffffff;
   padding:18px 36px;border-radius:var(--r-lg);
-  font-size:15px;font-weight:700;text-decoration:none;
+  font-size:16px;font-weight:700;text-decoration:none;
   letter-spacing:-0.015em;white-space:nowrap;
   transition:background .2s;
+  display:inline-flex;align-items:center;justify-content:center;
+  min-width:248px;
 }
 .cta-back-cta:hover{background:#C5000F;}
 @media(max-width:880px){
   .page-hero-in{padding:64px 24px 56px;}
   .page-hero-h1{font-size:34px;letter-spacing:-0.04em;}
-  .page-hero-p{font-size:14px;}
   .cta-back{padding:0 20px 48px;}
   .cta-back-in{flex-direction:column;align-items:center;text-align:center;padding:40px 28px;gap:28px;}
-  .cta-back-body{width:100%;}
+  .cta-back-body{width:100%;max-width:620px;}
   .cta-back-h{font-size:24px;}
-  .cta-back-cta{width:100%;text-align:center;}
+  .cta-back-cta{width:min(100%, 248px);text-align:center;}
 }
 
 /* ─ PDF Preview Modal ─ */
@@ -1522,44 +1560,44 @@ footer{
                 <tr>
                   <td class="col-grp">지수함수와 로그함수</td>
                   <td class="col-unit">지수와 로그</td>
-                  <td class="col-num basic">20문항</td>
-                  <td class="col-num inter">20문항</td>
-                  <td class="col-num killer">10문항</td>
+                  <td class="col-num basic">8문항</td>
+                  <td class="col-num inter">8문항</td>
+                  <td class="col-num killer">8문항</td>
                 </tr>
                 <tr>
                   <td class="col-grp">지수함수와 로그함수</td>
                   <td class="col-unit">지수함수와 로그함수</td>
-                  <td class="col-num basic">20문항</td>
-                  <td class="col-num inter">20문항</td>
-                  <td class="col-num killer">10문항</td>
+                  <td class="col-num basic">8문항</td>
+                  <td class="col-num inter">8문항</td>
+                  <td class="col-num killer">8문항</td>
                 </tr>
                 <tr>
                   <td class="col-grp">삼각함수</td>
                   <td class="col-unit">삼각함수</td>
-                  <td class="col-num basic">20문항</td>
-                  <td class="col-num inter">20문항</td>
-                  <td class="col-num killer">10문항</td>
+                  <td class="col-num basic">8문항</td>
+                  <td class="col-num inter">8문항</td>
+                  <td class="col-num killer">8문항</td>
                 </tr>
                 <tr>
                   <td class="col-grp">수열</td>
                   <td class="col-unit">등차수열과 등비수열</td>
-                  <td class="col-num basic">20문항</td>
-                  <td class="col-num inter">20문항</td>
-                  <td class="col-num killer">10문항</td>
+                  <td class="col-num basic">8문항</td>
+                  <td class="col-num inter">8문항</td>
+                  <td class="col-num killer">8문항</td>
                 </tr>
                 <tr>
                   <td class="col-grp">수열</td>
                   <td class="col-unit">수열의 합</td>
-                  <td class="col-num basic">20문항</td>
-                  <td class="col-num inter">20문항</td>
-                  <td class="col-num killer">10문항</td>
+                  <td class="col-num basic">8문항</td>
+                  <td class="col-num inter">8문항</td>
+                  <td class="col-num killer">8문항</td>
                 </tr>
                 <tr>
                   <td class="col-grp">수열</td>
                   <td class="col-unit">수학적 귀납법</td>
-                  <td class="col-num basic">20문항</td>
-                  <td class="col-num inter">20문항</td>
-                  <td class="col-num killer">10문항</td>
+                  <td class="col-num basic">8문항</td>
+                  <td class="col-num inter">8문항</td>
+                  <td class="col-num killer">8문항</td>
                 </tr>
               </tbody>
             </table>
@@ -1596,58 +1634,58 @@ footer{
                 <tr>
                   <td class="col-grp">함수의 극한과 연속</td>
                   <td class="col-unit">함수의 극한</td>
-                  <td class="col-num basic">20문항</td>
-                  <td class="col-num inter">20문항</td>
-                  <td class="col-num killer">10문항</td>
+                  <td class="col-num basic">8문항</td>
+                  <td class="col-num inter">8문항</td>
+                  <td class="col-num killer">8문항</td>
                 </tr>
                 <tr>
                   <td class="col-grp">함수의 극한과 연속</td>
                   <td class="col-unit">함수의 연속</td>
-                  <td class="col-num basic">20문항</td>
-                  <td class="col-num inter">20문항</td>
-                  <td class="col-num killer">10문항</td>
+                  <td class="col-num basic">8문항</td>
+                  <td class="col-num inter">8문항</td>
+                  <td class="col-num killer">8문항</td>
                 </tr>
                 <tr>
                   <td class="col-grp">미분</td>
                   <td class="col-unit">미분계수</td>
-                  <td class="col-num basic">20문항</td>
-                  <td class="col-num inter">20문항</td>
-                  <td class="col-num killer">10문항</td>
+                  <td class="col-num basic">8문항</td>
+                  <td class="col-num inter">8문항</td>
+                  <td class="col-num killer">8문항</td>
                 </tr>
                 <tr>
                   <td class="col-grp">미분</td>
                   <td class="col-unit">도함수</td>
-                  <td class="col-num basic">20문항</td>
-                  <td class="col-num inter">20문항</td>
-                  <td class="col-num killer">10문항</td>
+                  <td class="col-num basic">8문항</td>
+                  <td class="col-num inter">8문항</td>
+                  <td class="col-num killer">8문항</td>
                 </tr>
                 <tr>
                   <td class="col-grp">미분</td>
                   <td class="col-unit">도함수의 활용</td>
-                  <td class="col-num basic">20문항</td>
-                  <td class="col-num inter">20문항</td>
-                  <td class="col-num killer">10문항</td>
+                  <td class="col-num basic">8문항</td>
+                  <td class="col-num inter">8문항</td>
+                  <td class="col-num killer">8문항</td>
                 </tr>
                 <tr>
                   <td class="col-grp">적분</td>
                   <td class="col-unit">부정적분</td>
-                  <td class="col-num basic">20문항</td>
-                  <td class="col-num inter">20문항</td>
-                  <td class="col-num killer">10문항</td>
+                  <td class="col-num basic">8문항</td>
+                  <td class="col-num inter">8문항</td>
+                  <td class="col-num killer">8문항</td>
                 </tr>
                 <tr>
                   <td class="col-grp">적분</td>
                   <td class="col-unit">정적분</td>
-                  <td class="col-num basic">20문항</td>
-                  <td class="col-num inter">20문항</td>
-                  <td class="col-num killer">10문항</td>
+                  <td class="col-num basic">8문항</td>
+                  <td class="col-num inter">8문항</td>
+                  <td class="col-num killer">8문항</td>
                 </tr>
                 <tr>
                   <td class="col-grp">적분</td>
                   <td class="col-unit">정적분의 활용</td>
-                  <td class="col-num basic">20문항</td>
-                  <td class="col-num inter">20문항</td>
-                  <td class="col-num killer">10문항</td>
+                  <td class="col-num basic">8문항</td>
+                  <td class="col-num inter">8문항</td>
+                  <td class="col-num killer">8문항</td>
                 </tr>
               </tbody>
             </table>
@@ -1684,44 +1722,44 @@ footer{
                 <tr>
                   <td class="col-grp">경우의 수</td>
                   <td class="col-unit">순열과 조합</td>
-                  <td class="col-num basic">20문항</td>
-                  <td class="col-num inter">20문항</td>
-                  <td class="col-num killer">10문항</td>
+                  <td class="col-num basic">8문항</td>
+                  <td class="col-num inter">8문항</td>
+                  <td class="col-num killer">8문항</td>
                 </tr>
                 <tr>
                   <td class="col-grp">경우의 수</td>
                   <td class="col-unit">이항정리</td>
-                  <td class="col-num basic">20문항</td>
-                  <td class="col-num inter">20문항</td>
-                  <td class="col-num killer">10문항</td>
+                  <td class="col-num basic">8문항</td>
+                  <td class="col-num inter">8문항</td>
+                  <td class="col-num killer">8문항</td>
                 </tr>
                 <tr>
                   <td class="col-grp">확률</td>
                   <td class="col-unit">확률의 뜻과 활용</td>
-                  <td class="col-num basic">20문항</td>
-                  <td class="col-num inter">20문항</td>
-                  <td class="col-num killer">10문항</td>
+                  <td class="col-num basic">8문항</td>
+                  <td class="col-num inter">8문항</td>
+                  <td class="col-num killer">8문항</td>
                 </tr>
                 <tr>
                   <td class="col-grp">확률</td>
                   <td class="col-unit">조건부확률</td>
-                  <td class="col-num basic">20문항</td>
-                  <td class="col-num inter">20문항</td>
-                  <td class="col-num killer">10문항</td>
+                  <td class="col-num basic">8문항</td>
+                  <td class="col-num inter">8문항</td>
+                  <td class="col-num killer">8문항</td>
                 </tr>
                 <tr>
                   <td class="col-grp">통계</td>
                   <td class="col-unit">확률분포</td>
-                  <td class="col-num basic">20문항</td>
-                  <td class="col-num inter">20문항</td>
-                  <td class="col-num killer">10문항</td>
+                  <td class="col-num basic">8문항</td>
+                  <td class="col-num inter">8문항</td>
+                  <td class="col-num killer">8문항</td>
                 </tr>
                 <tr>
                   <td class="col-grp">통계</td>
                   <td class="col-unit">통계적 추정</td>
-                  <td class="col-num basic">20문항</td>
-                  <td class="col-num inter">20문항</td>
-                  <td class="col-num killer">10문항</td>
+                  <td class="col-num basic">8문항</td>
+                  <td class="col-num inter">8문항</td>
+                  <td class="col-num killer">8문항</td>
                 </tr>
               </tbody>
             </table>
@@ -1758,51 +1796,51 @@ footer{
                 <tr>
                   <td class="col-grp">수열의 극한</td>
                   <td class="col-unit">수열의 극한</td>
-                  <td class="col-num basic">20문항</td>
-                  <td class="col-num inter">20문항</td>
-                  <td class="col-num killer">10문항</td>
+                  <td class="col-num basic">8문항</td>
+                  <td class="col-num inter">8문항</td>
+                  <td class="col-num killer">8문항</td>
                 </tr>
                 <tr>
                   <td class="col-grp">수열의 극한</td>
                   <td class="col-unit">급수</td>
-                  <td class="col-num basic">20문항</td>
-                  <td class="col-num inter">20문항</td>
-                  <td class="col-num killer">10문항</td>
+                  <td class="col-num basic">8문항</td>
+                  <td class="col-num inter">8문항</td>
+                  <td class="col-num killer">8문항</td>
                 </tr>
                 <tr>
                   <td class="col-grp">미분법</td>
                   <td class="col-unit">여러 가지 함수의 미분</td>
-                  <td class="col-num basic">20문항</td>
-                  <td class="col-num inter">20문항</td>
-                  <td class="col-num killer">10문항</td>
+                  <td class="col-num basic">8문항</td>
+                  <td class="col-num inter">8문항</td>
+                  <td class="col-num killer">8문항</td>
                 </tr>
                 <tr>
                   <td class="col-grp">미분법</td>
                   <td class="col-unit">여러 가지 미분법</td>
-                  <td class="col-num basic">20문항</td>
-                  <td class="col-num inter">20문항</td>
-                  <td class="col-num killer">10문항</td>
+                  <td class="col-num basic">8문항</td>
+                  <td class="col-num inter">8문항</td>
+                  <td class="col-num killer">8문항</td>
                 </tr>
                 <tr>
                   <td class="col-grp">미분법</td>
                   <td class="col-unit">도함수의 활용</td>
-                  <td class="col-num basic">20문항</td>
-                  <td class="col-num inter">20문항</td>
-                  <td class="col-num killer">10문항</td>
+                  <td class="col-num basic">8문항</td>
+                  <td class="col-num inter">8문항</td>
+                  <td class="col-num killer">8문항</td>
                 </tr>
                 <tr>
                   <td class="col-grp">적분법</td>
                   <td class="col-unit">여러 가지 적분법</td>
-                  <td class="col-num basic">20문항</td>
-                  <td class="col-num inter">20문항</td>
-                  <td class="col-num killer">10문항</td>
+                  <td class="col-num basic">8문항</td>
+                  <td class="col-num inter">8문항</td>
+                  <td class="col-num killer">8문항</td>
                 </tr>
                 <tr>
                   <td class="col-grp">적분법</td>
                   <td class="col-unit">정적분의 활용</td>
-                  <td class="col-num basic">20문항</td>
-                  <td class="col-num inter">20문항</td>
-                  <td class="col-num killer">10문항</td>
+                  <td class="col-num basic">8문항</td>
+                  <td class="col-num inter">8문항</td>
+                  <td class="col-num killer">8문항</td>
                 </tr>
               </tbody>
             </table>
@@ -1844,7 +1882,7 @@ footer{
       </div>
       <div class="lvl-info">
         <h3 class="lvl-name">개념과 기본기를 다지는<br>단원별 진단 테스트</h3>
-        <p class="lvl-sub">2~3점 기초 완성 문항 중심의 20문항 단원 테스트. 개념 정착이 필요한 학생, 취약 단원 보강이 필요한 학생을 위한 기초 확인 도구입니다.</p>
+        <p class="lvl-sub">2~3점 기초 완성 문항 중심의 8문항 단원 테스트. 개념 정착이 필요한 학생, 취약 단원 보강이 필요한 학생을 위한 기초 확인 도구입니다.</p>
 
         <div class="lvl-list-card">
           <div class="lvl-list-h">추천 학생</div>
@@ -1879,7 +1917,7 @@ footer{
       </div>
       <div class="lvl-info">
         <h3 class="lvl-name">실전 적용력을 키우는<br>중상 단원 테스트</h3>
-        <p class="lvl-sub">3~4점 개념 완성 문항 중심의 20문항 단원 테스트. 개념은 이해했지만 실전 적용이 필요한 학생을 위한 단원 마무리 훈련.</p>
+        <p class="lvl-sub">3~4점 개념 완성 문항 중심의 8문항 단원 테스트. 개념은 이해했지만 실전 적용이 필요한 학생을 위한 단원 마무리 훈련.</p>
 
         <div class="lvl-list-card">
           <div class="lvl-list-h">추천 학생</div>
@@ -1914,7 +1952,7 @@ footer{
       </div>
       <div class="lvl-info">
         <h3 class="lvl-name">최상위권을 위한<br>고난도 변별 문항 훈련</h3>
-        <p class="lvl-sub">4점 고난도 완성 문항 중심의 10문항 단원 테스트. 상위권 변별과 만점 대비를 위한 고난도 실전 콘텐츠.</p>
+        <p class="lvl-sub">4점 고난도 완성 문항 중심의 8문항 단원 테스트. 상위권 변별과 만점 대비를 위한 고난도 실전 콘텐츠.</p>
 
         <div class="lvl-list-card">
           <div class="lvl-list-h">추천 학생</div>
@@ -1929,7 +1967,7 @@ footer{
           <div class="lvl-list-h">활용 가이드</div>
           <ul class="lvl-list">
             <li>단원 학습 완료 후 고난도 응용으로 마무리 훈련</li>
-            <li>단원당 10문항 집중 풀이 — 시간 압박 환경에서 진행</li>
+            <li>단원당 8문항 집중 풀이 — 시간 압박 환경에서 진행</li>
             <li>풀이 과정을 노트화해 출제 패턴 학습으로 연결</li>
           </ul>
         </div>
@@ -1993,7 +2031,7 @@ footer{
           <div class="tl-card">
             <div class="tl-dot">1</div>
             <div class="tl-label">시즌1</div>
-            <div class="tl-title">수능특강<br>기출 학습</div>
+            <div class="tl-title">수능특강 기출 학습</div>
             <div class="tl-period">3월</div>
             <div class="tl-scope">EBS 수능특강 기출 문항 기반</div>
             <ul class="tl-list">
@@ -2004,7 +2042,7 @@ footer{
           <div class="tl-card">
             <div class="tl-dot">2</div>
             <div class="tl-label">시즌2</div>
-            <div class="tl-title">EBS 수특<br>변형 학습</div>
+            <div class="tl-title">EBS 수특 변형 학습</div>
             <div class="tl-period">4월</div>
             <div class="tl-scope">수능특강 변형 출제 · 연계 대비</div>
             <ul class="tl-list">
@@ -2015,7 +2053,7 @@ footer{
           <div class="tl-card">
             <div class="tl-dot">3</div>
             <div class="tl-label">시즌3</div>
-            <div class="tl-title">6모 대비<br>실전 연습</div>
+            <div class="tl-title">6모 대비 실전 연습</div>
             <div class="tl-period">5월</div>
             <div class="tl-scope">6월 모의평가 직전 실전 점검</div>
             <ul class="tl-list">
@@ -2026,7 +2064,7 @@ footer{
           <div class="tl-card">
             <div class="tl-dot">4</div>
             <div class="tl-label">시즌4</div>
-            <div class="tl-title">평가원<br>반영 학습</div>
+            <div class="tl-title">평가원 반영 학습</div>
             <div class="tl-period">6월</div>
             <div class="tl-scope">6월 평가원 출제 경향 즉시 반영</div>
             <ul class="tl-list">
@@ -2037,7 +2075,7 @@ footer{
           <div class="tl-card">
             <div class="tl-dot">5</div>
             <div class="tl-label">시즌5</div>
-            <div class="tl-title">평가원<br>변형 훈련</div>
+            <div class="tl-title">평가원 변형 훈련</div>
             <div class="tl-period">7월</div>
             <div class="tl-scope">6월 평가원 변형 출제 · 심화 훈련</div>
             <ul class="tl-list">
@@ -2048,7 +2086,7 @@ footer{
           <div class="tl-card">
             <div class="tl-dot">6</div>
             <div class="tl-label">시즌6</div>
-            <div class="tl-title">9모 대비<br>실전 점검</div>
+            <div class="tl-title">9모 대비 실전 점검</div>
             <div class="tl-period">8월</div>
             <div class="tl-scope">9월 모의평가 직전 실전 점검</div>
             <ul class="tl-list">
@@ -2059,7 +2097,7 @@ footer{
           <div class="tl-card">
             <div class="tl-dot">7</div>
             <div class="tl-label">시즌7</div>
-            <div class="tl-title">평가원<br>기출 분석</div>
+            <div class="tl-title">평가원 기출 분석</div>
             <div class="tl-period">9월</div>
             <div class="tl-scope">9월 평가원 분석 · 출제 경향 반영</div>
             <ul class="tl-list">
@@ -2070,7 +2108,7 @@ footer{
           <div class="tl-card">
             <div class="tl-dot">8</div>
             <div class="tl-label">시즌8</div>
-            <div class="tl-title">수능 대비<br>파이널</div>
+            <div class="tl-title">수능 대비 파이널</div>
             <div class="tl-period">10월</div>
             <div class="tl-scope">수능 직전 최종 점검 · 파이널</div>
             <ul class="tl-list">
