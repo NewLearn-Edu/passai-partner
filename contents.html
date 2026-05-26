@@ -359,7 +359,13 @@ footer{
 
 /* Responsive */
 @media(max-width:1100px){
-  .nav-menu{display:none;}
+  .nav-menu{display:flex;}
+  .nav-menu a{
+    padding:8px 12px;border:1px solid var(--line);
+    background:var(--warm);color:var(--ink);
+    font-size:13px;font-weight:700;
+  }
+  .nav-menu a.active{display:none;}
 }
 @media(max-width:960px){
   nav, footer{padding-left:24px;padding-right:24px;}
@@ -1293,11 +1299,11 @@ footer{
   position:fixed;right:28px;bottom:28px;z-index:900;
   width:58px;height:58px;border-radius:16px;
   display:flex;align-items:center;justify-content:center;
-  background:linear-gradient(135deg,#1B72FF 0%,#7A2DFF 100%);
-  color:var(--white);box-shadow:0 14px 36px rgba(39,73,255,0.28);
+  background:#FEE500;color:#191919;
+  box-shadow:0 14px 36px rgba(25,25,25,0.18);
   text-decoration:none;transition:transform .18s,box-shadow .18s;
 }
-.kakao-float:hover{transform:translateY(-3px);box-shadow:0 18px 42px rgba(39,73,255,0.34);}
+.kakao-float:hover{transform:translateY(-3px);box-shadow:0 18px 42px rgba(25,25,25,0.24);}
 .kakao-float:focus-visible{outline:3px solid rgba(230,0,18,0.25);outline-offset:4px;}
 .kakao-float svg{width:34px;height:34px;display:block;}
 @media(max-width:720px){
@@ -1316,12 +1322,12 @@ footer{
 </head>
 <body>
 
-<a class="kakao-float" href="https://pf.kakao.com/_TrZxjX/friend" target="_blank" rel="noopener" aria-label="카카오톡 채널 연결" title="카카오톡 채널 연결">
+<a class="kakao-float" href="https://pf.kakao.com/_TrZxjX" target="_blank" rel="noopener" aria-label="카카오톡 채널 연결" title="카카오톡 채널 연결">
   <svg viewBox="0 0 48 48" aria-hidden="true" focusable="false">
     <path fill="currentColor" d="M24 9C14.6 9 7 15.1 7 22.6c0 4.7 3 8.8 7.6 11.2l-.9 5.3c-.1.8.8 1.3 1.4.8l5.6-3.9c1.1.2 2.2.3 3.3.3 9.4 0 17-6.1 17-13.7S33.4 9 24 9Z"/>
-    <circle cx="18" cy="23" r="2.1" fill="#7A2DFF"/>
-    <circle cx="24" cy="23" r="2.1" fill="#7A2DFF"/>
-    <circle cx="30" cy="23" r="2.1" fill="#7A2DFF"/>
+    <circle cx="18" cy="23" r="2.1" fill="#FEE500"/>
+    <circle cx="24" cy="23" r="2.1" fill="#FEE500"/>
+    <circle cx="30" cy="23" r="2.1" fill="#FEE500"/>
   </svg>
 </a>
 
