@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="112" height="112" viewBox="0 0 112 112" role="img" aria-labelledby="title desc">
+  <title id="title">뉴런연구소 N 마크</title>
+  <desc id="desc">빨간 사각형 안의 흰색 N 심볼</desc>
+  <g fill="none" fill-rule="evenodd">
+    <rect x="24" y="24" width="64" height="64" rx="12" fill="#E60012"/>
+    <text x="56" y="66" text-anchor="middle"
+      font-family="Pretendard Variable, Pretendard, -apple-system, BlinkMacSystemFont, Apple SD Gothic Neo, Noto Sans KR, sans-serif"
+      font-size="38" font-weight="900" letter-spacing="-2" fill="#FFFFFF">N</text>
+  </g>
+</svg>

@@ -588,6 +588,18 @@ footer{
 .cur-card-meta{text-align:center;}
 .cur-card-name{font-size:15px;font-weight:800;color:var(--ink);margin-bottom:2px;}
 .cur-card-desc{font-size:13px;color:var(--mid);font-weight:500;}
+.cur-card-action{
+  display:inline-flex;align-items:center;justify-content:center;
+  margin-top:8px;padding:5px 10px;border-radius:999px;
+  border:1px solid var(--line);
+  background:var(--white);color:var(--orange);
+  font-size:11px;font-weight:800;letter-spacing:-0.015em;
+  transition:background .18s,color .18s,border-color .18s;
+}
+.pdf-preview-card:hover .cur-card-action,
+.pdf-preview-card:focus-visible .cur-card-action{
+  background:var(--orange);color:var(--white);border-color:var(--orange);
+}
 .cur-card-plus{display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:300;color:var(--line);padding:0 4px;align-self:center;}
 .cur-foot{margin-top:16px;font-size:13px;color:var(--mid);text-align:center;font-weight:500;}
 @media(max-width:768px){
@@ -1277,6 +1289,17 @@ footer{
   border:0;
   background:#f3f4f6;
 }
+.kakao-float{
+  position:fixed;right:28px;bottom:28px;z-index:900;
+  width:58px;height:58px;border-radius:16px;
+  display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#1B72FF 0%,#7A2DFF 100%);
+  color:var(--white);box-shadow:0 14px 36px rgba(39,73,255,0.28);
+  text-decoration:none;transition:transform .18s,box-shadow .18s;
+}
+.kakao-float:hover{transform:translateY(-3px);box-shadow:0 18px 42px rgba(39,73,255,0.34);}
+.kakao-float:focus-visible{outline:3px solid rgba(230,0,18,0.25);outline-offset:4px;}
+.kakao-float svg{width:34px;height:34px;display:block;}
 @media(max-width:720px){
   .pdf-modal-panel{
     width:100vw;
@@ -1286,11 +1309,21 @@ footer{
   .pdf-modal-head{
     padding-left:16px;
   }
+  .kakao-float{right:18px;bottom:18px;width:54px;height:54px;border-radius:15px;}
 }
 
 </style>
 </head>
 <body>
+
+<a class="kakao-float" href="https://pf.kakao.com/_TrZxjX/friend" target="_blank" rel="noopener" aria-label="카카오톡 채널 연결" title="카카오톡 채널 연결">
+  <svg viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+    <path fill="currentColor" d="M24 9C14.6 9 7 15.1 7 22.6c0 4.7 3 8.8 7.6 11.2l-.9 5.3c-.1.8.8 1.3 1.4.8l5.6-3.9c1.1.2 2.2.3 3.3.3 9.4 0 17-6.1 17-13.7S33.4 9 24 9Z"/>
+    <circle cx="18" cy="23" r="2.1" fill="#7A2DFF"/>
+    <circle cx="24" cy="23" r="2.1" fill="#7A2DFF"/>
+    <circle cx="30" cy="23" r="2.1" fill="#7A2DFF"/>
+  </svg>
+</a>
 
 <!-- NAV -->
 <nav id="nav">
@@ -1373,6 +1406,7 @@ footer{
           <div class="cur-card-meta">
             <div class="cur-card-name">Level-Basic</div>
             <div class="cur-card-desc">2~3점 기초 완성</div>
+            <div class="cur-card-action">샘플 PDF 보기</div>
           </div>
         </div>
         <div class="cur-card cur-card-standard pdf-preview-card" role="button" tabindex="0" data-pdf="SAMPLE/도함수의 활용_STANDARD.pdf" data-title="Level-Standard 샘플 PDF">
@@ -1384,6 +1418,7 @@ footer{
           <div class="cur-card-meta">
             <div class="cur-card-name">Level-Standard</div>
             <div class="cur-card-desc">3~4점 개념 완성</div>
+            <div class="cur-card-action">샘플 PDF 보기</div>
           </div>
         </div>
         <div class="cur-card cur-card-killer pdf-preview-card" role="button" tabindex="0" data-pdf="SAMPLE/도함수의 활용_KILLER.pdf" data-title="Level-Killer 샘플 PDF">
@@ -1395,6 +1430,7 @@ footer{
           <div class="cur-card-meta">
             <div class="cur-card-name">Level-Killer</div>
             <div class="cur-card-desc">4점 고난도 완성</div>
+            <div class="cur-card-action">샘플 PDF 보기</div>
           </div>
         </div>
         <div class="cur-card-plus">+</div>
@@ -1407,6 +1443,7 @@ footer{
           <div class="cur-card-meta">
             <div class="cur-card-name">Level-Final</div>
             <div class="cur-card-desc">월간 모의고사</div>
+            <div class="cur-card-action">샘플 PDF 보기</div>
           </div>
         </div>
       </div>
