@@ -180,9 +180,9 @@ nav.up{box-shadow:var(--sh-sm);}
   letter-spacing:-0.005em;
 }
 /* ─ PROGRAM (NEW) ─ */
-.program{background:var(--white);padding:96px 60px;border-top:1px solid var(--line);}
+.program{background:var(--white);padding:96px 60px 48px;border-top:1px solid var(--line);}
 .program-in{max-width:1120px;margin:0 auto;}
-.timeline-wrap{margin-bottom:60px;}
+.timeline-wrap{margin-bottom:0;}
 .timeline-track{position:relative;margin-bottom:28px;}
 .timeline-track::before{display:none;}
 .timeline-grid{
@@ -364,7 +364,8 @@ footer{
 @media(max-width:960px){
   nav, footer{padding-left:24px;padding-right:24px;}
   .ft-info{text-align:left;}
-  .contents, .program{padding:96px 24px;}
+  .contents{padding:96px 24px;}
+  .program{padding:96px 24px 48px;}
   .sec-h2{font-size:32px;letter-spacing:-0.035em;}
   .sec-sub{margin-bottom:48px;}
   .contents-grid{grid-template-columns:1fr;}
@@ -1142,7 +1143,7 @@ footer{
 /* ─ CTA BACK STRIP (콘텐츠 페이지 하단 → 메인 폼으로) ─ */
 .cta-back{
   background:#ffffff;
-  padding:60px 60px 40px;
+  padding:0 60px 40px;
 }
 .cta-back-in{
   max-width:960px;margin:0 auto;
@@ -1175,7 +1176,7 @@ footer{
   .page-hero-in{padding:64px 24px 56px;}
   .page-hero-h1{font-size:32px;letter-spacing:-0.035em;}
   .page-hero-p{font-size:14px;}
-  .cta-back{padding:48px 24px;}
+  .cta-back{padding:0 24px 48px;}
   .cta-back-h{font-size:24px;}
   .cta-back-cta{width:100%;text-align:center;}
 }
@@ -1999,7 +2000,7 @@ footer{
             <div class="tl-label">시즌7</div>
             <div class="tl-title">평가원<br>기출 분석</div>
             <div class="tl-period">9월</div>
-            <div class="tl-scope">9월 평가원 기출 분석 · 출제 경향 반영</div>
+            <div class="tl-scope">9월 평가원 분석 · 출제 경향 반영</div>
             <ul class="tl-list">
               <li>9모 이후 방향 조정</li>
               <li><strong>출제 구조</strong> 재정리</li>
@@ -2021,21 +2022,21 @@ footer{
 
       <div class="tl-total">
         <div>
-          <div class="tl-total-label">고3·N수 연간 합계</div>
-          <div class="tl-total-main">8개월 · 3~10월 운영</div>
+          <div class="tl-total-label">고3·N수 시즌 구성</div>
+          <div class="tl-total-main">3~10월 총 8시즌</div>
         </div>
         <div class="tl-total-stats">
           <div class="tl-stat">
-            <div class="tl-stat-num">20<span>회</span></div>
-            <div class="tl-stat-label">격주 테스트</div>
+            <div class="tl-stat-num">3<span>개</span></div>
+            <div class="tl-stat-label">난이도: Basic · Standard · Killer</div>
           </div>
           <div class="tl-stat">
-            <div class="tl-stat-num">10<span>회</span></div>
-            <div class="tl-stat-label">월간 모의고사</div>
+            <div class="tl-stat-num">27<span>개</span></div>
+            <div class="tl-stat-label">월별 출제 단원</div>
           </div>
           <div class="tl-stat">
-            <div class="tl-stat-num">30<span>회분</span></div>
-            <div class="tl-stat-label">총 콘텐츠</div>
+            <div class="tl-stat-num">30<span>문항</span></div>
+            <div class="tl-stat-label">월간 수학 모의고사</div>
           </div>
         </div>
       </div>
