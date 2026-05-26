@@ -373,96 +373,106 @@ nav.up{box-shadow:var(--sh-sm);}
   letter-spacing:-0.005em;
 }
 
-/* ── PROCESS (이감 "프로그램 절차" 4단계 — 브랜드 컬러 백그라운드) ── */
+/* ── PROCESS ── */
 .process{
-  background:linear-gradient(180deg, #FFF1F2 0%, #FFE8EA 100%);
+  background:var(--warm);
   padding:var(--pad-sec) 60px;
-  position:relative;overflow:hidden;
-}
-.process::before{
-  content:'';position:absolute;top:-160px;left:-160px;
-  width:520px;height:520px;border-radius:50%;
-  background:radial-gradient(circle,rgba(230,0,18,0.10) 0%,rgba(230,0,18,0) 70%);
-  pointer-events:none;
-}
-.process::after{
-  content:'';position:absolute;bottom:-200px;right:-200px;
-  width:600px;height:600px;border-radius:50%;
-  background:radial-gradient(circle,rgba(230,0,18,0.08) 0%,rgba(230,0,18,0) 70%);
-  pointer-events:none;
+  position:relative;
+  overflow:hidden;
+  border-top:1px solid var(--line-soft);
+  border-bottom:1px solid var(--line-soft);
+  font-family:var(--f-sans);
 }
 .process-in{
   max-width:var(--max);margin:0 auto;position:relative;z-index:1;
-  display:grid;grid-template-columns:0.85fr 1.15fr;gap:88px;align-items:start;
+  display:grid;grid-template-columns:0.8fr 1.2fr;gap:76px;align-items:start;
 }
-.process-head{position:sticky;top:120px;}
+.process-head{position:sticky;top:112px;}
 .process-head .sec-tag-center{
   display:inline-flex;align-items:center;gap:10px;
-  margin-bottom:22px;
+  font-size:12px;font-weight:800;color:var(--orange);letter-spacing:0.18em;
+  margin-bottom:22px;text-transform:uppercase;
 }
 .process-head .sec-tag-center::before{content:'';width:20px;height:2px;background:var(--orange);border-radius:1px;}
 .process-head .sec-tag-center::after{display:none;}
 .process-h2{
   font-size:48px;font-weight:800;letter-spacing:-0.04em;
-  color:var(--ink);line-height:1.2;margin-bottom:18px;
+  color:var(--ink);line-height:1.18;margin-bottom:18px;
 }
 .process-h2 b{color:var(--orange);}
 .process-desc{
   font-size:16px;color:var(--mid);line-height:1.75;
-  letter-spacing:-0.005em;max-width:none;margin:0;
+  letter-spacing:-0.005em;max-width:430px;margin:0;
+}
+.process-route{
+  display:flex;align-items:center;flex-wrap:wrap;gap:8px;
+  max-width:440px;margin-top:30px;
+}
+.process-route span{
+  min-height:34px;padding:8px 13px;border:1px solid var(--line);
+  border-radius:999px;background:var(--white);
+  color:var(--ink);font-size:13px;font-weight:800;line-height:1.2;
+  letter-spacing:-0.015em;box-shadow:var(--sh-sm);
+}
+.process-route i{
+  width:18px;height:1px;background:var(--orange-bdr);display:block;
 }
 
 .proc-grid{
-  display:flex;flex-direction:column;gap:18px;
+  display:flex;flex-direction:column;gap:12px;
   max-width:none;margin:0;
   position:relative;
 }
 .proc-grid::before{
-  content:'';position:absolute;top:60px;bottom:60px;left:76px;width:2px;
-  background:linear-gradient(to bottom,var(--orange-bdr) 0%,var(--orange) 100%);
+  content:'';position:absolute;top:36px;bottom:36px;left:28px;width:1px;
+  background:linear-gradient(to bottom,var(--orange-bdr) 0%,var(--line) 100%);
   z-index:0;
 }
 .proc-card{
   background:var(--white);
-  border:1.5px solid var(--line);
-  border-radius:var(--r-lg);padding:32px 36px 32px 32px;
+  border:1px solid var(--line);
+  border-radius:var(--r-lg);padding:24px 26px 24px 24px;
   position:relative;z-index:1;
-  display:grid;grid-template-columns:88px 1fr;gap:28px;align-items:center;
+  display:grid;grid-template-columns:56px 1fr;gap:18px;align-items:center;
   transition:transform .25s,box-shadow .25s,border-color .25s;
-  text-align:left;
+  text-align:left;box-shadow:var(--sh-sm);
 }
 .proc-card:hover{
-  transform:translateX(6px);
+  transform:translateY(-3px);
   border-color:var(--orange-bdr);
-  box-shadow:var(--sh-lg);
+  box-shadow:0 14px 34px rgba(26,26,26,0.08);
 }
-.proc-card:last-child{border-color:var(--orange);box-shadow:0 0 0 1px var(--orange);}
+.proc-card:last-child{
+  border-color:rgba(230,0,18,0.28);
+  box-shadow:0 12px 32px rgba(230,0,18,0.08);
+}
 .proc-icon{
-  width:88px;height:88px;border-radius:18px;
+  width:56px;height:56px;border-radius:14px;
   background:var(--orange-light);
   display:flex;align-items:center;justify-content:center;
   color:var(--orange);
   position:relative;flex-shrink:0;
 }
 .proc-card:last-child .proc-icon{background:var(--orange);color:var(--white);}
-.proc-icon .icon{width:40px;height:40px;stroke-width:1.6;}
+.proc-icon .icon{width:28px;height:28px;stroke-width:1.7;}
 .proc-step{
-  position:absolute;top:-12px;right:-12px;
-  width:32px;height:32px;border-radius:50%;
+  position:absolute;top:-8px;right:-8px;
+  width:24px;height:24px;border-radius:50%;
   background:var(--ink);color:var(--white);
   display:flex;align-items:center;justify-content:center;
-  font-size:13px;font-weight:900;letter-spacing:-0.02em;
+  font-size:11px;font-weight:900;letter-spacing:-0.02em;
+  box-shadow:0 6px 14px rgba(26,26,26,0.16);
 }
 .proc-label{
-  font-size:11px;font-weight:800;color:var(--orange);
-  letter-spacing:0.18em;text-transform:uppercase;margin-bottom:6px;
+  font-size:10.5px;font-weight:800;color:var(--orange);
+  letter-spacing:0.16em;text-transform:uppercase;margin-bottom:5px;
 }
 .proc-title{
-  font-size:22px;font-weight:800;color:var(--ink);
-  letter-spacing:-0.025em;line-height:1.35;margin-bottom:8px;
+  font-size:20px;font-weight:800;color:var(--ink);
+  letter-spacing:-0.025em;line-height:1.35;margin-bottom:6px;
 }
 .proc-desc{
-  font-size:14.5px;color:var(--mid);line-height:1.7;
+  font-size:14px;color:var(--mid);line-height:1.7;
   letter-spacing:-0.005em;
 }
 .proc-body{display:flex;flex-direction:column;justify-content:center;}
@@ -723,6 +733,7 @@ body[data-counter-style="accent"] .ps-num .unit{color:var(--ink);}
   .pick,.proof,.process,.why,.inquiry{padding-left:24px;padding-right:24px;}
   .pick-grid,.proof-grid,.inq-wrap,.process-in{grid-template-columns:1fr;gap:48px;}
   .process-head{position:static;}
+  .process-route{margin-top:22px;}
   .pick-h2,.proof-h2,.process-h2,.why-h2{font-size:34px;}
   .inq-h3{font-size:32px;}
   .ps-num{font-size:46px;}
@@ -740,6 +751,20 @@ body[data-counter-style="accent"] .ps-num .unit{color:var(--ink);}
   .privacy-notice{padding:13px 14px;}
   .privacy-notice summary{gap:12px;}
   .fsub{padding:17px 16px;margin-top:4px;}
+  .process{padding-top:76px;padding-bottom:76px;}
+  .process-in{gap:34px;}
+  .process-route{gap:7px;margin-top:22px;}
+  .process-route span{min-height:32px;padding:8px 11px;font-size:12.5px;}
+  .process-route i{display:none;}
+  .proc-grid{gap:10px;}
+  .proc-grid::before{display:none;}
+  .proc-card{grid-template-columns:48px 1fr;gap:14px;padding:18px 16px;border-radius:12px;}
+  .proc-icon{width:48px;height:48px;border-radius:12px;}
+  .proc-icon .icon{width:24px;height:24px;}
+  .proc-step{top:-7px;right:-7px;width:22px;height:22px;font-size:10px;}
+  .proc-label{font-size:9.5px;margin-bottom:4px;}
+  .proc-title{font-size:18px;}
+  .proc-desc{font-size:13.5px;line-height:1.65;}
   .proof-cards,.why-grid{grid-template-columns:1fr;}
   .pick-stat{flex-direction:column;align-items:flex-start;}
   .frow{grid-template-columns:1fr;}
@@ -876,6 +901,15 @@ body[data-counter-style="accent"] .ps-num .unit{color:var(--ink);}
       <div class="sec-tag-center">프로그램 절차</div>
       <h2 class="process-h2">문의부터 배송까지, <b>4단계</b></h2>
       <p class="process-desc">담당자와 1:1로 진행하며, 학원 진도와 난이도를 직접 협의합니다.</p>
+      <div class="process-route" aria-label="프로그램 진행 흐름">
+        <span>도입 문의</span>
+        <i aria-hidden="true"></i>
+        <span>1:1 상담</span>
+        <i aria-hidden="true"></i>
+        <span>단원 선택</span>
+        <i aria-hidden="true"></i>
+        <span>배송</span>
+      </div>
     </div>
     <div class="proc-grid">
       <div class="proc-card">
