@@ -609,9 +609,13 @@ footer{
 .cur-card-plus{display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:300;color:var(--line);padding:0 4px;align-self:center;}
 .cur-foot{margin-top:16px;font-size:13px;color:var(--mid);text-align:center;font-weight:500;}
 @media(max-width:768px){
-  .cur-cards{flex-wrap:wrap;}
-  .cur-card{flex:1 1 calc(50% - 8px);min-width:140px;}
-  .cur-card-plus{flex:0 0 100%;font-size:20px;padding:4px 0;}
+  .cur-cards{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:18px 12px;
+  }
+  .cur-card{min-width:0;}
+  .cur-card-plus{display:none;}
 }
 /* ─ CURRICULUM (등급표 커버 막대 테이블) ─ */
 .curriculum{background:var(--warm);padding:96px 60px;}
