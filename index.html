@@ -319,10 +319,7 @@ nav.up{box-shadow:var(--sh-sm);}
   padding:var(--pad-sec) 60px;position:relative;overflow:hidden;
 }
 .proof::before{
-  content:'';position:absolute;top:-100px;right:-100px;
-  width:480px;height:480px;border-radius:50%;
-  background:radial-gradient(circle,rgba(230,0,18,0.18) 0%,rgba(230,0,18,0) 65%);
-  pointer-events:none;
+  display:none;
 }
 .proof-in{max-width:var(--max);margin:0 auto;position:relative;z-index:1;}
 .proof-grid{display:grid;grid-template-columns:0.85fr 1.15fr;gap:96px;align-items:center;}
