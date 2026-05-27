@@ -112,26 +112,26 @@ nav.up{box-shadow:var(--sh-sm);}
 .logo-mark{
   width:28px;height:28px;border-radius:5px;background:var(--orange);
   display:flex;align-items:center;justify-content:center;
-  color:var(--white);font-weight:900;font-size:16px;letter-spacing:-0.04em;line-height:1;
+  color:var(--white);font-weight:900;font-size:16px;line-height:1;
   font-family:var(--f-sans);
 }
-.logo-name{font-size:16px;font-weight:800;color:var(--ink);letter-spacing:-0.025em;}
+.logo-name{font-size:16px;font-weight:800;color:var(--ink);}
 .logo-tag{
   font-size:11px;font-weight:700;color:var(--orange);
   background:var(--orange-light);border:1px solid var(--orange-bdr);
-  padding:3px 10px;border-radius:20px;letter-spacing:-0.005em;
+  padding:3px 10px;border-radius:20px;
 }
 .nav-menu{display:flex;align-items:center;gap:4px;}
 .nav-menu a{
   font-size:14px;font-weight:600;color:var(--mid);text-decoration:none;
-  padding:10px 16px;border-radius:8px;letter-spacing:-0.005em;
+  padding:10px 16px;border-radius:8px;
   transition:color .2s,background .2s;
 }
 .nav-menu a:hover{color:var(--orange);}
 .nav-cta{
   background:var(--orange);color:white;
   padding:9px 22px;border-radius:22px;font-size:13px;font-weight:700;
-  text-decoration:none;letter-spacing:-0.015em;
+  text-decoration:none;
   box-shadow:var(--sh-or);
   transition:background .2s,transform .15s,box-shadow .2s;
 }
@@ -142,7 +142,7 @@ nav.up{box-shadow:var(--sh-sm);}
 .cur-units-tag,
 .lvl-info::before{
   display:inline-flex;align-items:center;gap:10px;
-  font-size:16px;font-weight:800;color:var(--orange);letter-spacing:0.18em;
+  font-size:16px;font-weight:800;color:var(--orange);
   text-transform:uppercase;
 }
 .sec-tag::before,
@@ -156,12 +156,12 @@ nav.up{box-shadow:var(--sh-sm);}
   margin-bottom:22px;
 }
 .sec-h2{
-  font-size:48px;font-weight:800;letter-spacing:-0.04em;
+  font-size:48px;font-weight:800;
   color:var(--ink);margin-bottom:16px;line-height:1.2;
 }
 .sec-sub{
   color:var(--mid);line-height:1.75;
-  letter-spacing:-0.005em;
+
   margin-bottom:72px;max-width:680px;
 }
 /* ─ CONTENTS (NEW) ─ */
@@ -185,11 +185,11 @@ nav.up{box-shadow:var(--sh-sm);}
 .cont-body{flex:1;}
 .cont-h3{
   font-size:18px;font-weight:800;color:var(--ink);
-  margin-bottom:8px;letter-spacing:-0.025em;line-height:1.4;
+  margin-bottom:8px;line-height:1.4;
 }
 .cont-p{
   font-size:16px;color:var(--mid);line-height:1.75;
-  letter-spacing:-0.005em;
+
 }
 /* ─ PROGRAM (NEW) ─ */
 .program{background:var(--white);padding:120px 60px 80px;border-top:1px solid var(--line);}
@@ -200,7 +200,7 @@ nav.up{box-shadow:var(--sh-sm);}
 .timeline-grid{
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:14px;
+  gap:16px;
   align-items:start;
   background:transparent;
 }
@@ -214,8 +214,7 @@ nav.up{box-shadow:var(--sh-sm);}
   grid-template-columns:max-content max-content 1fr;
   grid-template-areas:
     "label period ."
-    "title title title"
-    "scope scope scope"
+    "copy copy copy"
     "list list list";
   column-gap:8px;
   row-gap:20px;
@@ -250,10 +249,9 @@ nav.up{box-shadow:var(--sh-sm);}
   font-size:14px;
   font-weight:800;
   color:var(--orange);
-  letter-spacing:-0.01em;
+
   line-height:1.2;
 }
-.tl-label::first-letter{letter-spacing:-0.01em;}
 .tl-period{
   grid-area:period;
   display:inline-flex;
@@ -263,7 +261,7 @@ nav.up{box-shadow:var(--sh-sm);}
   color:var(--orange);
   font-weight:800;
   text-align:left;
-  letter-spacing:-0.01em;
+
   padding:6px 12px;
   border:1px solid var(--line);
   border-radius:999px;
@@ -271,28 +269,29 @@ nav.up{box-shadow:var(--sh-sm);}
   margin:0;
   line-height:1.2;
 }
+.tl-copy{
+  grid-area:copy;
+}
 .tl-title{
-  grid-area:title;
   font-size:22px;
   font-weight:800;
   color:var(--ink);
-  letter-spacing:-0.035em;
+
   line-height:1.32;
   text-align:left;
   min-height:auto;
   display:flex;
   align-items:flex-start;
   justify-content:flex-start;
-  margin-bottom:0;
+  margin-bottom:6px;
 }
 .tl-title br{display:none;}
 .tl-scope{
-  grid-area:scope;
   font-size:18px;
   color:var(--mid);
   line-height:1.7;
   text-align:left;
-  letter-spacing:-0.005em;
+
   flex:0;
   min-height:auto;
   display:block;
@@ -305,7 +304,7 @@ nav.up{box-shadow:var(--sh-sm);}
   color:var(--body);
   font-size:16px;
   line-height:1.75;
-  letter-spacing:-0.005em;
+
 }
 .tl-list li{margin:4px 0;}
 .tl-list strong{color:var(--orange);font-weight:800;}
@@ -322,26 +321,26 @@ nav.up{box-shadow:var(--sh-sm);}
 }
 .tl-total > *{position:relative;z-index:1;}
 .tl-total-label{
-  font-size:16px;font-weight:800;letter-spacing:0.14em;
+  font-size:16px;font-weight:800;
   color:var(--orange);text-transform:uppercase;
 }
 .tl-total-main{
-  font-size:22px;font-weight:800;letter-spacing:-0.025em;margin-top:4px;
+  font-size:22px;font-weight:800;margin-top:4px;
   line-height:1.4;
 }
 .tl-total-stats{display:flex;gap:32px;}
 .tl-stat{display:flex;flex-direction:column;gap:2px;}
 .tl-stat-num{
-  font-size:28px;font-weight:900;letter-spacing:-0.04em;line-height:1;
+  font-size:28px;font-weight:900;line-height:1;
   color:var(--orange);
 }
 .tl-stat-num span{
   font-size:13px;font-weight:700;color:rgba(255,255,255,0.7);
-  letter-spacing:-0.005em;
+
 }
 .tl-stat-label{
   font-size:11px;color:rgba(255,255,255,0.65);
-  letter-spacing:0.04em;font-weight:600;text-transform:uppercase;
+  font-weight:600;text-transform:uppercase;
 }
 @media(max-width:1100px){
   .timeline-grid{grid-template-columns:repeat(2,1fr);}
@@ -378,11 +377,11 @@ footer{
 .ft-mark{
   width:24px;height:24px;border-radius:5px;background:var(--orange);
   display:flex;align-items:center;justify-content:center;
-  color:var(--white);font-weight:900;font-size:14px;letter-spacing:-0.5px;line-height:1;
+  color:var(--white);font-weight:900;font-size:14px;line-height:1;
 }
-.ft-name{font-size:15px;font-weight:800;letter-spacing:-0.015em;color:var(--white);}
-.ft-copy{font-size:12px;color:rgba(255,255,255,0.4);margin-top:6px;letter-spacing:-0.005em;}
-.ft-info{font-size:12px;color:rgba(255,255,255,0.55);line-height:1.9;letter-spacing:-0.005em;display:flex;flex-direction:column;gap:2px;text-align:right;}
+.ft-name{font-size:15px;font-weight:800;color:var(--white);}
+.ft-copy{font-size:12px;color:rgba(255,255,255,0.4);margin-top:6px;}
+.ft-info{font-size:12px;color:rgba(255,255,255,0.55);line-height:1.9;display:flex;flex-direction:column;gap:2px;text-align:right;}
 .ft-info-row{display:block;}
 .ft-info-row strong{color:rgba(255,255,255,0.4);font-weight:600;margin-right:8px;}
 .ft-info a{color:inherit;text-decoration:none;border-bottom:1px solid transparent;}
@@ -403,7 +402,7 @@ footer{
   .ft-info{text-align:left;}
   .contents{padding:80px 24px;}
   .program{padding:80px 24px 64px;}
-  .sec-h2{font-size:34px;letter-spacing:-0.04em;}
+  .sec-h2{font-size:34px;}
   .sec-sub{margin-bottom:48px;}
   .contents-grid{grid-template-columns:1fr;}
   .timeline-grid{grid-template-columns:repeat(2,1fr);gap:24px 10px;}
@@ -430,11 +429,11 @@ footer{
 }
 .cur-units-h3{
   font-size:24px;font-weight:800;color:var(--ink);
-  letter-spacing:-0.025em;line-height:1.3;margin-bottom:8px;
+  line-height:1.3;margin-bottom:8px;
 }
 .cur-units-p{
   color:var(--mid);line-height:1.7;
-  letter-spacing:-0.005em;
+
 }
 /* Outer wrapper card */
 .uacc-wrap{
@@ -450,11 +449,11 @@ footer{
   display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;
 }
 .uacc-head-ttl{
-  font-size:15px;font-weight:800;letter-spacing:-0.02em;
+  font-size:15px;font-weight:800;
 }
 .uacc-head-meta{
   font-size:12px;color:rgba(255,255,255,0.7);
-  letter-spacing:-0.005em;
+
 }
 /* Subject row (accordion item) */
 .uacc-subj{
@@ -480,7 +479,7 @@ footer{
   width:36px;height:36px;border-radius:8px;
   background:var(--ink);color:var(--white);
   display:flex;align-items:center;justify-content:center;
-  font-size:13px;font-weight:900;letter-spacing:-0.02em;line-height:1;
+  font-size:13px;font-weight:900;line-height:1;
   flex-shrink:0;
 }
 .uacc-toggle.open .uacc-subj-num{
@@ -489,17 +488,17 @@ footer{
 .uacc-subj-info{display:flex;flex-direction:column;gap:2px;min-width:0;}
 .uacc-subj-name{
   font-size:17px;font-weight:800;color:var(--ink);
-  letter-spacing:-0.025em;line-height:1.3;
+  line-height:1.3;
 }
 .uacc-subj-meta{
   font-size:13px;color:var(--mid);font-weight:600;
-  letter-spacing:-0.005em;
+
 }
 .uacc-subj-count{
   font-size:12.5px;font-weight:800;color:var(--orange);
   background:var(--orange-light);border:1px solid var(--orange-bdr);
   padding:5px 11px;border-radius:14px;
-  letter-spacing:-0.005em;white-space:nowrap;
+  white-space:nowrap;
 }
 .uacc-icon{
   width:28px;height:28px;border-radius:50%;
@@ -544,7 +543,7 @@ footer{
   background:#F2EFED;
   font-size:10.5px;font-weight:800;
   color:var(--mid);
-  letter-spacing:0.08em;text-transform:uppercase;
+  text-transform:uppercase;
   padding:12px 18px;text-align:left;
   border-bottom:1px solid var(--line);
   white-space:nowrap;
@@ -557,7 +556,7 @@ footer{
 .uacc-table tbody td{
   padding:13px 18px;
   border-bottom:1px solid var(--line-soft);
-  letter-spacing:-0.005em;
+
   vertical-align:middle;
 }
 .uacc-table tbody tr:last-child td{border-bottom:0;}
@@ -568,7 +567,7 @@ footer{
 }
 .uacc-table .col-unit{
   color:var(--ink);font-weight:700;font-size:14.5px;
-  letter-spacing:-0.015em;
+
 }
 .uacc-table .col-num{
   text-align:center;
@@ -588,7 +587,7 @@ footer{
 .uacc-foot{
   padding:16px 28px;background:var(--warm);
   border-top:1px solid var(--line);
-  font-size:13px;color:var(--mid);letter-spacing:-0.005em;
+  font-size:13px;color:var(--mid);
   display:flex;align-items:center;gap:10px;flex-wrap:wrap;
 }
 .uacc-foot strong{color:var(--ink);font-weight:800;}
@@ -603,7 +602,7 @@ footer{
 .uacc-controls button{
   background:transparent;border:0;cursor:pointer;
   font-family:inherit;font-size:12px;font-weight:700;
-  color:var(--orange);letter-spacing:-0.005em;
+  color:var(--orange);
   padding:6px 12px;border-radius:6px;
   transition:background .2s;
 }
@@ -632,7 +631,7 @@ footer{
 .cur-card-killer .cur-card-inner{background:var(--killer-c,#E71F19);}
 .cur-card-inner-final{background:var(--white,#fff);border:2px solid var(--line,#E5E5E5);}
 .cur-card-unit{font-size:16px;font-weight:700;color:white;margin-bottom:4px;}
-.cur-card-level{font-size:18px;font-weight:600;color:rgba(255,255,255,.75);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;}
+.cur-card-level{font-size:18px;font-weight:600;color:rgba(255,255,255,.75);text-transform:uppercase;margin-bottom:8px;}
 .cur-card-count{font-size:15px;font-weight:900;color:white;padding:4px 14px;background:rgba(0,0,0,.15);border-radius:6px;}
 .cur-card-inner-final .cur-card-unit{color:var(--ink);}
 .cur-card-inner-final .cur-card-level{color:var(--mid);}
@@ -652,7 +651,7 @@ footer{
   margin-top:8px;padding:5px 10px;border-radius:999px;
   border:1px solid var(--line);
   background:var(--white);color:var(--orange);
-  font-size:11px;font-weight:800;letter-spacing:-0.015em;
+  font-size:11px;font-weight:800;
   transition:background .18s,color .18s,border-color .18s;
 }
 .pdf-preview-card:hover .cur-card-action,
@@ -660,7 +659,7 @@ footer{
   background:var(--orange);color:var(--white);border-color:var(--orange);
 }
 .cur-card-plus{display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:300;color:var(--line);padding:0 4px;align-self:center;}
-.cur-foot{margin-top:16px;font-size:15px;color:var(--mid);text-align:center;font-weight:500;}
+.cur-foot{margin-top:46px;font-size:15px;color:var(--mid);text-align:center;font-weight:500;}
 @media(max-width:768px){
   .cur-cards{
     display:grid;
@@ -699,7 +698,7 @@ footer{
   background:var(--navy);
   color:rgba(255,255,255,0.9);
   font-weight:800;
-  letter-spacing:-0.005em;
+
   padding:14px 8px;
   text-align:center;
   border-bottom:1px solid var(--navy-line);
@@ -719,7 +718,7 @@ footer{
   font-size:14px;font-weight:800;
   color:var(--white);
   padding:18px 8px;
-  letter-spacing:-0.005em;
+
 }
 .cur-table thead .th-grade{
   background:#2A2A2A;
@@ -727,7 +726,7 @@ footer{
   color:rgba(255,255,255,0.85);
   padding:11px 8px;
   border-top:1px solid var(--navy-line);
-  letter-spacing:-0.005em;
+
 }
 /* Body cells */
 .cur-table tbody td{
@@ -737,7 +736,7 @@ footer{
   vertical-align:middle;
   padding:0;
   text-align:center;
-  letter-spacing:-0.005em;
+
 }
 .cur-table tbody tr:last-child td{border-bottom:0;}
 .cur-table tbody td:last-child{border-right:0;}
@@ -759,7 +758,7 @@ footer{
   overflow:hidden;
 }
 .cur-content-badge .cb-label{
-  font-size:7px;font-weight:800;letter-spacing:0.16em;
+  font-size:7px;font-weight:800;
   margin-top:6px;margin-bottom:4px;
   position:relative;padding-bottom:4px;
   text-transform:uppercase;
@@ -769,7 +768,7 @@ footer{
   width:14px;height:1px;background:currentColor;
 }
 .cur-content-badge .cb-mark{
-  font-size:24px;font-weight:900;letter-spacing:-0.04em;line-height:1;
+  font-size:24px;font-weight:900;line-height:1;
   margin-top:2px;
 }
 .cur-content-badge .cb-foot{
@@ -781,7 +780,7 @@ footer{
   font-size:7px;font-weight:900;line-height:1;
 }
 .cur-content-badge .cb-foot-brand{
-  font-size:6px;font-weight:600;letter-spacing:-0.005em;
+  font-size:6px;font-weight:600;
 }
 /* Basic — white card, charcoal text, red accent */
 .cur-content-badge-img{
@@ -825,13 +824,13 @@ footer{
 }
 .cur-content-badge.cb-final .cb-exam-sub{
   font-size:5px;color:var(--ink);font-weight:500;
-  letter-spacing:-0.005em;line-height:1.4;
+  line-height:1.4;
   margin-bottom:6px;
   display:block;
 }
 .cur-content-badge.cb-final .cb-mark{
   font-size:17px;font-weight:900;color:var(--ink);
-  letter-spacing:-0.035em;line-height:1;
+  line-height:1;
   margin:0 0 auto;
 }
 .cur-content-badge.cb-final .cb-exam-name{
@@ -843,19 +842,19 @@ footer{
 .cur-content-badge.cb-final .cb-exam-name-key{
   font-weight:800;color:var(--ink);
   padding-right:3px;border-right:1px solid var(--ink);
-  letter-spacing:-0.005em;
+
 }
 .cur-content-badge.cb-final .cb-exam-warn{
   width:100%;font-size:4.5px;font-weight:700;color:var(--ink);
   background:#D8D8D8;
   padding:3px 2px;text-align:center;
   margin-top:0;
-  letter-spacing:-0.005em;line-height:1.2;
+  line-height:1.2;
 }
 .cur-content-badge.cb-final .cb-foot{display:none;}
 .cur-content-name{
   font-size:14px;font-weight:800;color:var(--ink);
-  letter-spacing:-0.02em;line-height:1.3;
+  line-height:1.3;
 }
 /* Difficulty cell */
 .cur-cell-diff{
@@ -864,7 +863,7 @@ footer{
 }
 .cur-diff-dots{
   display:inline-flex;gap:7px;
-  letter-spacing:0;
+
 }
 .cur-diff-dots span{
   width:12px;height:12px;border-radius:50%;
@@ -902,11 +901,11 @@ footer{
 }
 .cur-cover-h{
   font-size:14.5px;font-weight:800;
-  letter-spacing:-0.02em;line-height:1.3;
+  line-height:1.3;
 }
 .cur-cover-sub{
   font-size:12.5px;font-weight:600;
-  letter-spacing:-0.005em;line-height:1.5;
+  line-height:1.5;
 }
 /* Bar color variants */
 .cur-cover-basic{
@@ -948,7 +947,7 @@ footer{
   background:var(--warm);
   border-top:1px solid var(--line);
   font-size:15px;color:var(--mid);
-  letter-spacing:-0.005em;
+
   line-height:1.7;
 }
 .cur-foot strong{color:var(--ink);font-weight:800;}
@@ -961,10 +960,11 @@ footer{
   border-left:4px solid var(--orange);
   border-radius:var(--r-sm);
   padding:24px 28px;
+  margin-top:24px;
 }
 .curr-ops-h{
   font-size:13px;font-weight:800;color:var(--ink);
-  letter-spacing:-0.015em;margin-bottom:12px;
+  margin-bottom:12px;
   display:flex;align-items:center;gap:8px;
 }
 .curr-ops-h::before{
@@ -976,7 +976,7 @@ footer{
 }
 .curr-ops-list li{
   font-size:13px;color:var(--body);line-height:1.7;
-  letter-spacing:-0.005em;
+
   padding-left:14px;position:relative;
 }
 .curr-ops-list li::before{
@@ -991,7 +991,7 @@ footer{
   border-left:3px solid var(--mid);
   font-size:13px;color:var(--mid);line-height:1.75;
   border-radius:var(--r-sm);
-  letter-spacing:-0.005em;
+
 }
 .curr-note strong{color:var(--ink);font-weight:800;}
 @media(max-width:960px){
@@ -1010,16 +1010,17 @@ footer{
   background:var(--white);
 }
 .lvl-detail-in{
-  max-width:960px;margin:0 auto;
+  max-width:var(--max);margin:0 auto;
 }
 .lvl-detail-grid{
-  display:grid;grid-template-columns:1fr 1.1fr;gap:80px;
+  display:grid;grid-template-columns:1fr 1.3fr;gap:80px;
   align-items:center;
 }
 /* Cover area (left) — large minimal photo-like mockup */
 .lvl-cover-wrap{
   display:flex;align-items:center;justify-content:center;
   position:relative;
+  padding:0 20px;
 }
 .lvl-cover-art{
   width:100%;max-width:320px;
@@ -1032,7 +1033,7 @@ footer{
   box-shadow:0 24px 50px rgba(40,40,40,0.10), 0 4px 12px rgba(40,40,40,0.04);
 }
 .lvl-cover-label{
-  font-size:11px;font-weight:700;letter-spacing:0.24em;
+  font-size:11px;font-weight:700;
   margin-bottom:8px;position:relative;padding-bottom:8px;
   text-transform:uppercase;
 }
@@ -1041,11 +1042,11 @@ footer{
   width:24px;height:1px;background:currentColor;
 }
 .lvl-cover-mark{
-  font-size:84px;font-weight:900;letter-spacing:-0.05em;line-height:1;
+  font-size:84px;font-weight:900;line-height:1;
   margin-top:6px;
 }
 .lvl-cover-title{
-  font-size:16px;font-weight:700;letter-spacing:-0.02em;line-height:1.3;
+  font-size:16px;font-weight:700;line-height:1.3;
   margin-top:12px;
 }
 .lvl-cover-foot{
@@ -1056,12 +1057,13 @@ footer{
   display:flex;align-items:center;justify-content:center;
   font-size:10px;font-weight:900;line-height:1;
 }
-.lvl-cover-foot-brand{font-size:9px;font-weight:500;letter-spacing:-0.005em;}
+.lvl-cover-foot-brand{font-size:9px;font-weight:500;}
 /* Cover variants — keep visual identity */
 .lvl-cover-img{
-  width:100%;max-width:320px;
+  width:100%;max-width:360px;
   aspect-ratio:1/1.414;
-  border-radius:3px;
+  border-radius:12px;
+  border:1px solid #D6D6D6;
   object-fit:cover;
   box-shadow:0 24px 50px rgba(40,40,40,0.10), 0 4px 12px rgba(40,40,40,0.04);
 }
@@ -1093,10 +1095,10 @@ footer{
 .lvl-cover-final .lvl-cover-label{display:none;}
 .lvl-cover-final .lvl-exam-sub{
   font-size:11px;color:var(--ink);font-weight:500;
-  letter-spacing:-0.005em;margin-bottom:24px;line-height:1.6;
+  margin-bottom:24px;line-height:1.6;
 }
 .lvl-cover-final .lvl-cover-mark{
-  font-size:30px;font-weight:900;letter-spacing:-0.04em;
+  font-size:30px;font-weight:900;
   margin:0 0 auto;color:var(--ink);
 }
 .lvl-cover-final .lvl-exam-name{
@@ -1108,14 +1110,14 @@ footer{
 .lvl-cover-final .lvl-exam-name-key{
   font-weight:700;color:var(--ink);
   padding-right:10px;border-right:1px solid var(--ink);
-  letter-spacing:-0.005em;
+
 }
 .lvl-cover-final .lvl-exam-warn{
   width:100%;font-size:10px;font-weight:600;color:var(--ink);
   background:#D8D8D8;
   padding:8px 4px;text-align:center;
   margin-top:6px;
-  letter-spacing:-0.005em;
+
 }
 /* Right side content — minimal */
 .lvl-info{
@@ -1131,12 +1133,12 @@ footer{
 #level-final .lvl-info::before{content:'Level-Final';}
 .lvl-name{
   font-size:32px;font-weight:800;color:var(--ink);
-  letter-spacing:-0.04em;line-height:1.3;
+  line-height:1.3;
   margin-bottom:14px;
 }
 .lvl-sub{
   color:var(--mid);
-  line-height:1.75;letter-spacing:-0.005em;
+  line-height:1.75;
   margin-bottom:28px;
   font-weight:500;
 }
@@ -1151,7 +1153,7 @@ footer{
 .lvl-list-h{
   display:inline-block;
   font-size:15px;font-weight:800;color:var(--orange);
-  letter-spacing:0.12em;
+
   background:transparent;
   padding:0;border-radius:0;
   margin-bottom:12px;text-transform:uppercase;
@@ -1163,7 +1165,7 @@ footer{
 }
 .lvl-list li{
   font-size:16px;color:var(--body);line-height:1.85;
-  letter-spacing:-0.005em;
+
   padding-left:14px;position:relative;
   font-weight:500;
 }
@@ -1178,7 +1180,7 @@ footer{
 }
 /* All sections use same layout (no reverse for clean grid) */
 .lvl-detail.lvl-reverse .lvl-detail-grid{
-  grid-template-columns:1fr 1.1fr;
+  grid-template-columns:1fr 1.3fr;
 }
 .lvl-detail.lvl-reverse .lvl-cover-wrap{order:initial;}
 .lvl-detail.lvl-reverse .lvl-info{order:initial;}
@@ -1206,12 +1208,12 @@ footer{
 }
 .page-hero-h1{
   font-size:48px;font-weight:800;line-height:1.2;
-  letter-spacing:-0.04em;color:var(--ink);margin-bottom:20px;
+  color:var(--ink);margin-bottom:20px;
 }
 .page-hero-h1 b{font-weight:800;color:var(--orange);}
 .page-hero-p{
   color:var(--mid);line-height:1.75;
-  letter-spacing:-0.005em;max-width:540px;margin:0 auto;
+  max-width:540px;margin:0 auto;
 }
 /* nav active state for current page */
 .nav-menu a.active{color:var(--ink);font-weight:800;}
@@ -1231,13 +1233,13 @@ footer{
 }
 .cta-back-body{width:100%;max-width:620px;margin:0 auto;}
 .cta-back-h{
-  font-size:30px;font-weight:800;letter-spacing:-0.03em;
+  font-size:30px;font-weight:800;
   line-height:1.3;margin-bottom:12px;
 }
 .cta-back-h b{color:#E60012;font-weight:800;}
 .cta-back-p{
   color:rgba(255,255,255,0.65);
-  line-height:1.7;letter-spacing:-0.005em;margin:0 auto;
+  line-height:1.7;margin:0 auto;
 }
 .sec-sub,
 .page-hero-p,
@@ -1250,7 +1252,7 @@ footer{
   background:#E60012;color:#ffffff;
   padding:18px 36px;border-radius:var(--r-lg);
   font-size:16px;font-weight:700;text-decoration:none;
-  letter-spacing:-0.015em;white-space:nowrap;
+  white-space:nowrap;
   transition:background .2s;
   display:inline-flex;align-items:center;justify-content:center;
   min-width:248px;
@@ -1258,7 +1260,7 @@ footer{
 .cta-back-cta:hover{background:#C5000F;}
 @media(max-width:880px){
   .page-hero-in{padding:64px 24px 56px;}
-  .page-hero-h1{font-size:34px;letter-spacing:-0.04em;}
+  .page-hero-h1{font-size:34px;}
   .cta-back{padding:0 20px 48px;}
   .cta-back-in{flex-direction:column;align-items:center;text-align:center;padding:40px 28px;gap:28px;}
   .cta-back-body{width:100%;max-width:620px;}
@@ -1323,7 +1325,7 @@ footer{
   font-size:15px;
   font-weight:800;
   color:var(--ink);
-  letter-spacing:-0.02em;
+
   overflow:hidden;
   text-overflow:ellipsis;
   white-space:nowrap;
@@ -2035,9 +2037,11 @@ footer{
           <div class="tl-card">
             <div class="tl-dot">1</div>
             <div class="tl-label">시즌1</div>
-            <div class="tl-title">수능특강 기출 학습</div>
             <div class="tl-period">3월</div>
-            <div class="tl-scope">EBS 수능특강 기출 문항 기반</div>
+            <div class="tl-copy">
+              <div class="tl-title">수능특강 기출 학습</div>
+              <div class="tl-scope">EBS 수능특강 기출 문항 기반</div>
+            </div>
             <ul class="tl-list">
               <li>단원별 핵심 개념 점검</li>
               <li><strong>기초 구조</strong> 확인</li>
@@ -2046,9 +2050,11 @@ footer{
           <div class="tl-card">
             <div class="tl-dot">2</div>
             <div class="tl-label">시즌2</div>
-            <div class="tl-title">EBS 수특 변형 학습</div>
             <div class="tl-period">4월</div>
-            <div class="tl-scope">수능특강 변형 출제 · 연계 대비</div>
+            <div class="tl-copy">
+              <div class="tl-title">EBS 수특 변형 학습</div>
+              <div class="tl-scope">수능특강 변형 출제 · 연계 대비</div>
+            </div>
             <ul class="tl-list">
               <li>3월 학습 이후 연계 훈련</li>
               <li><strong>변형 유형</strong> 집중 점검</li>
@@ -2057,9 +2063,11 @@ footer{
           <div class="tl-card">
             <div class="tl-dot">3</div>
             <div class="tl-label">시즌3</div>
-            <div class="tl-title">6모 대비 실전 연습</div>
             <div class="tl-period">5월</div>
-            <div class="tl-scope">6월 모의평가 직전 실전 점검</div>
+            <div class="tl-copy">
+              <div class="tl-title">6모 대비 실전 연습</div>
+              <div class="tl-scope">6월 모의평가 직전 실전 점검</div>
+            </div>
             <ul class="tl-list">
               <li>출제 경향을 심도 있게 반영</li>
               <li><strong>실전 감각</strong> 강화</li>
@@ -2068,9 +2076,11 @@ footer{
           <div class="tl-card">
             <div class="tl-dot">4</div>
             <div class="tl-label">시즌4</div>
-            <div class="tl-title">평가원 반영 학습</div>
             <div class="tl-period">6월</div>
-            <div class="tl-scope">6월 평가원 출제 경향 즉시 반영</div>
+            <div class="tl-copy">
+              <div class="tl-title">평가원 반영 학습</div>
+              <div class="tl-scope">6월 평가원 출제 경향 즉시 반영</div>
+            </div>
             <ul class="tl-list">
               <li>6모 이후 약점 보완</li>
               <li><strong>최신 경향</strong> 반영</li>
@@ -2079,9 +2089,11 @@ footer{
           <div class="tl-card">
             <div class="tl-dot">5</div>
             <div class="tl-label">시즌5</div>
-            <div class="tl-title">평가원 변형 훈련</div>
             <div class="tl-period">7월</div>
-            <div class="tl-scope">6월 평가원 변형 출제 · 심화 훈련</div>
+            <div class="tl-copy">
+              <div class="tl-title">평가원 변형 훈련</div>
+              <div class="tl-scope">6월 평가원 변형 출제 · 심화 훈련</div>
+            </div>
             <ul class="tl-list">
               <li>여름방학 실전 훈련</li>
               <li><strong>심화 문항</strong> 대비</li>
@@ -2090,9 +2102,11 @@ footer{
           <div class="tl-card">
             <div class="tl-dot">6</div>
             <div class="tl-label">시즌6</div>
-            <div class="tl-title">9모 대비 실전 점검</div>
             <div class="tl-period">8월</div>
-            <div class="tl-scope">9월 모의평가 직전 실전 점검</div>
+            <div class="tl-copy">
+              <div class="tl-title">9모 대비 실전 점검</div>
+              <div class="tl-scope">9월 모의평가 직전 실전 점검</div>
+            </div>
             <ul class="tl-list">
               <li>취약 단원 재점검</li>
               <li><strong>실전 운영</strong> 강화</li>
@@ -2101,9 +2115,11 @@ footer{
           <div class="tl-card">
             <div class="tl-dot">7</div>
             <div class="tl-label">시즌7</div>
-            <div class="tl-title">평가원 기출 분석</div>
             <div class="tl-period">9월</div>
-            <div class="tl-scope">9월 평가원 분석 · 출제 경향 반영</div>
+            <div class="tl-copy">
+              <div class="tl-title">평가원 기출 분석</div>
+              <div class="tl-scope">9월 평가원 분석 · 출제 경향 반영</div>
+            </div>
             <ul class="tl-list">
               <li>9모 이후 방향 조정</li>
               <li><strong>출제 구조</strong> 재정리</li>
@@ -2112,9 +2128,11 @@ footer{
           <div class="tl-card">
             <div class="tl-dot">8</div>
             <div class="tl-label">시즌8</div>
-            <div class="tl-title">수능 대비 파이널</div>
             <div class="tl-period">10월</div>
-            <div class="tl-scope">수능 직전 최종 점검 · 파이널</div>
+            <div class="tl-copy">
+              <div class="tl-title">수능 대비 파이널</div>
+              <div class="tl-scope">수능 직전 최종 점검 · 파이널</div>
+            </div>
             <ul class="tl-list">
               <li>마지막 실전 감각 유지</li>
               <li><strong>최종 점검</strong> 구성</li>

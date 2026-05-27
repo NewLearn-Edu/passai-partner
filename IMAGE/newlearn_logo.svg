@@ -5,6 +5,6 @@
     <rect x="24" y="24" width="64" height="64" rx="12" fill="#E60012"/>
     <text x="56" y="66" text-anchor="middle"
       font-family="Pretendard Variable, Pretendard, -apple-system, BlinkMacSystemFont, Apple SD Gothic Neo, Noto Sans KR, sans-serif"
-      font-size="38" font-weight="900" letter-spacing="-2" fill="#FFFFFF">N</text>
+      font-size="38" font-weight="900" fill="#FFFFFF">N</text>
   </g>
 </svg>
