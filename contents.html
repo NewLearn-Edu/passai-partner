@@ -528,7 +528,18 @@ footer{
   width:100%;
   border-collapse:separate;border-spacing:0;
   font-size:13px;
+  table-layout:fixed;
 }
+.uacc-table th:nth-child(1),
+.uacc-table td:nth-child(1){width:26%;}
+.uacc-table th:nth-child(2),
+.uacc-table td:nth-child(2){width:28%;}
+.uacc-table th:nth-child(3),
+.uacc-table td:nth-child(3),
+.uacc-table th:nth-child(4),
+.uacc-table td:nth-child(4),
+.uacc-table th:nth-child(5),
+.uacc-table td:nth-child(5){width:15.333%;}
 .uacc-table thead th{
   background:#F2EFED;
   font-size:10.5px;font-weight:800;
@@ -1210,7 +1221,7 @@ footer{
   padding:0 60px 40px;
 }
 .cta-back-in{
-  max-width:960px;margin:0 auto;
+  max-width:var(--max);margin:0 auto;
   background:#1F2227;color:#ffffff;
   border-radius:14px;
   padding:48px 52px;
