@@ -774,6 +774,130 @@ body[data-counter-style="accent"] .ps-num .unit{color:var(--ink);}
 
 
 </style>
+
+<script type="module">
+  import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.8.1/firebase-app.js';
+  import { getAnalytics, logEvent } from 'https://www.gstatic.com/firebasejs/11.8.1/firebase-analytics.js';
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyDHxvGNXbOjhD7h8EEq9uGCbZ-5hqm-M2U",
+    authDomain: "partner-web-e78fe.firebaseapp.com",
+    projectId: "partner-web-e78fe",
+    storageBucket: "partner-web-e78fe.firebasestorage.app",
+    messagingSenderId: "561546674088",
+    appId: "1:561546674088:web:272841a28095f4745ea79d",
+    measurementId: "G-5BNPJEL6W9"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+  const pageName = 'home';
+  const withPage = (params = {}) => ({
+    page_name: pageName,
+    page_path: location.pathname || '/',
+    ...params
+  });
+  const trackEvent = (eventName, params = {}) => {
+    try {
+      logEvent(analytics, eventName, withPage(params));
+    } catch (err) {
+      console.warn('Analytics event failed:', eventName, err);
+    }
+  };
+  window.trackPartnerEvent = trackEvent;
+
+  // 로컬 테스트용 — 배포 전 제거
+  if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
+    window['FIREBASE_ANALYTICS_DEBUG_MODE'] = true;
+  }
+
+  // 페이지 로드 후 이벤트 바인딩
+  window.addEventListener('DOMContentLoaded', () => {
+
+    // ── 1. 버튼 클릭 추적 ──────────────────────────────
+    const clickTargets = [
+      { selector: 'a.btn-main', name: '도입문의_히어로', ctaId: 'hero_inquiry', inquirySource: 'home_hero' },
+      { selector: 'a.btn-sub', name: 'LevelX보기', ctaId: 'hero_contents', contentSource: 'home_hero' },
+      { selector: 'a.kakao-float', name: '카카오톡', ctaId: 'kakao_float' },
+      { selector: 'button#submitBtn', name: '폼_제출', ctaId: 'inquiry_submit_button' },
+    ];
+    clickTargets.forEach(({ selector, name, ctaId, inquirySource, contentSource }) => {
+      document.querySelector(selector)?.addEventListener('click', () => {
+        trackEvent('cta_click', { button: name, cta_id: ctaId });
+        if (inquirySource) trackEvent('inquiry_cta_click', { source: inquirySource });
+        if (contentSource) trackEvent('content_interest', { source: contentSource, target: 'contents_page' });
+        if (ctaId === 'kakao_float') trackEvent('kakao_click', { source: 'floating_button' });
+      });
+    });
+
+    // ── 2. 섹션 체류 추적 (Intersection Observer) ──────
+    const sections = ['hero', 'proof', 'why', 'process', 'inquiry'];
+    const viewedSections = new Set();
+    const visibleSince = new Map();
+    const flushSectionDwell = (section, finishedAt = performance.now()) => {
+      const startedAt = visibleSince.get(section);
+      if (startedAt == null) return;
+      visibleSince.delete(section);
+      const durationSec = Math.round((finishedAt - startedAt) / 100) / 10;
+      if (durationSec >= 1) {
+        trackEvent('section_dwell', { section, duration_sec: durationSec });
+      }
+    };
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const section = entry.target.id;
+        if (entry.isIntersecting) {
+          if (!viewedSections.has(section)) {
+            viewedSections.add(section);
+            trackEvent('section_view', { section });
+          }
+          if (!visibleSince.has(section)) visibleSince.set(section, performance.now());
+        } else {
+          flushSectionDwell(section);
+        }
+      });
+    }, { threshold: 0.4 }); // 섹션 40% 이상 보일 때 기록
+    sections.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) sectionObserver.observe(el);
+    });
+    const flushAllDwell = () => {
+      visibleSince.forEach((_, section) => flushSectionDwell(section));
+    };
+    window.addEventListener('pagehide', flushAllDwell);
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'hidden') flushAllDwell();
+    });
+
+    // ── 3. 스크롤 깊이 추적 (25/50/75/100%) ───────────
+    const depthMarks = new Set();
+    window.addEventListener('scroll', () => {
+      const scrolled = window.scrollY + window.innerHeight;
+      const total = document.documentElement.scrollHeight;
+      const pct = Math.floor((scrolled / total) * 100);
+      [25, 50, 75, 100].forEach(mark => {
+        if (pct >= mark && !depthMarks.has(mark)) {
+          depthMarks.add(mark);
+          trackEvent('scroll_depth', { depth: mark });
+        }
+      });
+    }, { passive: true });
+
+    // ── 4. 네비게이션 클릭 추적 ───────────────────────
+    document.querySelectorAll('#nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        const href = link.getAttribute('href') || '';
+        trackEvent('nav_click', { target: link.textContent.trim(), href });
+        if (href.includes('contents.html')) {
+          trackEvent('content_interest', { source: 'home_nav', target: 'contents_page' });
+        }
+      });
+    });
+
+    trackEvent('partner_page_view', { referrer: document.referrer || 'direct' });
+
+  });
+</script>
 </head>
 <body>
 
@@ -1137,7 +1261,57 @@ body[data-counter-style="accent"] .ps-num .unit{color:var(--ink);}
   // ─ Form submit (best-effort; this is design-only, network may fail)
   const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzSd_Xn-Ehbe8LO70YDym5zwYsLC9Bhp6U8vsxGAAmZqwwKOm0GJ7nJ7x-HoFDcJFO1/exec';
   const formLoadTime = Date.now();
-  document.getElementById('partnerForm').addEventListener('submit', function(e) {
+  const partnerForm = document.getElementById('partnerForm');
+  const trackPartner = (eventName, params = {}) => window.trackPartnerEvent?.(eventName, params);
+  const normalizeArray = (value) => Array.isArray(value) ? value : (value ? [value] : []);
+  const subjectSlugs = {
+    "수학I": "math1",
+    "수학II": "math2",
+    "미적분": "calculus",
+    "확률과 통계": "probability"
+  };
+  const levelSlug = (value) => String(value || '').split(' ')[0].toLowerCase() || 'unknown';
+  const buildInquiryMeta = (data) => {
+    const subjects = normalizeArray(data.subject).map(value => subjectSlugs[value] || 'other');
+    const levels = normalizeArray(data.level).map(levelSlug);
+    const chapters = normalizeArray(data.chapter);
+    const units = normalizeArray(data.unit);
+    return {
+      subject_count: subjects.length,
+      level_count: levels.length,
+      chapter_count: chapters.length,
+      unit_count: units.length,
+      subjects: subjects.join('|') || 'none',
+      levels: levels.join('|') || 'none',
+      has_message: Boolean(String(data.message || '').trim())
+    };
+  };
+  const readFormData = (form) => {
+    const data = {};
+    new FormData(form).forEach((v, k) => {
+      if (data[k]) {
+        data[k] = Array.isArray(data[k]) ? [...data[k], v] : [data[k], v];
+      } else {
+        data[k] = v;
+      }
+    });
+    return data;
+  };
+
+  partnerForm.addEventListener('input', () => {
+    trackPartner('inquiry_form_start', { source: 'home_inquiry' });
+  }, { once: true });
+
+  partnerForm.addEventListener('change', (e) => {
+    const field = e.target?.name;
+    if (!['subject', 'level', 'chapter', 'unit'].includes(field)) return;
+    trackPartner('inquiry_option_select', {
+      field,
+      ...buildInquiryMeta(readFormData(partnerForm))
+    });
+  });
+
+  partnerForm.addEventListener('submit', function(e) {
     e.preventDefault();
     const form = this;
     const btn = document.getElementById('submitBtn');
@@ -1150,25 +1324,22 @@ body[data-counter-style="accent"] .ps-num .unit{color:var(--ink);}
     };
     const honeypot = form.querySelector('input[name="website"]').value;
     if (honeypot) {
+      trackPartner('inquiry_bot_filtered', { reason: 'honeypot' });
       form.style.display = 'none';
       document.getElementById('formSuccess').style.display = 'block';
       return;
     }
     if (Date.now() - formLoadTime < 3000) {
+      trackPartner('inquiry_submit_blocked', { reason: 'too_fast' });
       showToast('잠시 후 다시 시도해주세요.', true);
       return;
     }
     btn.disabled = true; btn.textContent = '제출 중...';
-    const data = {};
-    new FormData(form).forEach((v, k) => {
-      if (data[k]) {
-        data[k] = Array.isArray(data[k]) ? [...data[k], v] : [data[k], v];
-      } else {
-        data[k] = v;
-      }
-    });
+    const data = readFormData(form);
+    const inquiryMeta = buildInquiryMeta(data);
     data._submitted_at = new Date().toISOString();
     data._page_url = location.href;
+    trackPartner('inquiry_submit_attempt', inquiryMeta);
 
     fetch(SCRIPT_URL, {
       method:'POST',
@@ -1189,6 +1360,7 @@ body[data-counter-style="accent"] .ps-num .unit{color:var(--ink);}
       }
 
       if (isSuccess) {
+        trackPartner('inquiry_submit_success', inquiryMeta);
         form.style.display = 'none';
         document.getElementById('formSuccess').style.display = 'block';
       } else {
@@ -1196,6 +1368,10 @@ body[data-counter-style="accent"] .ps-num .unit{color:var(--ink);}
       }
     })
     .catch(err => {
+      trackPartner('inquiry_submit_error', {
+        ...inquiryMeta,
+        error_type: err?.name || 'Error'
+      });
       btn.disabled = false; btn.textContent = '도입문의 보내기';
       showToast('제출 실패. 이메일(newlearnsoft@gmail.com)로 직접 문의해주세요.', true);
       console.error('Form submit error:', err);

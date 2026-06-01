@@ -1388,6 +1388,141 @@ footer{
 }
 
 </style>
+
+<script type="module">
+  import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.8.1/firebase-app.js';
+  import { getAnalytics, logEvent } from 'https://www.gstatic.com/firebasejs/11.8.1/firebase-analytics.js';
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyDHxvGNXbOjhD7h8EEq9uGCbZ-5hqm-M2U",
+    authDomain: "partner-web-e78fe.firebaseapp.com",
+    projectId: "partner-web-e78fe",
+    storageBucket: "partner-web-e78fe.firebasestorage.app",
+    messagingSenderId: "561546674088",
+    appId: "1:561546674088:web:272841a28095f4745ea79d",
+    measurementId: "G-5BNPJEL6W9"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+  const pageName = 'contents';
+  const withPage = (params = {}) => ({
+    page_name: pageName,
+    page_path: location.pathname || '/',
+    ...params
+  });
+  const trackEvent = (eventName, params = {}) => {
+    try {
+      logEvent(analytics, eventName, withPage(params));
+    } catch (err) {
+      console.warn('Analytics event failed:', eventName, err);
+    }
+  };
+  window.trackPartnerEvent = trackEvent;
+
+  if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
+    window['FIREBASE_ANALYTICS_DEBUG_MODE'] = true;
+  }
+
+  const bindSectionTracking = (sectionIds) => {
+    if (!('IntersectionObserver' in window)) return;
+    const viewedSections = new Set();
+    const visibleSince = new Map();
+    const flushSectionDwell = (section, finishedAt = performance.now()) => {
+      const startedAt = visibleSince.get(section);
+      if (startedAt == null) return;
+      visibleSince.delete(section);
+      const durationSec = Math.round((finishedAt - startedAt) / 100) / 10;
+      if (durationSec >= 1) {
+        trackEvent('section_dwell', { section, duration_sec: durationSec });
+      }
+    };
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const section = entry.target.id;
+        if (entry.isIntersecting) {
+          if (!viewedSections.has(section)) {
+            viewedSections.add(section);
+            trackEvent('section_view', { section });
+          }
+          if (!visibleSince.has(section)) visibleSince.set(section, performance.now());
+        } else {
+          flushSectionDwell(section);
+        }
+      });
+    }, { threshold: 0.4 });
+
+    sectionIds.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) sectionObserver.observe(el);
+    });
+
+    const flushAllDwell = () => {
+      visibleSince.forEach((_, section) => flushSectionDwell(section));
+    };
+    window.addEventListener('pagehide', flushAllDwell);
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'hidden') flushAllDwell();
+    });
+  };
+
+  window.addEventListener('DOMContentLoaded', () => {
+    trackEvent('partner_page_view', { referrer: document.referrer || 'direct' });
+    bindSectionTracking([
+      'contents-hero',
+      'contents',
+      'curriculum',
+      'level-basic',
+      'level-intermediate',
+      'level-killer',
+      'level-final',
+      'program',
+      'inquiry-cta'
+    ]);
+
+    const depthMarks = new Set();
+    window.addEventListener('scroll', () => {
+      const scrolled = window.scrollY + window.innerHeight;
+      const total = document.documentElement.scrollHeight;
+      const pct = Math.floor((scrolled / total) * 100);
+      [25, 50, 75, 100].forEach(mark => {
+        if (pct >= mark && !depthMarks.has(mark)) {
+          depthMarks.add(mark);
+          trackEvent('scroll_depth', { depth: mark });
+        }
+      });
+    }, { passive: true });
+
+    document.querySelectorAll('#nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        trackEvent('nav_click', {
+          target: link.textContent.trim(),
+          href: link.getAttribute('href') || ''
+        });
+      });
+    });
+
+    document.querySelector('.kakao-float')?.addEventListener('click', () => {
+      trackEvent('cta_click', { button: '카카오톡', cta_id: 'kakao_float' });
+      trackEvent('kakao_click', { source: 'floating_button' });
+    });
+
+    document.querySelector('.cta-back-cta')?.addEventListener('click', () => {
+      trackEvent('cta_click', { button: '도입문의_콘텐츠하단', cta_id: 'contents_bottom_inquiry' });
+      trackEvent('content_to_inquiry', { source: 'contents_bottom' });
+      trackEvent('inquiry_cta_click', { source: 'contents_bottom' });
+    });
+
+    document.getElementById('pdfPreviewOpen')?.addEventListener('click', (e) => {
+      const href = e.currentTarget.getAttribute('href') || '';
+      const title = document.getElementById('pdfPreviewTitle')?.textContent.trim() || 'unknown';
+      trackEvent('pdf_open_external', {
+        content_title: title,
+        pdf_file: href.split('#')[0] || 'unknown'
+      });
+    });
+  });
+</script>
 </head>
 <body>
 
@@ -1414,7 +1549,7 @@ footer{
 </nav>
 
 <!-- PAGE HERO -->
-<section class="page-hero">
+<section class="page-hero" id="contents-hero">
   <div class="page-hero-in">
     <div class="page-hero-kicker"><span></span>콘텐츠 소개</div>
     <h1 class="page-hero-h1">수능에 <b>가장 가까운</b><br>Level-X</h1>
@@ -2167,7 +2302,7 @@ footer{
 </section>
 
 <!-- CTA BACK STRIP — 메인 페이지 도입 문의로 유도 -->
-<section class="cta-back">
+<section class="cta-back" id="inquiry-cta">
   <div class="cta-back-in">
     <div class="cta-back-body">
       <div class="cta-back-h">Level-X가 마음에 드셨나요?<br><b>뉴런연구소</b>가 학원 운영을 책임집니다</div>
@@ -2225,6 +2360,9 @@ footer{
         const isOpen = btn.classList.toggle('open');
         body.classList.toggle('open', isOpen);
         btn.setAttribute('aria-expanded', String(isOpen));
+        window.trackPartnerEvent?.(isOpen ? 'curriculum_expand' : 'curriculum_collapse', {
+          subject: btn.querySelector('.uacc-subj-name')?.textContent.trim() || 'unknown'
+        });
         updateToggleAllLabel();
       });
     });
@@ -2244,6 +2382,9 @@ footer{
           btn.setAttribute('aria-expanded', String(shouldOpen));
           const body = document.getElementById(btn.getAttribute('aria-controls'));
           if (body) body.classList.toggle('open', shouldOpen);
+        });
+        window.trackPartnerEvent?.('curriculum_toggle_all', {
+          action: shouldOpen ? 'expand_all' : 'collapse_all'
         });
         updateToggleAllLabel();
       });
@@ -2291,6 +2432,11 @@ footer{
       const pdfTitle = card.dataset.title || '샘플 PDF 미리보기';
       if (!pdf) return;
 
+      window.trackPartnerEvent?.('pdf_preview_open', {
+        content_title: pdfTitle,
+        pdf_file: pdf,
+        level: (pdfTitle.match(/Level-([A-Za-z]+)/)?.[1] || 'unknown').toLowerCase()
+      });
       lastFocused = document.activeElement;
       title.textContent = pdfTitle;
       frame.src = encodeURI(pdf) + '#page=1&zoom=80';
