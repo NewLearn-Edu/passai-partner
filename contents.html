@@ -369,21 +369,21 @@ nav.up{box-shadow:var(--sh-sm);}
 
 footer{
   background:#0B1220;color:rgba(255,255,255,0.7);
-  padding:56px 60px 44px;border-top:1px solid rgba(255,255,255,0.06);
+  padding:64px 60px 52px;border-top:1px solid rgba(255,255,255,0.06);
 }
-.ft-in{max-width:var(--max);margin:0 auto;display:flex;align-items:flex-start;justify-content:space-between;gap:32px;flex-wrap:wrap;}
-.ft-brand{display:flex;flex-direction:column;gap:8px;min-width:200px;}
-.ft-logo{display:flex;align-items:center;gap:10px;}
+.ft-in{max-width:var(--max);margin:0 auto;display:flex;align-items:flex-start;justify-content:space-between;gap:40px;flex-wrap:wrap;}
+.ft-brand{display:flex;flex-direction:column;gap:10px;min-width:240px;}
+.ft-logo{display:flex;align-items:center;gap:12px;}
 .ft-mark{
-  width:24px;height:24px;border-radius:5px;background:var(--orange);
+  width:32px;height:32px;border-radius:7px;background:var(--orange);
   display:flex;align-items:center;justify-content:center;
-  color:var(--white);font-weight:900;font-size:14px;line-height:1;
+  color:var(--white);font-weight:900;font-size:18px;line-height:1;
 }
-.ft-name{font-size:15px;font-weight:800;color:var(--white);}
-.ft-copy{font-size:12px;color:rgba(255,255,255,0.4);margin-top:6px;}
-.ft-info{font-size:12px;color:rgba(255,255,255,0.55);line-height:1.9;display:flex;flex-direction:column;gap:2px;text-align:right;}
+.ft-name{font-size:18px;font-weight:800;color:var(--white);}
+.ft-copy{font-size:14px;color:rgba(255,255,255,0.5);margin-top:8px;line-height:1.6;}
+.ft-info{font-size:15px;color:rgba(255,255,255,0.76);line-height:1.85;display:flex;flex-direction:column;gap:5px;text-align:right;padding-right:92px;}
 .ft-info-row{display:block;}
-.ft-info-row strong{color:rgba(255,255,255,0.4);font-weight:600;margin-right:8px;}
+.ft-info-row strong{color:rgba(255,255,255,0.56);font-weight:700;margin-right:10px;}
 .ft-info a{color:inherit;text-decoration:none;border-bottom:1px solid transparent;}
 .ft-info a:hover{border-bottom-color:rgba(255,255,255,0.4);}
 
@@ -399,7 +399,7 @@ footer{
 }
 @media(max-width:960px){
   nav, footer{padding-left:24px;padding-right:24px;}
-  .ft-info{text-align:left;}
+  .ft-info{text-align:left;padding-right:0;}
   .contents{padding:80px 24px;}
   .program{padding:80px 24px 64px;}
   .sec-h2{font-size:34px;}
@@ -618,6 +618,48 @@ footer{
   .uacc-table thead th.col-grp-h{display:none;}
 }
 /* ─ CURRICULUM CARDS (v2 style) ─ */
+.cur-sec-sub{margin-bottom:28px;}
+.cur-download-panel{
+  display:flex;align-items:center;justify-content:space-between;gap:20px;
+  background:var(--white);
+  border:1px solid var(--line);
+  border-radius:var(--r-md);
+  padding:22px 24px;
+  box-shadow:var(--sh-sm);
+}
+.cur-download-kicker{
+  font-size:12px;font-weight:800;color:var(--orange);
+  letter-spacing:0;text-transform:uppercase;margin-bottom:6px;
+}
+.cur-download-title{
+  font-size:20px;font-weight:800;color:var(--ink);
+  line-height:1.35;
+}
+.cur-download-copy{
+  margin-top:6px;
+  font-size:14px;line-height:1.55;color:var(--mid);
+}
+.cur-download-btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  min-height:46px;padding:0 18px;border-radius:8px;
+  background:var(--orange);color:var(--white);
+  font-size:14px;font-weight:800;text-decoration:none;
+  white-space:nowrap;box-shadow:var(--sh-or);
+  transition:background .18s,transform .15s,box-shadow .18s;
+}
+.cur-download-btn:hover{
+  background:var(--orange-dark);
+  transform:translateY(-1px);
+  box-shadow:0 8px 22px rgba(230,0,18,0.28);
+}
+.cur-download-btn:focus-visible{
+  outline:3px solid var(--orange-bdr);
+  outline-offset:3px;
+}
+.cur-download-btn svg{
+  width:18px;height:18px;fill:none;stroke:currentColor;
+  stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;
+}
 .cur-cards-wrap{margin-top:32px;}
 .cur-cards{display:flex;gap:12px;align-items:flex-start;}
 .cur-card{flex:1;text-align:center;}
@@ -661,6 +703,12 @@ footer{
 .cur-card-plus{display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:300;color:var(--line);padding:0 4px;align-self:center;}
 .cur-foot{margin-top:46px;font-size:15px;color:var(--mid);text-align:center;font-weight:500;}
 @media(max-width:768px){
+  .cur-download-panel{
+    flex-direction:column;align-items:stretch;
+    padding:20px;
+  }
+  .cur-download-title{font-size:18px;}
+  .cur-download-btn{width:100%;}
   .cur-cards{
     display:grid;
     grid-template-columns:repeat(2,minmax(0,1fr));
@@ -1226,14 +1274,14 @@ footer{
   max-width:var(--max);margin:0 auto;
   background:#1F2227;color:#ffffff;
   border-radius:14px;
-  padding:48px 52px;
+  padding:56px 60px;
   display:flex;flex-direction:column;align-items:center;justify-content:center;
   gap:28px;text-align:center;
   box-shadow:0 8px 32px rgba(0,0,0,.12);
 }
 .cta-back-body{width:100%;max-width:620px;margin:0 auto;}
 .cta-back-h{
-  font-size:30px;font-weight:800;
+  font-size:36px;font-weight:800;
   line-height:1.3;margin-bottom:12px;
 }
 .cta-back-h b{color:#E60012;font-weight:800;}
@@ -1250,12 +1298,12 @@ footer{
 }
 .cta-back-cta{
   background:#E60012;color:#ffffff;
-  padding:18px 36px;border-radius:var(--r-lg);
-  font-size:16px;font-weight:700;text-decoration:none;
+  padding:20px 42px;border-radius:var(--r-lg);
+  font-size:18px;font-weight:800;text-decoration:none;
   white-space:nowrap;
   transition:background .2s;
   display:inline-flex;align-items:center;justify-content:center;
-  min-width:248px;
+  min-width:280px;
 }
 .cta-back-cta:hover{background:#C5000F;}
 @media(max-width:880px){
@@ -1264,8 +1312,9 @@ footer{
   .cta-back{padding:0 20px 48px;}
   .cta-back-in{flex-direction:column;align-items:center;text-align:center;padding:40px 28px;gap:28px;}
   .cta-back-body{width:100%;max-width:620px;}
-  .cta-back-h{font-size:24px;}
-  .cta-back-cta{width:min(100%, 248px);text-align:center;}
+  .cta-back-h{font-size:28px;}
+  .cta-back-p{font-size:17px;}
+  .cta-back-cta{width:min(100%, 280px);text-align:center;}
 }
 
 /* ─ PDF Preview Modal ─ */
@@ -1513,6 +1562,15 @@ footer{
       trackEvent('inquiry_cta_click', { source: 'contents_bottom' });
     });
 
+    document.querySelector('[data-sample-download]')?.addEventListener('click', (e) => {
+      const href = e.currentTarget.getAttribute('href') || '';
+      trackEvent('cta_click', { button: '샘플전체다운로드', cta_id: 'contents_sample_all_download' });
+      trackEvent('sample_download', {
+        content_scope: 'basic_standard_killer_final',
+        download_file: href || 'unknown'
+      });
+    });
+
     document.getElementById('pdfPreviewOpen')?.addEventListener('click', (e) => {
       const href = e.currentTarget.getAttribute('href') || '';
       const title = document.getElementById('pdfPreviewTitle')?.textContent.trim() || 'unknown';
@@ -1603,7 +1661,23 @@ footer{
   <div class="curriculum-in">
     <div class="sec-tag">Level-X Contents 커리큘럼</div>
     <h2 class="sec-h2">콘텐츠별 난이도 · 문항 구성</h2>
-    <p class="sec-sub">단원별·난이도별 모의고사 4종 구성을 확인하세요.</p>
+    <p class="sec-sub cur-sec-sub">단원별·난이도별 모의고사 4종 구성을 확인하세요.</p>
+
+    <div class="cur-download-panel">
+      <div class="cur-download-text">
+        <div class="cur-download-kicker">샘플 자료</div>
+        <div class="cur-download-title">Basic부터 Final까지 한 번에 받아보세요</div>
+        <p class="cur-download-copy">Basic · Standard · Killer · Final 문제지와 답지를 ZIP으로 제공합니다.</p>
+      </div>
+      <a class="cur-download-btn" href="SAMPLE/Level-X-sample-all.zip" download data-sample-download aria-label="Basic, Standard, Killer, Final 샘플 전체 다운로드">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M12 3v12"/>
+          <path d="m7 10 5 5 5-5"/>
+          <path d="M5 21h14"/>
+        </svg>
+        <span>샘플 전체 다운로드</span>
+      </a>
+    </div>
 
     <div class="cur-cards-wrap">
       <div class="cur-cards">
